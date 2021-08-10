@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "lib": [
+      "es2017",
+      "es6",
+      "dom"
+    ],
+    "paths": {
+      "*": ["*", "*.web"]
+    },
+    "target": "es5",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "declaration": true,
+    "baseUrl": ".",
+    "noEmit": false ,
+    "noImplicitAny": true,
+    "incremental": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "alwaysStrict": true,
+  },
+  "exclude": [
+    "node_modules",
+  ],
+  "include": [
+    "src"
+  ]
+}
