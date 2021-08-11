@@ -185,10 +185,11 @@ const Button: FC<IButtonProps> = ({
       }}
       onLayout={handleLayoutChange}
       accessible={true}
+
       accessibilityRole="button"
       style={{
         height: 38,
-        minWidth: '100px',
+        minWidth: 100,
         width: isFill ? '100%' : 'fit-content',
         marginLeft: 0,
         justifyContent: 'center',
@@ -196,12 +197,15 @@ const Button: FC<IButtonProps> = ({
       }}
     >
       {({ hovered }: any) => (
-        <ButtonInner
-          type={type}
-          hovered={hovered ?? false}
-          width={buttonWidth}
-          children={buttonChild}
-        />
+        <>
+          {< Text > {hovered}</Text>}
+          <ButtonInner
+            type={type}
+            hovered={hovered ?? false}
+            width={buttonWidth}
+            children={buttonChild}
+          />
+        </>
       )}
     </Pressable>
   )
