@@ -5,6 +5,7 @@ import { useSpring, animated } from '@react-spring/native'
 
 import { body1 } from '../../text'
 import ControlGraphics from './ControlGraphics'
+import Hoverable from './Hoverable'
 
 type ButtonType = 'primary' | 'secondary'
 
@@ -148,7 +149,7 @@ const Button: FC<IButtonProps> = ({
   const buttonChild = (
     <View
       style={{
-        width: isFill ? '100%' : 'fit-content',
+        width: isFill ? '100%' : 'auto',
         flexDirection: isReverse ? 'row' : 'row-reverse',
         alignItems: 'center',
         justifyContent: justifyContent as any,
@@ -190,22 +191,21 @@ const Button: FC<IButtonProps> = ({
       style={{
         height: 38,
         minWidth: 100,
-        width: isFill ? '100%' : 'fit-content',
+        width: isFill ? '100%' : 'auto',
         marginLeft: 0,
         justifyContent: 'center',
         alignItems: 'center',
       }}
     >
-      {({ hovered }: any) => (
-        <>
-          {< Text > {hovered}</Text>}
-          <ButtonInner
+      {({ pressed }: any) => (
+        <Hoverable>
+          {hovered => <ButtonInner
             type={type}
             hovered={hovered ?? false}
             width={buttonWidth}
             children={buttonChild}
-          />
-        </>
+          />}
+        </Hoverable>
       )}
     </Pressable>
   )
