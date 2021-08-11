@@ -1,12 +1,18 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { FC } from 'react'
+import React, { FC } from 'react'
+import { HostComponent, requireNativeComponent } from 'react-native'
+
+const CustomUserControl: HostComponent<{ style: any, label: string }> = requireNativeComponent('TestControl')
 
 interface IProps {
     width: number
 }
 
 const ControlGraphics: FC<IProps> = ({ width }) => {
-    return null
+    return <CustomUserControl
+        style={{ width, heigth: 38 }}
+        label="CustomUserControl!"
+    />
 }
 
 export default ControlGraphics
