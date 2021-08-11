@@ -2,7 +2,7 @@
 import React, { FC } from 'react'
 import { HostComponent, requireNativeComponent } from 'react-native'
 
-const CustomUserControl: HostComponent<{ style: any, label: string }> = requireNativeComponent('TestControl')
+const RNControlGraphics: HostComponent<{ style: any, label: string }> = requireNativeComponent('ControlGraphics')
 
 interface IProps {
     width: number
@@ -10,7 +10,7 @@ interface IProps {
 }
 
 const ControlGraphics: FC<IProps> = ({ width }) => {
-    return <CustomUserControl
+    return <RNControlGraphics
         style={{ width, heigth: 38 }}
         label="CustomUserControl!"
     />

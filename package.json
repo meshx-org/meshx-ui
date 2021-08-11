@@ -5,13 +5,17 @@
   "main": "src/index.ts",
   "scripts": {
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "windows": "react-native run-windows"
   },
   "license": "MIT",
   "dependencies": {
     "@react-spring/native": "^9.2.4",
+    "react": "17.0.2",
+    "react-native": "0.65.0-rc.2",
     "react-native-svg": "^12.1.1",
-    "react-spring": "^9.2.4"
+    "react-spring": "^9.2.4",
+    "react-native-windows": "0.65.0-preview.8"
   },
   "devDependencies": {
     "@types/react-native": "^0.64.5",

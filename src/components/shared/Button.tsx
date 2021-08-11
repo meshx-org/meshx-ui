@@ -54,17 +54,7 @@ const ButtonInner: FC<IProps> = ({ hovered, children, type, width }) => {
 
   return (
     <>
-      <View
-        style={{
-          position: 'absolute',
-          width: '100%',
-          height: 38,
-        }}
-      >
-        <ControlGraphics width={width ?? 10} backgroundColor={getBgColor(type)} />
-      </View>
-
-
+      <ControlGraphics width={width ?? 10} backgroundColor={getBgColor(type)} />
 
       <animated.View
         style={{
