@@ -6,6 +6,7 @@ const CustomUserControl: HostComponent<{ style: any, label: string }> = requireN
 
 interface IProps {
     width: number
+    backgroundColor: string
 }
 
 const ControlGraphics: FC<IProps> = ({ width }) => {
