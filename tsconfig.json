@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "jsx": "react",
+    "jsx": "react-native",
     "lib": [
       "es2017",
       "es6",

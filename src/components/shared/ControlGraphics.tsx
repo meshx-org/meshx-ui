@@ -18,7 +18,7 @@ interface IProps {
 const ControlGraphics: FC<IProps> = ({ width, backgroundColor }) => {
   if (Platform.OS == "windows") {
     return <RNControlGraphics
-      style={{ width, heigth: 38 }}
+      style={{ width, height: 38 }}
       label="CustomUserControl!"
     />
   } else {

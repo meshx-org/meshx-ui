@@ -1,3 +1,5 @@
+const windowsSwitch = '--use-react-native-windows';
+
 module.exports = {
   project: {
     windows: {
