@@ -1,7 +1,6 @@
 import React, { FC } from 'react'
 import { StyleSheet, View, Image, Platform } from 'react-native'
 import Button from '../shared/Button'
-import ControlGraphics from '../shared/ControlGraphics'
 
 const styles = StyleSheet.create({
   headerWithoutBg: {
@@ -23,30 +22,12 @@ const styles = StyleSheet.create({
 
   center: {},
   workspace: {
-    width: 180,
+    maxWidth: 180
   },
   user: {
-    width: 180,
+    maxWidth: 180
   },
 })
-
-const SearchBar = () => {
-  return (
-    <View>
-      <ControlGraphics width={370} />
-      <View
-        style={{
-          zIndex: -1,
-          height: 38,
-          width: 370,
-          backgroundColor: 'white',
-          borderRadius: 4.8,
-          position: 'absolute',
-        }}
-      />
-    </View>
-  )
-}
 
 interface IProps {
   hasBg?: boolean
@@ -65,8 +46,8 @@ const Header: FC<IProps> = ({ hasBg = false, center }) => {
             <Image
               style={{ borderRadius: 2 }}
               source={{
-                width: 32,
-                height: 32,
+                width: 32.5,
+                height: 32.5,
                 uri: 'https://images.unsplash.com/photo-1485724745104-ae0f55940bc1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1428&q=80',
               }}
             />
@@ -83,8 +64,8 @@ const Header: FC<IProps> = ({ hasBg = false, center }) => {
             <Image
               style={{ borderRadius: 2 }}
               source={{
-                width: 32,
-                height: 32,
+                width: 32.5,
+                height: 32.5,
                 uri: 'https://images.unsplash.com/photo-1609379968673-ba7c5fe7a8e0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80',
               }}
             />

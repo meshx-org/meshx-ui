@@ -61,13 +61,11 @@ const ButtonInner: FC<IProps> = ({ hovered, children, type, width }) => {
       <animated.View
         style={{
           position: 'absolute',
-          // zIndex: -1,
+         zIndex: -1,
           opacity: props.opacity,
           borderRadius: 4,
-          width: 'auto',
-
+          width: '100%',
           height: 38,
-          margin: 0,
           backgroundColor: getShadeColor(type),
         }}
       />
