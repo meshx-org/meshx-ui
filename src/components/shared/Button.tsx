@@ -54,7 +54,7 @@ const ButtonInner: FC<IProps> = ({ hovered, children, type, width }) => {
 
   return (
     <>
-      <View style={{ height: 38, position: 'absolute', width: '100%', }}>
+      <View style={{ height: 38, position: 'absolute', width: 'auto', }}>
         <ControlGraphics width={width ?? 10} backgroundColor={getBgColor(type)} />
       </View>
 
@@ -64,7 +64,7 @@ const ButtonInner: FC<IProps> = ({ hovered, children, type, width }) => {
           // zIndex: -1,
           opacity: props.opacity,
           borderRadius: 4,
-          width: '100%',
+          width: 'auto',
 
           height: 38,
           margin: 0,
@@ -129,8 +129,8 @@ const Button: FC<IButtonProps> = ({
 
   const buttonChild = (
     <View
+      onLayout={handleLayoutChange}
       style={{
-        width: isFill ? '100%' : 'auto',
         flexDirection: isReverse ? 'row' : 'row-reverse',
         alignItems: 'center',
         justifyContent: justifyContent as any,
@@ -140,6 +140,7 @@ const Button: FC<IButtonProps> = ({
     >
       {icon}
       <Text
+
         selectable={false}
         numberOfLines={1}
         style={[
@@ -165,14 +166,14 @@ const Button: FC<IButtonProps> = ({
       onPress={() => {
         if (onPress) onPress()
       }}
-      onLayout={handleLayoutChange}
+
       accessible={true}
 
       accessibilityRole="button"
       style={{
         height: 38,
         minWidth: 100,
-        width: isFill ? '100%' : 'auto',
+        //width: isFill ? '100%' : 'auto',
         marginLeft: 0,
         justifyContent: 'center',
         alignItems: 'center',

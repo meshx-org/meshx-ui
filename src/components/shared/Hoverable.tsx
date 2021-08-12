@@ -10,11 +10,7 @@ const Hoverable: FC<IProps> = ({ children }) => {
     const child =
         typeof children === 'function' ? children(false) : children;
 
-    return (
-        <View>
-            {child as any}
-        </View>
-    );
+    return React.cloneElement(React.Children.only(child as any), {});
 }
 
 export default Hoverable
