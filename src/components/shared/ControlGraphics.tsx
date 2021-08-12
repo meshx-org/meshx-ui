@@ -7,8 +7,8 @@ let RNControlGraphics: HostComponent<{ style: any, label: string }>
 
 if (Platform.OS == "windows") {
   RNControlGraphics = requireNativeComponent('ControlGraphics')
+  console.log(RNControlGraphics)
 }
-
 
 interface IProps {
   width: number
