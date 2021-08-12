@@ -12,13 +12,14 @@ if (Platform.OS == "windows") {
 
 interface IProps {
   width: number
+  height: number
   backgroundColor: string
 }
 
-const ControlGraphics: FC<IProps> = ({ width, backgroundColor }) => {
+const ControlGraphics: FC<IProps> = ({ width, height, backgroundColor }) => {
   if (Platform.OS == "windows") {
     return <RNControlGraphics
-      style={{ width, height: 38 }}
+      style={{ width, height }}
       label="CustomUserControl!"
     />
   } else {
@@ -28,13 +29,13 @@ const ControlGraphics: FC<IProps> = ({ width, backgroundColor }) => {
         width={width}
         height="38"
         fill={backgroundColor}
-        viewBox={`0 0 ${width} 38`}
+        viewBox={`0 0 ${width} ${height}`}
         focusable={false}
       >
         <rect
           tabIndex={-1}
           width={Math.max(0, width - 1)}
-          height="37"
+          height={height - 1}
           x="0.5"
           y="0.5"
           stroke="url(#paint0_linear)"
@@ -46,7 +47,7 @@ const ControlGraphics: FC<IProps> = ({ width, backgroundColor }) => {
             x1="159.5"
             x2="159.5"
             y1="1"
-            y2="37"
+            y2={height - 1}
             gradientUnits="userSpaceOnUse"
           >
             <Stop offset="0.906" stopOpacity="0.08" />

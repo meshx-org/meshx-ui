@@ -54,8 +54,8 @@ const ButtonInner: FC<IProps> = ({ hovered, children, type, width }) => {
 
   return (
     <>
-      <View style={{ height: 38, position: 'absolute', width: 'auto', }}>
-        <ControlGraphics width={width ?? 10} backgroundColor={getBgColor(type)} />
+      <View style={{ height: 32, position: 'absolute', width: 'auto', }}>
+        <ControlGraphics height={ 32 } width={width ?? 1} backgroundColor={getBgColor(type)} />
       </View>
 
       <animated.View
@@ -65,7 +65,7 @@ const ButtonInner: FC<IProps> = ({ hovered, children, type, width }) => {
           opacity: props.opacity,
           borderRadius: 4,
           width: '100%',
-          height: 38,
+          height: 32,
           backgroundColor: getShadeColor(type),
         }}
       />
@@ -169,7 +169,7 @@ const Button: FC<IButtonProps> = ({
 
       accessibilityRole="button"
       style={{
-        height: 38,
+        height: 32,
         minWidth: 100,
         //width: isFill ? '100%' : 'auto',
         marginLeft: 0,
