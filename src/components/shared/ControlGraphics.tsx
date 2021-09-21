@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { FC } from 'react'
-import { Platform, View, HostComponent, requireNativeComponent } from 'react-native'
+import { Platform, HostComponent, requireNativeComponent } from 'react-native'
+import { Rect } from 'react-native-svg'
 
+let RNControlGraphics: HostComponent<{ style: any; label: string }>
 
-let RNControlGraphics: HostComponent<{ style: any, label: string }>
-
-if (Platform.OS == "windows") {
+if (Platform.OS == 'windows') {
   RNControlGraphics = requireNativeComponent('ControlGraphics')
   console.log(RNControlGraphics)
 }
@@ -13,45 +13,43 @@ if (Platform.OS == "windows") {
 interface IProps {
   width: number
   height: number
-  backgroundColor: string
 }
 
-const ControlGraphics: FC<IProps> = ({ width, height, backgroundColor }) => {
-  if (Platform.OS == "windows") {
-    return <RNControlGraphics
-      style={{ width, height }}
-      label="CustomUserControl!"
-    />
+const ControlGraphics: FC<IProps> = ({ width, height }) => {
+  if (Platform.OS == 'windows') {
+    return (
+      <RNControlGraphics style={{ width, height }} label="CustomUserControl!" />
+    )
   } else {
     const { Defs, LinearGradient, Stop, Svg } = require('react-native-svg')
     return (
       <Svg
-        width={width}
-        height="38"
-        fill={backgroundColor}
-        viewBox={`0 0 ${width} ${height}`}
+      width={width}
+        height="100%"
+        fill="transparent"
+        //viewBox={`0 0 100px 34px`}
         focusable={false}
       >
-        <rect
-          tabIndex={-1}
-          width={Math.max(0, width - 1)}
-          height={height - 1}
-          x="0.5"
-          y="0.5"
+        <Rect
+          //tabIndex={-1}
+          width={width-1}
+          height={'calc(100% - 1px)'}
+          x="0.5px"
+          y="0.5px"
           stroke="url(#paint0_linear)"
-          rx="4"
+          rx="3.5"
         />
         <Defs>
           <LinearGradient
             id="paint0_linear"
-            x1="159.5"
-            x2="159.5"
-            y1="1"
+            x1="100%"
+            x2="100%"
+            y1="0"
             y2={height - 1}
             gradientUnits="userSpaceOnUse"
           >
-            <Stop offset="0.906" stopOpacity="0.08" />
-            <Stop offset="1" stopOpacity="0.202" />
+            <Stop offset="0.9" stopOpacity="0.08" />
+            <Stop offset="1" stopOpacity="0.2" />
           </LinearGradient>
         </Defs>
       </Svg>

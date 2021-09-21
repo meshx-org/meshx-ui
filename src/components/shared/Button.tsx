@@ -1,24 +1,34 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, { FC, useEffect, useState } from 'react'
-import { LayoutChangeEvent, Pressable, Text, View } from 'react-native'
-import { useSpring, animated } from '@react-spring/native'
+import React, { FC, useState } from 'react'
+import {
+  LayoutChangeEvent,
+  Pressable,
+  Text,
+  View,
+  StyleSheet,
+} from 'react-native'
 
-import { body1 } from '../../text'
 import ControlGraphics from './ControlGraphics'
 import Hoverable from './Hoverable'
 
-type ButtonType = 'primary' | 'secondary'
+type ButtonAppearance = 'primary' | 'secondary'
+type ButtonLayout =
+  | 'fill'
+  | 'fit-left'
+  | 'fit-right'
+  | 'fill-left'
+  | 'fill-right'
 
-const getBgColor = (type: ButtonType) => {
+const getBgColor = (type: ButtonAppearance) => {
   switch (type) {
     case 'primary':
       return '#0396FF'
     case 'secondary':
-      return '#FFF'
+      return 'white'
   }
 }
 
-const getTextColor = (type: ButtonType) => {
+const getTextColor = (type: ButtonAppearance) => {
   switch (type) {
     case 'primary':
       return '#FFF'
@@ -27,7 +37,7 @@ const getTextColor = (type: ButtonType) => {
   }
 }
 
-const getShadeColor = (type: ButtonType) => {
+const getShadeColor = (type: ButtonAppearance) => {
   switch (type) {
     case 'primary':
       return 'rgba(255,255,255,0.2)'
@@ -36,71 +46,84 @@ const getShadeColor = (type: ButtonType) => {
   }
 }
 
-interface IProps {
+const styles = StyleSheet.create({
+  button: {
+    height: 34,
+    alignItems: 'center',
+  },
+  content: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    //alignSelf: 'flex-start',
+    height: 34,
+    flex: 1,
+  },
+  gfxBackground: {
+    borderRadius: 4,
+    height: 34,
+    position: 'absolute',
+    //right: 0,
+    left: 0,
+  },
+  gfxBorder: { height: 34, position: 'absolute', right: 0, left: 0 },
+  gfxOverlay: {
+    position: 'absolute',
+    zIndex: -1,
+    borderRadius: 4,
+    right: 0,
+    left: 0,
+    height: 34,
+  },
+  label: {},
+})
+
+interface IGraphicsProps {
   hovered: boolean
-  type: ButtonType
+  apparance: ButtonAppearance
   width: number
 }
 
-const ButtonInner: FC<IProps> = ({ hovered, children, type, width }) => {
-  const [props, set] = useSpring(() => ({
-    opacity: hovered ? 1.0 : 0.0,
-    config: { duration: 100 },
-  }))
-
-  useEffect(() => {
-    set({ opacity: hovered ? 1.0 : 0.0 })
-  }, [hovered])
-
+const ButtonGraphics: FC<IGraphicsProps> = ({ hovered, apparance, width }) => {
   return (
     <>
-      <View style={{ height: 32, position: 'absolute', width: 'auto', }}>
-        <ControlGraphics height={ 32 } width={width ?? 1} backgroundColor={getBgColor(type)} />
+      <View
+        style={[
+          styles.gfxBackground,
+          {
+            backgroundColor: getBgColor(apparance),
+            width: width ?? 1,
+          },
+        ]}
+      />
+      <View style={styles.gfxBorder}>
+        <ControlGraphics height={34} width={width ?? 1} />
       </View>
 
-      <animated.View
-        style={{
-          position: 'absolute',
-         zIndex: -1,
-          opacity: props.opacity,
-          borderRadius: 4,
-          width: '100%',
-          height: 32,
-          backgroundColor: getShadeColor(type),
-        }}
+      <View
+        style={[
+          styles.gfxOverlay,
+          {
+            backgroundColor: getShadeColor(apparance),
+          },
+        ]}
       />
-
-      {children}
     </>
   )
 }
 
-interface IButtonProps {
-  type: ButtonType
-  layout: 'fill' | 'fit-left' | 'fit-right' | 'fill-left' | 'fill-right'
+interface IButtonContent {
+  apparance: ButtonAppearance
+  layout: ButtonLayout
+  onWidthChange: (width: number) => void
   icon?: JSX.Element
   text: string
-  onPress?: () => void
 }
 
-const Button: FC<IButtonProps> = ({
-  type,
-  text,
-  onPress,
-  icon,
-  layout = 'fill',
-}) => {
-  const [buttonWidth, setButtonWidth] = useState(0)
-
-  const handleLayoutChange = (event: LayoutChangeEvent) => {
-    const { width } = event.nativeEvent.layout
-    setButtonWidth(width)
-  }
-
-  const isFill = layout.startsWith('fill')
-  let justifyContent = 'center'
+const ButtonContent: FC<IButtonContent> = (props) => {
+  const { onWidthChange, icon, text, apparance, layout } = props
 
   const isReverse = layout.endsWith('left')
+  let justifyContent = 'center'
 
   switch (layout) {
     case 'fit-left': {
@@ -125,66 +148,71 @@ const Button: FC<IButtonProps> = ({
     }
   }
 
-  const buttonChild = (
-    <View
-      onLayout={handleLayoutChange}
-      style={{
-        flexDirection: isReverse ? 'row' : 'row-reverse',
-        alignItems: 'center',
-        justifyContent: justifyContent as any,
-        padding: 3,
-        flex: 1,
-      }}
-    >
-      {icon}
-      <Text
+  return null
+}
 
-        selectable={false}
-        numberOfLines={1}
-        style={[
-          body1,
-          {
-            color: getTextColor(type),
-            paddingHorizontal: 8,
-            alignItems: 'center',
-            textAlign: 'center',
-            flex: 1,
-            fontSize: 14,
-          },
-        ]}
-      >
-        {text}
-      </Text>
-    </View>
-  )
+export interface IButtonProps {
+  apparance: ButtonAppearance
+  layout: ButtonLayout
+  icon?: JSX.Element
+  text: string
+  onPress?: () => void
+}
+
+const Button: FC<IButtonProps> = ({
+  apparance,
+  text,
+  onPress,
+  icon,
+  layout = 'fill',
+}) => {
+  const [buttonWidth, setButtonWidth] = useState(0)
+
+  const handleLayoutChange = (event: LayoutChangeEvent) => {
+    const width = event.nativeEvent.layout.width
+    setButtonWidth(width)
+  }
 
   return (
     <Pressable
       focusable={true}
+      accessible={true}
+      accessibilityRole="button"
       onPress={() => {
         if (onPress) onPress()
       }}
-
-      accessible={true}
-
-      accessibilityRole="button"
-      style={{
-        height: 32,
-        minWidth: 100,
-        //width: isFill ? '100%' : 'auto',
-        marginLeft: 0,
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
+      style={styles.button}
+      onLayout={handleLayoutChange}
     >
       {({ pressed }: any) => (
         <Hoverable>
-          {hovered => <ButtonInner
-            type={type}
-            hovered={hovered ?? false}
-            width={buttonWidth}
-            children={buttonChild}
-          />}
+          {(hovered) => (
+            <>
+              <ButtonGraphics
+                apparance={apparance}
+                hovered={hovered ?? false}
+                width={buttonWidth}
+              />
+
+              <View style={styles.content}>
+                {icon}
+                <Text
+                  selectable={false}
+                  numberOfLines={1}
+                  style={{
+                    color: getTextColor(apparance),
+                    paddingHorizontal: 12,
+                    alignItems: 'center',
+                    textAlign: 'center',
+                    fontFamily: 'Open Sans',
+                    fontSize: 13,
+                  }}
+                >
+                  {text}
+                </Text>
+              </View>
+            </>
+          )}
         </Hoverable>
       )}
     </Pressable>
