@@ -57,8 +57,8 @@ const styles = StyleSheet.create({
     //alignSelf: 'flex-start',
     height: 34,
     flex: 1,
-    flexDirection: "row",
-    padding: 3
+    flexDirection: 'row',
+    padding: 3,
   },
   gfxBackground: {
     borderRadius: 4,

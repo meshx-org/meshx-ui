@@ -1,19 +1,18 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useState } from 'react'
 
 interface IProps {
-    children: (hovered: boolean) => void
+  children: (hovered: boolean) => void
 }
 
 const Hoverable: FC<IProps> = ({ children }) => {
-    const [isHovered, setHovered] = useState(false)
+  const [isHovered, setHovered] = useState(false)
 
-    const child =
-        typeof children === 'function' ? children(isHovered) : children;
+  const child = typeof children === 'function' ? children(isHovered) : children
 
-    return React.cloneElement(React.Children.only(child as any), {
-        onMouseEnter: () => setHovered(true),
-        onMouseLeave: () => setHovered(false)
-    });
+  return React.cloneElement(React.Children.only(child as any), {
+    onMouseEnter: () => setHovered(true),
+    onMouseLeave: () => setHovered(false),
+  })
 }
 
 export default Hoverable

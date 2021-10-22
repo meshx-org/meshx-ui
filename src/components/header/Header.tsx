@@ -39,7 +39,7 @@ const Header: FC<IProps> = ({ hasBg = false, center }) => {
     <View style={hasBg ? styles.headerWithBg : styles.headerWithoutBg}>
       <View style={styles.workspace}>
         <Button
-          type="secondary"
+          apparance="secondary"
           layout="fill-left"
           text="Vulkan LLC"
           icon={
@@ -57,7 +57,7 @@ const Header: FC<IProps> = ({ hasBg = false, center }) => {
       <View style={styles.center}>{center}</View>
       <View style={styles.user}>
         <Button
-          type="secondary"
+          apparance="secondary"
           layout="fill-right"
           text="adsfasdasdf"
           icon={
