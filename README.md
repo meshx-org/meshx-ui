@@ -16,9 +16,9 @@ parent:
 
 <div align="center">
 
-![GitHub package.json version (subfolder of monorepo)](https://img.shields.io/github/package-json/v/meshx-org/meshx-sidetree?filename=packages%2Fcore%2Fpackage.json)
+![GitHub package.json version (subfolder of monorepo)](https://img.shields.io/github/package-json/v/meshx-org/meshx-ui)
 ![typescript](https://badgen.net/badge/icon/typescript?icon=typescript&label)
-[![Continuous Integration](https://github.com/meshx-org/meshx-sidetree/workflows/CI/badge.svg)](https://github.com/meshx-org/meshx-sidetree/actions/workflows/ci.yml)
+[![Continous Integration](https://github.com/meshx-org/meshx-ui/actions/workflows/ci.yaml/badge.svg?branch=main&event=push)](https://github.com/meshx-org/meshx-ui/actions/workflows/ci.yaml)
 [![License: Apache-2.0](https://img.shields.io/github/license/meshx-org/sidetree-sdk)](https://opensource.org/licenses/Apache-2.0)
 
 </div>
