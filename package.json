@@ -1,10 +1,14 @@
 {
   "name": "@meshx-org/ui",
+  "description": "Component library used across MeshX Apps",
+  "version": "1.0.0",
+  "license": "apache-2.0",
   "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
   "homepage": "https://meshx.co",
-  "license": "apache-2.0",
-  "version": "1.0.0",
-  "description": "",
+  "browserslist": [
+    "defaults",
+    "not IE 11"
+  ],
   "publishConfig": {
     "access": "public",
     "registry": "https://npm.pkg.github.com",
@@ -17,6 +21,7 @@
   "main": "dist/index.js",
   "types": "src/index.ts",
   "scripts": {
+    "prepare": "husky install",
     "format": "prettier --write \".\" ",
     "lint": "eslint **/*.{tsx,ts}",
     "build": "tsc",
@@ -44,9 +49,21 @@
     "@storybook/addon-links": "^6.3.8",
     "@storybook/react": "^6.3.8",
     "@types/react-native": "^0.64.5",
+    "@typescript-eslint/eslint-plugin": "^5.12.1",
+    "@typescript-eslint/parser": "^5.12.1",
     "babel-loader": "^8.2.2",
     "babel-preset-react-app": "^10.0.0",
+    "eslint": "^8.9.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^16.1.0",
+    "eslint-config-prettier": "^8.4.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.29.1",
+    "eslint-plugin-react-native": "^4.0.0",
+    "lerna": "^4.0.0",
     "metro-react-native-babel-preset": "^0.66.2",
+    "prettier": "^2.5.1",
     "typescript": "^4.3.5"
   },
   "peerDependencies": {

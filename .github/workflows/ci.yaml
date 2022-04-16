@@ -1,0 +1,32 @@
+name: Continous Integration
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+env:
+  NODE_AUTH_TOKEN: ${{ secrets.GHPR_TOKEN }}
+
+jobs:
+  lint_run:
+    name: Run Lint and Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node 16
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn
+
+      - run: node -p 'os.cpus()'
+      - run: yarn lint
+      - run: yarn test:unit
+      - run: yarn build
