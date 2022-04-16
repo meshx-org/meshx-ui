@@ -28,5 +28,5 @@ jobs:
 
       - run: node -p 'os.cpus()'
       - run: yarn lint
-      - run: yarn test:unit
+      - run: yarn test
       - run: yarn build
