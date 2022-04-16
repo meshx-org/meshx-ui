@@ -31,6 +31,8 @@
   "dependencies": {
     "@react-spring/native": "^9.2.4",
     "babel-plugin-react-native-web": "^0.17.1",
+    "@storybook/react": "^6.3.8",
+    "husky": "7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-native": "0.65.0-rc.2",
@@ -47,7 +49,6 @@
     "@storybook/addon-actions": "^6.3.8",
     "@storybook/addon-essentials": "^6.3.8",
     "@storybook/addon-links": "^6.3.8",
-    "@storybook/react": "^6.3.8",
     "@types/react-native": "^0.64.5",
     "@typescript-eslint/eslint-plugin": "^5.12.1",
     "@typescript-eslint/parser": "^5.12.1",
