@@ -1,21 +1,21 @@
-import { Meta } from '@storybook/addon-docs';
-import Code from './assets/code-brackets.svg';
-import Colors from './assets/colors.svg';
-import Comments from './assets/comments.svg';
-import Direction from './assets/direction.svg';
-import Flow from './assets/flow.svg';
-import Plugin from './assets/plugin.svg';
-import Repo from './assets/repo.svg';
-import StackAlt from './assets/stackalt.svg';
+import { Meta } from '@storybook/addon-docs'
+import Code from './assets/code-brackets.svg'
+import Colors from './assets/colors.svg'
+import Comments from './assets/comments.svg'
+import Direction from './assets/direction.svg'
+import Flow from './assets/flow.svg'
+import Plugin from './assets/plugin.svg'
+import Repo from './assets/repo.svg'
+import StackAlt from './assets/stackalt.svg'
 
 <Meta title="Example/Introduction" />
 
 <style>{`
-  .subheading {
+  h4 {
     --mediumdark: '#999999';
     font-weight: 900;
     font-size: 13px;
-    color: #999;
+    color: #999 !important;
     letter-spacing: 6px;
     line-height: 24px;
     text-transform: uppercase;
@@ -123,57 +123,37 @@ Browse example stories now by navigating to them in the sidebar.
 View their code in the `src/stories` directory to learn how they work.
 We recommend building UIs with a [**component-driven**](https://componentdriven.org) process starting with atomic components and ending with pages.
 
-<div className="subheading">Configure</div>
+#### Configure
 
 <div className="link-list">
   <a
     className="link-item"
-    href="https://storybook.js.org/docs/react/addons/addon-types"
-    target="_blank"
+    href="?path=/story/components-button--primary"
+    // target="_blank"
   >
-    <span>
-      Test
-    </span>
+    <span>Button</span>
   </a>
-  <a
-    className="link-item"
-    href="https://storybook.js.org/docs/react/configure/webpack"
-    target="_blank"
-  >
-    <span>
-     Test2
-    </span>
+  <a className="link-item" href="https://storybook.js.org/docs/react/configure/webpack" target="_blank">
+    <span>Test2</span>
   </a>
 </div>
 
 <div className="link-list">
-  <a
-    className="link-item"
-    href="https://storybook.js.org/docs/react/addons/addon-types"
-    target="_blank"
-  >
+  <a className="link-item" href="https://storybook.js.org/docs/react/addons/addon-types" target="_blank">
     <img src={Plugin} alt="plugin" />
     <span>
       <strong>Presets for popular tools</strong>
       Easy setup for TypeScript, SCSS and more.
     </span>
   </a>
-  <a
-    className="link-item"
-    href="https://storybook.js.org/docs/react/configure/webpack"
-    target="_blank"
-  >
+  <a className="link-item" href="https://storybook.js.org/docs/react/configure/webpack" target="_blank">
     <img src={StackAlt} alt="Build" />
     <span>
       <strong>Build configuration</strong>
       How to customize webpack and Babel
     </span>
   </a>
-  <a
-    className="link-item"
-    href="https://storybook.js.org/docs/react/configure/styling-and-css"
-    target="_blank"
-  >
+  <a className="link-item" href="https://storybook.js.org/docs/react/configure/styling-and-css" target="_blank">
     <img src={Colors} alt="colors" />
     <span>
       <strong>Styling</strong>
@@ -193,7 +173,7 @@ We recommend building UIs with a [**component-driven**](https://componentdriven.
   </a>
 </div>
 
-<div className="subheading">Learn</div>
+#### Learn
 
 <div className="link-list">
   <a className="link-item" href="https://storybook.js.org/docs" target="_blank">
@@ -216,6 +196,7 @@ We recommend building UIs with a [**component-driven**](https://componentdriven.
       <strong>GitHub project</strong>
       View the source and add issues
     </span>
+
   </a>
   <a className="link-item" href="https://discord.gg/storybook" target="_blank">
     <img src={Comments} alt="comments" />
@@ -227,6 +208,5 @@ We recommend building UIs with a [**component-driven**](https://componentdriven.
 </div>
 
 <div className="tip-wrapper">
-  <span className="tip">Tip</span>Edit the Markdown in{' '}
-  <code>src/stories/Introduction.stories.mdx</code>
+  <span className="tip">Tip</span>Edit the Markdown in <code>src/stories/Introduction.stories.mdx</code>
 </div>

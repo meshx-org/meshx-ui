@@ -1,35 +1,26 @@
-// YourComponent.stories.ts | YourComponent.stories.tsx
+/* eslint-disable import/no-extraneous-dependencies */
 
-import React, { ComponentProps } from 'react'
-import { View } from 'react-native'
+import React from 'react'
+import { Text, View } from 'react-native'
 
 import { Story, Meta } from '@storybook/react'
 
-import {
-  Title,
-  Subtitle,
-  Description,
-  ArgsTable,
-  Stories,
-  PRIMARY_STORY,
-} from '@storybook/addon-docs'
+import MXButton from '../components/button/Button'
+import { IButtonProps } from '../components/button/Button.types'
 
-import MXButton, { IButtonProps } from '../components/shared/Button'
-
-//👇 This default export determines where your story goes in the story list
+// 👇 This default export determines where your story goes in the story list
 export default {
   title: 'Components/Button',
   component: MXButton,
   parameters: {
-    docs: { 
-      page: null 
-    },
-  },
+    docs: {
+      page: null
+    }
+  }
 } as Meta
 
-//👇 We create a “template” of how args map to rendering
+// 👇 We create a “template” of how args map to rendering
 const Template: Story<IButtonProps> = (args) => (
- 
   <View style={{ alignSelf: 'flex-start' }}>
     <MXButton {...args} />
   </View>
@@ -38,12 +29,58 @@ const Template: Story<IButtonProps> = (args) => (
 export const Primary = Template.bind({})
 Primary.args = {
   apparance: 'primary',
-  text: 'Primary',
+  children: (
+    <Text
+      selectable={false}
+      numberOfLines={1}
+      style={{
+        color: 'white',
+        paddingHorizontal: 12,
+        fontFamily: 'Open Sans',
+        fontSize: 13
+      }}
+    >
+      Button
+    </Text>
+  )
 }
 
-export const Secondary = Template.bind({  })
+export const Secondary = Template.bind({})
 Secondary.args = {
   apparance: 'secondary',
-  text: 'Secondary',
-  
+  children: (
+    <Text
+      selectable={false}
+      numberOfLines={1}
+      style={{
+        paddingHorizontal: 12,
+        fontFamily: 'Open Sans',
+        fontSize: 13
+      }}
+    >
+      Button
+    </Text>
+  )
+}
+
+export const WithIcon = Template.bind({})
+WithIcon.args = {
+  apparance: 'primary',
+  children: (
+    <>
+      <View style={{ width: 28, height: 28, backgroundColor: 'rgba(0,0,0,0.2)', borderRadius: 2 }} />
+      <Text
+        selectable={false}
+        numberOfLines={1}
+        style={{
+          color: 'white',
+          paddingHorizontal: 12,
+          fontFamily: 'Open Sans',
+          fontSize: 13
+        }}
+      >
+        Button
+      </Text>
+    </>
+  )
 }

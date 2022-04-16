@@ -9,10 +9,11 @@ const Hoverable: FC<IProps> = ({ children }) => {
 
   const child = typeof children === 'function' ? children(isHovered) : children
 
-  return React.cloneElement(React.Children.only(child as any), {
-    onMouseEnter: () => setHovered(true),
-    onMouseLeave: () => setHovered(false),
-  })
+  return (
+    <div onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
+      {child as any}
+    </div>
+  )
 }
 
 export default Hoverable

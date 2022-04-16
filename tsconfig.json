@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "jsx": "react-native",
-    "lib": [
-      "es2017",
-      "es6",
-      "dom"
-    ],
+    "lib": ["es2017", "es6", "dom"],
     "paths": {
       "*": ["*", "*.web"]
     },
@@ -14,7 +10,7 @@
     "moduleResolution": "node",
     "declaration": true,
     "baseUrl": ".",
-    "noEmit": false ,
+    "noEmit": false,
     "noImplicitAny": true,
     "incremental": true,
     "esModuleInterop": true,
@@ -22,12 +18,8 @@
     "skipLibCheck": true,
     "strict": true,
     "strictNullChecks": true,
-    "alwaysStrict": true,
+    "alwaysStrict": true
   },
-  "exclude": [
-    "node_modules",
-  ],
-  "include": [
-    "src"
-  ]
+  "exclude": ["node_modules"],
+  "include": ["src"]
 }

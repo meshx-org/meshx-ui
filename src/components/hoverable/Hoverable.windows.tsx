@@ -11,7 +11,7 @@ const Hoverable: FC<IProps> = ({ children }) => {
 
   return React.cloneElement(React.Children.only(child as any), {
     onMouseEnter: () => setHovered(true),
-    onMouseLeave: () => setHovered(false),
+    onMouseLeave: () => setHovered(false)
   })
 }
 

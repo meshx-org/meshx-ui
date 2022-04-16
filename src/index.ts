@@ -1,6 +1,9 @@
-import Button from './components/shared/Button'
-import Input from './components/shared/TextField'
-//import Header from './components/header/Header'
-//import SeachBar from './components/header/SeachBar'
+import Button from './components/button/Button'
+import Input from './components/input/TextField'
+import ControlSurface from './components/surface/ControlSurface'
+import { Card } from './components/card/Card'
 
-export { Button, Input }
+// import Header from './components/header/Header'
+// import SeachBar from './components/header/SeachBar'
+
+export { Button, Input, ControlSurface, Card }
