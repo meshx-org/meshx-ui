@@ -1,10 +1,12 @@
 {
   "name": "@meshx-org/ui",
   "description": "Component library used across MeshX Apps",
-  "version": "0.0.2-unstable.1",
+  "version": "0.0.2-unstable.2",
   "license": "apache-2.0",
   "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
   "homepage": "https://meshx.co",
+  "main": "dist/index.js",
+  "types": "src/index.ts",
   "files": [
     "src",
     "dist"
@@ -22,8 +24,6 @@
     "type": "git",
     "url": "git+https://github.com/meshx-org/meshx-ui.git"
   },
-  "main": "dist/index.js",
-  "types": "src/index.ts",
   "scripts": {
     "prepare": "husky install",
     "format": "prettier --write \".\" ",
