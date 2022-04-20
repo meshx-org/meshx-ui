@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
-    "jsx": "react-native",
+    "jsx": "react-jsx",
     "lib": ["es2017", "es6", "dom"],
     "paths": {
       "*": ["*", "*.web"]
     },
+    "outDir": "./dist",
     "target": "es5",
     "module": "ESNext",
     "moduleResolution": "node",

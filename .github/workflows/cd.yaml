@@ -1,0 +1,47 @@
+name: Continous Delivery
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - src/**
+      - tests/**
+
+env:
+  NODE_AUTH_TOKEN: ${{ secrets.GHPR_TOKEN }}
+
+jobs:
+  publish-gpr:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 16
+          registry-url: 'https://npm.pkg.github.com'
+
+      - name: Version Bump
+        uses: phips28/gh-action-bump-version@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_USER: github-actions
+          GITHUB_EMAIL: github-actions@github.com
+        with:
+          tag-prefix: v
+          commit-message: 'CI: bump version to {{version}} [skip ci]'
+          default: prerelease
+          minor-wording: minor
+          major-wording: major
+          patch-wording: patch
+          rc-wording: rc,pre
+          bump-policy: ignore
+
+      - run: yarn
+      - run: yarn build
+
+      - name: Publish unstable version
+        run: yarn publish:unstable
