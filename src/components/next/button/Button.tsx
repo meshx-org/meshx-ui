@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 import { ControlState } from '../../../interfaces/control'
+import { useTheme } from '../../../provider/ThemeProvider'
 import ControlFill from '../control-fill/ControlFill'
 import Elevation from '../elevation/Elevation'
 import { ButtonProps } from './Button.types'
+import styles from './Button.module.css'
 
 function Button({ apparance, loading, disabled, children }: ButtonProps) {
+    const theme = useTheme()
     const [pressed, setPressed] = useState(false)
     const [hovered, setHovered] = useState(false)
 
@@ -15,15 +18,17 @@ function Button({ apparance, loading, disabled, children }: ButtonProps) {
 
     return (
         <button
+            data-theme={theme}
+            className={styles.button}
             onMouseDown={() => setPressed(true)}
             onMouseUp={() => setPressed(false)}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
             type="button"
         >
-            <Elevation>
-                <ControlFill state={state}>
-                    <div style={{ padding: 10 }}>{JSON.stringify({ pressed, hovered })}</div>
+            <Elevation state={state}>
+                <ControlFill disabled={disabled} state={state}>
+                    <div className={styles.buttonContent}>OK</div>
                 </ControlFill>
             </Elevation>
         </button>

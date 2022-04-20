@@ -1,23 +1,12 @@
 import React from 'react'
-import { ControlState } from '../../../interfaces/control'
+import { useTheme } from '../../../provider/ThemeProvider'
 import { ControlFillProps } from './ControlFill.types'
+import styles from './ControlFill.module.css'
 
-function getStateFill(state: ControlState): string {
-    switch (state) {
-        case ControlState.Hovered:
-            return 'red'
-        case ControlState.Pressed:
-            return 'green'
-        case ControlState.Disabled:
-            return 'blue'
-        case ControlState.Rest:
-        default:
-            return 'white'
-    }
-}
+function ControlFill({ children, disabled }: ControlFillProps) {
+    const theme = useTheme()
 
-function ControlFill({ children, state }: ControlFillProps) {
-    return <div className='control-fill' style={{ backgroundColor: getStateFill(state), borderRadius: 4.5 }}>{children}</div>
+    return <div data-disabled={disabled} data-theme={theme} className={styles.controlFill}>{children}</div>
 }
 
 export default ControlFill

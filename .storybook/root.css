@@ -9,13 +9,6 @@ input:focus {
     outline: none !important;
 }
 
-button {
-    margin: 0;
-    padding: 0;
-    border: none;
-    background: none;
-}
-
-.control-fill {
-    
+* {
+    box-sizing: border-box;
 }

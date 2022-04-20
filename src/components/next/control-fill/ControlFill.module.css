@@ -1,0 +1,41 @@
+/* light theme */
+
+.controlFill[data-theme="light"] {
+    margin: 1px;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.7);
+    transition: background 100ms ease-in-out;
+}
+
+.controlFill[data-theme="light"]:hover {
+    background-color: rgb(249, 249, 249, 0.5);
+}
+
+.controlFill[data-theme="light"]:active {
+    background-color: rgb(249, 249, 249, 0.3);
+}
+
+.controlFill[data-theme="light"][data-disabled=true] {
+    background-color: rgb(249, 249, 249, 0.3);
+}
+
+/* dark theme */
+
+.controlFill[data-theme="dark"] {
+    margin: 1px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.0605);
+    transition: background 100ms ease-in-out;
+}
+
+.controlFill[data-theme="dark"]:hover {
+    background: rgba(255, 255, 255, 0.0837);
+}
+
+.controlFill[data-theme="dark"]:active {
+    background: rgba(255, 255, 255, 0.0326);
+}
+
+.controlFill[data-theme="dark"][data-disabled=true] {
+    background: rgba(255, 255, 255, 0.0419);
+}
