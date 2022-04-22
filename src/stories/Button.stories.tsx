@@ -46,24 +46,6 @@ Primary.args = {
     )
 }
 
-export const Secondary = Template.bind({})
-Secondary.args = {
-    apparance: 'subtle',
-    children: (
-        <Text
-            selectable={false}
-            numberOfLines={1}
-            style={{
-                paddingHorizontal: 12,
-                fontFamily: 'Open Sans',
-                fontSize: 13
-            }}
-        >
-            Button
-        </Text>
-    )
-}
-
 export const Disabled = Template.bind({})
 Disabled.args = {
     apparance: 'subtle',

@@ -1,4 +1,15 @@
 .textBox {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+        'Helvetica Neue', sans-serif;
+    
+}
+
+.textBoxInput[data-theme='light'] {
+    color: rgba(0, 0, 0, 1);
+}
+
+.textBoxInput[data-theme='dark'] {
+    color: rgba(255, 255, 255, 1);
 }
 
 .textBoxInput {
@@ -6,25 +17,22 @@
     background: transparent;
     padding: 8px;
     font-size: 14px;
-    line-height: 32px;
-    height: 32px;
+    line-height: 20px;
+    
 }
 
-::placeholder {
-    color: rgba(0, 0, 0, 0.4);
+*[data-theme='dark'] ::placeholder {
+    color: rgba(255, 255, 255, 0.79);
 }
 
-::-webkit-input-placeholder {
-    /* Chrome/Opera/Safari */
-    color: rgba(0, 0, 0, 0.4);
+*[data-theme='dark'][data-state='disabled'] ::placeholder {
+    color: rgba(255, 255, 255, 0.36);
 }
 
-::-moz-placeholder {
-    /* Firefox 19+ */
-    color: rgba(0, 0, 0, 0.4);
+*[data-theme='light'] ::placeholder {
+    color: rgba(0, 0, 0, 0.61);
 }
 
-:-moz-placeholder {
-    /* Firefox 18- */
-    color: rgba(0, 0, 0, 0.4);
+*[data-theme='light'][data-state='disabled'] ::placeholder {
+    color: rgba(0, 0, 0, 0.36);
 }

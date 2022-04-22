@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTheme } from '../../../provider/ThemeProvider'
-import { ControlFillProps } from './ControlFill.types'
-import styles from './ControlFill.module.css'
+import { ControlFillProps } from './Fill.types'
+import styles from './Fill.module.css'
 
 export function TextControlFill({ children, state }: ControlFillProps) {
     const theme = useTheme()

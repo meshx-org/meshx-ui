@@ -16,7 +16,6 @@ interface EventHandlers<T = Element> {
 interface UseControlState<T = Element> {
     handlers: EventHandlers<T>
     state: ControlState
-    focused: boolean
 }
 
 export function useControlState<T = Element>(disabled?: boolean): UseControlState<T> {
@@ -33,5 +32,5 @@ export function useControlState<T = Element>(disabled?: boolean): UseControlStat
         onMouseLeave: () => setHovered(false)
     }
 
-    return { handlers, focused, state: getControlState(pressed, hovered, disabled ?? false) }
+    return { handlers, state: getControlState(pressed, hovered, focused, disabled ?? false) }
 }

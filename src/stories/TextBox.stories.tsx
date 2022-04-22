@@ -32,4 +32,10 @@ Rest.args = {
     placeholder: 'Placeholder'
 }
 
+export const Disabled = Template.bind({})
+Disabled.args = {
+    placeholder: 'Placeholder',
+    disabled: true
+}
+
 export default meta

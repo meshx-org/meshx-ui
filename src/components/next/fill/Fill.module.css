@@ -54,6 +54,10 @@
     background: rgba(255, 255, 255, 1);
 }
 
+.textControlFill[data-theme='light']:focus-within {
+    background: rgba(255, 255, 255, 1);
+}
+
 .textControlFill[data-theme='light'][data-state='disabled'] {
     background: rgba(249, 249, 249, 0.3);
 }
@@ -67,6 +71,10 @@
 }
 
 .textControlFill[data-theme='dark']:active {
+    background: rgba(30, 30, 30, 0.7);
+}
+
+.textControlFill[data-theme='dark']:focus-within {
     background: rgba(30, 30, 30, 0.7);
 }
 
