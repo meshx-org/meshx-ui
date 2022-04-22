@@ -1,6 +1,6 @@
 export enum ControlState {
-    Rest,
-    Hovered,
-    Pressed,
-    Disabled
+    Rest = "rest",
+    Hovered = "hovered",
+    Pressed = "pressed",
+    Disabled = "disabled",
 }

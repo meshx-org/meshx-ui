@@ -3,10 +3,22 @@ import { useTheme } from '../../../provider/ThemeProvider'
 import { ControlFillProps } from './ControlFill.types'
 import styles from './ControlFill.module.css'
 
-function ControlFill({ children, disabled }: ControlFillProps) {
+export function TextControlFill({ children, state }: ControlFillProps) {
     const theme = useTheme()
 
-    return <div data-disabled={disabled} data-theme={theme} className={styles.controlFill}>{children}</div>
+    return (
+        <div data-state={state} data-theme={theme} className={`${styles.fill} ${styles.textControlFill}`}>
+            {children}
+        </div>
+    )
 }
 
-export default ControlFill
+export function ControlFill({ children, state }: ControlFillProps) {
+    const theme = useTheme()
+
+    return (
+        <div data-state={state} data-theme={theme} className={`${styles.fill} ${styles.controlFill}`}>
+            {children}
+        </div>
+    )
+}

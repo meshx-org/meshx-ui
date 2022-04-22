@@ -1,5 +1,12 @@
-function Elevation() {
-    return null
+import React from 'react'
+import { ElevationProps } from './Elevation.types'
+
+function ControlElevation({ children }: ElevationProps) {
+    return children
 }
 
-export default Elevation
+function TextControlElevation({ children }: ElevationProps) {
+    return children
+}
+
+export default { ControlElevation, TextControlElevation }

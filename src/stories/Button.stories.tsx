@@ -13,6 +13,7 @@ export default {
     title: 'Components/Button',
     component: MXButton,
     parameters: {
+        grid: { cellSize: 1 },
         docs: {
             page: null
         }

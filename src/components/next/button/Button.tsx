@@ -1,36 +1,24 @@
 import React, { useState } from 'react'
-import { ControlState } from '../../../interfaces/control'
-import { useTheme } from '../../../provider/ThemeProvider'
-import ControlFill from '../control-fill/ControlFill'
-import Elevation from '../elevation/Elevation'
-import { ButtonProps } from './Button.types'
 import styles from './Button.module.css'
+import { useTheme } from '../../../provider/ThemeProvider'
+import { ControlFill } from '../control-fill/ControlFill'
+import { ControlElevation } from '../elevation/Elevation'
+import { ButtonProps } from './Button.types'
+import { useControlState } from '../../../util/useControlState'
 
-function Button({ apparance, loading, disabled, children }: ButtonProps) {
+function Button(props: ButtonProps) {
+    const { apparance = 'primary', loading = false, disabled = false, children } = props
+    
     const theme = useTheme()
-    const [pressed, setPressed] = useState(false)
-    const [hovered, setHovered] = useState(false)
-
-    let state: ControlState = ControlState.Rest
-    if (hovered) state = ControlState.Hovered
-    if (pressed && hovered) state = ControlState.Pressed
-    if (disabled) state = ControlState.Disabled
+    const { state, handlers, focused } = useControlState<HTMLButtonElement>(disabled)
 
     return (
-        <button
-            data-theme={theme}
-            className={styles.button}
-            onMouseDown={() => setPressed(true)}
-            onMouseUp={() => setPressed(false)}
-            onMouseEnter={() => setHovered(true)}
-            onMouseLeave={() => setHovered(false)}
-            type="button"
-        >
-            <Elevation state={state}>
-                <ControlFill disabled={disabled} state={state}>
-                    <div className={styles.buttonContent}>OK</div>
+        <button {...handlers} data-theme={theme} className={styles.button} type="button">
+            <ControlElevation state={state}>
+                <ControlFill state={state}>
+                    <div className={styles.buttonContent}>Button</div>
                 </ControlFill>
-            </Elevation>
+            </ControlElevation>
         </button>
     )
 }

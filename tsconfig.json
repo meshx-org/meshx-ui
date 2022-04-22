@@ -8,6 +8,7 @@
     "outDir": "./dist",
     "target": "es5",
     "module": "ESNext",
+    "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",
     "declaration": true,
     "baseUrl": ".",
