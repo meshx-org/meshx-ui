@@ -1,7 +1,7 @@
 {
   "name": "@meshx-org/ui",
   "description": "Component library used across MeshX Apps",
-  "version": "0.0.2-unstable.5",
+  "version": "0.0.2-unstable.6",
   "license": "apache-2.0",
   "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
   "homepage": "https://meshx.co",
@@ -26,9 +26,11 @@
   },
   "scripts": {
     "prepare": "husky install",
+    "prepublish": "yarn build",
     "format": "prettier --write \".\" ",
     "lint": "eslint **/*.{tsx,ts}",
-    "build": "tsc",
+    "build": "tsc && yarn copy-css",
+    "copy-css": "copyfiles -u 1 src/**/*.css dist/",
     "test": "echo \"Error: no test specified\" && exit 0",
     "storybook": "start-storybook -p 6006"
   },
@@ -56,6 +58,7 @@
     "babel-loader": "^8.2.2",
     "babel-plugin-react-native-web": "^0.17.1",
     "babel-preset-react-app": "^10.0.0",
+    "copyfiles": "^2.4.1",
     "eslint": "^8.9.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^16.1.0",
@@ -73,7 +76,8 @@
     "react-native": "0.64.1",
     "storybook-css-modules-preset": "^1.1.1",
     "storybook-dark-mode": "^1.0.9",
-    "typescript": "^4.3.5"
+    "typescript": "^4.3.5",
+    "typescript-plugin-css-modules": "^3.4.0"
   },
   "peerDependencies": {
     "react": "17.0.2",
