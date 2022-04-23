@@ -27,8 +27,8 @@ export function ToggleSwitch(props: ToggleSwitchProps) {
     )
 
     return (
-        <label className={styles.toggleSwitch} {...handlers}>
-            <div data-theme={theme} data-state={state} className={styles.switch}>
+        <label data-theme={theme} data-state={state} className={styles.toggleSwitch} {...handlers}>
+            <div className={styles.switch}>
                 <input
                     autoFocus
                     disabled={disabled}

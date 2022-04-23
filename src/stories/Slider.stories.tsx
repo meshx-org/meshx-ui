@@ -5,13 +5,13 @@ import { View } from 'react-native'
 
 import { Story, Meta } from '@storybook/react'
 
-import { TextBox } from '../components/next/text-box/TextBox'
-import { TextBoxProps } from '../components/next/text-box/TextBox.types'
+import { Slider } from '../components/next/slider/Slider'
+import { SliderProps } from '../components/next/slider/Slider.types'
 
 // 👇 This default export determines where your story goes in the story list
 const meta: Meta = {
-    title: 'Basic Input/TextBox',
-    component: TextBox,
+    title: 'Basic Input/Slider',
+    component: Slider,
     parameters: {
         backgrounds: {
             grid: { cellSize: 1 }
@@ -23,20 +23,13 @@ const meta: Meta = {
 }
 
 // 👇 We create a “template” of how args map to rendering
-const Template: Story<TextBoxProps> = (args) => (
-    <View style={{ alignSelf: 'flex-start' }}>
-        <TextBox {...args} />
-    </View>
-)
+const Template: Story<SliderProps> = (args) => <Slider {...args} />
 
 export const Rest = Template.bind({})
-Rest.args = {
-    placeholder: 'Placeholder'
-}
+Rest.args = {}
 
 export const Disabled = Template.bind({})
 Disabled.args = {
-    placeholder: 'Placeholder',
     disabled: true
 }
 

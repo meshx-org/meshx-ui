@@ -1,7 +1,7 @@
 export type ButtonAppearance = 'primary' | 'secondary'
 
 export interface ButtonProps {
-    apparance?: 'primary' | 'outline' | 'subtle' | 'transparent'
+    apparance?: 'default' | 'accent'
 
     /**
      * A button can fill the width of its container.
@@ -22,14 +22,6 @@ export interface ButtonProps {
     iconPosition?: 'before' | 'after'
 
     /**
-     * A button can show a loading indicator if it is waiting for another action to happen before allowing itself to
-     * be interacted with.
-     * @default false
-     * @unstable
-     */
-    loading?: boolean
-
-    /**
      * A button supports different sizes.
      * @default 'medium'
      */
@@ -42,4 +34,3 @@ export interface ButtonProps {
 
     children: React.ReactNode
 }
-

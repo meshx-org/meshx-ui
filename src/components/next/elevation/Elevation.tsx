@@ -15,7 +15,7 @@ function url(id: string) {
     return `url(#${id})`
 }
 
-function TextControlElevation({ children, state }: ElevationProps) {
+export function TextControlElevation({ children, state, focused = false }: ElevationProps) {
     const theme = useTheme()
     const uniqueId = useMemo(createId, [])
     const clipId = `clip-${uniqueId}`
@@ -50,8 +50,8 @@ function TextControlElevation({ children, state }: ElevationProps) {
     )
 
     const restFill: string = theme === 'dark' ? ' rgba(255, 255, 255, 0.5442)' : 'rgba(0, 0, 0, 0.45)'
-    const lineHeight: number = state === ControlState.Focused ? 2 : 1
-    const lineFill: string = state === ControlState.Focused ? '#0396FF' : restFill
+    const lineHeight: number = focused ? 2 : 1
+    const lineFill: string = focused ? '#0396FF' : restFill
 
     return (
         <>
@@ -80,7 +80,7 @@ function TextControlElevation({ children, state }: ElevationProps) {
     )
 }
 
-function ControlElevation({ children, state }: ElevationProps) {
+export function ControlElevation({ children, state, focused = false }: ElevationProps) {
     const theme = useTheme()
     const uniqueId = useMemo(createId, [])
     const lightGradId = `elevation-${uniqueId}-light`
@@ -132,4 +132,47 @@ function ControlElevation({ children, state }: ElevationProps) {
     )
 }
 
-export { ControlElevation, TextControlElevation }
+export function CircleControlElevation({ children, state, focused = false }: ElevationProps) {
+    const theme = useTheme()
+    const uniqueId = useMemo(createId, [])
+    const lightGradId = `elevation-${uniqueId}-light`
+    const darkGradId = `elevation-${uniqueId}-dark`
+
+    const definitions = useMemo(
+        () => (
+            <defs>
+                <linearGradient id={lightGradId} gradientTransform="rotate(90)">
+                    <stop offset="0.5" stopColor="rgba(0, 0, 0, 0.06)" />
+                    <stop offset="1" stopColor="rgba(0, 0, 0, 0.16)" />
+                </linearGradient>
+                <linearGradient id={darkGradId} gradientTransform="rotate(90)">
+                    <stop offset="0" stopColor="rgba(255, 255, 255, 0.09)" />
+                    <stop offset="0.5" stopColor="rgba(255, 255, 255, 0.07)" />
+                </linearGradient>
+            </defs>
+        ),
+        []
+    )
+
+    let stroke = url(theme === 'dark' ? darkGradId : lightGradId)
+
+    if (theme === 'dark') {
+        if (state === ControlState.Disabled || state === ControlState.Pressed) {
+            stroke = 'rgba(255, 255, 255, 0.07)'
+        }
+    } else if (theme === 'light') {
+        if (state === ControlState.Disabled || state === ControlState.Pressed) {
+            stroke = 'rgba(0, 0, 0, 0.06)'
+        }
+    }
+
+    return (
+        <>
+            <svg overflow="visible" className={styles.elevation} fill="transparent" aria-hidden="true" tabIndex={-1}>
+                {definitions}
+                <rect width="calc(100% - 1px)" height="calc(100% - 1px)" x="0.5px" y="0.5px" stroke={stroke} rx="50%" />
+            </svg>
+            {children}
+        </>
+    )
+}

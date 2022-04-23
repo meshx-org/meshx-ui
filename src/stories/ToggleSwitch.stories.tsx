@@ -12,7 +12,9 @@ const meta: Meta = {
     title: 'Basic Input/ToggleSwitch',
     component: ToggleSwitch,
     parameters: {
-        grid: { cellSize: 1 },
+        backgrounds: {
+            grid: { cellSize: 1 }
+        },
         docs: {
             page: null
         }

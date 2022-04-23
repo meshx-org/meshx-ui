@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
 import React from 'react'
-import { Text, View } from 'react-native'
+import { View } from 'react-native'
 
 import { Story, Meta } from '@storybook/react'
 
@@ -13,7 +13,9 @@ export default {
     title: 'Basic Input/Button',
     component: Button,
     parameters: {
-        grid: { cellSize: 1 },
+        backgrounds: {
+            grid: { cellSize: 1 }
+        },
         docs: {
             page: null
         }
@@ -29,13 +31,13 @@ const Template: Story<ButtonProps> = (args) => (
 
 export const Primary = Template.bind({})
 Primary.args = {
-    apparance: 'primary',
+    apparance: 'default',
     children: 'test'
 }
 
 export const Disabled = Template.bind({})
 Disabled.args = {
-    apparance: 'subtle',
+    apparance: 'default',
     disabled: true,
     children: 'test'
 }

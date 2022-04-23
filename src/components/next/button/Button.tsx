@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styles from './Button.module.css'
 import { useTheme } from '../../../provider/ThemeProvider'
 import { ControlFill } from '../fill/Fill'
@@ -7,13 +7,13 @@ import { ButtonProps } from './Button.types'
 import { useControlState } from '../../../hooks/useControlState'
 
 function Button(props: ButtonProps) {
-    const { apparance = 'primary', loading = false, disabled = false, children } = props
-    
+    const { apparance = 'primary', disabled = false, children } = props
+
     const theme = useTheme()
     const { state, handlers } = useControlState<HTMLButtonElement>(disabled)
 
     return (
-        <button {...handlers} data-theme={theme} className={styles.button} type="button">
+        <button type="button" data-theme={theme} data-state={state} className={styles.button} {...handlers}>
             <ControlElevation state={state}>
                 <ControlFill state={state}>
                     <div className={styles.buttonContent}>Button</div>
