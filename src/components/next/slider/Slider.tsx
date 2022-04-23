@@ -88,7 +88,7 @@ export function SliderX(props: SliderProps) {
         return () => {}
     }, [value])
 
-    const handleChange = useCallback<ChangeEventHandler<HTMLLabelElement>>(
+    const handleChange = useCallback<ChangeEventHandler<HTMLInputElement>>(
         (event) => {
             setValueInternal(Number(event.target.value))
             if (onChange) {

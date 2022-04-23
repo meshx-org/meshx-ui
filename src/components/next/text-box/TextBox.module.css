@@ -1,4 +1,5 @@
 .textBox {
+    display: flex;
 }
 
 .textBoxInput[data-theme='light'] {

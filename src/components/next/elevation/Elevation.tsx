@@ -54,8 +54,8 @@ export function TextControlElevation({ children, state, focused = false }: Eleva
     const lineFill: string = focused ? '#0396FF' : restFill
 
     return (
-        <>
-            <svg overflow="visible" className={styles.elevation} fill="transparent" aria-hidden="true" tabIndex={-1}>
+        <div className={styles.elevation}>
+            <svg overflow="visible" fill="transparent" aria-hidden="true" tabIndex={-1}>
                 {definitions}
                 <rect
                     width="calc(100% - 1px)"
@@ -76,7 +76,7 @@ export function TextControlElevation({ children, state, focused = false }: Eleva
                 />
             </svg>
             {children}
-        </>
+        </div>
     )
 }
 
@@ -115,8 +115,8 @@ export function ControlElevation({ children, state, focused = false }: Elevation
     }
 
     return (
-        <>
-            <svg overflow="visible" className={styles.elevation} fill="transparent" aria-hidden="true" tabIndex={-1}>
+        <div className={styles.elevation}>
+            <svg overflow="visible" fill="transparent" aria-hidden="true" tabIndex={-1}>
                 {definitions}
                 <rect
                     width="calc(100% - 1px)"
@@ -128,7 +128,7 @@ export function ControlElevation({ children, state, focused = false }: Elevation
                 />
             </svg>
             {children}
-        </>
+        </div>
     )
 }
 

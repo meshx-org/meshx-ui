@@ -7,7 +7,7 @@ import { ButtonProps } from './Button.types'
 import { useControlState } from '../../../hooks/useControlState'
 
 function Button(props: ButtonProps) {
-    const { apparance = 'primary', disabled = false, children } = props
+    const { apparance = 'default', disabled = false, children } = props
 
     const theme = useTheme()
     const { state, handlers } = useControlState<HTMLButtonElement>(disabled)
@@ -16,7 +16,7 @@ function Button(props: ButtonProps) {
         <button type="button" data-theme={theme} data-state={state} className={styles.button} {...handlers}>
             <ControlElevation state={state}>
                 <ControlFill state={state}>
-                    <div className={styles.buttonContent}>Button</div>
+                    <div className={styles.buttonContent}>{children}</div>
                 </ControlFill>
             </ControlElevation>
         </button>

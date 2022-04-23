@@ -23,11 +23,7 @@ const meta: Meta = {
 }
 
 // 👇 We create a “template” of how args map to rendering
-const Template: Story<TextBoxProps> = (args) => (
-    <View style={{ alignSelf: 'flex-start' }}>
-        <TextBox {...args} />
-    </View>
-)
+const Template: Story<TextBoxProps> = (args) => <TextBox {...args} />
 
 export const Rest = Template.bind({})
 Rest.args = {

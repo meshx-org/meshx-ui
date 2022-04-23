@@ -23,11 +23,7 @@ export default {
 } as Meta
 
 // 👇 We create a “template” of how args map to rendering
-const Template: Story<ButtonProps> = (args) => (
-    <View style={{ alignSelf: 'flex-start' }}>
-        <Button {...args} />
-    </View>
-)
+const Template: Story<ButtonProps> = (args) => <Button {...args} />
 
 export const Primary = Template.bind({})
 Primary.args = {
