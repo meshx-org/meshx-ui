@@ -124,7 +124,7 @@ export function ControlElevation({ children, state, focused = false }: Elevation
                     x="0.5px"
                     y="0.5px"
                     stroke={stroke}
-                    rx="4.3px"
+                    rx="4.5px"
                 />
             </svg>
             {children}
@@ -167,12 +167,12 @@ export function CircleControlElevation({ children, state, focused = false }: Ele
     }
 
     return (
-        <>
-            <svg overflow="visible" className={styles.elevation} fill="transparent" aria-hidden="true" tabIndex={-1}>
+        <div className={styles.elevation}>
+            <svg overflow="visible" fill="transparent" aria-hidden="true" tabIndex={-1}>
                 {definitions}
                 <rect width="calc(100% - 1px)" height="calc(100% - 1px)" x="0.5px" y="0.5px" stroke={stroke} rx="50%" />
             </svg>
             {children}
-        </>
+        </div>
     )
 }
