@@ -4,7 +4,7 @@ import { useTheme } from '../../../provider/ThemeProvider'
 import { ControlFill } from '../fill/Fill'
 import { ControlElevation } from '../elevation/Elevation'
 import { ButtonProps } from './Button.types'
-import { useControlState } from '../../../util/useControlState'
+import { useControlState } from '../../../hooks/useControlState'
 
 function Button(props: ButtonProps) {
     const { apparance = 'primary', loading = false, disabled = false, children } = props

@@ -1,18 +1,36 @@
+/* Toggle Switch */
+
 .toggleSwitch {
+    height: 20px;
+    align-items: center;
+    column-gap: 10px;
+    display: flex;
+
+    font-size: 14px;
+    line-height: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+        'Helvetica Neue', sans-serif;
+}
+
+/* Switch */
+
+.switch {
     position: relative;
-    display: inline-block;
     width: 40px;
     height: 20px;
     cursor: pointer;
     -webkit-user-select: none;
     user-select: none;
+    display: flex;
 }
 
-.toggleSwitch input {
+.switch input {
     opacity: 0;
     width: 0;
     height: 0;
 }
+
+/* Slider Border */
 
 .sliderBorder {
     position: absolute;
@@ -20,55 +38,100 @@
     left: 0;
     right: 0;
     bottom: 0;
-    border-radius: 12px;
     height: 100%;
-    border: 1px solid rgba(0, 0, 0, 0.45);
+    border-radius: 12px;
     transition: 0.2s ease;
 }
 
+.switch[data-theme='light'] .sliderBorder {
+    border: 1px solid rgba(0, 0, 0, 0.45);
+}
+
+.switch[data-theme='dark'] .sliderBorder {
+    border: 1px solid rgba(255, 255, 255, 0.54);
+}
+
+/* Slider */
+
 .slider {
-    border-radius: 12px;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: transparent;
+    border-radius: 12px;
     transition: 0.2s ease;
 }
 
-.toggleSwitch .thumb {
+.switch[data-theme='light'] .slider {
+    background: rgba(0, 0, 0, 0.06);
+}
+
+.switch[data-theme='light'][data-state='rest'] .slider {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.switch[data-theme='dark'] .slider {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.switch[data-theme='dark'][data-state='rest'] .slider {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* Thumb */
+
+.switch .thumb {
     position: absolute;
     border-radius: 6px;
     height: 12px;
     width: 12px;
     left: 4px;
     bottom: 4px;
-    background-color: rgba(0, 0, 0, 0.61);
     transition: 0.2s ease;
 }
 
-.toggleSwitch:active .thumb {
-    width: 14px;
+.switch[data-theme='light'] .thumb {
+    background: rgba(0, 0, 0, 0.61);
 }
 
-.toggleSwitch:hover .thumb {
+.switch[data-theme='dark'] .thumb {
+    background: rgba(255, 255, 255, 0.79);
+}
+
+.switch input:disabled ~ .thumb {
+    transform: scale(1) !important;
+    width: 12px !important;
+}
+
+.switch:active .thumb {
+    width: 15px;
+}
+
+.switch:hover .thumb {
     transform: scale(1.125);
 }
 
-.toggleSwitch input:checked + .slider {
-    background-color: #2196f3;
+.switch input:checked ~ .slider {
+    background-color: #2196f3 !important;
 }
 
-.toggleSwitch input:checked + .slider > .sliderBorder {
+.switch input:checked ~ .sliderBorder {
     border: 1px solid rgba(0, 0, 0, 0);
 }
 
-.toggleSwitch input:checked ~ .thumb {
+.switch input:checked ~ .thumb {
     left: 24px;
+}
+
+.switch:active input:checked ~ .thumb {
+    left: 21px;
+}
+
+.switch[data-theme='light'] input:checked ~ .thumb {
     background-color: white;
 }
 
-.toggleSwitch:active input:checked ~ .thumb {
-    left: 22px;
+.switch[data-theme='dark'] input:checked ~ .thumb {
+    background-color: black;
 }

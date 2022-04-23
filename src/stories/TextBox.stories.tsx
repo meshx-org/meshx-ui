@@ -10,7 +10,7 @@ import { TextBoxProps } from '../components/next/text-box/TextBox.types'
 
 // 👇 This default export determines where your story goes in the story list
 const meta: Meta = {
-    title: 'Components/TextBox',
+    title: 'Basic Input/TextBox',
     component: TextBox,
     parameters: {
         grid: { cellSize: 1 },

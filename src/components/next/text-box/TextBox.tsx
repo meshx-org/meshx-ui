@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 
 import styles from './TextBox.module.css'
 import { TextBoxProps } from './TextBox.types'
-import { useControlState } from '../../../util/useControlState'
+import { useControlState } from '../../../hooks/useControlState'
 import { useTheme } from '../../../provider/ThemeProvider'
 import { TextControlElevation } from '../elevation/Elevation'
 import { TextControlFill } from '../fill/Fill'

@@ -9,7 +9,7 @@ import { ToggleSwitchProps } from '../components/next/toggle-switch/ToggleSwitch
 
 // 👇 This default export determines where your story goes in the story list
 const meta: Meta = {
-    title: 'Components/ToggleSwitch',
+    title: 'Basic Input/ToggleSwitch',
     component: ToggleSwitch,
     parameters: {
         grid: { cellSize: 1 },
@@ -25,6 +25,11 @@ const Template: Story<ToggleSwitchProps> = (args) => <ToggleSwitch {...args} />
 export const Rest = Template.bind({})
 Rest.args = {
     // defaultChecked: false
+}
+
+export const Disabled = Template.bind({})
+Disabled.args = {
+    disabled: true
 }
 
 export default meta

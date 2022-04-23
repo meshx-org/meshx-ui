@@ -4,4 +4,5 @@ export interface ToggleSwitchProps {
     checked?: boolean
     defaultChecked?: boolean
     onChange?: ChangeHandler
+    disabled?: boolean
 }

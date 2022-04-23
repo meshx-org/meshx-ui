@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { ControlState } from '../interfaces/control'
-import { getControlState } from './getControlState'
+import { getControlState } from '../util/getControlState'
 
 interface EventHandlers<T = Element> {
     onFocus: React.FocusEventHandler<T>
