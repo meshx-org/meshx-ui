@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "jsx": "react-jsx",
+    "jsx": "react",
     "lib": ["es2017", "es6", "dom"],
     "paths": {
       "*": ["*", "*.web"]

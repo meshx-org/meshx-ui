@@ -99,8 +99,8 @@
 }
 
 .thumb:hover span {
-    height: 14px;
-    width: 14px;
+    height: 16px;
+    width: 16px;
 }
 
 .thumb:active span {
