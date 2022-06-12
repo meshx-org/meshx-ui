@@ -25,35 +25,47 @@ parent:
 
 ---
 
-## Welcome!
+## 👋 Welcome
 
 MeshX UI is an open-source component library heavily influenced by the also open-sourced [Fluent Design System](https://www.microsoft.com/design/fluent) by Microsoft.
 
 It is used across the MeshX ecosystem to provide a consistent UI across all MeshX apps and services.
 
-## Usage
+## 🌱 Getting Started
+
+### Install
+
+This repository is distributed with npm. After installing npm, you can install @meshx-org/ui with this command:
 
 ```
+$ npm install         # install npm dependencies
+```
+
+### Import
+
+You can import individual UI components directly from the @meshx-org/ui package:
+
+```tsx
 import { Button } from '@meshx-org/ui';
+
+// in your component
+function MyComponent() {
+    return <Button />
+}
 ```
 
-<!--  ## Developers Guide
-
-See [Development](./DEVELOPMENT.md)
--->
-
-## Code of Conduct
+## 📙 Code of Conduct
 
 This project has adopted the [Contributor Covenant Code of Conduct v2.1](CODE_OF_CONDUCT.md). For more information see the [Code of Conduct FAQ](https://www.contributor-covenant.org/faq), or contact [opensource@meshx.co](mailto:opensource@meshx.co) with any additional questions or comments.
 
-## Security Policy
+## 👮 Security Policy
 
 Please see our [security policy](./SECURITY.md) for additional details about responsible disclosure of security related issues.
 
-## License
+## 📜 License
 
 This project is licensed under the [Apache v2.0 License](LICENSE.txt).
 
-## Copyright
+## ©️ Copyright
 
 Copyright MeshX UI Contributors. See [NOTICE](NOTICE.txt) for details.
