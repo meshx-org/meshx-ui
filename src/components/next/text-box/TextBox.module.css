@@ -21,18 +21,18 @@
         'Helvetica Neue', sans-serif;
 }
 
-*[data-theme='dark'] ::placeholder {
+.textBox[data-theme='dark'] ::placeholder {
     color: rgba(255, 255, 255, 0.79);
 }
 
-*[data-theme='dark'][data-state='disabled'] ::placeholder {
+.textBox[data-theme='dark'][data-state='disabled'] ::placeholder {
     color: rgba(255, 255, 255, 0.36);
 }
 
-*[data-theme='light'] ::placeholder {
+.textBox[data-theme='light'] ::placeholder {
     color: rgba(0, 0, 0, 0.61);
 }
 
-*[data-theme='light'][data-state='disabled'] ::placeholder {
+.textBox[data-theme='light'][data-state='disabled'] ::placeholder {
     color: rgba(0, 0, 0, 0.36);
 }
