@@ -22,7 +22,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/meshx-org/meshx-ui.git"
+        "url": "https://github.com/meshx-org/meshx-ui.git"
     },
     "scripts": {
         "prepare": "husky install",
@@ -34,7 +34,6 @@
         "test": "echo \"Error: no test specified\" && exit 0",
         "storybook": "start-storybook -p 6006",
         "publish:unstable": "lerna publish prerelease --preid unstable --yes"
-
     },
     "dependencies": {
         "@react-spring/native": "^9.2.4",

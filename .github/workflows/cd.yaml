@@ -28,6 +28,7 @@ jobs:
               with:
                   node-version: 16
                   registry-url: 'https://npm.pkg.github.com'
+                  scope: '@meshx-org'
 
             - name: Version Bump
               uses: phips28/gh-action-bump-version@master
