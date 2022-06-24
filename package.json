@@ -32,7 +32,9 @@
         "build": "tsc && yarn copy-css",
         "copy-css": "copyfiles -u 1 src/**/*.css dist/",
         "test": "echo \"Error: no test specified\" && exit 0",
-        "storybook": "start-storybook -p 6006"
+        "storybook": "start-storybook -p 6006",
+        "publish:unstable": "lerna publish prerelease --preid unstable --yes"
+
     },
     "dependencies": {
         "@react-spring/native": "^9.2.4",
