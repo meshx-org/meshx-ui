@@ -27,24 +27,7 @@ jobs:
             - uses: actions/setup-node@v1
               with:
                   node-version: 16
-                  registry-url: 'https://npm.pkg.github.com'
-                  scope: '@meshx-org'
-
-            - name: Version Bump
-              uses: phips28/gh-action-bump-version@master
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                  GITHUB_USER: github-actions
-                  GITHUB_EMAIL: github-actions@github.com
-              with:
-                  tag-prefix: v
-                  commit-message: 'CI: bump version to {{version}} [skip ci]'
-                  default: prerelease
-                  minor-wording: minor
-                  major-wording: major
-                  patch-wording: patch
-                  rc-wording: rc,pre
-                  bump-policy: ignore
+                  cache: 'yarn'
 
             - run: yarn
             - run: yarn build
