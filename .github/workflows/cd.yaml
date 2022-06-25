@@ -27,10 +27,10 @@ jobs:
             - uses: actions/setup-node@v1
               with:
                   node-version: 16
-                  cache: 'yarn'
+                  cache: 'npm'
 
-            - run: yarn
-            - run: yarn build
+            - run: npm ci
+            - run: npm run build
 
             - uses: JS-DevTools/npm-publish@v1
               with:

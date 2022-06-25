@@ -1,7 +1,7 @@
 {
     "name": "@meshx-org/ui",
     "description": "Component library used across MeshX Apps",
-    "version": "0.0.2-unstable.13",
+    "version": "0.0.2-unstable.14",
     "license": "apache-2.0",
     "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
     "homepage": "https://meshx.co",
@@ -20,14 +20,13 @@
         "registry": "https://npm.pkg.github.com",
         "main": "dist/index.js"
     },
-    
     "repository": {
         "type": "git",
         "url": "https://github.com/meshx-org/meshx-ui.git"
     },
     "scripts": {
         "prepare": "husky install",
-        "prepublish": "yarn build",
+        "prepublish": "npm run build",
         "format": "prettier --write \".\" ",
         "lint": "eslint **/*.{tsx,ts}",
         "build": "tsc && yarn copy-css",
@@ -37,23 +36,21 @@
         "publish:unstable": "lerna publish prerelease --preid unstable --yes"
     },
     "dependencies": {
-        "@react-spring/native": "^9.2.4",
-        "@storybook/react": "^6.3.8",
-        "react-native-svg": "^12.1.1",
+        "react-native-svg": "^12.3.0",
         "react-native-svg-web": "^1.0.9",
-        "react-native-web": "^0.17.1",
-        "react-native-windows": "0.65.0-preview.8",
-        "react-slider": "^2.0.0",
-        "react-spring": "^9.2.4"
+        "react-native-web": "^0.17.7",
+        "react-slider": "^2.0.0"
     },
     "devDependencies": {
         "@babel/core": "^7.15.5",
         "@babel/preset-env": "^7.15.6",
         "@babel/preset-react": "^7.14.5",
-        "@storybook/addon-actions": "^6.3.8",
-        "@storybook/addon-essentials": "^6.3.8",
-        "@storybook/addon-links": "^6.3.8",
-        "@types/react-native": "^0.64.5",
+        "@storybook/addon-docs": "^6.5.9",
+        "@storybook/react": "^6.5.9",
+        "@storybook/addon-actions": "^6.5.9 ",
+        "@storybook/addon-essentials": "^6.5.9",
+        "@storybook/addon-links": "^6.5.9",
+        "@types/react-native": "^0.66.4",
         "@types/react-slider": "^1.3.1",
         "@typescript-eslint/eslint-plugin": "^5.12.1",
         "@typescript-eslint/parser": "^5.12.1",
@@ -75,11 +72,10 @@
         "prettier": "^2.5.1",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
-        "react-native": "0.64.1",
         "storybook-css-modules-preset": "^1.1.1",
-        "storybook-dark-mode": "^1.0.9",
+        "storybook-dark-mode": "^1.1.0",
         "typescript": "^4.3.5",
-        "typescript-plugin-css-modules": "^3.4.0"
+        "typescript-plugin-css-modules": "^1.3.1"
     },
     "peerDependencies": {
         "react": "^17.0.2",
