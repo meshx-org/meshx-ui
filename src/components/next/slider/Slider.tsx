@@ -48,7 +48,7 @@ export function Slider(props: SliderProps) {
                 onBeforeChange={() => {}}
                 renderMark={({ style, ...markProps }) => {
                     const { left, ...rest } = style as { left: number }
-                    return <div style={{ left: Math.round(left + 10), ...rest }} {...markProps} />
+                    return <span style={{ left: Math.round(left + 10), ...rest }} {...markProps} />
                 }}
                 renderTrack={({ style, ...trackProps }, trackState) => {
                     const { left, right } = style as { left: number; right: number }
