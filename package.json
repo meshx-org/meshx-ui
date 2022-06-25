@@ -1,7 +1,7 @@
 {
     "name": "@meshx-org/ui",
     "description": "Component library used across MeshX Apps",
-    "version": "0.0.2-unstable.15",
+    "version": "0.0.2-unstable.16",
     "license": "apache-2.0",
     "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
     "homepage": "https://meshx.co",
@@ -80,6 +80,6 @@
     "peerDependencies": {
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
-        "react-native": "^0.66.0"
+        "react-native": ">=0.66.0"
     }
 }
