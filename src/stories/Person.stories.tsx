@@ -34,12 +34,14 @@ export default {
 const Template: Story<PersonProps> = (args) => <Person {...args} />
 
 export const PersonWithImage = Template.bind({})
+
 PersonWithImage.args = {
     size: 44,
     name: 'John Doe',
     image: 'https://images.unsplash.com/photo-1628157588553-5eeea00af15c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=96&q=100',
     badge: 0
 }
+
 PersonWithImage.parameters = {
     docs: {
         description: {
@@ -50,6 +52,7 @@ PersonWithImage.parameters = {
 }
 
 export const PersonWithInitials = Template.bind({})
+
 PersonWithInitials.args = {
     size: 44,
     name: 'John Doe',
