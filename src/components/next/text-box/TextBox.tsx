@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React from 'react'
 
 import styles from './TextBox.module.css'
 import { TextBoxProps } from './TextBox.types'
@@ -14,10 +14,9 @@ export function TextBox(props: TextBoxProps) {
     const theme = useTheme()
     const { focused, handlers: focusHandlers } = useFocus<HTMLInputElement>()
     const { state, handlers } = useControlState<HTMLInputElement>(disabled)
-    const isEdge = useMemo(() => /Edg/.test(navigator.userAgent), [])
 
     return (
-        <label className={styles.textBox}>
+        <div style={{ width: 300 }}>
             <TextControlElevation state={state} focused={focused}>
                 <TextControlFill state={state}>
                     <input
@@ -37,6 +36,6 @@ export function TextBox(props: TextBoxProps) {
                     />
                 </TextControlFill>
             </TextControlElevation>
-        </label>
+        </div>
     )
 }

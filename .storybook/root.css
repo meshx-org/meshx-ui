@@ -9,6 +9,3 @@ input:focus {
     outline: none !important;
 }
 
-* {
-    box-sizing: border-box;
-}

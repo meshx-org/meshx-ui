@@ -1,7 +1,3 @@
-.textBox {
-    display: flex;
-}
-
 .textBoxInput[data-theme='light'] {
     color: rgba(0, 0, 0, 1);
 }
@@ -11,6 +7,7 @@
 }
 
 .textBoxInput {
+    flex: 1;
     border: none;
     background: transparent;
     padding: 5px 8px;
