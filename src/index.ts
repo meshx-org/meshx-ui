@@ -12,3 +12,5 @@ export { Slider } from './components/next/slider/Slider'
 export { ToggleSwitch } from './components/next/toggle-switch/ToggleSwitch'
 export { ThemeProvider, useTheme } from './provider/ThemeProvider'
 
+export { TreeView } from './components/next/tree-view/TreeView'
+export * as treeUtils from './components/next/tree-view/utils'
