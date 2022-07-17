@@ -20,10 +20,7 @@ export function TextBox(props: TextBoxProps) {
             <TextControlElevation state={state} focused={focused}>
                 <TextControlFill state={state}>
                     <input
-                        autoFocus
-                        security="restricted"
                         role="textbox"
-                        type="password"
                         data-state={state}
                         data-theme={theme}
                         placeholder={placeholder}
