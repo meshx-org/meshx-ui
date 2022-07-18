@@ -1,7 +1,7 @@
 import './root.css'
 import { ThemeProvider } from '../src/provider/ThemeProvider'
 import { useDarkMode } from 'storybook-dark-mode'
-import { themes, color } from '@storybook/theming'
+import { themes } from '@storybook/theming'
 
 export const decorators = [
     (Story) => {

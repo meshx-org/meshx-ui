@@ -4,6 +4,11 @@ export interface ThemeValues {
     accent?: string
     primaryTextColor?: string
     fillColor: {
+        // Solid background colors to place layers, cards, or controls on.
+        solidBackgroundBase: string 
+        solidBackgroundSecondary: string
+        
+        // TODO
         secondary: string
         subtle: string
     }
@@ -18,6 +23,8 @@ const DEFAULT_LIGHT: ThemeValues = {
     accent: 'rgb(3, 150, 255)',
     primaryTextColor: 'black',
     fillColor: {
+        solidBackgroundBase: "#F3F3F3",
+        solidBackgroundSecondary: "#EEEEEE",
         secondary: 'rgba(0, 0, 0, 0.03)',
         subtle: 'rgba(0, 0, 0, 0.024)'
     }
@@ -27,6 +34,8 @@ const DEFAULT_DARK: ThemeValues = {
     accent: 'rgb(3, 150, 255)',
     primaryTextColor: 'white',
     fillColor: {
+        solidBackgroundBase: "#202020",
+        solidBackgroundSecondary: "#1C1C1C",
         secondary: 'rgba(255, 255, 255, 0.06)',
         subtle: 'rgba(255, 255, 255, 0.04)'
     }
