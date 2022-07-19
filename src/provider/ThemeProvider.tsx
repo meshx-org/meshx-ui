@@ -2,8 +2,8 @@ import React from 'react'
 import { Platform } from 'react-native'
 
 export interface ThemeValues {
-    accent?: string
-    primaryTextColor?: string
+    accent: string
+    primaryTextColor: string
     stoke: {
         divider: string
         card: string
@@ -82,10 +82,33 @@ declare module 'react' {
 }
 
 export const ThemeProvider = ({ theme, children }: ThemeProviderProps) => {
-    const content = Platform.OS === 'web' ? (<div style={{ '--value': 'red' }}>{children}</div>) : children
-    return (
-        <ThemeContext.Provider value={{ name: theme, values: theme === 'dark' ? DEFAULT_DARK : DEFAULT_LIGHT }}>
-            {content}
-        </ThemeContext.Provider>
-    )
+    const values = theme === 'dark' ? DEFAULT_DARK : DEFAULT_LIGHT
+    const content =
+        Platform.OS === 'web' ? (
+            <div
+                style={{
+                    height: '100%',
+                    display: 'flex',
+                    '--theme-fill-solid-background-base': values.fillColor.solidBackgroundBase,
+                    '--theme-fill-solid-background-secondary': values.fillColor.solidBackgroundSecondary,
+                    '--theme-fill-layer-default': values.fillColor.layerDefault,
+                    '--theme-fill-layer-alt': values.fillColor.layerAlt,
+                    '--theme-fill-secondary': values.fillColor.secondary,
+                    '--theme-fill-subtle': values.fillColor.subtle,
+
+                    '--theme-accent': values.primaryTextColor,
+                    '--theme-primary-text-color': values.primaryTextColor,
+
+                    '--theme-stroke-card': values.stoke.card,
+                    '--theme-stroke-divider': values.stoke.divider,
+                    '--theme-stroke-surface': values.stoke.surface
+                }}
+            >
+                {children}
+            </div>
+        ) : (
+            children
+        )
+
+    return <ThemeContext.Provider value={{ name: theme, values }}>{content}</ThemeContext.Provider>
 }
