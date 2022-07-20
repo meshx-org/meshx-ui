@@ -1,18 +1,33 @@
 import React from 'react'
+import { View } from 'react-native'
 import { BrandingProps } from './Branding.types'
 import styles from './Branding.module.css'
-import { useTheme } from '../../../provider/ThemeProvider'
-// import Link from 'next/link'
+import { useTheme, useThemeValues } from '../../../provider/ThemeProvider'
+import { TextBlock } from '../text-block/TextBlock'
 
 export function Branding({ title, logo, subtitle, to }: BrandingProps) {
     const theme = useTheme()
+    const { primaryTextColor } = useThemeValues()
 
     const wrappedContent = (
         <>
             <img className={styles.image} src={logo} alt={title} />
-            <p className={styles.text}>
-                <span className={styles.title}>{title}</span> {subtitle && <div />} {subtitle && <span>{subtitle}</span>}
-            </p>
+            <View style={{ flexDirection: 'row' }}>
+                <TextBlock variant="body" children={title} />
+                {subtitle && (
+                    <View
+                        style={{
+                            borderLeftWidth: 2,
+                            borderColor: primaryTextColor,
+                            opacity: 0.5,
+                            paddingLeft: 8,
+                            marginLeft: 8
+                        }}
+                    >
+                        <TextBlock children={subtitle} />
+                    </View>
+                )}
+            </View>
         </>
     )
 
