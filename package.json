@@ -39,7 +39,7 @@
         "@storybook/react": "^6.5.9",
         "react-native-svg": "^12.3.0",
         "react-native-svg-web": "^1.0.9",
-        "react-native-web": "^0.17.7",
+        "react-native-web": "^0.18.7",
         "react-slider": "^2.0.1"
     },
     "devDependencies": {
