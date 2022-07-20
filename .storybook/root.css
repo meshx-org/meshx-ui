@@ -5,6 +5,10 @@
     flex-direction: column;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 input:focus {
     outline: none !important;
 }

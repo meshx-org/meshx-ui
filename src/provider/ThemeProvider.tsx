@@ -1,5 +1,5 @@
 import React from 'react'
-import { Platform } from 'react-native'
+import { ColorValue, Platform } from 'react-native'
 
 export interface ThemeValues {
     accent: string
@@ -8,6 +8,27 @@ export interface ThemeValues {
         divider: string
         card: string
         surface: string
+    }
+    spacing: {
+        [key: string]: number
+    }
+    textVariants: {
+        [key: string]: {
+            color?: ColorValue
+            fontFamily?: string
+            fontSize?: number
+            fontStyle?: 'normal' | 'italic'
+            fontWeight?: 'normal' | 'bold' | '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
+            letterSpacing?: number
+            lineHeight?: number | undefined
+            textDecorationLine?: 'none' | 'underline' | 'line-through' | 'underline line-through' | undefined
+            textDecorationStyle?: 'solid' | 'double' | 'dotted' | 'dashed' | undefined
+            textDecorationColor?: ColorValue | undefined
+            textShadowColor?: ColorValue | undefined
+            textShadowOffset?: { width: number; height: number } | undefined
+            textShadowRadius?: number | undefined
+            textTransform?: 'none' | 'capitalize' | 'uppercase' | 'lowercase' | undefined
+        }
     }
     fillColor: {
         // Solid background colors to place layers, cards, or controls on.
@@ -29,9 +50,57 @@ export interface Theme {
     values: ThemeValues
 }
 
+const textVariants: any = {
+    display: {
+        //fontFamily: 'SF Pro',
+        fontWeight: 'bold',
+        fontSize: 68,
+        lineHeight: 92
+    },
+    title: {
+        //fontFamily: 'SF Pro',
+        fontWeight: 'bold',
+        fontSize: 28,
+        lineHeight: 36
+    },
+    subtitle: {
+        //fontFamily: 'SF Pro',
+        fontWeight: 'bold',
+        fontSize: 20,
+        lineHeight: 28
+    },
+    caption: {
+        opacity: 0.8,
+        fontWeight: '300',
+        fontSize: 12,
+        lineHeight: 16
+    },
+    body: {
+        fontSize: 14,
+        lineHeight: 20
+    },
+    bodyStrong: {
+        fontWeight: 'bold',
+        fontSize: 14,
+        lineHeight: 20
+    },
+    bodyLarge: {
+        //fontFamily: 'SF Pro',
+        fontSize: 18,
+        lineHeight: 24
+    }
+}
+
 const DEFAULT_LIGHT: ThemeValues = {
     accent: 'rgb(3, 150, 255)',
     primaryTextColor: 'black',
+    spacing: {
+        sm: 8,
+        md: 16,
+        lg: 24,
+        xl: 32
+    },
+    textVariants,
     stoke: {
         divider: 'rgba(0,0,0,0.0803)',
         card: 'rgba(0,0,0,0.0578)',
@@ -50,6 +119,13 @@ const DEFAULT_LIGHT: ThemeValues = {
 const DEFAULT_DARK: ThemeValues = {
     accent: 'rgb(3, 150, 255)',
     primaryTextColor: 'white',
+    spacing: {
+        sm: 8,
+        md: 16,
+        lg: 24,
+        xl: 32
+    },
+    textVariants,
     stoke: {
         divider: 'rgba(255,255,255,0.0837)',
         card: 'rgba(0,0,0,0.25)',
