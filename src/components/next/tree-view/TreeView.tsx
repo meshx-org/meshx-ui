@@ -38,7 +38,7 @@ function useThemedStyles<T>(styleWrapper: (values: ThemeValues) => T) {
     return styleWrapper(theme)
 }
 
-function TreeViewNode(props: TreeViewNodeProps) {
+function TreeViewNode<T = unknown>(props: TreeViewNodeProps<T>) {
     const { item, renderTreeItem, path, onCollapse, onExpand, onInvoke } = props
 
     const themeValues = useThemeValues()
@@ -90,10 +90,10 @@ function TreeViewNode(props: TreeViewNodeProps) {
     )
 }
 
-export function TreeView(props: TreeViewProps) {
+export function TreeView<T = unknown>(props: TreeViewProps<T>) {
     const flattenedTree = useMemo(() => flattenTree(props.tree), [props.tree])
 
-    const renderTreeItem: ListRenderItem<FlattenedItem> = ({ item }) => (
+    const renderTreeItem: ListRenderItem<FlattenedItem<T>> = ({ item }) => (
         <TreeViewNode
             key={item.item.id}
             item={item.item}
@@ -111,7 +111,7 @@ export function TreeView(props: TreeViewProps) {
             accessibilityRole="menu"
             // showsVerticalScrollIndicator={false}
             // contentInset={{ right: 0, top: 8, left: 8, bottom: 8 }}
-            contentContainerStyle={{ padding: 8 }}
+            contentContainerStyle={{ }}
             windowSize={11}
             maxToRenderPerBatch={5}
             getItemCount={(data) => data.length}

@@ -1,3 +1,8 @@
+export interface Person {
+    name: string;
+    image?: string;
+}
+
 export interface PersonProps {
     /**
      * Size of the avatar in pixels.

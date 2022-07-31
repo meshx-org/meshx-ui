@@ -52,19 +52,19 @@ export interface Theme {
 
 const textVariants: any = {
     display: {
-        //fontFamily: 'SF Pro',
+        // fontFamily: 'SF Pro',
         fontWeight: 'bold',
         fontSize: 68,
         lineHeight: 92
     },
     title: {
-        //fontFamily: 'SF Pro',
+        // fontFamily: 'SF Pro',
         fontWeight: 'bold',
         fontSize: 28,
         lineHeight: 36
     },
     subtitle: {
-        //fontFamily: 'SF Pro',
+        // fontFamily: 'SF Pro',
         fontWeight: 'bold',
         fontSize: 20,
         lineHeight: 28
@@ -76,6 +76,7 @@ const textVariants: any = {
         lineHeight: 16
     },
     body: {
+        fontWeight: '400',
         fontSize: 14,
         lineHeight: 20
     },
@@ -85,7 +86,7 @@ const textVariants: any = {
         lineHeight: 20
     },
     bodyLarge: {
-        //fontFamily: 'SF Pro',
+        // fontFamily: 'SF Pro',
         fontSize: 18,
         lineHeight: 24
     }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { View } from 'react-native'
+import { View, StyleSheet } from 'react-native'
 import { BrandingProps } from './Branding.types'
 import styles from './Branding.module.css'
 import { useTheme, useThemeValues } from '../../../provider/ThemeProvider'
@@ -17,7 +17,7 @@ export function Branding({ title, logo, subtitle, to }: BrandingProps) {
                 {subtitle && (
                     <View
                         style={{
-                            borderLeftWidth: 2,
+                            borderLeftWidth: StyleSheet.hairlineWidth,
                             borderColor: primaryTextColor,
                             opacity: 0.5,
                             paddingLeft: 8,

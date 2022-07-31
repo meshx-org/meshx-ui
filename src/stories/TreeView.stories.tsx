@@ -103,7 +103,7 @@ export const Default = Template.bind({})
 
 Default.decorators = [
     (S) => (
-        <div style={{ maxWidth: '300px' }}>
+        <div style={{ width: '300px' }}>
             <S />
         </div>
     )
