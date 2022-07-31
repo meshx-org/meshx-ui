@@ -7,7 +7,7 @@ import { TextBlock } from '../text-block/TextBlock'
 
 export function Branding({ title, logo, subtitle, to }: BrandingProps) {
     const theme = useTheme()
-    const { primaryTextColor } = useThemeValues()
+    const { textColor } = useThemeValues()
 
     const wrappedContent = (
         <>
@@ -18,7 +18,7 @@ export function Branding({ title, logo, subtitle, to }: BrandingProps) {
                     <View
                         style={{
                             borderLeftWidth: StyleSheet.hairlineWidth,
-                            borderColor: primaryTextColor,
+                            borderColor: textColor.primary,
                             opacity: 0.5,
                             paddingLeft: 8,
                             marginLeft: 8
