@@ -15,7 +15,7 @@ const styles = (theme: ThemeValues) =>
         treeViewItem: {
             paddingVertical: 6,
             flex: 1,
-            color: theme.primaryTextColor
+            color: theme.textColor.primary
         },
         selectorWrapper: {
             overflow: 'hidden',
@@ -74,7 +74,7 @@ function TreeViewNode<T = unknown>(props: TreeViewNodeProps<T>) {
         >
             <View style={style.selectorWrapper}>
                 <View
-                    style={[style.selector, { backgroundColor: item.isSelected ? themeValues.accent : 'transparent' }]}
+                    style={[style.selector, { backgroundColor: item.isSelected ? themeValues.fillColor.accent : 'transparent' }]}
                 />
             </View>
 
@@ -111,7 +111,7 @@ export function TreeView<T = unknown>(props: TreeViewProps<T>) {
             accessibilityRole="menu"
             // showsVerticalScrollIndicator={false}
             // contentInset={{ right: 0, top: 8, left: 8, bottom: 8 }}
-            contentContainerStyle={{ }}
+            contentContainerStyle={{}}
             windowSize={11}
             maxToRenderPerBatch={5}
             getItemCount={(data) => data.length}

@@ -28,7 +28,7 @@
         "prepare": "husky install",
         "prepublish": "npm run build",
         "format": "prettier --write \".\" ",
-        "lint": "eslint **/*.{tsx,ts}",
+        "lint": "eslint 'src/**/*.{tsx,ts}'",
         "build": "tsc && yarn copy-css",
         "copy-css": "copyfiles -u 1 src/**/*.css dist/",
         "test": "echo \"Error: no test specified\" && exit 0",

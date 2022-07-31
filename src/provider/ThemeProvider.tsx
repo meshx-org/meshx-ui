@@ -2,8 +2,16 @@ import React from 'react'
 import { ColorValue, Platform } from 'react-native'
 
 export interface ThemeValues {
-    accent: string
-    primaryTextColor: string
+    accentTextColor: {
+        primary: string
+        secondary: string
+        disabled: string
+    }
+    textColor: {
+        primary: string
+        secondary: string
+        disabled: string
+    }
     stoke: {
         divider: string
         card: string
@@ -31,6 +39,7 @@ export interface ThemeValues {
         }
     }
     fillColor: {
+        accent: string
         // Solid background colors to place layers, cards, or controls on.
         solidBackgroundBase: string
         solidBackgroundSecondary: string
@@ -93,8 +102,6 @@ const textVariants: any = {
 }
 
 const DEFAULT_LIGHT: ThemeValues = {
-    accent: 'rgb(3, 150, 255)',
-    primaryTextColor: 'black',
     spacing: {
         sm: 8,
         md: 16,
@@ -107,7 +114,18 @@ const DEFAULT_LIGHT: ThemeValues = {
         card: 'rgba(0,0,0,0.0578)',
         surface: '#C6C6C8'
     },
+    accentTextColor: {
+        primary: 'rgb(3, 150, 255)',
+        secondary: 'rgb(3, 150, 255)',
+        disabled: 'rgb(3, 150, 255)'
+    },
+    textColor: {
+        primary: 'rgba(0,0,0,1)',
+        secondary: 'rgba(0,0,0,0.6)',
+        disabled: 'rgba(0,0,0,0.36)'
+    },
     fillColor: {
+        accent: 'rgb(3, 150, 255)',
         solidBackgroundBase: '#F3F3F3',
         solidBackgroundSecondary: '#EEEEEE',
         layerDefault: 'rgba(255, 255, 255, 0.5)',
@@ -118,8 +136,6 @@ const DEFAULT_LIGHT: ThemeValues = {
 }
 
 const DEFAULT_DARK: ThemeValues = {
-    accent: 'rgb(3, 150, 255)',
-    primaryTextColor: 'white',
     spacing: {
         sm: 8,
         md: 16,
@@ -132,7 +148,18 @@ const DEFAULT_DARK: ThemeValues = {
         card: 'rgba(0,0,0,0.25)',
         surface: 'rgba(117,117,117,0.4)'
     },
+    accentTextColor: {
+        primary: 'rgb(3, 150, 255)',
+        secondary: 'rgb(3, 150, 255)',
+        disabled: 'rgb(3, 150, 255)'
+    },
+    textColor: {
+        primary: 'rgba(255,255,255,1)',
+        secondary: 'rgba(255,255,255,0.78)',
+        disabled: 'rgba(255,255,255,0.36)'
+    },
     fillColor: {
+        accent: 'rgb(3, 150, 255)',
         solidBackgroundBase: '#202020',
         solidBackgroundSecondary: '#1C1C1C',
         layerDefault: 'rgba(58, 58, 58, 0.3)',
@@ -166,6 +193,12 @@ export const ThemeProvider = ({ theme, children }: ThemeProviderProps) => {
                 style={{
                     height: '100%',
                     display: 'flex',
+
+                    '--theme-spacing-sm': `${values.spacing.sm}px`,
+                    '--theme-spacing-md': `${values.spacing.md}px`,
+                    '--theme-spacing-lg': `${values.spacing.lg}px`,
+                    '--theme-spacing-xl': `${values.spacing.xl}px`,
+
                     '--theme-fill-solid-background-base': values.fillColor.solidBackgroundBase,
                     '--theme-fill-solid-background-secondary': values.fillColor.solidBackgroundSecondary,
                     '--theme-fill-layer-default': values.fillColor.layerDefault,
@@ -173,8 +206,13 @@ export const ThemeProvider = ({ theme, children }: ThemeProviderProps) => {
                     '--theme-fill-secondary': values.fillColor.secondary,
                     '--theme-fill-subtle': values.fillColor.subtle,
 
-                    '--theme-accent': values.primaryTextColor,
-                    '--theme-primary-text-color': values.primaryTextColor,
+                    '--theme-text-color-primary': values.textColor.primary,
+                    '--theme-text-color-secondary': values.textColor.secondary,
+                    '--theme-text-color-disabled': values.textColor.disabled,
+
+                    '--theme-accent-text-color-primary': values.accentTextColor.primary,
+                    '--theme-accent-text-color-secondary': values.accentTextColor.secondary,
+                    '--theme-accent-text-color-disabled': values.accentTextColor.disabled,
 
                     '--theme-stroke-card': values.stoke.card,
                     '--theme-stroke-divider': values.stoke.divider,

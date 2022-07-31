@@ -4,7 +4,7 @@ import { TextBlockProps } from './TextBlock.types'
 import { useThemeValues } from '../../provider/ThemeProvider'
 
 export function TextBlock({ children, variant }: TextBlockProps) {
-    const { textVariants, primaryTextColor } = useThemeValues()
+    const { textVariants, textColor } = useThemeValues()
 
-    return <Text style={[{ color: primaryTextColor }, textVariants[variant ?? 'body']]}>{children}</Text>
+    return <Text style={[{ color: textColor.primary }, textVariants[variant ?? 'body']]}>{children}</Text>
 }
