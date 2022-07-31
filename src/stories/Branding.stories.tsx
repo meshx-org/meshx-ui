@@ -4,8 +4,8 @@ import React from 'react'
 
 import { Story, Meta } from '@storybook/react'
 
-import { Branding } from '../components/next/branding/Branding'
-import { BrandingProps } from '../components/next/branding/Branding.types'
+import { Branding } from '../components/branding/Branding'
+import { BrandingProps } from '../components/branding/Branding.types'
 
 import logo from './assets/logo.svg'
 

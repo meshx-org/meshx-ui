@@ -1,18 +1,12 @@
-import Input from './components/input/TextField'
-import ControlSurface from './components/surface/ControlSurface'
-import { Card } from './components/card/Card'
-
-export { Input, ControlSurface, Card }
-
-export { default as Button } from './components/next/button/Button'
-export { TextBox } from './components/next/text-box/TextBox'
-export { TextBlock } from './components/next/text-block/TextBlock'
-export { Person } from './components/next/person/Person'
-export { Branding } from './components/next/branding/Branding'
-export { Slider } from './components/next/slider/Slider'
-export { ToggleSwitch } from './components/next/toggle-switch/ToggleSwitch'
+export { default as Button } from './components/button/Button'
+export { TextBox } from './components/text-box/TextBox'
+export { TextBlock } from './components/text-block/TextBlock'
+export { Person } from './components/person/Person'
+export { Branding } from './components/branding/Branding'
+export { Slider } from './components/slider/Slider'
+export { ToggleSwitch } from './components/toggle-switch/ToggleSwitch'
 export { ThemeProvider, useTheme, useThemeValues } from './provider/ThemeProvider'
 
-export { TreeView } from './components/next/tree-view/TreeView'
-export * from './components/next/tree-view/TreeView.types'
-export * as treeUtils from './components/next/tree-view/utils'
+export { TreeView } from './components/tree-view/TreeView'
+export * from './components/tree-view/TreeView.types'
+export * as treeUtils from './components/tree-view/utils'

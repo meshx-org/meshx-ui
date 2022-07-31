@@ -1,14 +1,12 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
 import React from 'react'
-import { View } from 'react-native'
 
 import { Story, Meta } from '@storybook/react'
 
-import { Slider } from '../components/next/slider/Slider'
-import { SliderProps } from '../components/next/slider/Slider.types'
+import { Slider } from '../components/slider/Slider'
+import { SliderProps } from '../components/slider/Slider.types'
 
-// 👇 This default export determines where your story goes in the story list
 const meta: Meta = {
     title: 'Basic Input/Slider',
     component: Slider,
@@ -22,7 +20,6 @@ const meta: Meta = {
     }
 }
 
-// 👇 We create a “template” of how args map to rendering
 const Template: Story<SliderProps> = (args) => <Slider {...args} />
 
 export const Rest = Template.bind({})

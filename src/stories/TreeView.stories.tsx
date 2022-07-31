@@ -5,9 +5,9 @@ import React, { useState } from 'react'
 import { Story, Meta } from '@storybook/react'
 
 import { Pressable, View, Text, Animated } from 'react-native'
-import { TreeView } from '../components/next/tree-view/TreeView'
-import { ItemId, RenderItemParams, TreeItem, TreeViewProps } from '../components/next/tree-view/TreeView.types'
-import { iterateTree, mutateTree } from '../components/next/tree-view/utils'
+import { TreeView } from '../components/tree-view/TreeView'
+import { ItemId, RenderItemParams, TreeItem, TreeViewProps } from '../components/tree-view/TreeView.types'
+import { iterateTree, mutateTree } from '../components/tree-view/utils'
 
 // 👇 This default export determines where your story goes in the story list
 const meta: Meta = {
@@ -23,7 +23,7 @@ const meta: Meta = {
     }
 }
 
-function getChevron(item: TreeItem, onExpand: (itemId: ItemId) => void, onCollapse: (itemId: ItemId) => void) {
+function getChevron(item: TreeItem<any>, onExpand: (itemId: ItemId) => void, onCollapse: (itemId: ItemId) => void) {
     const value = new Animated.Value(item.isExpanded ? 1 : 0)
 
     return (
@@ -59,8 +59,8 @@ function getChevron(item: TreeItem, onExpand: (itemId: ItemId) => void, onCollap
     )
 }
 
-const renderItem = ({ item, onExpand, onCollapse }: RenderItemParams) => {
-    const { title, glyph } = item.data as any
+const renderItem = ({ item, onExpand, onCollapse }: RenderItemParams<any>) => {
+    const { title, glyph } = item.data
 
     return (
         <View style={{ flexDirection: 'row', height: 20 }}>
@@ -73,7 +73,7 @@ const renderItem = ({ item, onExpand, onCollapse }: RenderItemParams) => {
 }
 
 // 👇 We create a “template” of how props map to rendering
-const Template: Story<TreeViewProps> = (props) => {
+const Template: Story<TreeViewProps<any>> = (props) => {
     const [tree, setTree] = useState(props.tree)
 
     const onExpand = (itemId: ItemId) => {

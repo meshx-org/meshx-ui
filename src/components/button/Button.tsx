@@ -1,62 +1,26 @@
-/* eslint-disable react-native/no-inline-styles */
-import React, { FC, useState } from 'react'
-import { LayoutChangeEvent, Pressable, View, Text as RNText, Animated } from 'react-native'
+import React from 'react'
+import styles from './Button.module.css'
+import { useTheme } from '../../../provider/ThemeProvider'
+import { ControlFill } from '../fill/Fill'
+import { ControlElevation } from '../elevation/Elevation'
+import { ButtonProps } from './Button.types'
+import { useControlState } from '../../../hooks/useControlState'
 
-import ControlSurface from '../surface/ControlSurface'
-import styles from './Button.styles'
-import type { ButtonAppearance, ButtonComponent, PressableState } from './Button.types'
+function Button(props: ButtonProps) {
+    const { apparance = 'default', disabled = false, children } = props
 
-const getBgColor = (type: ButtonAppearance) => {
-  if (type === 'primary') {
-    return '#0396FF'
-  }
+    const theme = useTheme()
+    const { state, handlers } = useControlState<HTMLButtonElement>(disabled)
 
-  return 'white'
+    return (
+        <button type="button" data-theme={theme} data-state={state} className={styles.button} {...handlers}>
+            <ControlElevation state={state}>
+                <ControlFill state={state}>
+                    <div className={styles.buttonContent}>{children}</div>
+                </ControlFill>
+            </ControlElevation>
+        </button>
+    )
 }
-
-const getShadeColor = (type: ButtonAppearance) => {
-  if (type === 'primary') {
-    return 'rgba(255,255,255,0.2)'
-  }
-
-  return 'rgba(0,0,0,0.056)'
-}
-
-const Button: ButtonComponent = ({ apparance, children, ...props }) => {
-  const [buttonWidth, setButtonWidth] = useState(0)
-
-  const handleLayoutChange = (event: LayoutChangeEvent) => {
-    const { width } = event.nativeEvent.layout
-    setButtonWidth(width)
-  }
-
-  return (
-    <Pressable
-      {...props}
-      focusable={true}
-      accessibilityRole="button"
-      style={styles.button}
-      onLayout={handleLayoutChange}
-    >
-      {({ pressed, hovered }: PressableState) => (
-        <Animated.View style={{ opacity: new Animated.Value(hovered ? 0.7 : 1) }}>
-          <View style={[styles.gfxBorder]}>
-            <ControlSurface height={34} width={buttonWidth ?? 1} backgroundColor={getBgColor(apparance)} />
-          </View>
-
-          <View style={[styles.gfxOverlay, { backgroundColor: getShadeColor(apparance) }]} />
-
-          <View style={[styles.content]}>{children}</View>
-        </Animated.View>
-      )}
-    </Pressable>
-  )
-}
-
-Button.Text = ({ children, style, ...props }) => (
-  <RNText {...props} selectable={false} numberOfLines={1} style={[style, styles.text]}>
-    {children}
-  </RNText>
-)
 
 export default Button

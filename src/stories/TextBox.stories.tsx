@@ -5,8 +5,8 @@ import { View } from 'react-native'
 
 import { Story, Meta } from '@storybook/react'
 
-import { TextBox } from '../components/next/text-box/TextBox'
-import { TextBoxProps } from '../components/next/text-box/TextBox.types'
+import { TextBox } from '../components/text-box/TextBox'
+import { TextBoxProps } from '../components/text-box/TextBox.types'
 
 // 👇 This default export determines where your story goes in the story list
 const meta: Meta = {

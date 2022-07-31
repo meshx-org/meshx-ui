@@ -3,9 +3,9 @@
 import React from 'react'
 
 import { Story, Meta } from '@storybook/react'
-import { TextBlock } from '../components/next/text-block/TextBlock'
-import { TextBlockProps } from '../components/next/text-block/TextBlock.types'
 import { View } from 'react-native'
+import { TextBlock } from '../components/text-block/TextBlock'
+import { TextBlockProps } from '../components/text-block/TextBlock.types'
 
 export default {
     title: 'Text/TextBlock',

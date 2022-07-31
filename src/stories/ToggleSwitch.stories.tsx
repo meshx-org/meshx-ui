@@ -4,8 +4,8 @@ import React from 'react'
 
 import { Story, Meta } from '@storybook/react'
 
-import { ToggleSwitch } from '../components/next/toggle-switch/ToggleSwitch'
-import { ToggleSwitchProps } from '../components/next/toggle-switch/ToggleSwitch.types'
+import { ToggleSwitch } from '../components/toggle-switch/ToggleSwitch'
+import { ToggleSwitchProps } from '../components/toggle-switch/ToggleSwitch.types'
 
 // 👇 This default export determines where your story goes in the story list
 const meta: Meta = {

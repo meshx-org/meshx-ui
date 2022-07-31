@@ -2,7 +2,7 @@ import React from 'react'
 import { View, StyleSheet } from 'react-native'
 import { BrandingProps } from './Branding.types'
 import styles from './Branding.module.css'
-import { useTheme, useThemeValues } from '../../../provider/ThemeProvider'
+import { useTheme, useThemeValues } from '../../provider/ThemeProvider'
 import { TextBlock } from '../text-block/TextBlock'
 
 export function Branding({ title, logo, subtitle, to }: BrandingProps) {
