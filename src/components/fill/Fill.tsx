@@ -1,5 +1,5 @@
 import React from 'react'
-import { useTheme } from '../../../provider/ThemeProvider'
+import { useTheme } from '../../provider/ThemeProvider'
 import { ControlFillProps } from './Fill.types'
 import styles from './Fill.module.css'
 

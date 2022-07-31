@@ -1,4 +1,4 @@
-import { ControlState } from '../../../interfaces/control'
+import { ControlState } from '../../interfaces/control'
 
 export type ButtonAppearance = 'primary' | 'secondary'
 

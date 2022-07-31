@@ -1,6 +1,6 @@
 import React from 'react'
 import { View } from 'react-native'
-import { useTheme } from '../../../provider/ThemeProvider'
+import { useTheme } from '../../provider/ThemeProvider'
 import { ControlFillProps } from './Fill.types'
 
 export function TextControlFill({ children, state }: ControlFillProps) {

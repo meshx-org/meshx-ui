@@ -2,11 +2,11 @@ import React from 'react'
 
 import styles from './TextBox.module.css'
 import { TextBoxProps } from './TextBox.types'
-import { useControlState } from '../../../hooks/useControlState'
-import { useTheme } from '../../../provider/ThemeProvider'
+import { useControlState } from '../../hooks/useControlState'
+import { useTheme } from '../../provider/ThemeProvider'
 import { TextControlElevation } from '../elevation/Elevation'
 import { TextControlFill } from '../fill/Fill'
-import { useFocus } from '../../../hooks/useFocus'
+import { useFocus } from '../../hooks/useFocus'
 
 export function TextBox(props: TextBoxProps) {
     const { placeholder, disabled = false, value, onChange } = props

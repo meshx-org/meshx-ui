@@ -1,6 +1,6 @@
 import React, { ChangeEventHandler, useCallback, useState, useEffect } from 'react'
-import { useTheme } from '../../../provider/ThemeProvider'
-import { useControlState } from '../../../hooks/useControlState'
+import { useTheme } from '../../provider/ThemeProvider'
+import { useControlState } from '../../hooks/useControlState'
 import styles from './ToggleSwitch.module.css'
 import { ToggleSwitchProps } from './ToggleSwitch.types'
 

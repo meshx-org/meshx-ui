@@ -1,10 +1,10 @@
 import React from 'react'
 import styles from './Button.module.css'
-import { useTheme } from '../../../provider/ThemeProvider'
+import { useTheme } from '../../provider/ThemeProvider'
 import { ControlFill } from '../fill/Fill'
 import { ControlElevation } from '../elevation/Elevation'
 import { ButtonProps } from './Button.types'
-import { useControlState } from '../../../hooks/useControlState'
+import { useControlState } from '../../hooks/useControlState'
 
 function Button(props: ButtonProps) {
     const { apparance = 'default', disabled = false, children } = props
