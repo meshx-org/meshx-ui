@@ -36,7 +36,7 @@
         "publish:unstable": "lerna publish prerelease --preid unstable --yes"
     },
     "dependencies": {
-        "@storybook/react": "^6.5.9",
+        "@storybook/react": "^6.5.10",
         "react-native-svg": "^12.3.0",
         "react-native-svg-web": "^1.0.9",
         "react-native-web": "^0.18.7",
