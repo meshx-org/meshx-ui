@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import { ControlState } from '../../common'
 
 export interface TreeViewNodeProps<T> {
     item: TreeItem<T>
@@ -89,6 +90,7 @@ export interface RenderItemParams<T> {
     depth: number
     onExpand: (itemId: ItemId) => void
     onCollapse: (itemId: ItemId) => void
+    state: ControlState
     // provided: TreeDraggableProvided
     // snapshot: DraggableStateSnapshot
 }

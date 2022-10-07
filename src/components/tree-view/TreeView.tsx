@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react'
 import { ListRenderItem, View, VirtualizedList, StyleSheet, Pressable } from 'react-native'
+import { ControlState } from 'src/common'
 import { useThemeValues, ThemeValues } from '../../context/ThemeProvider'
 import { FlattenedItem, TreeViewNodeProps, TreeViewProps } from './TreeView.types'
 import { flattenTree } from './utils'
@@ -65,30 +66,35 @@ function TreeViewNode<T = unknown>(props: TreeViewNodeProps<T>) {
             accessibilityRole="menuitem"
             onLongPress={() => {}}
             onPress={handlePress}
-            style={(state: any) => [
+            style={(state) => [
                 style.treeViewNode,
                 {
                     backgroundColor: getBackgroundColor(state)
                 }
             ]}
         >
-            <View style={style.selectorWrapper}>
-                <View
-                    style={[
-                        style.selector,
-                        { backgroundColor: item.isSelected ? themeValues.fillColor.accent : 'transparent' }
-                    ]}
-                />
-            </View>
+            {(state) => (
+                <>
+                    <View style={style.selectorWrapper}>
+                        <View
+                            style={[
+                                style.selector,
+                                { backgroundColor: item.isSelected ? themeValues.fillColor.accent : 'transparent' }
+                            ]}
+                        />
+                    </View>
 
-            <View style={[style.treeViewItem, { paddingLeft: (path.length - 1) * 20 }]}>
-                {renderTreeItem({
-                    item,
-                    depth: path.length - 1,
-                    onExpand: (itemId) => onExpand(itemId, path),
-                    onCollapse: (itemId) => onCollapse(itemId, path)
-                })}
-            </View>
+                    <View style={[style.treeViewItem, { paddingLeft: (path.length - 1) * 20 }]}>
+                        {renderTreeItem({
+                            item,
+                            state: state.pressed ? ControlState.Pressed : ControlState.Rest,
+                            depth: path.length - 1,
+                            onExpand: (itemId) => onExpand(itemId, path),
+                            onCollapse: (itemId) => onCollapse(itemId, path)
+                        })}
+                    </View>
+                </>
+            )}
         </Pressable>
     )
 }
