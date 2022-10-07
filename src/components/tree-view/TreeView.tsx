@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import { ListRenderItem, View, VirtualizedList, StyleSheet, Pressable } from 'react-native'
-import { ControlState } from 'src/common'
+import { ControlState } from '../../common'
 import { useThemeValues, ThemeValues } from '../../context/ThemeProvider'
 import { FlattenedItem, TreeViewNodeProps, TreeViewProps } from './TreeView.types'
 import { flattenTree } from './utils'
