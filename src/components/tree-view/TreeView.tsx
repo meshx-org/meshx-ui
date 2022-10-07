@@ -114,6 +114,7 @@ export function TreeView<T = unknown>(props: TreeViewProps<T>) {
             accessibilityRole="menu"
             // showsVerticalScrollIndicator={false}
             // contentInset={{ right: 0, top: 8, left: 8, bottom: 8 }}
+            style={{ marginBottom: -4 }}
             contentContainerStyle={{}}
             windowSize={11}
             maxToRenderPerBatch={5}
