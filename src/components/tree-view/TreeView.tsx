@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import { ListRenderItem, View, VirtualizedList, StyleSheet, Pressable } from 'react-native'
-import { useThemeValues, ThemeValues } from '../../provider/ThemeProvider'
+import { useThemeValues, ThemeValues } from '../../context/ThemeProvider'
 import { FlattenedItem, TreeViewNodeProps, TreeViewProps } from './TreeView.types'
 import { flattenTree } from './utils'
 
@@ -74,7 +74,10 @@ function TreeViewNode<T = unknown>(props: TreeViewNodeProps<T>) {
         >
             <View style={style.selectorWrapper}>
                 <View
-                    style={[style.selector, { backgroundColor: item.isSelected ? themeValues.fillColor.accent : 'transparent' }]}
+                    style={[
+                        style.selector,
+                        { backgroundColor: item.isSelected ? themeValues.fillColor.accent : 'transparent' }
+                    ]}
                 />
             </View>
 

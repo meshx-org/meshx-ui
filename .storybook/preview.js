@@ -1,5 +1,5 @@
 import './root.css'
-import { ThemeProvider } from '../src/provider/ThemeProvider'
+import { ThemeProvider } from '../src/context/ThemeProvider'
 import { useDarkMode } from 'storybook-dark-mode'
 import { themes } from '@storybook/theming'
 

@@ -5,7 +5,7 @@ export { Person } from './components/person/Person'
 export { Branding } from './components/branding/Branding'
 export { Slider } from './components/slider/Slider'
 export { ToggleSwitch } from './components/toggle-switch/ToggleSwitch'
-export { ThemeProvider, useTheme, useThemeValues } from './provider/ThemeProvider'
+export { ThemeProvider, useTheme, useThemeValues } from './context/ThemeProvider'
 
 export { TreeView } from './components/tree-view/TreeView'
 export * from './components/tree-view/TreeView.types'

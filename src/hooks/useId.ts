@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { getId } from '../util'
+import { getId } from '../common'
 
 /**
  * Hook to generate a unique ID in the global scope (spanning across duplicate copies of the same library).

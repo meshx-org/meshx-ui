@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import { Image, View, Text, StyleSheet } from 'react-native'
-import { useTheme } from '../../provider/ThemeProvider'
+import { useTheme } from '../../context/ThemeProvider'
 import { PersonProps } from './Person.types'
 
 function getInitials(name: string) {

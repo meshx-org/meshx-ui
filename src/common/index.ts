@@ -1,3 +1,3 @@
-export * from './getControlState'
+export * from './control'
 export * from './getId'
 export * from './getWindow'

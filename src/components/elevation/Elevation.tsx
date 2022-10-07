@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import styles from './Elevation.module.css'
-import { useTheme } from '../../provider/ThemeProvider'
-import { ControlState } from '../../interfaces/control'
+import { useTheme } from '../../context/ThemeProvider'
+import { ControlState } from '../../common/control'
 import { ElevationProps } from './Elevation.types'
 
 let lastId = 0

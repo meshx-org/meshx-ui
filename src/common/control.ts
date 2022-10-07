@@ -1,4 +1,9 @@
-import { ControlState } from '../interfaces/control'
+export enum ControlState {
+    Rest = "rest",
+    Hovered = "hovered",
+    Pressed = "pressed",
+    Disabled = "disabled",
+}
 
 export function getControlState(pressed: boolean, hovered: boolean, disabled: boolean): ControlState {
     let state: ControlState = ControlState.Rest

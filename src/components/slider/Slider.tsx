@@ -3,7 +3,7 @@ import React, { useRef, useEffect, useState, useCallback, ChangeEventHandler } f
 import ReactSlider from 'react-slider'
 import styles from './Slider.module.css'
 import { useControlState } from '../../hooks/useControlState'
-import { useTheme } from '../../provider/ThemeProvider'
+import { useTheme } from '../../context/ThemeProvider'
 import { SliderProps } from './Slider.types'
 import { CircleControlElevation } from '../elevation/Elevation'
 

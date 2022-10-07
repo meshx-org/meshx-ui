@@ -1,4 +1,4 @@
-import { ControlState } from '../../interfaces/control'
+import { ControlState } from '../../common/control'
 
 export interface ElevationProps {
     state: ControlState
