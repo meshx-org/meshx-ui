@@ -30,7 +30,7 @@ export interface ButtonProps {
     /**
      * Handler to be called when the button is pressed.
      */
-    onClick?: () => void
+    onPress?: (e: any) => void
 
     children: React.ReactNode
 }

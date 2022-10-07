@@ -7,13 +7,20 @@ import { ButtonProps } from './Button.types'
 import { useControlState } from '../../hooks/useControlState'
 
 function Button(props: ButtonProps) {
-    const { apparance = 'default', disabled = false, children } = props
+    const { apparance = 'default', disabled = false, onPress, children } = props
 
     const theme = useTheme()
     const { state, handlers } = useControlState<HTMLButtonElement>(disabled)
 
     return (
-        <button type="button" data-theme={theme} data-state={state} className={styles.button} {...handlers}>
+        <button
+            onClick={onPress}
+            type="button"
+            data-theme={theme}
+            data-state={state}
+            className={styles.button}
+            {...handlers}
+        >
             <ControlElevation state={state}>
                 <ControlFill state={state}>
                     <div className={styles.buttonContent}>{children}</div>
