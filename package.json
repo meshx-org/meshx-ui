@@ -37,10 +37,10 @@
     },
     "dependencies": {
         "@storybook/react": "^6.5.10",
-        "react-native-svg": "^12.4.4",
+        "react-native-svg": "^13.3.0",
         "react-native-svg-web": "^1.0.9",
         "react-native-web": "^0.18.7",
-        "react-slider": "^2.0.3"
+        "react-slider": "^2.0.4"
     },
     "devDependencies": {
         "@babel/core": "^7.18.10",
