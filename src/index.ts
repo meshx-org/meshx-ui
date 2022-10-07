@@ -1,4 +1,5 @@
 export { default as Button } from './components/button/Button'
+export { default as Divider } from './components/divider/Divider'
 export { TextBox } from './components/text-box/TextBox'
 export { TextBlock } from './components/text-block/TextBlock'
 export { Person } from './components/person/Person'
