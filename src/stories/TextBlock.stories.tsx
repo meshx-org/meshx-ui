@@ -20,20 +20,25 @@ export default {
     }
 } as Meta
 
-const Template: Story<TextBlockProps> = (args) => (
+const HeadingsTextStory: Story<TextBlockProps> = (args) => (
     <View>
-        <TextBlock variant="caption" children="Caption" />
-        <TextBlock variant="body" children="Body" />
-        <TextBlock variant="bodyStrong" children="Body Strong" />
-        <TextBlock variant="bodyLarge" children="Body Large" />
-        <TextBlock variant="subtitle" children="Subtitle" />
-        <TextBlock variant="title" children="Title" />
-        <TextBlock variant="display" children="Display" />
+        <TextBlock variant="heading1" children="H1 heading" />
+        <TextBlock variant="heading2" children="H2 heading" />
+        <TextBlock variant="heading3" children="H3 heading" />
+        <TextBlock variant="heading4" children="H4 heading" />
+        <TextBlock variant="heading5" children="H5 heading" />
+        <TextBlock variant="heading6" children="H6 heading" />
     </View>
 )
 
-export const Default = Template.bind({})
-Default.args = {
-    variant: 'body',
-    children: 'body'
-}
+const BodyTextStory: Story<TextBlockProps> = (args) => (
+    <View>
+        <TextBlock variant="bodyLarge" children="Body Large" />
+        <TextBlock variant="bodyStrong" children="Body Strong" />
+        <TextBlock variant="body" children="Body" />
+        <TextBlock variant="caption" children="Caption" />
+    </View>
+)
+
+export const Headings = HeadingsTextStory.bind({})
+export const BodyText = BodyTextStory.bind({})

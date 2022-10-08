@@ -8,7 +8,7 @@ import { Slider } from '../components/slider/Slider'
 import { SliderProps } from '../components/slider/Slider.types'
 
 const meta: Meta = {
-    title: 'Basic Input/Slider',
+    title: 'Form/Slider',
     component: Slider,
     parameters: {
         backgrounds: {

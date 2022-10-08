@@ -9,7 +9,7 @@ import { ToggleSwitchProps } from '../components/toggle-switch/ToggleSwitch.type
 
 // 👇 This default export determines where your story goes in the story list
 const meta: Meta = {
-    title: 'Basic Input/ToggleSwitch',
+    title: 'Form/ToggleSwitch',
     component: ToggleSwitch,
     parameters: {
         backgrounds: {

@@ -1,8 +1,11 @@
 import React from 'react'
+import { ColorProps, SpaceProps, TypographyProps } from 'styled-system'
+import { textVariants } from '../../common/constants'
 
-export interface TextBlockProps {
+export interface TextBlockProps extends ColorProps, SpaceProps, TypographyProps {
     children?: React.ReactNode
-    variant?: 'caption' | 'body' | 'title' | 'subtitle' | string
-    ssTextSelectionEnabled?: string
-    selectionHighlightColor?: string
+    variant?: keyof typeof textVariants
+
+    // ssTextSelectionEnabled?: string
+    // selectionHighlightColor?: string
 }

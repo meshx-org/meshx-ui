@@ -5,16 +5,16 @@ import styles from './ToggleSwitch.module.css'
 import { ToggleSwitchProps } from './ToggleSwitch.types'
 
 export function ToggleSwitch(props: ToggleSwitchProps) {
-    const { defaultChecked, checked, onChange, disabled } = props
+    const { defaultValue, value, onChange, disabled } = props
 
     const theme = useTheme()
     const { handlers, state } = useControlState<HTMLLabelElement>(disabled)
-    const [checkedInternal, setCheckedInternal] = useState(defaultChecked)
+    const [checkedInternal, setCheckedInternal] = useState(defaultValue)
 
     useEffect(() => {
-        setCheckedInternal(checked)
+        setCheckedInternal(value)
         return () => {}
-    }, [checked])
+    }, [value])
 
     const handleChange = useCallback<ChangeEventHandler<HTMLInputElement>>(
         (event) => {

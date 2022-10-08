@@ -1,10 +1,18 @@
 import React from 'react'
 import { Text } from 'react-native'
+import { variant, compose, space, color, typography } from 'styled-system'
 import { TextBlockProps } from './TextBlock.types'
 import { useThemeValues } from '../../context/ThemeProvider'
+import { textVariants as variants } from '../../common/constants'
 
-export function TextBlock({ children, variant }: TextBlockProps) {
-    const { textVariants, textColor } = useThemeValues()
+const propStyles = compose(color, space, typography)
+const textVariants = variant({ prop: 'variant', variants })
 
-    return <Text style={[{ color: textColor.primary }, textVariants[variant ?? 'body']]}>{children}</Text>
+export function TextBlock({ children, ...props }: TextBlockProps) {
+    const theme = useThemeValues()
+
+    const propsWithTheme = { theme, color: 'text.primary', ...props }
+    const style = { ...textVariants(propsWithTheme), ...propStyles(propsWithTheme) }
+
+    return <Text style={style}>{children}</Text>
 }

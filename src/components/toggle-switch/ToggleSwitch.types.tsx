@@ -1,8 +1,8 @@
 type ChangeHandler = (value: boolean) => void
 
 export interface ToggleSwitchProps {
-    checked?: boolean
-    defaultChecked?: boolean
+    value?: boolean
+    defaultValue?: boolean
     onChange?: ChangeHandler
     disabled?: boolean
 }

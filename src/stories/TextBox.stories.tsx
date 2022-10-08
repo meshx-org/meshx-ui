@@ -10,7 +10,7 @@ import { TextBoxProps } from '../components/text-box/TextBox.types'
 
 // 👇 This default export determines where your story goes in the story list
 const meta: Meta = {
-    title: 'Basic Input/TextBox',
+    title: 'Form/TextBox',
     component: TextBox,
     parameters: {
         backgrounds: {
