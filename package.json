@@ -39,7 +39,7 @@
         "@emotion/native": "^11.10.0",
         "@emotion/react": "^11.10.4",
         "@storybook/react": "^6.5.13",
-        "react-native-svg": "^13.4.0",
+        "react-native-svg": "^13.5.0",
         "react-native-svg-web": "^1.0.9",
         "react-native-web": "^0.18.9",
         "react-slider": "^2.0.4",
