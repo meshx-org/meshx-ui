@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react'
-import styles from './Elevation.module.css'
+import styles from './Stroke.module.css'
 import { useTheme } from '../../context/ThemeProvider'
 import { ControlState } from '../../common/control'
-import { ElevationProps } from './Elevation.types'
+import { ControlStrokeProps } from './Stroke.types'
 
 let lastId = 0
 
@@ -15,12 +15,12 @@ function url(id: string) {
     return `url(#${id})`
 }
 
-export function TextControlElevation({ children, state, focused = false }: ElevationProps) {
+function TextControlStroke({ children, state, focused = false }: ControlStrokeProps) {
     const theme = useTheme()
     const uniqueId = useMemo(createId, [])
     const clipId = `clip-${uniqueId}`
-    const lightGradId = `elevation-${uniqueId}-light`
-    const darkGradId = `elevation-${uniqueId}-dark`
+    const lightGradId = `stroke-${uniqueId}-light`
+    const darkGradId = `stroke-${uniqueId}-dark`
 
     const definitions = useMemo(
         () => (
@@ -54,7 +54,7 @@ export function TextControlElevation({ children, state, focused = false }: Eleva
     const lineFill: string = focused ? '#0396FF' : restFill
 
     return (
-        <div className={styles.elevation}>
+        <div className={styles.stroke}>
             <svg overflow="visible" fill="transparent" aria-hidden="true" tabIndex={-1}>
                 {definitions}
                 <rect
@@ -80,11 +80,11 @@ export function TextControlElevation({ children, state, focused = false }: Eleva
     )
 }
 
-export function ControlElevation({ children, state, focused = false }: ElevationProps) {
+function ControlStroke({ children, state, focused = false }: ControlStrokeProps) {
     const theme = useTheme()
     const uniqueId = useMemo(createId, [])
-    const lightGradId = `elevation-${uniqueId}-light`
-    const darkGradId = `elevation-${uniqueId}-dark`
+    const lightGradId = `stroke-${uniqueId}-light`
+    const darkGradId = `stroke-${uniqueId}-dark`
 
     const definitions = useMemo(
         () => (
@@ -115,7 +115,7 @@ export function ControlElevation({ children, state, focused = false }: Elevation
     }
 
     return (
-        <div className={styles.elevation}>
+        <div className={styles.stroke}>
             <svg overflow="visible" fill="transparent" aria-hidden="true" tabIndex={-1}>
                 {definitions}
                 <rect
@@ -132,11 +132,11 @@ export function ControlElevation({ children, state, focused = false }: Elevation
     )
 }
 
-export function CircleControlElevation({ children, state, focused = false }: ElevationProps) {
+function CircleControlStroke({ children, state, focused = false }: ControlStrokeProps) {
     const theme = useTheme()
     const uniqueId = useMemo(createId, [])
-    const lightGradId = `elevation-${uniqueId}-light`
-    const darkGradId = `elevation-${uniqueId}-dark`
+    const lightGradId = `stroke-${uniqueId}-light`
+    const darkGradId = `stroke-${uniqueId}-dark`
 
     const definitions = useMemo(
         () => (
@@ -167,7 +167,7 @@ export function CircleControlElevation({ children, state, focused = false }: Ele
     }
 
     return (
-        <div className={styles.elevation}>
+        <div className={styles.stroke}>
             <svg overflow="visible" fill="transparent" aria-hidden="true" tabIndex={-1}>
                 {definitions}
                 <rect width="calc(100% - 1px)" height="calc(100% - 1px)" x="0.5px" y="0.5px" stroke={stroke} rx="50%" />
@@ -176,3 +176,5 @@ export function CircleControlElevation({ children, state, focused = false }: Ele
         </div>
     )
 }
+
+export { ControlStroke, CircleControlStroke, TextControlStroke }

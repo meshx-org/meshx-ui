@@ -1,9 +1,9 @@
-.elevation {
+.stroke {
     position: relative;
     display: flex;
 }
 
-.elevation svg {
+.stroke svg {
     position: absolute;
     pointer-events: none;
     top: 0px;

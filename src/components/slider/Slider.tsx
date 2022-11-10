@@ -5,7 +5,7 @@ import styles from './Slider.module.css'
 import { useControlState } from '../../hooks/useControlState'
 import { useTheme } from '../../context/ThemeProvider'
 import { SliderProps } from './Slider.types'
-import { CircleControlElevation } from '../elevation/Elevation'
+import { CircleControlStroke } from '../stroke/Stroke'
 
 const getPercent = (value: number, min: number, max: number) => (max === min ? 0 : ((value - min) / (max - min)) * 100)
 
@@ -63,11 +63,11 @@ export function Slider(props: SliderProps) {
                 }}
                 renderThumb={(thumbProps) => (
                     <div className={styles.thumb} {...handlers} {...thumbProps}>
-                        <CircleControlElevation state={state}>
+                        <CircleControlStroke state={state}>
                             <div className={styles.thumbInner}>
                                 <span />
                             </div>
-                        </CircleControlElevation>
+                        </CircleControlStroke>
                     </div>
                 )}
             />
@@ -118,11 +118,11 @@ export function SliderX(props: SliderProps) {
             <div className={styles.rail} />
             <div className={styles.progress} style={{ width: calcTrackWidth() + 10 }} />
             <div className={styles.thumb} style={{ left: calcThumbPosition() }}>
-                <CircleControlElevation state={state}>
+                <CircleControlStroke state={state}>
                     <div className={styles.thumbInner}>
                         <span />
                     </div>
-                </CircleControlElevation>
+                </CircleControlStroke>
             </div>
             <input
                 {...handlers}

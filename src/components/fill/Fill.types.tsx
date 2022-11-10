@@ -6,3 +6,8 @@ export interface ControlFillProps {
     state: ControlState
     children: React.ReactNode
 }
+
+export interface AcrilicFillProps {
+    blur?: number
+    children: React.ReactNode
+}

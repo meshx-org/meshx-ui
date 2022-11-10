@@ -16,6 +16,12 @@ export const light: IColors = {
     textOnAccent: ''
 }
 
+export const surfaceVariants = {
+    layer: {},
+    card: {},
+    flyout: {}
+}
+
 export const textVariants = {
     heading1: {
         fontSize: 6,

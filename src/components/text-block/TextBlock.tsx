@@ -6,6 +6,7 @@ import { useThemeValues } from '../../context/ThemeProvider'
 import { textVariants as variants } from '../../common/constants'
 
 const propStyles = compose(color, space, typography)
+
 const textVariants = variant({ prop: 'variant', variants })
 
 export function TextBlock({ children, ...props }: TextBlockProps) {

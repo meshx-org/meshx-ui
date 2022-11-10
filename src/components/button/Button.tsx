@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './Button.module.css'
 import { useTheme } from '../../context/ThemeProvider'
 import { ControlFill } from '../fill/Fill'
-import { ControlElevation } from '../elevation/Elevation'
+import { ControlStroke } from '../stroke/Stroke'
 import { ButtonProps } from './Button.types'
 import { useControlState } from '../../hooks/useControlState'
 
@@ -21,11 +21,11 @@ function Button(props: ButtonProps) {
             className={styles.button}
             {...handlers}
         >
-            <ControlElevation state={state}>
+            <ControlStroke state={state}>
                 <ControlFill state={state}>
                     <div className={styles.buttonContent}>{children}</div>
                 </ControlFill>
-            </ControlElevation>
+            </ControlStroke>
         </button>
     )
 }

@@ -4,7 +4,7 @@ import styles from './TextBox.module.css'
 import { TextBoxProps } from './TextBox.types'
 import { useControlState } from '../../hooks/useControlState'
 import { useTheme } from '../../context/ThemeProvider'
-import { TextControlElevation } from '../elevation/Elevation'
+import { TextControlStroke } from '../stroke/Stroke'
 import { TextControlFill } from '../fill/Fill'
 import { useFocus } from '../../hooks/useFocus'
 
@@ -17,7 +17,7 @@ export function TextBox(props: TextBoxProps) {
 
     return (
         <div style={{ width: 300 }}>
-            <TextControlElevation state={state} focused={focused}>
+            <TextControlStroke state={state} focused={focused}>
                 <TextControlFill state={state}>
                     <input
                         role="textbox"
@@ -32,7 +32,7 @@ export function TextBox(props: TextBoxProps) {
                         {...focusHandlers}
                     />
                 </TextControlFill>
-            </TextControlElevation>
+            </TextControlStroke>
         </div>
     )
 }
