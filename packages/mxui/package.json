@@ -42,9 +42,7 @@
         "@meshx-org/mxui-textbox": "0.3.0-unstable.9"
     },
     "devDependencies": {
+        "react-native-builder-bob": "^0.20.1",
         "tsconfig": "*"
-    },
-    "peerDependencies": {
-        "@meshx-org/mxui-button": "0.3.0-unstable.9"
     }
 }

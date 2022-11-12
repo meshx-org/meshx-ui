@@ -36,8 +36,17 @@
     "scripts": {
         "build": "bob build"
     },
-    "dependencies": {},
+    "dependencies": {
+        "styled-system": "^5.1.5"
+    },
     "devDependencies": {
+        "@types/react-native": "^0.70.6",
+        "@types/styled-system": "^5.1.15",
+        "react-native": "^0.70.5",
+        "react-native-builder-bob": "^0.20.1",
         "tsconfig": "*"
+    },
+    "peerDependencies": {
+        "react-native": ">=0.68.5"
     }
 }

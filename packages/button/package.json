@@ -41,6 +41,8 @@
         "styled-components": "^5.3.6"
     },
     "devDependencies": {
+        "@types/styled-components": "^5.1.26",
+        "react-native-builder-bob": "^0.20.1",
         "tsconfig": "*"
     },
     "peerDependencies": {}

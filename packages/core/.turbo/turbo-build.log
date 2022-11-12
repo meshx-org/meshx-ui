@@ -1,7 +1,5 @@
-
-> @meshx-org/mxui-core@0.3.0-unstable.9 build
-> bob build
-
+warning package.json: License should be a valid SPDX license expression
+$ bob build
 ℹ Building target commonjs
 ℹ Cleaning up previous build at lib\commonjs
 ℹ Compiling 5 files in src with babel

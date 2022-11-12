@@ -22,32 +22,13 @@
         "version-packages": "changeset version",
         "release": "turbo run build --filter=docs^... && changeset publish"
     },
-    "dependencies": {
-        "@emotion/native": "^11.10.0",
-        "@emotion/react": "^11.10.4",
-        "@storybook/react": "^6.5.13",
-        "react-native-svg": "^13.4.0",
-        "react-native-svg-web": "^1.0.9",
-        "react-native-web": "^0.18.9",
-        "react-slider": "^2.0.4",
-        "styled-components": "^5.3.6",
-        "styled-system": "^5.1.5"
-    },
+    "dependencies": {},
     "devDependencies": {
         "turbo": "1.6.3",
         "@babel/core": "^7.19.6",
         "@babel/preset-env": "^7.19.4",
         "@babel/preset-react": "^7.18.6",
         "@changesets/cli": "^2.25.2",
-        "@storybook/addon-actions": "^6.5.13",
-        "@storybook/addon-docs": "^6.5.13",
-        "@storybook/addon-essentials": "^6.5.13",
-        "@storybook/addon-links": "^6.5.13",
-        "@types/react-native": "^0.66.4",
-        "@types/react-slider": "^1.3.1",
-        "@types/styled-components": "^5.1.26",
-        "@types/styled-components-react-native": "^5.1.3",
-        "@types/styled-system": "^5.1.15",
         "@typescript-eslint/eslint-plugin": "^5.41.0",
         "@typescript-eslint/parser": "^5.41.0",
         "babel-loader": "^8.2.5",
@@ -63,20 +44,8 @@
         "eslint-plugin-react": "^7.31.10",
         "eslint-plugin-react-native": "^4.0.0",
         "husky": "^8",
-        "lerna": "^6.0.1",
-        "metro-react-native-babel-preset": "^0.73.3",
         "prettier": "^2.7.1",
-        "react": "^17.0.2",
-        "react-dom": "^17.0.2",
-        "react-native-builder-bob": "^0.20.1",
-        "storybook-css-modules-preset": "^1.1.1",
-        "storybook-dark-mode": "^1.1.2",
-        "typescript": "^4.8.4",
-        "typescript-plugin-css-modules": "^3.4.0"
-    },
-    "peerDependencies": {
-        "react": ">=17.0.2",
-        "react-dom": ">=17.0.2",
-        "react-native": ">=0.66.0"
+        "metro-react-native-babel-preset": "^0.73.3",
+        "typescript": "^4.8.4"
     }
 }

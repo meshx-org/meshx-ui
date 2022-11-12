@@ -1,14 +1,12 @@
-
-> @meshx-org/mxui-slider@0.3.0-unstable.9 build
-> bob build
-
+warning package.json: License should be a valid SPDX license expression
+$ bob build
 ℹ Building target commonjs
 ℹ Cleaning up previous build at lib\commonjs
-ℹ Compiling 4 files in src with babel
+ℹ Compiling 5 files in src with babel
 ✔ Wrote files to lib\commonjs
 ℹ Building target module
 ℹ Cleaning up previous build at lib\module
-ℹ Compiling 4 files in src with babel
+ℹ Compiling 5 files in src with babel
 ✔ Wrote files to lib\module
 ℹ Building target typescript
 ℹ Cleaning up previous build at lib\typescript
