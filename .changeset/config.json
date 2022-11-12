@@ -2,17 +2,12 @@
     "$schema": "https://unpkg.com/@changesets/config@2.0.0/schema.json",
     "changelog": false,
     "commit": false,
-    "linked": [],
-    "fixed": [
+    "linked": [
         [
-            "@meshx-org/mxui-core",
-            "@meshx-org/mxui-button",
-            "@meshx-org/mxui-textbox",
-            "@meshx-org/mxui-switch",
-            "@meshx-org/mxui-slider",
-            "@meshx-org/mxui-primitives"
+            "@meshx-org/mxui-*"
         ]
     ],
+    "fixed": [],
     "access": "public",
     "baseBranch": "main",
     "updateInternalDependencies": "patch",

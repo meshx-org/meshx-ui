@@ -14,6 +14,5 @@ $ bob build
 ℹ Generating type definitions with tsc
 ⚠ Found following options in the config file which can conflict with the CLI options. Please remove them from tsconfig.json:
 - compilerOptions.outDir
-⚠ Using a global version of tsc. Consider adding typescript to your devDependencies or specifying the tsc option for the typescript target.
 ✔ Wrote definition files to lib\typescript
-Done in 22.16s.
+Done in 27.95s.
