@@ -1,11 +1,11 @@
 {
     "name": "@meshx-org/mxui-button",
     "description": "Button component for MXUI",
-    "version": "0.3.0",
+    "version": "0.4.0",
     "license": "apache-2.0",
     "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
     "homepage": "https://meshx.co/produts/mxui",
-    "main": "lib/module/index.js",
+    "main": "lib/commonjs/index.js",
     "types": "src/index.ts",
     "files": [
         "src",
@@ -36,8 +36,8 @@
         "build": "bob build"
     },
     "dependencies": {
-        "@meshx-org/mxui-core": "0.3.0",
-        "@meshx-org/mxui-primitives": "0.3.0",
+        "@meshx-org/mxui-core": "0.4.0",
+        "@meshx-org/mxui-primitives": "0.4.0",
         "styled-components": "^5.3.6"
     },
     "devDependencies": {

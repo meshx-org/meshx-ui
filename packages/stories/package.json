@@ -6,11 +6,11 @@
         "storybook": "cross-env NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006"
     },
     "dependencies": {
-        "@meshx-org/mxui-button": "0.3.0",
-        "@meshx-org/mxui-switch": "0.3.0",
-        "@meshx-org/mxui-core": "0.3.0",
-        "@meshx-org/mxui-textbox": "0.3.0",
-        "@meshx-org/mxui-slider": "0.3.0",
+        "@meshx-org/mxui-button": "0.4.0",
+        "@meshx-org/mxui-switch": "0.4.0",
+        "@meshx-org/mxui-core": "0.4.0",
+        "@meshx-org/mxui-textbox": "0.4.0",
+        "@meshx-org/mxui-slider": "0.4.0",
         "@storybook/addon-react-native-web": "^0.0.19",
         "@storybook/react": "^6.5.12",
         "@storybook/addon-actions": "^6.5.12",

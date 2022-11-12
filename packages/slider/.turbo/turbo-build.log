@@ -1,3 +1,4 @@
+yarn run v1.22.10
 warning package.json: License should be a valid SPDX license expression
 $ bob build
 ℹ Building target commonjs
@@ -15,3 +16,4 @@ $ bob build
 - compilerOptions.outDir
 ⚠ Using a global version of tsc. Consider adding typescript to your devDependencies or specifying the tsc option for the typescript target.
 ✔ Wrote definition files to lib\typescript
+Done in 22.56s.
