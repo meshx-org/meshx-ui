@@ -48,29 +48,60 @@ const TextControlFillBase = styled(FillBase)`
         background: rgba(30, 30, 30, 0.7);
     }
 
-    &[data-theme='darg'][data-state='disabled'] {
+    &[data-theme='dark'][data-state='disabled'] {
         background: green;
     }
+`
 
+const SubtleFillBase = styled(FillBase)`
+    &[data-theme='light'] {
+        background: rgba(0, 0, 0, 0.0);
+    }
+
+    &[data-theme='light']:hover {
+        background: rgb(0, 0, 0, 0.0373);
+    }
+
+    &[data-theme='light']:active {
+        background: rgb(0, 0, 0, 0.0241);
+    }
+
+    &[data-theme='light'][data-state='disabled'] {
+        background: rgb(0, 0, 0, 0.0);
+    }
+
+    &[data-theme='dark'] {
+        background: rgba(255, 255, 255, 0.0);
+    }
+
+    &[data-theme='dark']:hover {
+        background: rgba(255, 255, 255, 0.0837);
+    }
+
+    &[data-theme='dark']:active {
+        background: rgba(255, 255, 255, 0.0326);
+    }
+
+    &[data-theme='dark'][data-state='disabled'] {
+        background: rgba(255, 255, 255, 0.04);
+    }
 `
 
 const ControlFillBase = styled(FillBase)`
     &[data-theme='light'] {
-        margin: 1px;
-        border-radius: 4px;
-        background-color: rgba(255, 255, 255, 0.7);
+        background: rgba(255, 255, 255, 0.7);
     }
 
     &[data-theme='light']:hover {
-        background-color: rgb(249, 249, 249, 0.5);
+        background: rgb(249, 249, 249, 0.5);
     }
 
     &[data-theme='light']:active {
-        background-color: rgb(249, 249, 249, 0.3);
+        background: rgb(249, 249, 249, 0.3);
     }
 
     &[data-theme='light'][data-state='disabled'] {
-        background-color: rgb(249, 249, 249, 0.3);
+        background: rgb(249, 249, 249, 0.3);
     }
 
     &[data-theme='dark'] {
@@ -119,6 +150,16 @@ export function ControlFill({ children, state }: ControlFillProps) {
         <ControlFillBase data-state={state} data-theme={theme}>
             {children}
         </ControlFillBase>
+    )
+}
+
+export function SubtleFill({ children, state }: ControlFillProps) {
+    const theme = useTheme()
+
+    return (
+        <SubtleFillBase data-state={state} data-theme={theme}>
+            {children}
+        </SubtleFillBase>
     )
 }
 

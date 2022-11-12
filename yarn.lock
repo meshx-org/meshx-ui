@@ -1640,36 +1640,44 @@
   "resolved" "https://registry.npmjs.org/@mdx-js/react/-/react-1.6.22.tgz"
   "version" "1.6.22"
 
+"@mdx-js/react@^2.1.5":
+  "integrity" "sha512-3Az1I6SAWA9R38rYjz5rXBrGKeZhq96CSSyQtqY+maPj8stBsoUH5pNcmIixuGkufYsh8F5+ka2CVPo2fycWZw=="
+  "resolved" "https://registry.npmjs.org/@mdx-js/react/-/react-2.1.5.tgz"
+  "version" "2.1.5"
+  dependencies:
+    "@types/mdx" "^2.0.0"
+    "@types/react" ">=16"
+
 "@mdx-js/util@1.6.22":
   "integrity" "sha512-H1rQc1ZOHANWBvPcW+JpGwr+juXSxM8Q8YCkm3GhZd8REu1fHR3z99CErO1p9pkcfcxZnMdIZdIsXkOHY0NilA=="
   "resolved" "https://registry.npmjs.org/@mdx-js/util/-/util-1.6.22.tgz"
   "version" "1.6.22"
 
-"@meshx-org/mxui-button@0.4.0", "@meshx-org/mxui-button@file:C:\\Users\\Roland\\Documents\\Code\\meshx-ui\\packages\\button":
+"@meshx-org/mxui-button@0.5.0", "@meshx-org/mxui-button@file:C:\\Users\\Roland\\Documents\\Code\\meshx-ui\\packages\\button":
   "resolved" "file:packages/button"
-  "version" "0.4.0"
+  "version" "0.5.0"
   dependencies:
-    "@meshx-org/mxui-core" "0.4.0"
-    "@meshx-org/mxui-primitives" "0.4.0"
+    "@meshx-org/mxui-core" "0.5.0"
+    "@meshx-org/mxui-primitives" "0.5.0"
 
-"@meshx-org/mxui-core@0.4.0", "@meshx-org/mxui-core@file:C:\\Users\\Roland\\Documents\\Code\\meshx-ui\\packages\\core":
+"@meshx-org/mxui-core@0.5.0", "@meshx-org/mxui-core@file:C:\\Users\\Roland\\Documents\\Code\\meshx-ui\\packages\\core":
   "resolved" "file:packages/core"
-  "version" "0.4.0"
+  "version" "0.5.0"
   dependencies:
     "styled-system" "^5.1.5"
 
-"@meshx-org/mxui-primitives@0.4.0", "@meshx-org/mxui-primitives@file:C:\\Users\\Roland\\Documents\\Code\\meshx-ui\\packages\\primitives":
+"@meshx-org/mxui-primitives@0.5.0", "@meshx-org/mxui-primitives@file:C:\\Users\\Roland\\Documents\\Code\\meshx-ui\\packages\\primitives":
   "resolved" "file:packages/primitives"
-  "version" "0.4.0"
+  "version" "0.5.0"
   dependencies:
-    "@meshx-org/mxui-core" "0.4.0"
+    "@meshx-org/mxui-core" "0.5.0"
 
-"@meshx-org/mxui-slider@0.4.0", "@meshx-org/mxui-slider@file:C:\\Users\\Roland\\Documents\\Code\\meshx-ui\\packages\\slider":
+"@meshx-org/mxui-slider@0.5.0", "@meshx-org/mxui-slider@file:C:\\Users\\Roland\\Documents\\Code\\meshx-ui\\packages\\slider":
   "resolved" "file:packages/slider"
-  "version" "0.4.0"
+  "version" "0.5.0"
   dependencies:
-    "@meshx-org/mxui-core" "0.4.0"
-    "@meshx-org/mxui-primitives" "0.4.0"
+    "@meshx-org/mxui-core" "0.5.0"
+    "@meshx-org/mxui-primitives" "0.5.0"
     "react-slider" "^2.0.4"
     "styled-components" "^5.3.6"
 
@@ -1677,12 +1685,13 @@
   "resolved" "file:packages/stories"
   "version" "0.0.0"
   dependencies:
-    "@meshx-org/mxui-button" "0.4.0"
-    "@meshx-org/mxui-core" "0.4.0"
-    "@meshx-org/mxui-slider" "0.4.0"
-    "@meshx-org/mxui-switch" "0.4.0"
-    "@meshx-org/mxui-textbox" "0.4.0"
-    "@meshx-org/mxui-treeview" "0.4.0"
+    "@mdx-js/react" "^2.1.5"
+    "@meshx-org/mxui-button" "0.5.0"
+    "@meshx-org/mxui-core" "0.5.0"
+    "@meshx-org/mxui-slider" "0.5.0"
+    "@meshx-org/mxui-switch" "0.5.0"
+    "@meshx-org/mxui-textbox" "0.5.0"
+    "@meshx-org/mxui-treeview" "0.5.0"
     "@storybook/addon-actions" "^6.5.12"
     "@storybook/addon-docs" "^6.5.12"
     "@storybook/addon-essentials" "^6.5.12"
@@ -1697,42 +1706,46 @@
     "storybook-dark-mode" "^1.1.0"
     "webpack" "^5.9.0"
 
-"@meshx-org/mxui-switch@0.4.0", "@meshx-org/mxui-switch@file:C:\\Users\\Roland\\Documents\\Code\\meshx-ui\\packages\\toggle-switch":
+"@meshx-org/mxui-switch@0.5.0", "@meshx-org/mxui-switch@file:C:\\Users\\Roland\\Documents\\Code\\meshx-ui\\packages\\toggle-switch":
   "resolved" "file:packages/toggle-switch"
-  "version" "0.4.0"
+  "version" "0.5.0"
   dependencies:
-    "@meshx-org/mxui-core" "0.4.0"
-    "styled-components" "^5.3.6"
+    "@meshx-org/mxui-core" "0.5.0"
 
-"@meshx-org/mxui-textbox@0.4.0", "@meshx-org/mxui-textbox@file:C:\\Users\\Roland\\Documents\\Code\\meshx-ui\\packages\\textbox":
+"@meshx-org/mxui-text@0.5.0", "@meshx-org/mxui-text@file:C:\\Users\\Roland\\Documents\\Code\\meshx-ui\\packages\\text":
+  "resolved" "file:packages/text"
+  "version" "0.5.0"
+  dependencies:
+    "@meshx-org/mxui-core" "0.5.0"
+    "styled-system" "^5.1.5"
+
+"@meshx-org/mxui-textbox@0.5.0", "@meshx-org/mxui-textbox@file:C:\\Users\\Roland\\Documents\\Code\\meshx-ui\\packages\\textbox":
   "resolved" "file:packages/textbox"
-  "version" "0.4.0"
+  "version" "0.5.0"
   dependencies:
-    "@meshx-org/mxui-core" "0.4.0"
-    "@meshx-org/mxui-primitives" "0.4.0"
-    "styled-components" "^5.3.6"
+    "@meshx-org/mxui-core" "0.5.0"
+    "@meshx-org/mxui-primitives" "0.5.0"
 
-"@meshx-org/mxui-treeview@0.4.0", "@meshx-org/mxui-treeview@file:C:\\Users\\Roland\\Documents\\Code\\meshx-ui\\packages\\treeview":
+"@meshx-org/mxui-treeview@0.5.0", "@meshx-org/mxui-treeview@file:C:\\Users\\Roland\\Documents\\Code\\meshx-ui\\packages\\treeview":
   "resolved" "file:packages/treeview"
-  "version" "0.4.0"
+  "version" "0.5.0"
   dependencies:
-    "@meshx-org/mxui-core" "0.4.0"
-    "styled-components" "^5.3.6"
+    "@meshx-org/mxui-core" "0.5.0"
 
 "@meshx-org/mxui-tsconfig@*", "@meshx-org/mxui-tsconfig@file:C:\\Users\\Roland\\Documents\\Code\\meshx-ui\\packages\\tsconfig":
   "resolved" "file:packages/tsconfig"
-  "version" "0.1.0"
+  "version" "0.5.0"
 
 "@meshx-org/mxui@file:C:\\Users\\Roland\\Documents\\Code\\meshx-ui\\packages\\mxui":
   "resolved" "file:packages/mxui"
-  "version" "0.4.0"
+  "version" "0.5.0"
   dependencies:
-    "@meshx-org/mxui-button" "0.4.0"
-    "@meshx-org/mxui-primitives" "0.4.0"
-    "@meshx-org/mxui-slider" "0.4.0"
-    "@meshx-org/mxui-switch" "0.4.0"
-    "@meshx-org/mxui-textbox" "0.4.0"
-    "@meshx-org/mxui-treeview" "0.4.0"
+    "@meshx-org/mxui-button" "0.5.0"
+    "@meshx-org/mxui-primitives" "0.5.0"
+    "@meshx-org/mxui-slider" "0.5.0"
+    "@meshx-org/mxui-switch" "0.5.0"
+    "@meshx-org/mxui-textbox" "0.5.0"
+    "@meshx-org/mxui-treeview" "0.5.0"
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   "integrity" "sha512-bPHp6Ji8b41szTOcaP63VlnbbO5Ny6dwAATtY6JTjh5N2OLrb5Qk/Th5cRkRQhkWCt+EJsYrNB0MiL+Gpn6e3g=="
@@ -3090,6 +3103,11 @@
   dependencies:
     "@types/unist" "*"
 
+"@types/mdx@^2.0.0":
+  "integrity" "sha512-IgHxcT3RC8LzFLhKwP3gbMPeaK7BM9eBH46OdapPA7yvuIUJ8H6zHZV53J8hGZcTSnt95jANt+rTBNUUc22ACQ=="
+  "resolved" "https://registry.npmjs.org/@types/mdx/-/mdx-2.0.3.tgz"
+  "version" "2.0.3"
+
 "@types/minimatch@*":
   "integrity" "sha512-K0VQKziLUWkVKiRVrx4a40iPaxTUefQmjtkQofBkYRcoaaL/8rhwDWww9qWbrgicNOgnpIsMxyNIUM4+n6dUIA=="
   "resolved" "https://registry.npmjs.org/@types/minimatch/-/minimatch-5.1.2.tgz"
@@ -3177,7 +3195,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*":
+"@types/react@*", "@types/react@>=16":
   "integrity" "sha512-xD6c0KDT4m7n9uD4ZHi02lzskaiqcBxf4zi+tXZY98a04wvc0hi/TcCPC2FOESZi51Nd7tlUeOJY8RofL799/g=="
   "resolved" "https://registry.npmjs.org/@types/react/-/react-18.0.25.tgz"
   "version" "18.0.25"
@@ -10941,7 +10959,7 @@
   dependencies:
     "prop-types" "^15.8.1"
 
-"react@*", "react@^0.14.8 || ^15.0.1 || ^16.0.0 || ^17.0.1", "react@^16 || ^17 || ^18", "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.13.1 || ^17.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.8.4 || ^17.0.0", "react@^17.0.0 || ^18.0.0", "react@^17.0.2 || ^18.0.0", "react@^18.1.0", "react@>= 16.8.0", "react@>=17.0.0", "react@18.1.0":
+"react@*", "react@^0.14.8 || ^15.0.1 || ^16.0.0 || ^17.0.1", "react@^16 || ^17 || ^18", "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.13.1 || ^17.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.8.4 || ^17.0.0", "react@^17.0.0 || ^18.0.0", "react@^17.0.2 || ^18.0.0", "react@^18.1.0", "react@>= 16.8.0", "react@>=16", "react@>=17.0.0", "react@18.1.0":
   "integrity" "sha512-4oL8ivCz5ZEPyclFQXaNksK3adutVS8l2xzZU0cqEFrE9Sb7fC0EFK5uEk74wIreL1DERyjvsU915j1pcT2uEQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.1.0.tgz"
   "version" "18.1.0"

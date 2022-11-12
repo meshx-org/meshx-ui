@@ -50,7 +50,8 @@ const DEFAULT_LIGHT: ThemeValues = {
     colors: {
         text: {
             primary: 'rgba(0,0,0,1)',
-            secondary: 'rgba(0,0,0,0.6)'
+            secondary: 'rgba(0,0,0,0.6)',
+            disabled: "rgba(0,0,0,0.5)"
         },
         storke: {
             divider: 'rgba(0,0,0,0.0803)',
@@ -116,7 +117,8 @@ const DEFAULT_DARK: ThemeValues = {
     colors: {
         text: {
             primary: 'rgba(255,255,255,1)',
-            secondary: 'rgba(255,255,255,0.6)'
+            secondary: 'rgba(255,255,255,0.6)',
+            disabled: "rgba(255,255,255,0.6)"
         },
         accentText: {
             primary: 'rgb(3, 150, 255)',

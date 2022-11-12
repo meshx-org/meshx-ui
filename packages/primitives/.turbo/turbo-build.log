@@ -15,4 +15,4 @@ $ bob build
 ⚠ Found following options in the config file which can conflict with the CLI options. Please remove them from tsconfig.json:
 - compilerOptions.outDir
 ✔ Wrote definition files to lib\typescript
-Done in 27.80s.
+Done in 16.43s.

@@ -16,4 +16,4 @@ $ bob build
 - compilerOptions.outDir
 ⚠ Using a global version of tsc. Consider adding typescript to your devDependencies or specifying the tsc option for the typescript target.
 ✔ Wrote definition files to lib\typescript
-Done in 26.49s.
+Done in 16.98s.

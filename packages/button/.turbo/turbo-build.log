@@ -3,11 +3,11 @@ warning package.json: License should be a valid SPDX license expression
 $ bob build
 ℹ Building target commonjs
 ℹ Cleaning up previous build at lib\commonjs
-ℹ Compiling 4 files in src with babel
+ℹ Compiling 6 files in src with babel
 ✔ Wrote files to lib\commonjs
 ℹ Building target module
 ℹ Cleaning up previous build at lib\module
-ℹ Compiling 4 files in src with babel
+ℹ Compiling 6 files in src with babel
 ✔ Wrote files to lib\module
 ℹ Building target typescript
 ℹ Cleaning up previous build at lib\typescript
@@ -15,4 +15,4 @@ $ bob build
 ⚠ Found following options in the config file which can conflict with the CLI options. Please remove them from tsconfig.json:
 - compilerOptions.outDir
 ✔ Wrote definition files to lib\typescript
-Done in 27.95s.
+Done in 17.14s.

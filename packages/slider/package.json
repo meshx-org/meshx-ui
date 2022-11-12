@@ -1,7 +1,7 @@
 {
     "name": "@meshx-org/mxui-slider",
     "description": "Slider component for MXUI",
-    "version": "0.5.0",
+    "version": "0.6.0",
     "license": "apache-2.0",
     "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
     "homepage": "https://meshx.co/produts/mxui",
@@ -36,8 +36,8 @@
         "build": "bob build"
     },
     "dependencies": {
-        "@meshx-org/mxui-core": "0.5.0",
-        "@meshx-org/mxui-primitives": "0.5.0",
+        "@meshx-org/mxui-core": "0.6.0",
+        "@meshx-org/mxui-primitives": "0.6.0",
         "styled-components": "^5.3.6",
         "react-slider": "^2.0.4"
     },

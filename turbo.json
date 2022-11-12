@@ -3,7 +3,6 @@
     "pipeline": {
         "build": {
             "outputs": [
-                "dist/**",
                 "lib/**"
             ]
         },

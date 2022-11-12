@@ -1,11 +1,11 @@
 import React from 'react'
+import { LinkButtonProps } from './Button.types'
 import { useTheme, useControlState } from '@meshx-org/mxui-core'
-import { ControlFill, ControlStroke } from '@meshx-org/mxui-primitives'
 import { Text } from '@meshx-org/mxui-text'
-import { ButtonProps } from './Button.types'
+import { SubtleFill } from '@meshx-org/mxui-primitives'
 import styled from 'styled-components'
 
-const StyledButton = styled.button`
+const StyledButton = styled.a`
     margin: 0;
     padding: 0;
     border: none;
@@ -47,26 +47,21 @@ const StyledButtonContent = styled.div`
     padding: 5px 12px;
     font-size: 14px;
     line-height: 20px;
-    min-width: 80px;
 `
 
-function Button(props: ButtonProps) {
-    const { apparance = 'default', disabled = false, onPress, children } = props
-
+function LinkButton({ label, href, disabled = false, ...props }: LinkButtonProps) {
     const theme = useTheme()
-    const { state, handlers } = useControlState<HTMLButtonElement>(disabled)
+    const { state, handlers } = useControlState<HTMLAnchorElement>(disabled)
 
     return (
-        <StyledButton onClick={onPress} type="button" data-theme={theme} data-state={state} {...handlers}>
-            <ControlStroke state={state}>
-                <ControlFill state={state}>
-                    <StyledButtonContent>
-                        <Text variant="body" children={children} />
-                    </StyledButtonContent>
-                </ControlFill>
-            </ControlStroke>
+        <StyledButton href={href} type="button" data-theme={theme} data-state={state} {...handlers}>
+            <SubtleFill state={state}>
+                <StyledButtonContent>
+                    <Text variant="body" color="text.disabled" children={label} />
+                </StyledButtonContent>
+            </SubtleFill>
         </StyledButton>
     )
 }
 
-export { Button }
+export { LinkButton }

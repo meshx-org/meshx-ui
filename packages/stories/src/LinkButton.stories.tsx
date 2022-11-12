@@ -1,10 +1,10 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
-import { Button, ButtonProps } from '@meshx-org/mxui-button/src'
+import { LinkButton, LinkButtonProps } from '@meshx-org/mxui-button/src'
 
 export default {
-    title: 'Basic Input/Button',
-    component: Button,
+    title: 'Basic Input/LinkButton',
+    component: LinkButton,
     parameters: {
         backgrounds: {
             grid: { cellSize: 1 }
@@ -15,17 +15,17 @@ export default {
     }
 } as Meta
 
-const Template: Story<ButtonProps> = (args) => <Button {...args} />
+const Template: Story<LinkButtonProps> = (args) => <LinkButton {...args} />
 
 export const Primary = Template.bind({})
 Primary.args = {
-    apparance: 'default',
-    children: 'Simple Button'
+    label: 'test',
+    href: '#'
 }
 
 export const Disabled = Template.bind({})
 Disabled.args = {
-    apparance: 'default',
     disabled: true,
-    children: 'Disabled Button'
+    label: 'test',
+    href: '#'
 }

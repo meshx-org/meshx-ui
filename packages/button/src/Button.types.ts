@@ -34,3 +34,25 @@ export interface ButtonProps {
 
     children: React.ReactNode
 }
+
+export interface LinkButtonProps {
+
+    /**
+     * A button can fill the width of its container.
+     * @default false
+     */
+    block?: boolean
+
+     /**
+     * A button can show that it cannot be interacted with.
+     * @default false
+     */
+     disabled?: boolean
+
+    /**
+     * Handler to be called when the button is pressed.
+     */
+    href: string
+
+    label: string
+}
