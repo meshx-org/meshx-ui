@@ -27,13 +27,11 @@ jobs:
                   node-version: 16.x
                   cache: 'npm'
 
+            - name: Install Turbo
+              run: npm install -g turbo
+
             - run: npm install
             - run: npm run build
-
-            - uses: JS-DevTools/npm-publish@v1
-              with:
-                  token: ${{ secrets.GITHUB_TOKEN }}
-                  registry: https://npm.pkg.github.com
 
             - name: Create Release Pull Request
               uses: changesets/action@v1
