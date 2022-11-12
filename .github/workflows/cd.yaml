@@ -11,7 +11,7 @@ env:
 
 permissions:
     packages: write
-    contents: read
+    contents: write
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
