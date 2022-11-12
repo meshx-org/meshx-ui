@@ -5,11 +5,6 @@ on:
     push:
         branches:
             - main
-        paths:
-            - .github/**
-            - package.json
-            - src/**
-            - tests/**
 
 env:
     NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -17,6 +12,8 @@ env:
 permissions:
     packages: write
     contents: read
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
     publish-gpr:
@@ -30,13 +27,22 @@ jobs:
                   node-version: 16
                   cache: 'npm'
 
-            - run: npm ci --legacy-peer-deps
+            - run: npm ci
             - run: npm run build
 
             - uses: JS-DevTools/npm-publish@v1
               with:
                   token: ${{ secrets.GITHUB_TOKEN }}
                   registry: https://npm.pkg.github.com
+
+            - name: Create Release Pull Request
+              uses: changesets/action@v1
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              with:
+                # This expects you to have a script called release which does a build for your packages and calls changeset publish
+                publish: npm run release
 
             - if: steps.publish.outputs.type != 'none'
               run: |

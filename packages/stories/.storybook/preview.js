@@ -1,5 +1,5 @@
 import './root.css'
-import { ThemeProvider } from '../src/context/ThemeProvider'
+import { ThemeProvider } from '@meshx-org/mxui-core'
 import { useDarkMode } from 'storybook-dark-mode'
 import { themes } from '@storybook/theming'
 

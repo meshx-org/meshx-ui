@@ -1,0 +1,32 @@
+{
+    "name": "@meshx-org/mxui-stories",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "storybook": "cross-env NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006"
+    },
+    "dependencies": {
+        "@meshx-org/mxui-button": "0.3.0-unstable.9",
+        "@meshx-org/mxui-switch": "0.3.0-unstable.9",
+        "@meshx-org/mxui-core": "0.3.0-unstable.9",
+        "@meshx-org/mxui-textbox": "0.3.0-unstable.9",
+        "@meshx-org/mxui-slider": "0.3.0-unstable.9",
+
+        "@storybook/addon-react-native-web": "^0.0.19",
+        "@storybook/react": "^6.5.12",
+        "@storybook/addon-actions": "^6.5.12",
+        "@storybook/builder-vite": "^0.2.5",
+        "@storybook/addon-docs": "^6.5.12",
+        "@storybook/addon-essentials": "^6.5.12",
+        "@storybook/addon-links": "^6.5.12",
+        "storybook-css-modules-preset": "^1.1.1",
+        "storybook-dark-mode": "^1.1.0",
+        "webpack": "^5.9.0",
+        "cross-env": "*",
+        "react-native-svg-web": "^1.0.9",
+        "react-native-web": "^0.18.7"
+    },
+    "devDependencies": {
+        "tsconfig": "*"
+    }
+}

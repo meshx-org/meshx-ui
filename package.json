@@ -2,38 +2,24 @@
     "name": "@meshx-org/ui",
     "description": "Component library used across MeshX Apps",
     "version": "0.0.3-unstable.9",
+    "workspaces": [
+        "./packages/*"
+    ],
     "license": "apache-2.0",
     "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
-    "homepage": "https://meshx.co",
-    "main": "dist/index.js",
-    "types": "src/index.ts",
-    "files": [
-        "src",
-        "dist"
-    ],
-    "browserslist": [
-        "defaults",
-        "not IE 11"
-    ],
-    "publishConfig": {
-        "access": "public",
-        "registry": "https://npm.pkg.github.com",
-        "main": "dist/index.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/meshx-org/meshx-ui.git"
-    },
+    "homepage": "https://github.com/meshx-org/meshx-ui",
     "scripts": {
         "prepare": "husky install",
-        "prepublish": "npm run build",
-        "format": "prettier --write \".\" ",
-        "lint": "eslint 'src/**/*.{tsx,ts}'",
-        "build": "tsc && yarn copy-css",
+        "lint": "turbo run lint",
+        "build": "turbo run build",
+        "test": "turbo run test",
         "copy-css": "copyfiles -u 1 src/**/*.css dist/",
-        "test": "echo \"Error: no test specified\" && exit 0",
-        "storybook": "start-storybook -p 6006",
-        "publish:unstable": "lerna publish prerelease --preid unstable --yes"
+        "storybook": "turbo run storybook",
+        "publish:unstable": "lerna publish prerelease --preid unstable --yes",
+        "format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
+        "changeset": "changeset",
+        "version-packages": "changeset version",
+        "release": "turbo run build --filter=docs^... && changeset publish"
     },
     "dependencies": {
         "@emotion/native": "^11.10.0",
@@ -50,6 +36,7 @@
         "@babel/core": "^7.19.3",
         "@babel/preset-env": "^7.18.10",
         "@babel/preset-react": "^7.18.6",
+        "@changesets/cli": "^2.25.2",
         "@storybook/addon-actions": "^6.5.9 ",
         "@storybook/addon-docs": "^6.5.12",
         "@storybook/addon-essentials": "^6.5.10",
@@ -79,14 +66,16 @@
         "prettier": "^2.7.1",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
+        "react-native-builder-bob": "^0.20.1",
         "storybook-css-modules-preset": "^1.1.1",
         "storybook-dark-mode": "^1.1.0",
+        "turbo": "^1.6.3",
         "typescript": "^4.8.4",
         "typescript-plugin-css-modules": "^3.4.0"
     },
     "peerDependencies": {
-        "react": "^17.0.2",
-        "react-dom": "^17.0.2",
+        "react": ">=17.0.2",
+        "react-dom": ">=17.0.2",
         "react-native": ">=0.66.0"
     }
 }

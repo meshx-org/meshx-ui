@@ -1,0 +1,19 @@
+
+> @meshx-org/mxui-button@0.3.0-unstable.9 build
+> bob build
+
+ℹ Building target commonjs
+ℹ Cleaning up previous build at lib\commonjs
+ℹ Compiling 4 files in src with babel
+✔ Wrote files to lib\commonjs
+ℹ Building target module
+ℹ Cleaning up previous build at lib\module
+ℹ Compiling 4 files in src with babel
+✔ Wrote files to lib\module
+ℹ Building target typescript
+ℹ Cleaning up previous build at lib\typescript
+ℹ Generating type definitions with tsc
+⚠ Found following options in the config file which can conflict with the CLI options. Please remove them from tsconfig.json:
+- compilerOptions.outDir
+⚠ Using a global version of tsc. Consider adding typescript to your devDependencies or specifying the tsc option for the typescript target.
+✔ Wrote definition files to lib\typescript
