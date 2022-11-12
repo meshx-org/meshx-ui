@@ -1,11 +1,22 @@
 {
     "$schema": "https://unpkg.com/@changesets/config@2.0.0/schema.json",
-    "changelog": "@changesets/cli/changelog",
+    "changelog": false,
     "commit": false,
-    "fixed": [],
     "linked": [],
+    "fixed": [
+        [
+            "@meshx-org/mxui-core",
+            "@meshx-org/mxui-button",
+            "@meshx-org/mxui-textbox",
+            "@meshx-org/mxui-switch",
+            "@meshx-org/mxui-slider",
+            "@meshx-org/mxui-primitives"
+        ]
+    ],
     "access": "public",
     "baseBranch": "main",
     "updateInternalDependencies": "patch",
-    "ignore": []
+    "ignore": [
+        "@meshx-org/mxui-stories"
+    ]
 }

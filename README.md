@@ -46,10 +46,10 @@ $ npm install         # install npm dependencies
 You can import individual UI components directly from the @meshx-org/ui package:
 
 ```tsx
-import { Button } from '@meshx-org/ui';
+import { Button } from '@meshx-org/mxui'; // or import { Button } from '@meshx-org/mxui-button';
 
 // in your component
-function MyComponent() {
+function MyApp() {
     return <Button />
 }
 ```
