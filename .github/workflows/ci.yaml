@@ -27,9 +27,9 @@ jobs:
                   cache: yarn
 
             - name: Install dependencies
-              run: npm ci --legacy-peer-deps
+              run: yarn
 
             - run: node -p 'os.cpus()'
-            - run: npm run lint
-            - run: npm run test
-            - run: npm run build
+            - run: yarn lint
+            - run: yarn test
+            - run: yarn build
