@@ -1,7 +1,7 @@
 {
     "name": "@meshx-org/mxui-core",
     "description": "Button component for MXUI",
-    "version": "0.6.0",
+    "version": "0.7.0",
     "license": "apache-2.0",
     "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
     "homepage": "https://meshx.co/produts/mxui",
@@ -42,8 +42,11 @@
     "devDependencies": {
         "@meshx-org/mxui-tsconfig": "*",
         "@types/styled-system": "^5.1.15",
+        "@types/styled-components": "^5.1.26",
         "react-native-builder-bob": "^0.20.1",
-        "typescript": "4.8.3"
+        "typescript": "4.8.3",
+        "react": "18.1.0",
+        "react-dom": "18.1.0"
     },
     "peerDependencies": {
         "react": "^17.0.0 || ^18.0.0",

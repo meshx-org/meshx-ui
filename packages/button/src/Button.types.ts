@@ -17,13 +17,13 @@ export interface ButtonProps {
 
     /**
      * A button can format its icon to appear before or after its content.
-     * @default 'before'
+     * @default before
      */
     iconPosition?: 'before' | 'after'
 
     /**
      * A button supports different sizes.
-     * @default 'medium'
+     * @default medium
      */
     size?: 'small' | 'medium' | 'large'
 

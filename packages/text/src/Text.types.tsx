@@ -1,11 +1,23 @@
 import React from 'react'
 import { ColorProps, SpaceProps, TypographyProps } from 'styled-system'
-import { textVariants } from './variants'
+import { textVariants, headingVariants } from './variants'
 
-export interface TextProps extends ColorProps, SpaceProps, TypographyProps {
+interface BaseProps extends ColorProps, SpaceProps, TypographyProps {
     children?: React.ReactNode
-    variant?: keyof typeof textVariants
 
-    // ssTextSelectionEnabled?: string
+    /** 
+     * Lets the user select text, to use the native copy and paste functionality. 
+     * @default false
+     */
+    selectable?: boolean
+
     // selectionHighlightColor?: string
+}
+
+export interface TextProps extends BaseProps {
+    variant?: keyof typeof textVariants
+}
+
+export interface HeadingProps extends BaseProps { 
+    variant?: keyof typeof headingVariants
 }

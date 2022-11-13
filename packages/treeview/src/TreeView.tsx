@@ -28,7 +28,7 @@ const styles = (theme: ThemeValues) =>
         selector: {
             // TODO: animate transform: [{ translateY: 10 }],
             width: 3,
-            height: '50%',
+            height: 16,
             borderRadius: 8
         }
     })

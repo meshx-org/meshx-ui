@@ -11,7 +11,6 @@ const FillBase = styled.div`
 `
 
 const TextControlFillBase = styled(FillBase)`
-     
     &[data-theme='light'] {
         background: rgba(255, 255, 255, 0.7);
     }
@@ -37,7 +36,7 @@ const TextControlFillBase = styled(FillBase)`
     }
 
     &[data-theme='dark']:hover {
-        background: rgba(255, 255, 255, 0.08);
+        background: rgba(255, 255, 255, 0.083);
     }
 
     &[data-theme='dark']:active {
@@ -49,7 +48,7 @@ const TextControlFillBase = styled(FillBase)`
     }
 
     &[data-theme='dark'][data-state='disabled'] {
-        background: green;
+        background: rgba(255, 255, 255, 0.042);
     }
 `
 

@@ -4,7 +4,7 @@ import React from 'react'
 
 import { Story, Meta } from '@storybook/react'
 import { View } from 'react-native'
-import { Text, TextProps } from '@meshx-org/mxui-text/src'
+import { Text, Heading, TextProps, HeadingProps } from '@meshx-org/mxui-text/src'
 
 export default {
     title: 'Primitives/Text',
@@ -16,28 +16,38 @@ export default {
         docs: {
             page: null
         }
+    },
+    argTypes: {
+        variant: {
+            control: false,
+            table: {
+                disable: true
+            }
+        }
     }
 } as Meta
 
-const HeadingsTextStory: Story<TextProps> = (args) => (
+const HeadingsStory: Story<HeadingProps> = (args) => (
     <View>
-        <Text variant="heading1" children="H1 heading" />
-        <Text variant="heading2" children="H2 heading" />
-        <Text variant="heading3" children="H3 heading" />
-        <Text variant="heading4" children="H4 heading" />
-        <Text variant="heading5" children="H5 heading" />
-        <Text variant="heading6" children="H6 heading" />
+        <Heading {...args} children="Display 1"  variant="display1" />
+        <Heading {...args} children="Display 2"  variant="display2" />
+        <Heading {...args} children="H1 heading" variant="heading1" />
+        <Heading {...args} children="H2 heading" variant="heading2" />
+        <Heading {...args} children="H3 heading" variant="heading3" />
+        <Heading {...args} children="H4 heading" variant="heading4" />
+        <Heading {...args} children="H5 heading" variant="heading5" />
+        <Heading {...args} children="H6 heading" variant="heading6" />
     </View>
 )
 
-const BodyTextStory: Story<TextProps> = (args) => (
+const TextStory: Story<TextProps> = (args) => (
     <View>
-        <Text variant="bodyLarge" children="Body Large" />
-        <Text variant="bodyStrong" children="Body Strong" />
-        <Text variant="body" children="Body" />
-        <Text variant="caption" children="Caption" />
+        <Text {...args} variant="bodyLarge" children="Body Large" />
+        <Text {...args} variant="bodyAlt"   children="Body Strong" />
+        <Text {...args} variant="body"      children="Body" />
+        <Text {...args} variant="caption"   children="Caption" />
     </View>
 )
 
-export const Headings = HeadingsTextStory.bind({})
-export const BodyText = BodyTextStory.bind({})
+export const Headings = HeadingsStory.bind({})
+export const Texts = TextStory.bind({})

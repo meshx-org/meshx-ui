@@ -1,19 +1,22 @@
 import React from 'react'
-import { Text as RNText } from 'react-native'
 import { variant, compose, space, color, typography } from 'styled-system'
 import { TextProps } from './Text.types'
-import { useThemeValues } from '@meshx-org/mxui-core'
 import { textVariants as variants } from './variants'
-
-const propStyles = compose(color, space, typography)
+import styled from 'styled-components'
 
 const textVariants = variant({ prop: 'variant', variants })
 
-export function Text({ children, ...props }: TextProps) {
-    const theme = useThemeValues()
+const TextBase = styled.p<TextProps>`
+    ${color}
+    ${space}
+    ${typography}
+    ${textVariants}
 
-    const propsWithTheme = { theme, color: 'text.primary', ...props }
-    const style = { ...textVariants(propsWithTheme), ...propStyles(propsWithTheme) }
+    user-select: ${(props) => (props.selectable ? 'auto' : 'none')};
+`
 
-    return <RNText style={style}>{children}</RNText>
+export function Text(props: TextProps) {
+    const { selectable = false, ...restProps } = props
+
+    return <TextBase selectable={selectable} {...restProps as any} />
 }

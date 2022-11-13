@@ -39,7 +39,7 @@ const StyledButton = styled.button`
     }
 `
 
-const StyledButtonContent = styled.div`
+const ButtonContent = styled.div`
     height: 32px;
     display: flex;
     align-items: center;
@@ -60,9 +60,9 @@ function Button(props: ButtonProps) {
         <StyledButton onClick={onPress} type="button" data-theme={theme} data-state={state} {...handlers}>
             <ControlStroke state={state}>
                 <ControlFill state={state}>
-                    <StyledButtonContent>
-                        <Text variant="body" children={children} />
-                    </StyledButtonContent>
+                    <ButtonContent>
+                        <Text variant="body" selectable={false} color={disabled ? "text.disabled" : "text.primary"} children={children} />
+                    </ButtonContent>
                 </ControlFill>
             </ControlStroke>
         </StyledButton>

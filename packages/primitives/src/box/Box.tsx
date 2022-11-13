@@ -1,16 +1,18 @@
-import React from 'react'
-import { View } from 'react-native'
-import { compose, space, color,shadow, layout, border, position, background } from 'styled-system'
-import { useThemeValues } from '@meshx-org/mxui-core'
+import React from "react"
+import styled from 'styled-components'
+import { space, color, layout, flexbox, border, position, background } from 'styled-system'
 import { BoxProps } from './Box.types'
 
-const propStyles = compose(space, color, layout, border, position, background, shadow)
+const BoxRoot = styled.div`
+    ${space}
+    ${color}
+    ${layout}
+    ${flexbox}
+    ${border}
+    ${position}
+    ${background}
+`
 
-export function Box({ children, ...props }: BoxProps) {
-    const theme = useThemeValues()
-
-    const propsWithTheme = { theme, ...props }
-    const style = propStyles(propsWithTheme)
-
-    return <View style={{...style}}>{children}</View>
+export function Box({ children, ...props}: BoxProps) {
+    return <BoxRoot {...props as any} >{children}</BoxRoot>
 }

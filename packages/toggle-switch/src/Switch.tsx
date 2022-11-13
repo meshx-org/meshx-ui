@@ -151,7 +151,7 @@ export function Switch(props: SwitchProps) {
     )
 
     return (
-        <ThemeProvider theme={{ name: theme, state }}>
+        <ThemeProvider theme={{ name: theme, state } as any}>
             <StyledSwitchWrapper data-theme={theme} data-state={state} {...handlers}>
                 <StyledSwitch>
                     <input

@@ -57,7 +57,7 @@ function LinkButton({ label, href, disabled = false, ...props }: LinkButtonProps
         <StyledButton href={href} type="button" data-theme={theme} data-state={state} {...handlers}>
             <SubtleFill state={state}>
                 <StyledButtonContent>
-                    <Text variant="body" color="text.disabled" children={label} />
+                    <Text variant="body" selectable={false} color={disabled ? "text.disabled" : "text.primary"} children={label} />
                 </StyledButtonContent>
             </SubtleFill>
         </StyledButton>

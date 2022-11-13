@@ -1,6 +1,8 @@
 import { ButtonProps } from './Button.types'
 
-function Button({ apparance, children, onPress, ...props }: ButtonProps) {
+function Button(props: ButtonProps) {
+    const { apparance = 'default', disabled = false, onPress, children } = props
+
     return null
 }
 
