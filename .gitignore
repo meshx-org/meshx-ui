@@ -60,3 +60,5 @@ buck-out/
 
 dist
 lib
+*.log
+.turbo

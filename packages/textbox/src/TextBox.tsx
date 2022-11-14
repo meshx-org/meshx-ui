@@ -52,7 +52,6 @@ export function TextBox(props: TextBoxProps) {
     const { placeholder, disabled = false, value, onChange } = props
 
     const theme = useTheme()
-    console.log(useFocus)
     const { focused, handlers: focusHandlers } = useFocus<HTMLInputElement>()
     const { state, handlers } = useControlState<HTMLInputElement>(disabled)
 

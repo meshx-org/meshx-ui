@@ -42,10 +42,10 @@ const HeadingsStory: Story<HeadingProps> = (args) => (
 
 const TextStory: Story<TextProps> = (args) => (
     <View>
-        <Text {...args} variant="bodyLarge" children="Body Large" />
-        <Text {...args} variant="bodyAlt"   children="Body Strong" />
-        <Text {...args} variant="body"      children="Body" />
-        <Text {...args} variant="caption"   children="Caption" />
+        <Text {...args} variant="bodyAlt"    children="Body Alt" />
+        <Text {...args} variant="body"       children="Body" />
+        <Text {...args} variant="caption"    children="Caption" />
+        <Text {...args} variant="captionAlt" children="Caption Alt" />
     </View>
 )
 

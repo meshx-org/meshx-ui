@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React, { useMemo, useId } from 'react'
 import { ControlState, useTheme } from '@meshx-org/mxui-core'
 import { ControlStrokeProps } from './Stroke.types'
 import styled from 'styled-components'
@@ -21,19 +21,14 @@ const LineBase = styled.rect`
     transition: all 0.2s ease;
 `
 
-let lastId = 0
-function createId() {
-    lastId += 1
-    return lastId
-}
-
 function url(id: string) {
     return `url(#${id})`
 }
 
 function TextControlStroke({ children, state, focused = false }: ControlStrokeProps) {
     const theme = useTheme()
-    const uniqueId = useMemo(createId, [])
+    const uniqueId = useId()
+
     const clipId = `clip-${uniqueId}`
     const lightGradId = `stroke-${uniqueId}-light`
     const darkGradId = `stroke-${uniqueId}-dark`
@@ -98,7 +93,7 @@ function TextControlStroke({ children, state, focused = false }: ControlStrokePr
 
 function ControlStroke({ children, state, focused = false }: ControlStrokeProps) {
     const theme = useTheme()
-    const uniqueId = useMemo(createId, [])
+    const uniqueId = useId()
     const lightGradId = `stroke-${uniqueId}-light`
     const darkGradId = `stroke-${uniqueId}-dark`
 
@@ -150,7 +145,7 @@ function ControlStroke({ children, state, focused = false }: ControlStrokeProps)
 
 function CircleControlStroke({ children, state, focused = false }: ControlStrokeProps) {
     const theme = useTheme()
-    const uniqueId = useMemo(createId, [])
+    const uniqueId = useId()
     const lightGradId = `stroke-${uniqueId}-light`
     const darkGradId = `stroke-${uniqueId}-dark`
 

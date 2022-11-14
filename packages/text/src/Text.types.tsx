@@ -11,6 +11,8 @@ interface BaseProps extends ColorProps, SpaceProps, TypographyProps {
      */
     selectable?: boolean
 
+    as?: string | React.ComponentType<any>
+
     // selectionHighlightColor?: string
 }
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { variant, compose, space, color, typography } from 'styled-system'
+import { variant, space, color, typography } from 'styled-system'
 import { TextProps } from './Text.types'
 import { textVariants as variants } from './variants'
 import styled from 'styled-components'
@@ -16,7 +16,7 @@ const TextBase = styled.p<TextProps>`
 `
 
 export function Text(props: TextProps) {
-    const { selectable = false, ...restProps } = props
+    const { selectable = false, as, ...restProps } = props
 
-    return <TextBase selectable={selectable} {...restProps as any} />
+    return <TextBase as={as} selectable={selectable} {...restProps as any} />
 }
