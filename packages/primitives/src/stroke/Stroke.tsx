@@ -17,10 +17,6 @@ const StrokeBase = styled.div`
     }
 `
 
-const LineBase = styled.rect`
-    transition: all 0.2s ease;
-`
-
 function url(id: string) {
     return `url(#${id})`
 }
@@ -76,8 +72,8 @@ function TextControlStroke({ children, state, focused = false }: ControlStrokePr
                     stroke={url(theme === 'dark' ? darkGradId : lightGradId)}
                     rx="4.5px"
                 />
-                <LineBase
-                    as="rect"
+                <rect
+                    style={{ transition: "all 0.2s ease"}}
                     clipPath={url(clipId)}
                     width="100%"
                     height={`${lineHeight}px`}
