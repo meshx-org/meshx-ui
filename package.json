@@ -28,7 +28,7 @@
         "@babel/preset-react": "^7.18.6",
         "@changesets/cli": "^2.25.2",
        
-        "@typescript-eslint/eslint-plugin": "^5.41.0",
+        "@typescript-eslint/eslint-plugin": "^5.43.0",
         "@typescript-eslint/parser": "^5.41.0",
         "babel-loader": "^9.1.0",
         "babel-plugin-react-native-web": "^0.18.9",
