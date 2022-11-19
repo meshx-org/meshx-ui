@@ -18,22 +18,6 @@ const StyledButton = styled.button`
         pointer-events: none;
     }
 
-    &[data-theme='dark'] {
-        color: white;
-    }
-
-    &[data-state='disabled'][data-theme='dark'] {
-        color: rgba(255, 255, 255, 0.36);
-    }
-
-    &[data-theme='dark'] {
-        color: white;
-    }
-
-    &[data-state='disabled'][data-theme='light'] {
-        color: rgba(0, 0, 0, 0.36);
-    }
-
     &[data-state='pressed'] .buttonContent {
         opacity: 0.5;
     }
@@ -61,7 +45,12 @@ function Button(props: ButtonProps) {
             <ControlStroke state={state}>
                 <ControlFill state={state}>
                     <ButtonContent>
-                        <Text variant="body" selectable={false} color={disabled ? "text.disabled" : "text.primary"} children={children} />
+                        <Text
+                            variant="body"
+                            selectable={false}
+                            color={disabled ? 'text.disabled' : 'text.primary'}
+                            children={children}
+                        />
                     </ButtonContent>
                 </ControlFill>
             </ControlStroke>

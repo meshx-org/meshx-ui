@@ -1,24 +1,21 @@
 export interface ThemeValues {
-    colors: Record<string, any>
+    colors: {
+        text: Record<string, any>
+        stroke: {
+            divider: string
+            card: string
+            surface: string
+        }
+        accentText: Record<string, any>
+        fill: Record<string, any>
+    }
     fontSizes: number[]
+    fonts: {
+        default: string,
+        mono: string
+    }
     space: number[]
     lineHeights: Record<string, any>
-
-    accentTextColor: {
-        primary: string
-        secondary: string
-        disabled: string
-    }
-    textColor: {
-        primary: string
-        secondary: string
-        disabled: string
-    }
-    stoke: {
-        divider: string
-        card: string
-        surface: string
-    }
     spacing: {
         [key: string]: number
     }
@@ -38,6 +35,24 @@ export interface ThemeValues {
     }
 }
 
+function fontStack(fonts: string[]) {
+    return fonts.map((font) => (font.includes(' ') ? `"${font}"` : font)).join(', ')
+}
+
+const fonts = {
+    default: fontStack([
+        '-apple-system',
+        'BlinkMacSystemFont',
+        'Segoe UI',
+        'Helvetica',
+        'Arial',
+        'sans-serif',
+        'Apple Color Emoji',
+        'Segoe UI Emoji'
+    ]),
+    mono: fontStack(['SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo', 'Courier', 'monospace'])
+}
+
 export const DEFAULT_LIGHT: ThemeValues = {
     colors: {
         text: {
@@ -45,12 +60,7 @@ export const DEFAULT_LIGHT: ThemeValues = {
             secondary: 'rgba(10, 37, 64,0.6)',
             disabled: 'rgba(10, 37, 64,0.5)'
         },
-        link: {
-            // primary: 'rgba(0,0,0,1)',
-            // secondary: 'rgba(0,0,0,0.6)',
-            // disabled: "rgba(0,0,0,0.5)"
-        },
-        storke: {
+        stroke: {
             divider: 'rgba(0,0,0,0.0803)',
             card: 'rgba(0,0,0,0.0578)',
             surface: '#C6C6C8'
@@ -70,6 +80,7 @@ export const DEFAULT_LIGHT: ThemeValues = {
             subtle: 'rgba(0, 0, 0, 0.024)'
         }
     },
+    fonts,
     fontSizes: [12, 14, 16, 18, 21, 24, 32, 48, 60],
     space: [0, 4, 8, 16, 32, 64, 128, 256],
     lineHeights: {
@@ -84,21 +95,6 @@ export const DEFAULT_LIGHT: ThemeValues = {
         xl: 32
     },
 
-    stoke: {
-        divider: 'rgba(0,0,0,0.0803)',
-        card: 'rgba(0,0,0,0.0578)',
-        surface: '#C6C6C8'
-    },
-    accentTextColor: {
-        primary: 'rgb(3, 150, 255)',
-        secondary: 'rgb(3, 150, 255)',
-        disabled: 'rgb(3, 150, 255)'
-    },
-    textColor: {
-        primary: 'rgba(0,0,0,1)',
-        secondary: 'rgba(0,0,0,0.6)',
-        disabled: 'rgba(0,0,0,0.36)'
-    },
     fillColor: {
         accent: 'rgb(3, 150, 255)',
         solidBackgroundBase: '#F3F3F3',
@@ -137,7 +133,8 @@ export const DEFAULT_DARK: ThemeValues = {
             subtle: 'rgba(255, 255, 255, 0.04)'
         }
     },
-    fontSizes: [12, 14, 16, 24, 32, 48, 64, 96, 128],
+    fonts,
+    fontSizes: [12, 14, 16, 18, 21, 24, 32, 48, 60],
     space: [0, 4, 8, 16, 32, 64, 128, 256],
     lineHeights: {
         body: '150%',
@@ -151,21 +148,6 @@ export const DEFAULT_DARK: ThemeValues = {
         xl: 32
     },
 
-    stoke: {
-        divider: 'rgba(255,255,255,0.0837)',
-        card: 'rgba(0,0,0,0.25)',
-        surface: 'rgba(117,117,117,0.4)'
-    },
-    accentTextColor: {
-        primary: 'rgb(3, 150, 255)',
-        secondary: 'rgb(3, 150, 255)',
-        disabled: 'rgb(3, 150, 255)'
-    },
-    textColor: {
-        primary: 'rgba(255,255,255,1)',
-        secondary: 'rgba(255,255,255,0.78)',
-        disabled: 'rgba(255,255,255,0.36)'
-    },
     fillColor: {
         accent: 'rgb(3, 150, 255)',
         solidBackgroundBase: '#202020',

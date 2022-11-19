@@ -25,18 +25,42 @@ declare module 'react' {
 }
 
 declare module 'styled-components' {
-    export interface DefaultTheme {
-        name: string,
-        values: ThemeValues
+    export interface DefaultTheme extends ThemeValues {
+        name: string
     }
 }
 
 const GlobalStyle = createGlobalStyle`
     :root {
-        --theme-spacing-sm: ${(props) => props.theme.values.spacing.sm}px;
-        --theme-spacing-md: ${(props) => props.theme.values.spacing.md}px;
-        --theme-spacing-lg: ${(props) => props.theme.values.spacing.lg}px;
-        --theme-spacing-xl: ${(props) => props.theme.values.spacing.xl}px;
+        --theme-spacing-sm: ${(props) => props.theme.spacing.sm}px;
+        --theme-spacing-md: ${(props) => props.theme.spacing.md}px;
+        --theme-spacing-lg: ${(props) => props.theme.spacing.lg}px;
+        --theme-spacing-xl: ${(props) => props.theme.spacing.xl}px;
+
+        --theme-color-text-primary: ${({ theme }) => theme.colors.text.primary};
+        --theme-color-text-secondary: ${({ theme }) => theme.colors.text.secondary};
+        --theme-color-text-disabled: ${({ theme }) => theme.colors.text.disabled};
+
+        --theme-color-accent-text-primary: ${({ theme }) => theme.colors.accentText.primary};
+        --theme-color-accent-text-secondary: ${({ theme }) => theme.colors.accentText.secondary};
+        --theme-color-accent-text-disabled: ${({ theme }) => theme.colors.accentText.disabled};
+        
+        --theme-color-stroke-card: ${({ theme }) => theme.colors.stroke.card};
+        --theme-color-stroke-divider: ${({ theme }) => theme.colors.stroke.divider};
+        --theme-color-stroke-surface: ${({ theme }) => theme.colors.stroke.surface};
+
+        --theme-font-default: ${({ theme }) => theme.fonts.default};
+        --theme-font-mono: ${({ theme }) => theme.fonts.mono};
+
+        --theme-font-size-0: ${({ theme }) => theme.fontSizes[0]}px;
+        --theme-font-size-1: ${({ theme }) => theme.fontSizes[1]}px;
+        --theme-font-size-2: ${({ theme }) => theme.fontSizes[2]}px;
+        --theme-font-size-3: ${({ theme }) => theme.fontSizes[3]}px;
+        --theme-font-size-4: ${({ theme }) => theme.fontSizes[4]}px;
+        --theme-font-size-5: ${({ theme }) => theme.fontSizes[5]}px;
+        --theme-font-size-6: ${({ theme }) => theme.fontSizes[6]}px;
+        --theme-font-size-7: ${({ theme }) => theme.fontSizes[7]}px;
+        --theme-font-size-8: ${({ theme }) => theme.fontSizes[8]}px;
     }
 `
 
@@ -50,29 +74,12 @@ export function ThemeProvider({ theme, children }: ThemeProviderProps) {
                     height: '100%',
                     display: 'flex',
 
-                    '--theme-spacing-sm': `${values.spacing.sm}px`,
-                    '--theme-spacing-md': `${values.spacing.md}px`,
-                    '--theme-spacing-lg': `${values.spacing.lg}px`,
-                    '--theme-spacing-xl': `${values.spacing.xl}px`,
-
                     '--theme-fill-solid-background-base': values.fillColor.solidBackgroundBase,
                     '--theme-fill-solid-background-secondary': values.fillColor.solidBackgroundSecondary,
                     '--theme-fill-layer-default': values.fillColor.layerDefault,
                     '--theme-fill-layer-alt': values.fillColor.layerAlt,
                     '--theme-fill-secondary': values.fillColor.secondary,
-                    '--theme-fill-subtle': values.fillColor.subtle,
-
-                    '--theme-text-color-primary': values.textColor.primary,
-                    '--theme-text-color-secondary': values.textColor.secondary,
-                    '--theme-text-color-disabled': values.textColor.disabled,
-
-                    '--theme-accent-text-color-primary': values.accentTextColor.primary,
-                    '--theme-accent-text-color-secondary': values.accentTextColor.secondary,
-                    '--theme-accent-text-color-disabled': values.accentTextColor.disabled,
-
-                    '--theme-stroke-card': values.stoke.card,
-                    '--theme-stroke-divider': values.stoke.divider,
-                    '--theme-stroke-surface': values.stoke.surface
+                    '--theme-fill-subtle': values.fillColor.subtle, 
                 }}
             >
                 {children}
@@ -83,7 +90,10 @@ export function ThemeProvider({ theme, children }: ThemeProviderProps) {
 
     return (
         <ThemeContext.Provider value={{ name: theme, values }}>
-            <StyledProvider theme={{ name: theme, values }}>{content}</StyledProvider>
+            <StyledProvider theme={{ ...values, name: theme }}>
+                {Platform.OS === 'web' ? (<GlobalStyle />) : null}
+                {content}
+            </StyledProvider>
         </ThemeContext.Provider>
     )
 }

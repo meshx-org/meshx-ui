@@ -15,7 +15,7 @@ const styles = (theme: ThemeValues) =>
         treeViewItem: {
             paddingVertical: 6,
             flex: 1,
-            color: theme.textColor.primary
+            color: theme.colors.text.primary
         },
         selectorWrapper: {
             overflow: 'hidden',

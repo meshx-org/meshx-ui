@@ -17,7 +17,7 @@ const StyledTextBox = styled.input`
     font-size: 14px;
     line-height: 20px;
 
-    font-family: "Noto Sans", sans-serif;
+    font-family: ${props => props.theme.fonts.default};
 
     &[data-theme='light'] {
         color: rgba(0, 0, 0, 1);
@@ -28,23 +28,23 @@ const StyledTextBox = styled.input`
     }
 
     &[data-state='disabled'] {
-        color: ${props => props.theme.values.colors.text.disabled};
+        color: ${props => props.theme.colors.text.disabled};
     }
 
     &::-webkit-input-placeholder {
-        color: ${props => props.theme.values.colors.text.secondary};
+        color: ${props => props.theme.colors.text.secondary};
     }
 
     &::placeholder {
-        color: ${props => props.theme.values.colors.text.secondary};
+        color: ${props => props.theme.colors.text.secondary};
     }
     
     &:-ms-input-placeholder {
-        color: ${props => props.theme.values.colors.text.secondary};
+        color: ${props => props.theme.colors.text.secondary};
     }
 
     &::-moz-placeholder {
-        color: ${props => props.theme.values.colors.text.secondary};
+        color: ${props => props.theme.colors.text.secondary};
     }
 `
 
