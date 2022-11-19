@@ -29,5 +29,5 @@ export function Heading(props: HeadingProps) {
     const { selectable = false, variant = "heading1", ...restProps } = props
     const as = asMapping[variant]
 
-    return <HeadingBase ara as={as} selectable={selectable} variant={variant} {...restProps as any} />
+    return <HeadingBase ara as={as} selectable={selectable} variant={variant} color='text.primary' {...restProps as any} />
 }

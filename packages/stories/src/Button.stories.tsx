@@ -1,7 +1,6 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
 import { Button, ButtonProps, LinkButton } from '@meshx-org/mxui-button/src'
-import CustomMDXDocumentation from './Custom.mdx'
 
 export default {
     title: 'Basic Input/Button',
@@ -11,7 +10,7 @@ export default {
             grid: { cellSize: 1 }
         },
         docs: {
-            page: CustomMDXDocumentation
+            page: null
         },
     },
     argTypes: {

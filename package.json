@@ -22,17 +22,12 @@
         "version-packages": "changeset version",
         "release": "turbo run build --filter=docs^... && changeset publish"
     },
-    "dependencies": {},
     "devDependencies": {
-        "turbo": "1.6.3",
-
-        "react-native": "0.70.5",
-        "styled-components": "^5.3.6",
-
         "@babel/core": "^7.19.6",
         "@babel/preset-env": "^7.19.4",
         "@babel/preset-react": "^7.18.6",
         "@changesets/cli": "^2.25.2",
+       
         "@typescript-eslint/eslint-plugin": "^5.41.0",
         "@typescript-eslint/parser": "^5.41.0",
         "babel-loader": "^9.1.0",
@@ -48,8 +43,11 @@
         "eslint-plugin-react": "^7.31.10",
         "eslint-plugin-react-native": "^4.0.0",
         "husky": "^8",
-        "prettier": "^2.7.1",
         "metro-react-native-babel-preset": "^0.73.3",
+        "prettier": "^2.7.1",
+        "react-native": "0.70.5",
+        "styled-components": "^5.3.6",
+        "turbo": "1.6.3",
         "typescript": "^4.8.4"
     }
 }

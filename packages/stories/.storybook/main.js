@@ -18,13 +18,15 @@ module.exports = {
             }
         }
     ],
+    core: {
+        builder: "webpack5",
+    },
     framework: '@storybook/react',
     reactOptions: {
         // fastRefresh: true,
         // strictMode: true
     },
     features: {
-        // interactionsDebugger: true,
         storyStoreV7: true,
         buildStoriesJson: true
     },

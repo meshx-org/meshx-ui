@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { TextBoxProps } from './TextBox.types'
-import { useControlState, ThemeValues, useTheme, useFocus } from '@meshx-org/mxui-core'
+import { useControlState, useFocus } from '@meshx-org/mxui-core'
 import { TextControlStroke, TextControlFill } from '@meshx-org/mxui-primitives'
 import styled from 'styled-components'
 
@@ -18,15 +18,8 @@ const StyledTextBox = styled.input`
     line-height: 20px;
 
     font-family: ${props => props.theme.fonts.default};
-
-    &[data-theme='light'] {
-        color: rgba(0, 0, 0, 1);
-    }
-
-    &[data-theme='dark'] {
-        color: rgba(255, 255, 255, 1);
-    }
-
+    color: ${props => props.theme.colors.text.primary};
+   
     &[data-state='disabled'] {
         color: ${props => props.theme.colors.text.disabled};
     }
@@ -50,8 +43,7 @@ const StyledTextBox = styled.input`
 
 export function TextBox(props: TextBoxProps) {
     const { placeholder, disabled = false, value, onChange } = props
-
-    const theme = useTheme()
+ 
     const { focused, handlers: focusHandlers } = useFocus<HTMLInputElement>()
     const { state, handlers } = useControlState<HTMLInputElement>(disabled)
 
@@ -62,7 +54,6 @@ export function TextBox(props: TextBoxProps) {
                     <StyledTextBox
                         role="textbox"
                         data-state={state}
-                        data-theme={theme}
                         placeholder={placeholder}
                         disabled={disabled}
                         value={value}

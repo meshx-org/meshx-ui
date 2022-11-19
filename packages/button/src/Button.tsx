@@ -48,6 +48,7 @@ function Button(props: ButtonProps) {
                         <Text
                             variant="body"
                             selectable={false}
+                            data-t={disabled ? 'text.disabled' : 'text.primary'}
                             color={disabled ? 'text.disabled' : 'text.primary'}
                             children={children}
                         />

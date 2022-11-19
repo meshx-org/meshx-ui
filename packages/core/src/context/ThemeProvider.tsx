@@ -37,21 +37,40 @@ const GlobalStyle = createGlobalStyle`
         --theme-spacing-lg: ${(props) => props.theme.spacing.lg}px;
         --theme-spacing-xl: ${(props) => props.theme.spacing.xl}px;
 
+        // Text Colors 
         --theme-color-text-primary: ${({ theme }) => theme.colors.text.primary};
         --theme-color-text-secondary: ${({ theme }) => theme.colors.text.secondary};
         --theme-color-text-disabled: ${({ theme }) => theme.colors.text.disabled};
 
+        // Accent Text Colors 
         --theme-color-accent-text-primary: ${({ theme }) => theme.colors.accentText.primary};
         --theme-color-accent-text-secondary: ${({ theme }) => theme.colors.accentText.secondary};
         --theme-color-accent-text-disabled: ${({ theme }) => theme.colors.accentText.disabled};
         
+        // Stroke Colors
         --theme-color-stroke-card: ${({ theme }) => theme.colors.stroke.card};
         --theme-color-stroke-divider: ${({ theme }) => theme.colors.stroke.divider};
         --theme-color-stroke-surface: ${({ theme }) => theme.colors.stroke.surface};
 
+        // Backgrounds Colors
+        --theme-background-card-default: ${({ theme }) => theme.colors.backgrounds.card.default};
+        --theme-background-card-secondary: ${({ theme }) => theme.colors.backgrounds.card.secondary};
+        --theme-background-card-tertiary: ${({ theme }) => theme.colors.backgrounds.card.tertiary};
+
+        --theme-background-solid-default: ${({ theme }) => theme.colors.backgrounds.solid.default};
+        --theme-background-solid-secondary: ${({ theme }) => theme.colors.backgrounds.solid.secondary};
+        --theme-background-solid-tertiary: ${({ theme }) => theme.colors.backgrounds.solid.tertiary};
+
+        --theme-background-layer-default: ${({ theme }) => theme.colors.backgrounds.layer.default};
+        --theme-background-layer-alt: ${({ theme }) => theme.colors.backgrounds.layer.alt};
+
+        --theme-background-smoke-default: ${({ theme }) => theme.colors.backgrounds.smoke.default};
+
+        // Fonts
         --theme-font-default: ${({ theme }) => theme.fonts.default};
         --theme-font-mono: ${({ theme }) => theme.fonts.mono};
 
+        // Font sizes
         --theme-font-size-0: ${({ theme }) => theme.fontSizes[0]}px;
         --theme-font-size-1: ${({ theme }) => theme.fontSizes[1]}px;
         --theme-font-size-2: ${({ theme }) => theme.fontSizes[2]}px;

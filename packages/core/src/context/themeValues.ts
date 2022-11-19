@@ -6,6 +6,32 @@ export interface ThemeValues {
             card: string
             surface: string
         }
+        backgrounds: {
+            // Used to create `cards` t
+            card: {
+                default: string,
+                secondary: string,
+                tertiary: string
+            }
+
+            // Used over under dialogs to block them out as inaccessible.
+            smoke: {
+                default: string
+            },
+
+            // Used on background colors of any material to create layering.
+            layer: {
+                default: string,
+                alt: string
+            },
+            
+            // Solid background colors to place layers, cards, or controls on.
+            solid: {
+                default: string,
+                secondary: string,
+                tertiary: string
+            }
+        }
         accentText: Record<string, any>
         fill: Record<string, any>
     }
@@ -70,6 +96,25 @@ export const DEFAULT_LIGHT: ThemeValues = {
             secondary: 'rgb(3, 150, 255)',
             disabled: 'rgb(3, 150, 255)'
         },
+        backgrounds: {
+            card: {
+                default: "rgba(255,255,255,0.7)",
+                secondary: "rgba(246,246,246,0.5)",
+                tertiary: "rgba(255,255,255,1)"
+            },
+            smoke: {
+                default: "rgba(0,0,0,0.3)"
+            },
+            layer: {
+                default: "rgba(255,255,255,0.5)",
+                alt: "rgba(255,255,255,1)"
+            },
+            solid: {
+                default: "#F3F3F3FF",
+                secondary: "#EEEEEEFF",
+                tertiary: "#F9F9F9FF",
+            }
+        },
         fill: {
             accent: 'rgb(3, 150, 255)',
             solidBackgroundBase: '#F3F3F3',
@@ -122,6 +167,25 @@ export const DEFAULT_DARK: ThemeValues = {
             divider: 'rgba(255,255,255,0.0837)',
             card: 'rgba(0,0,0,0.25)',
             surface: 'rgba(117,117,117,0.4)'
+        },
+        backgrounds: {
+            card: {
+                default: "#FFFFFF0D",
+                secondary: "#FFFFFF08",
+                tertiary: "#FFFFFF12"
+            },
+            smoke: {
+                default: "rgba(0,0,0,0.3)"
+            },
+            layer: {
+                default: "#3A3A3A4C",
+                alt: "#FFFFFF0D"
+            },
+            solid: {
+                default: "#202020",
+                secondary: "#1C1C1C",
+                tertiary: "#282828",
+            }
         },
         fill: {
             accent: 'rgb(3, 150, 255)',
