@@ -1,12 +1,12 @@
 import React, { useMemo } from 'react'
 import { ListRenderItem, View, VirtualizedList, StyleSheet, Pressable } from 'react-native'
 import { ControlState, useThemeValues, ThemeValues } from '@meshx-org/mxui-core'
+import { SubtleFill } from '@meshx-org/mxui-primitives'
 import { FlattenedItem, TreeViewNodeProps, TreeViewProps } from './TreeView.types'
 import { flattenTree } from './utils'
 
 const styles = (theme: ThemeValues) =>
     StyleSheet.create({
-        container: {},
         treeViewNode: {
             borderRadius: 5,
             marginBottom: 4,
@@ -53,47 +53,44 @@ function TreeViewNode<T = unknown>(props: TreeViewNodeProps<T>) {
         }
     }
 
-    const getBackgroundColor = (state: any) => {
-        if (state.pressed) return themeValues.fillColor.subtle
-        if (item.isSelected || state.hovered) return themeValues.fillColor.secondary
+    const rnToControlState = (pressableState: any): ControlState => {
+        if (pressableState.pressed) return ControlState.Pressed
+        if (pressableState.hovered) return ControlState.Hovered
 
-        return 'transparent'
+        return ControlState.Rest
     }
 
     return (
-        <Pressable
-            accessibilityRole="menuitem"
-            onLongPress={() => {}}
-            onPress={handlePress}
-            style={(state) => [
-                style.treeViewNode,
-                {
-                    backgroundColor: getBackgroundColor(state)
-                }
-            ]}
-        >
-            {(state) => (
-                <>
-                    <View style={style.selectorWrapper}>
-                        <View
-                            style={[
-                                style.selector,
-                                { backgroundColor: item.isSelected ? themeValues.fillColor.accent : 'transparent' }
-                            ]}
-                        />
-                    </View>
+        <Pressable accessibilityRole="menuitem" onPress={handlePress} style={(state) => [style.treeViewNode]}>
+            {(pressableState) => {
+                const state = rnToControlState(pressableState)
+                return (
+                    <SubtleFill state={item.isSelected ? ControlState.Hovered : state}>
+                        <View style={style.selectorWrapper}>
+                            <View
+                                style={[
+                                    style.selector,
+                                    {
+                                        backgroundColor: item.isSelected
+                                            ? themeValues.colors.fill.accent
+                                            : 'transparent'
+                                    }
+                                ]}
+                            />
+                        </View>
 
-                    <View style={[style.treeViewItem, { paddingLeft: (path.length - 1) * 20 }]}>
-                        {renderTreeItem({
-                            item,
-                            state: state.pressed ? ControlState.Pressed : ControlState.Rest,
-                            depth: path.length - 1,
-                            onExpand: (itemId) => onExpand(itemId, path),
-                            onCollapse: (itemId) => onCollapse(itemId, path)
-                        })}
-                    </View>
-                </>
-            )}
+                        <View style={[style.treeViewItem, { paddingLeft: (path.length - 1) * 20 }]}>
+                            {renderTreeItem({
+                                item,
+                                state,
+                                depth: path.length - 1,
+                                onExpand: (itemId) => onExpand(itemId, path),
+                                onCollapse: (itemId) => onCollapse(itemId, path)
+                            })}
+                        </View>
+                    </SubtleFill>
+                )
+            }}
         </Pressable>
     )
 }

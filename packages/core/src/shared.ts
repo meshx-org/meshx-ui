@@ -13,3 +13,9 @@ export function getControlState(pressed: boolean, hovered: boolean, disabled: bo
 
     return state
 }
+
+export enum CardState {
+    Rest = "rest",
+    Hovered = "hovered",
+    Pressed = "pressed",
+}

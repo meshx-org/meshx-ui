@@ -93,12 +93,10 @@ export function ThemeProvider({ theme, children }: ThemeProviderProps) {
                     height: '100%',
                     display: 'flex',
 
-                    '--theme-fill-solid-background-base': values.fillColor.solidBackgroundBase,
-                    '--theme-fill-solid-background-secondary': values.fillColor.solidBackgroundSecondary,
-                    '--theme-fill-layer-default': values.fillColor.layerDefault,
-                    '--theme-fill-layer-alt': values.fillColor.layerAlt,
-                    '--theme-fill-secondary': values.fillColor.secondary,
-                    '--theme-fill-subtle': values.fillColor.subtle, 
+                    '--theme-fill-layer-default': values.colors.fill.layerDefault,
+                    '--theme-fill-layer-alt': values.colors.fill.layerAlt,
+                    '--theme-fill-secondary': values.colors.fill.secondary,
+                    '--theme-fill-subtle': values.colors.fill.subtle, 
                 }}
             >
                 {children}

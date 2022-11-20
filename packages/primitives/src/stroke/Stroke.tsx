@@ -1,7 +1,8 @@
 import React, { useMemo, useId } from 'react'
 import { ControlState, useTheme } from '@meshx-org/mxui-core'
-import { ControlStrokeProps } from './Stroke.types'
-import styled from 'styled-components'
+import { ControlStrokeProps, CardStrokeProps, SurfaceStrokeProps } from './Stroke.types'
+import { borderRadius } from "styled-system"
+import styled, { css } from 'styled-components'
 
 const StrokeBase = styled.div`
     position: relative;
@@ -73,7 +74,7 @@ function TextControlStroke({ children, state, focused = false }: ControlStrokePr
                     rx="4.5px"
                 />
                 <rect
-                    style={{ transition: "all 0.2s ease"}}
+                    style={{ transition: 'all 0.2s ease' }}
                     clipPath={url(clipId)}
                     width="100%"
                     height={`${lineHeight}px`}
@@ -86,6 +87,27 @@ function TextControlStroke({ children, state, focused = false }: ControlStrokePr
         </StrokeBase>
     )
 }
+
+const strokeMixin = css`
+    position: absolute;
+    top: 1px;
+    bottom: 1px;
+    right: 1px;
+    left: 1px;
+    background: transparent;
+`;
+
+const SurfaceStroke = styled.div.attrs(props => ({ ...props, 'aria-hidden': true }))<SurfaceStrokeProps>`
+    ${strokeMixin}
+    ${borderRadius}
+    box-shadow: 0 0 0 1px ${props => props.theme.colors.stroke.surface};
+`
+
+const CardStroke = styled.div.attrs(props => ({ ...props, 'aria-hidden': true }))<CardStrokeProps>`
+    ${strokeMixin}
+    ${borderRadius}
+    box-shadow: 0 0 0 1px ${props => props.theme.colors.stroke.card};
+`
 
 function ControlStroke({ children, state, focused = false }: ControlStrokeProps) {
     const theme = useTheme()
@@ -184,4 +206,4 @@ function CircleControlStroke({ children, state, focused = false }: ControlStroke
     )
 }
 
-export { ControlStroke, CircleControlStroke, TextControlStroke }
+export { CardStroke, SurfaceStroke, ControlStroke, CircleControlStroke, TextControlStroke }

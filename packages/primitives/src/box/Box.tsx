@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { space, color, layout, flexbox, border, position, background } from 'styled-system'
 import { BoxProps } from './Box.types'
 
-const BoxRoot = styled.div`
+const BoxBase = styled.div`
     ${space}
     ${color}
     ${layout}
@@ -14,5 +14,5 @@ const BoxRoot = styled.div`
 `
 
 export function Box({ children, ...props}: BoxProps) {
-    return <BoxRoot {...props as any} >{children}</BoxRoot>
+    return <BoxBase {...props as any} >{children}</BoxBase>
 }
