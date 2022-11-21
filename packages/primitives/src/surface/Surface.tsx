@@ -5,6 +5,7 @@ import { CardStroke, SurfaceStroke } from '../stroke/Stroke'
 import { AcrylicFill, LayerFill, SmokeFill, CardFill } from '../fill/Fill'
 import { CardShadow, FlyoutShadow } from '../shadow/Shadow'
 import { FlyoutSurfaceProps, LayerSurfaceProps, CardSurfaceProps } from './Surface.types'
+import { useControlState } from '@meshx-org/mxui-core'
 
 const SurfaceWrapper = styled.div<MarginProps>`
     ${margin}
@@ -31,13 +32,14 @@ export function FlyoutSurface(props: FlyoutSurfaceProps) {
 }
 
 export function CardSurface(props: CardSurfaceProps) {
-    const { children, state, ...restProps } = props
-
+    const { children, ...restProps } = props
+    const { state, handlers } = useControlState<HTMLDivElement>(false)
+    
     return (
-        <SurfaceWrapper {...restProps}>
+        <SurfaceWrapper {...handlers} {...restProps}>
             <CardStroke borderRadius={4} {...restProps} />
-            <CardShadow borderRadius={4} {...restProps} />
-            <CardFill borderRadius={4} state={state} {...restProps} />
+            <CardShadow borderRadius={4} {...restProps} state={state}  />
+            <CardFill borderRadius={4} {...restProps}  state={state} />
             <SurfaceContent {...restProps}>{children}</SurfaceContent>
         </SurfaceWrapper>
     )

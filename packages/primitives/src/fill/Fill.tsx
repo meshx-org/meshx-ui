@@ -1,8 +1,8 @@
 import React from 'react'
 import { ControlFillProps, SmokeFillProps, CardFillProps, LayerFillProps, AcrylicFillProps } from './Fill.types'
-import { useTheme } from '@meshx-org/mxui-core'
+import { ControlState, useTheme } from '@meshx-org/mxui-core'
 import { borderRadius } from "styled-system"
-import styled, { css } from 'styled-components'
+import styled, { css, DefaultTheme, InterpolationFunction } from 'styled-components'
 
 const FillBase = styled.div`
     display: flex;
@@ -200,8 +200,16 @@ export const AcrylicFill = styled.div.attrs(ariaHidden)<AcrylicFillProps>`
     background-color: ${({ theme }) => theme.colors.backgrounds.acrylic.default};
 `
 
+function cardFillState(theme: DefaultTheme, state: ControlState) {
+    switch (state) {
+        case ControlState.Hovered: return theme.colors.backgrounds.card.tertiary
+        case ControlState.Pressed: return theme.colors.backgrounds.card.tertiary
+        default: return theme.colors.backgrounds.card.default
+    } 
+}
+
 export const CardFill = styled.div.attrs(ariaHidden)<CardFillProps>`
     ${fillBase}
     ${borderRadius}
-    background-color: ${({ theme }) => theme.colors.backgrounds.card.default};
+    background-color: ${props => cardFillState(props.theme, props.state)};
 `

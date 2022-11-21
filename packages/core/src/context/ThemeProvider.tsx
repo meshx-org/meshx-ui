@@ -32,6 +32,7 @@ declare module 'styled-components' {
 
 const GlobalStyle = createGlobalStyle`
     :root {
+        // Spacing
         --theme-spacing-sm: ${(props) => props.theme.spacing.sm}px;
         --theme-spacing-md: ${(props) => props.theme.spacing.md}px;
         --theme-spacing-lg: ${(props) => props.theme.spacing.lg}px;
@@ -86,30 +87,11 @@ const GlobalStyle = createGlobalStyle`
 export function ThemeProvider({ theme, children }: ThemeProviderProps) {
     const values = theme === 'dark' ? DEFAULT_DARK : DEFAULT_LIGHT
 
-    const content =
-        Platform.OS === 'web' ? (
-            <div
-                style={{
-                    height: '100%',
-                    display: 'flex',
-
-                    '--theme-fill-layer-default': values.colors.fill.layerDefault,
-                    '--theme-fill-layer-alt': values.colors.fill.layerAlt,
-                    '--theme-fill-secondary': values.colors.fill.secondary,
-                    '--theme-fill-subtle': values.colors.fill.subtle, 
-                }}
-            >
-                {children}
-            </div>
-        ) : (
-            children
-        )
-
     return (
         <ThemeContext.Provider value={{ name: theme, values }}>
             <StyledProvider theme={{ ...values, name: theme }}>
                 {Platform.OS === 'web' ? (<GlobalStyle />) : null}
-                {content}
+                {children}
             </StyledProvider>
         </ThemeContext.Provider>
     )

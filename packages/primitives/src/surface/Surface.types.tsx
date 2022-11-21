@@ -7,7 +7,6 @@ export interface FlyoutSurfaceProps extends SpaceProps, BorderRadiusProps {
 
 export interface CardSurfaceProps extends SpaceProps, BorderRadiusProps {
     children?: React.ReactNode | React.ReactNode[]
-    state: ControlState
 }
 
 export interface LayerSurfaceProps extends SpaceProps, BorderRadiusProps {
