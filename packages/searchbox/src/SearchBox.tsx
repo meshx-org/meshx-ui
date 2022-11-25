@@ -1,7 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react'
-
 import { SearchBoxProps, Hit } from './SearchBox.types'
-
 import { AnchoredOverlay } from '@meshx-org/mxui-overlays'
 import { TextBox } from '@meshx-org/mxui-textbox'
 import { Text } from '@meshx-org/mxui-text'
@@ -17,7 +15,7 @@ export function SearchBox<H extends Hit>(props: SearchBoxProps<H>) {
 
     const renderEmpty = () => {
         return (
-            <Box width="100%" display="flex" py={ 8} justifyContent="center">
+            <Box width="100%" display="flex" py={8} justifyContent="center">
                 <Text variant="body">No hits found</Text>
             </Box>
         )
@@ -38,7 +36,7 @@ export function SearchBox<H extends Hit>(props: SearchBoxProps<H>) {
                 value={query}
                 onChange={setQuery}
             />
-            <FlyoutSurface width={300} p={1}>
+            <FlyoutSurface width={400} p={1}>
                 {hasHits ? children({ query, hits: props.hits }) : renderEmpty()}
             </FlyoutSurface>
         </AnchoredOverlay>

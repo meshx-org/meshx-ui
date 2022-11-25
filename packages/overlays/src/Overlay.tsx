@@ -66,7 +66,7 @@ function Overlay(props: OverlayProps, ref: Ref<HTMLDivElement>) {
 
     return (
         <OverlayAria portalContainer={container}>
-            <div style={{ zIndex: 99999, background: 'transparent', isolation: 'isolate' }}>
+            <div style={{ position: "relative", zIndex: 99999, background: 'transparent', isolation: 'isolate' }}>
                 <div ref={ref} style={overlayStyles}>
                     <animated.div style={styles}>{children}</animated.div>
                 </div>

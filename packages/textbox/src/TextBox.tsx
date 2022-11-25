@@ -48,7 +48,7 @@ export function TextBox(props: TextBoxProps) {
     const { state, handlers } = useControlState<HTMLInputElement>(disabled)
 
     return (
-        <div style={{ width: 300 }}>
+        <div style={{ width: 400 }}>
             <TextControlStroke state={state} focused={focused}>
                 <TextControlFill state={state}>
                     <StyledTextBox
