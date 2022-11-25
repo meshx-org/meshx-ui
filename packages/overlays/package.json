@@ -1,7 +1,7 @@
 {
     "name": "@meshx-org/mxui-overlays",
     "description": "Overlay component for MXUI",
-    "version": "0.7.7",
+    "version": "0.7.8",
     "license": "apache-2.0",
     "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
     "homepage": "https://meshx.co",
@@ -36,8 +36,8 @@
         "build": "bob build"
     },
     "dependencies": {
-        "@meshx-org/mxui-core": "0.7.7",
-        "@meshx-org/mxui-primitives": "0.7.7"
+        "@meshx-org/mxui-core": "0.7.8",
+        "@meshx-org/mxui-primitives": "0.7.8"
     },
     "devDependencies": {
         "@meshx-org/mxui-tsconfig": "*",
