@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { margin, padding, MarginProps, PaddingProps } from 'styled-system'
+import { layout, margin, padding, MarginProps, PaddingProps } from 'styled-system'
 import { CardStroke, SurfaceStroke } from '../stroke/Stroke'
 import { AcrylicFill, LayerFill, SmokeFill, CardFill } from '../fill/Fill'
 import { CardShadow, FlyoutShadow } from '../shadow/Shadow'
@@ -9,6 +9,7 @@ import { useControlState } from '@meshx-org/mxui-core'
 
 const SurfaceWrapper = styled.div<MarginProps>`
     ${margin}
+    ${layout}
     position: relative;
     display: flex;
 `
@@ -16,6 +17,7 @@ const SurfaceWrapper = styled.div<MarginProps>`
 const SurfaceContent = styled.div<PaddingProps>`
     ${padding}
     z-index: 3;
+    flex: 1;
 `
 
 export function FlyoutSurface(props: FlyoutSurfaceProps) {

@@ -1,4 +1,5 @@
 type ChangeHandler = (value: string) => void
+type VoidHandler = () => void
 
 export interface TextBoxProps {
     placeholder?: string
@@ -8,4 +9,7 @@ export interface TextBoxProps {
 
     value?: string
     onChange?: ChangeHandler
+
+    onFocus?: VoidHandler
+    onBlur?: VoidHandler
 }

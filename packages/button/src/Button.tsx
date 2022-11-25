@@ -39,9 +39,14 @@ function Button(props: ButtonProps) {
 
     const theme = useTheme()
     const { state, handlers } = useControlState<HTMLButtonElement>(disabled)
+    const { ...restHandlers } = handlers
+
+    const handleClick = (e: any) => {
+        onPress && onPress(e)
+    }
 
     return (
-        <StyledButton onClick={onPress} type="button" data-theme={theme} data-state={state} {...handlers}>
+        <StyledButton onClick={handleClick} type="button" data-theme={theme} data-state={state} {...restHandlers}>
             <ControlStroke state={state}>
                 <ControlFill state={state}>
                     <ButtonContent>

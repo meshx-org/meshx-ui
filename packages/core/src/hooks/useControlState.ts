@@ -3,7 +3,7 @@ import { ControlState, getControlState } from '../shared'
 
 interface EventHandlers<T = Element> {
     onMouseDown: React.MouseEventHandler<T>
-    onMouseUp: React.MouseEventHandler<T>
+    // onClick: React.MouseEventHandler<T>
 
     onMouseEnter: React.MouseEventHandler<T>
     onMouseLeave: React.MouseEventHandler<T>
@@ -18,9 +18,17 @@ export function useControlState<T = Element>(disabled?: boolean): UseControlStat
     const [pressed, setPressed] = useState(false)
     const [hovered, setHovered] = useState(false)
 
+    const handleMouseUp = (e: any) => {
+        setPressed(false)
+        window.removeEventListener('mouseup', handleMouseUp, true)
+    }
+
     const handlers = {
-        onMouseDown: () => setPressed(true),
-        onMouseUp: () => setPressed(false),
+        onMouseDown: () => {
+            console.log('handleMouseDown - add Listeners')
+            window.addEventListener('mouseup', handleMouseUp, true)
+            setPressed(true)
+        },
         onMouseEnter: () => setHovered(true),
         onMouseLeave: () => setHovered(false)
     }

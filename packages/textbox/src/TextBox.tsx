@@ -42,9 +42,9 @@ const StyledTextBox = styled.input`
 `
 
 export function TextBox(props: TextBoxProps) {
-    const { placeholder, disabled = false, value, onChange } = props
+    const { placeholder, disabled = false, value, onChange, onFocus, onBlur } = props
  
-    const { focused, handlers: focusHandlers } = useFocus<HTMLInputElement>()
+    const { focused, handlers: focusHandlers } = useFocus<HTMLInputElement>(onFocus, onBlur)
     const { state, handlers } = useControlState<HTMLInputElement>(disabled)
 
     return (

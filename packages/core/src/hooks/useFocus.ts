@@ -10,12 +10,18 @@ interface UseFocus<T = Element> {
     focused: boolean
 }
 
-export function useFocus<T = Element>(): UseFocus<T> {
+export function useFocus<T = Element>(onFocus?: React.FocusEventHandler<T>, onBlur?: React.FocusEventHandler<T>): UseFocus<T> {
     const [focused, setFocused] = useState(false)
 
     const handlers = {
-        onFocus: () => setFocused(true),
-        onBlur: () => setFocused(false)
+        onFocus: (e: React.FocusEvent<T>) => {
+            setFocused(true)
+            onFocus && onFocus(e)
+        },
+        onBlur: (e: React.FocusEvent<T>) => {
+            setFocused(false)
+            onBlur && onBlur(e)
+        }
     }
 
     return { handlers, focused }
