@@ -32,6 +32,8 @@ declare module 'styled-components' {
 
 const GlobalStyle = createGlobalStyle`
     :root {
+        color-scheme: ${({ theme }) => theme.name};
+
         // Spacing
         --theme-spacing-sm: ${(props) => props.theme.spacing.sm}px;
         --theme-spacing-md: ${(props) => props.theme.spacing.md}px;
