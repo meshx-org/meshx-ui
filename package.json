@@ -13,6 +13,7 @@
         "prepare": "husky install",
         "lint": "turbo run lint",
         "build": "turbo run build",
+        "clean": "turbo run clean",
         "test": "turbo run test",
         "copy-css": "copyfiles -u 1 src/**/*.css dist/",
         "storybook": "turbo run storybook",

@@ -69,6 +69,8 @@ const GlobalStyle = createGlobalStyle`
 
         --theme-background-smoke-default: ${({ theme }) => theme.colors.backgrounds.smoke.default};
 
+        --theme-background-acrylic-default: ${({ theme }) => theme.colors.backgrounds.acrylic.default};
+
         // Fonts
         --theme-font-default: ${({ theme }) => theme.fonts.default};
         --theme-font-mono: ${({ theme }) => theme.fonts.mono};

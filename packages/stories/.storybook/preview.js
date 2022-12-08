@@ -29,7 +29,7 @@ export const parameters = {
             appBorderColor:  DEFAULT_DARK.colors.stroke.divider,
             inputBorder: DEFAULT_DARK.colors.stroke.divider,
 
-            appBg: DEFAULT_DARK.colors.backgrounds.solid.secondary,
+            appBg: DEFAULT_DARK.colors.backgrounds.solid.default,
             appContentBg: DEFAULT_DARK.colors.backgrounds.solid.default, // main story view frame
             barBg: DEFAULT_DARK.colors.backgrounds.solid.default, // top toolbar
         },
@@ -40,7 +40,7 @@ export const parameters = {
             appBorderColor: DEFAULT_LIGHT.colors.stroke.divider,
             inputBorder: DEFAULT_LIGHT.colors.stroke.divider,
 
-            appBg: DEFAULT_LIGHT.colors.backgrounds.solid.secondary,
+            appBg: DEFAULT_LIGHT.colors.backgrounds.solid.default,
             appContentBg: DEFAULT_LIGHT.colors.backgrounds.solid.default, // main story view frame
             barBg: DEFAULT_LIGHT.colors.backgrounds.solid.default, // top toolbar
         }

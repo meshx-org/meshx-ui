@@ -11,7 +11,6 @@
  */
 
 import { HTMLAttributes, ReactElement, ReactNode } from 'react'
-type StyleProps = any
 
 export type Placement =
     | 'bottom'
@@ -93,7 +92,7 @@ export interface OverlayProps {
     onExited?: () => void
 }
 
-export interface ModalProps extends StyleProps, OverlayProps {
+export interface ModalProps extends OverlayProps {
     children: ReactElement
     isOpen?: boolean
     onClose?: () => void
@@ -101,7 +100,7 @@ export interface ModalProps extends StyleProps, OverlayProps {
     isDismissable?: boolean
 }
 
-export interface PopoverProps extends StyleProps, OverlayProps {
+export interface PopoverProps extends OverlayProps {
     children: ReactNode
     placement?: PlacementAxis
     arrowProps?: HTMLAttributes<HTMLElement>

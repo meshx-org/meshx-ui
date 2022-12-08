@@ -25,3 +25,8 @@ a {
 input:focus {
     outline: none !important;
 }
+
+html {
+    color: var(--theme-color-text-primary);
+    background: var(--theme-background-solid-default); 
+}

@@ -5,18 +5,33 @@ import { TextBox } from '@meshx-org/mxui-textbox'
 import { Text } from '@meshx-org/mxui-text'
 import { FlyoutSurface, Box } from '@meshx-org/mxui-primitives'
 
-export function SearchBox<H extends Hit>(props: SearchBoxProps<H>) {
-    const { minQueryLength = 3, children, onQuery } = props
+ import styled from "styled-components";
+
+const Component = styled.div`
+  color: red;
+`;
+
+const s = (
+  <Component
+    as="button"
+    onClick={() => alert('It works!')}
+  >
+    Hello World!
+  </Component>
+)
+
+export function SearchBox<H = Hit>(props: SearchBoxProps<H>) {
+    const { minQueryLength = 3, onRenderHits, onQuery } = props
     const [query, setQuery] = useState('')
     const [focused, setFocused] = useState(false)
     const hasValidQuery = useMemo(() => query.length > minQueryLength, [query])
     const hasHits = props.hits.length > 0
     useEffect(() => onQuery && onQuery(query), [query])
 
-    const renderEmpty = () => {
+    const onRenderEmpty = () => {
         return (
-            <Box width="100%" display="flex" py={8} justifyContent="center">
-                <Text variant="body">No hits found</Text>
+            <Box width="100%" display="flex" py={6} justifyContent="center">
+                <Text variant="body">No hits found for "{query}"</Text>
             </Box>
         )
     }
@@ -36,8 +51,8 @@ export function SearchBox<H extends Hit>(props: SearchBoxProps<H>) {
                 value={query}
                 onChange={setQuery}
             />
-            <FlyoutSurface width={400} p={1}>
-                {hasHits ? children({ query, hits: props.hits }) : renderEmpty()}
+            <FlyoutSurface width={350} p={1}>
+                {hasHits ? onRenderHits({ query, hits: props.hits }) : onRenderEmpty()}
             </FlyoutSurface>
         </AnchoredOverlay>
     )
