@@ -5,8 +5,8 @@ import { textVariants, headingVariants } from './variants'
 interface BaseProps extends ColorProps, SpaceProps, TypographyProps {
     children?: React.ReactNode
 
-    /** 
-     * Lets the user select text, to use the native copy and paste functionality. 
+    /**
+     * Lets the user select text, to use the native copy and paste functionality.
      * @default false
      */
     selectable?: boolean
@@ -14,7 +14,7 @@ interface BaseProps extends ColorProps, SpaceProps, TypographyProps {
     as?: string | React.ComponentType<any>
 
     // ellipsizeMode = "tail"
-    // numberOfLines = {1} 
+    // numberOfLines = {1}
 
     // selectionHighlightColor?: string
 }
@@ -23,6 +23,6 @@ export interface TextProps extends BaseProps {
     variant?: keyof typeof textVariants
 }
 
-export interface HeadingProps extends BaseProps { 
+export interface HeadingProps extends BaseProps {
     variant?: keyof typeof headingVariants
 }

@@ -49,15 +49,20 @@ const StyledButtonContent = styled.div`
     line-height: 20px;
 `
 
-function LinkButton({ label, href, disabled = false, ...props }: LinkButtonProps) {
+function LinkButton({ children, href, disabled = false, as, ...otherProps }: LinkButtonProps) {
     const theme = useTheme()
     const { state, handlers } = useControlState<HTMLAnchorElement>(disabled)
 
     return (
-        <StyledButton href={href} type="button" data-theme={theme} data-state={state} {...handlers}>
+        <StyledButton as={as} href={href} type="button" {...otherProps} data-theme={theme} data-state={state} {...handlers}>
             <SubtleFill state={state}>
                 <StyledButtonContent>
-                    <Text variant="body" selectable={false} color={disabled ? "text.disabled" : "text.primary"} children={label} />
+                    <Text
+                        variant="body"
+                        selectable={false}
+                        color={disabled ? 'text.disabled' : 'text.primary'}
+                        children={children}
+                    />
                 </StyledButtonContent>
             </SubtleFill>
         </StyledButton>
