@@ -2,7 +2,7 @@
     "name": "@meshx-org/mxui-tsconfig",
     "version": "0.7.3",
     "private": true,
-    "license": "MIT",
+    "license": "Apache-2.0",
     "publishConfig": {
         "access": "public"
     }

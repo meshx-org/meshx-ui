@@ -2,7 +2,7 @@
     "name": "@meshx-org/mxui",
     "description": "Button component for MXUI",
     "version": "0.7.9",
-    "license": "apache-2.0",
+    "license": "Apache-2.0",
     "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
     "homepage": "https://meshx.co/produts/mxui",
     "main": "lib/index.js",
@@ -38,6 +38,7 @@
     },
     "dependencies": {
         "@meshx-org/mxui-overlays": "0.7.9",
+        "@meshx-org/mxui-navigation": "0.7.9",
         "@meshx-org/mxui-button": "0.7.9",
         "@meshx-org/mxui-switch": "0.7.9",
         "@meshx-org/mxui-textbox": "0.7.9",

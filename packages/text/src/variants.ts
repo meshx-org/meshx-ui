@@ -39,13 +39,11 @@ const hVariants = {
         fontWeight: 700
     },
     heading5: {
-        
         fontFamily: 'default',
         fontSize: 2,
         fontWeight: 700
     },
     heading6: {
-        
         fontFamily: 'default',
         fontSize: 1,
         fontWeight: 700
@@ -59,25 +57,34 @@ export const headingVariants = {
 
 export const textVariants = {
     body: {
-        
         fontFamily: 'default',
         lineHeight: 'body',
-        fontWeight: '400',
+        fontWeight: 400,
         fontSize: 1
     },
     bodyAlt: {
-       
         fontFamily: 'default',
         lineHeight: 'body',
         fontWeight: 600,
         fontSize: 1
     },
+    bodyLarge: {
+        fontFamily: 'default',
+        lineHeight: 'body',
+        fontWeight: 400,
+        fontSize: 2
+    },
+    bodyLargeAlt: {
+        fontFamily: 'default',
+        lineHeight: 'body',
+        fontWeight: 600,
+        fontSize: 2
+    },
     caption: {
-       
         fontFamily: 'default',
         lineHeight: 'body',
         opacity: 0.8,
-        fontWeight: '400',
+        fontWeight: 400,
         fontSize: 0
     },
     captionAlt: {

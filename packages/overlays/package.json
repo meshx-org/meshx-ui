@@ -2,7 +2,7 @@
     "name": "@meshx-org/mxui-overlays",
     "description": "Overlay component for MXUI",
     "version": "0.7.9",
-    "license": "apache-2.0",
+    "license": "Apache-2.0",
     "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
     "homepage": "https://meshx.co",
     "main": "lib/commonjs/index.js",

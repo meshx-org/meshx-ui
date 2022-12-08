@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Story, Meta } from '@storybook/react'
 import { Tabs, TabPanels, TabList, Item, TabsProps } from '@meshx-org/mxui-navigation/src'
-import { Text } from '@meshx-org/mxui-text/src'
 
 const argTypes = {}
 

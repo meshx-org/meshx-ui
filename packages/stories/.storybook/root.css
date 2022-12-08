@@ -3,7 +3,6 @@
 #root {
     display: flex;
     flex-direction: column;
-    font-family: 'Noto Sans', sans-serif;
     font-size: 14px;
     letter-spacing: 0;
     line-height: 1.2858142857;

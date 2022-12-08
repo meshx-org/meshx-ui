@@ -1,94 +1,49 @@
-export interface ThemeValues {
-    colors: {
-        text: Record<string, any>
-        stroke: {
-            divider: string
-            card: string
-            surface: string
-        }
-        backgrounds: {
-            // Used to create `cards` t
-            card: {
-                default: string
-                secondary: string
-                tertiary: string
-            }
-
-            // Used over under dialogs to block them out as inaccessible.
-            smoke: {
-                default: string
-            }
-
-            // Used on background colors of any material to create layering.
-            layer: {
-                default: string
-                alt: string
-            }
-
-            // Solid background colors to place layers, cards, or controls on.
-            solid: {
-                default: string
-                secondary: string
-                tertiary: string
-            }
-
-            acrylic: {
-                default: string
-            }
-        }
-        accentText: Record<string, any>
-        fill: {
-            accent: string
-            
-
-            // Used on background colors of any material to create layering.
-            layerDefault: string
-            layerAlt: string
-
-            // TODO
-            secondary: string
-            subtle: string
-        }
-    }
-    fontSizes: number[]
-    fonts: {
-        default: string
-        mono: string
-    }
-    space: number[]
-    lineHeights: Record<string, any>
-    spacing: {
-        [key: string]: number
-    }
-}
+import type { ThemeValues } from './types'
 
 function fontStack(fonts: string[]) {
     return fonts.map((font) => (font.includes(' ') ? `"${font}"` : font)).join(', ')
 }
 
-const spacing = {
-    sm: 8,
-    md: 16,
-    lg: 24,
-    xl: 32
+// https://tailwindcss.com/docs/customizing-spacing#default-spacing-scale
+const space: ThemeValues['space'] = [
+    0, 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 32, 36, 40, 48, 56, 64, 80, 96
+] as ThemeValues['space']
+
+space.sm = space[2]
+space.md = space[3]
+space.lg = space[5]
+space.xl = space[9]
+space['2xl'] = space[13]
+space['3xl'] = space[17]
+
+const lineHeights = {
+    body: '150%',
+    heading: '125%'
 }
 
+const fontSizes = [12, 14, 16, 18, 21, 24, 32, 48, 60]
 const fonts = {
     default: fontStack([
         '-apple-system',
         'BlinkMacSystemFont',
         'Segoe UI',
-        'Helvetica',
+        'Roboto',
+        'Helvetica Neue',
+        'Noto Sans',
         'Arial',
         'sans-serif',
         'Apple Color Emoji',
-        'Segoe UI Emoji'
+        'Segoe UI Emoji',
+        'sans-serif'
     ]),
     mono: fontStack(['SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo', 'Courier', 'monospace'])
 }
 
 export const DEFAULT_LIGHT: ThemeValues = {
     colors: {
+        accent: {
+            default: 'rgba(3, 150, 255, 1)'
+        },
         text: {
             primary: 'rgba(10, 37, 64,1)',
             secondary: 'rgba(10, 37, 64,0.6)',
@@ -97,7 +52,7 @@ export const DEFAULT_LIGHT: ThemeValues = {
         stroke: {
             divider: 'rgba(0,0,0,0.0803)',
             card: 'rgba(0 0 0 / 6%)',
-            surface: 'rgba(0 0 0 / 6%)',
+            surface: 'rgba(0 0 0 / 6%)'
         },
         accentText: {
             primary: 'rgb(3, 150, 255)',
@@ -135,17 +90,16 @@ export const DEFAULT_LIGHT: ThemeValues = {
         }
     },
     fonts,
-    fontSizes: [12, 14, 16, 18, 21, 24, 32, 48, 60],
-    space: [0, 4, 8, 16, 32, 64, 128, 256],
-    lineHeights: {
-        body: '150%',
-        heading: '125%'
-    },
-    spacing
+    fontSizes,
+    space,
+    lineHeights
 }
 
 export const DEFAULT_DARK: ThemeValues = {
     colors: {
+        accent: {
+            default: 'rgba(3, 150, 255, 1)'
+        },
         text: {
             primary: 'rgba(255,255,255,1)',
             secondary: 'rgba(255,255,255,0.6)',
@@ -159,7 +113,7 @@ export const DEFAULT_DARK: ThemeValues = {
         stroke: {
             divider: 'rgba(255,255,255,0.0837)',
             card: 'rgba(0 0 0 / 10%)',
-            surface: 'rgba(0 0 0 / 20%)',
+            surface: 'rgba(0 0 0 / 20%)'
         },
         backgrounds: {
             card: {
@@ -192,11 +146,7 @@ export const DEFAULT_DARK: ThemeValues = {
         }
     },
     fonts,
-    fontSizes: [12, 14, 16, 18, 21, 24, 32, 48, 60],
-    space: [0, 4, 8, 16, 32, 64, 128, 256],
-    lineHeights: {
-        body: '150%',
-        heading: '125%'
-    },
-    spacing
+    fontSizes,
+    space,
+    lineHeights
 }

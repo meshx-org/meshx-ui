@@ -13,6 +13,9 @@ interface BaseProps extends ColorProps, SpaceProps, TypographyProps {
 
     as?: string | React.ComponentType<any>
 
+    // ellipsizeMode = "tail"
+    // numberOfLines = {1} 
+
     // selectionHighlightColor?: string
 }
 

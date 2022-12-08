@@ -1,15 +1,15 @@
-import React from "react"
+import React from 'react'
 import { Tab } from '@headlessui/react'
 import { SubtleFill } from '@meshx-org/mxui-primitives'
 import { ControlState } from '@meshx-org/mxui-core'
 import { Text } from '@meshx-org/mxui-text'
-import { TabsProps, TabPanelsProps, ItemProps, TabListProps } from "./types"
-import styled from "styled-components"
+import { TabsProps, TabPanelsProps, ItemProps, TabListProps } from './types'
+import styled from 'styled-components'
 
 const StyledTab = styled(Tab)`
     background: none;
     outline: 0;
-    
+    cursor: pointer;
 `
 
 const StyledTabContent = styled.div`
@@ -24,10 +24,10 @@ const StyledTabContent = styled.div`
 `
 
 const StyledTabList = styled(Tab.List)`
-    column-gap: 6px;
-    padding: 8px 6px;
     display: flex;
-    border-bottom: 1px solid ${props => props.theme.colors.stroke.surface};
+    column-gap: ${(props) => props.theme.space[4]}px;
+    padding: ${(props) => props.theme.space[3]}px 0px;
+    border-bottom: 1px solid ${(props) => props.theme.colors.stroke.surface};
 `
 
 function Item(props: ItemProps) {
@@ -49,16 +49,20 @@ const SelectorWrapper = styled.div`
     justify-content: center;
 `
 
+/** @private */
 function TabInternal(props: any) {
     return (
         <StyledTab>
-            {({ selected }) => (
+            {({ selected }: any) => (
                 <SubtleFill state={selected ? ControlState.Hovered : ControlState.Rest}>
                     <StyledTabContent>
-                        <Text variant="body" selectable={false} color={false ? "text.disabled" : "text.primary"} children={props.children} />
-                        <SelectorWrapper>
-                            {selected ? <Selector />: null}
-                        </SelectorWrapper>
+                        <Text
+                            variant="body"
+                            selectable={false}
+                            color={false ? 'text.disabled' : 'text.primary'}
+                            children={props.children}
+                        />
+                        <SelectorWrapper>{selected ? <Selector /> : null}</SelectorWrapper>
                     </StyledTabContent>
                 </SubtleFill>
             )}
@@ -84,9 +88,15 @@ const StyledTabPanels = styled(Tab.Panels)`
 function TabPanels(props: TabPanelsProps) {
     return (
         <StyledTabPanels>
-            <Tab.Panel>Content 1</Tab.Panel>
-            <Tab.Panel>Content 2</Tab.Panel>
-            <Tab.Panel>Content 3</Tab.Panel>
+            <Tab.Panel>
+                <Text variant="body">Content 1</Text>
+            </Tab.Panel>
+            <Tab.Panel>
+                <Text>Content 2</Text>
+            </Tab.Panel>
+            <Tab.Panel>
+                <Text>Content 3</Text>
+            </Tab.Panel>
         </StyledTabPanels>
     )
 }
@@ -99,9 +109,7 @@ const StyledTabs = styled(Tab.List)`
 function Tabs(props: TabsProps) {
     return (
         <Tab.Group>
-            <StyledTabs>
-                    {props.children}
-            </StyledTabs>
+            <StyledTabs>{props.children}</StyledTabs>
         </Tab.Group>
     )
 }

@@ -4,7 +4,8 @@ import React, { useState } from 'react'
 
 import { Story, Meta } from '@storybook/react'
 
-import { Pressable, View, Text, Animated } from 'react-native'
+import { Pressable, View, Animated } from 'react-native'
+import { Text } from "@meshx-org/mxui-text" 
 import { TreeView, ItemId, RenderItemParams, TreeItem, TreeViewProps, iterateTree, mutateTree } from '@meshx-org/mxui-treeview/src'
 
 // 👇 This default export determines where your story goes in the story list
@@ -63,7 +64,7 @@ const renderItem = ({ item, onExpand, onCollapse }: RenderItemParams<any>) => {
     return (
         <View style={{ flexDirection: 'row', height: 20 }}>
             {item.hasChildren && getChevron(item, onExpand, onCollapse)}
-            <Text ellipsizeMode="tail" numberOfLines={1} style={{ marginLeft: 4 }}>
+            <Text ml="4px">
                 {glyph} {title}
             </Text>
         </View>

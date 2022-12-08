@@ -1,17 +1,13 @@
-import React from 'react'
-import { Platform } from 'react-native'
+import React, { createContext, useContext } from 'react'
 import { ThemeProvider as StyledProvider, createGlobalStyle } from 'styled-components'
-import { ThemeValues, DEFAULT_DARK, DEFAULT_LIGHT } from './themeValues'
+import type { ThemeContextValue, ThemeValues } from './types'
+import { DEFAULT_DARK, DEFAULT_LIGHT } from './themeValues'
+import { Platform } from '../platform'
 
-export interface Theme {
-    name: string
-    values: ThemeValues
-}
+const ThemeContext = createContext<ThemeContextValue>({ name: 'light', values: DEFAULT_LIGHT })
 
-const ThemeContext = React.createContext<Theme>({ name: 'light', values: DEFAULT_LIGHT })
-
-export const useTheme = () => React.useContext(ThemeContext).name
-export const useThemeValues = () => React.useContext(ThemeContext).values
+export const useTheme = () => useContext(ThemeContext).name
+export const useThemeValues = () => useContext(ThemeContext).values
 
 interface ThemeProviderProps {
     theme: 'light' | 'dark'
@@ -19,9 +15,9 @@ interface ThemeProviderProps {
 }
 
 declare module 'react' {
-    interface CSSProperties {
-        [key: `--${string}`]: string | number
-    }
+    //interface CSSProperties {
+    //    [key: `--${string}`]: string | number
+    //}u
 }
 
 declare module 'styled-components' {
@@ -33,13 +29,7 @@ declare module 'styled-components' {
 const GlobalStyle = createGlobalStyle`
     :root {
         color-scheme: ${({ theme }) => theme.name};
-
-        // Spacing
-        --theme-spacing-sm: ${(props) => props.theme.spacing.sm}px;
-        --theme-spacing-md: ${(props) => props.theme.spacing.md}px;
-        --theme-spacing-lg: ${(props) => props.theme.spacing.lg}px;
-        --theme-spacing-xl: ${(props) => props.theme.spacing.xl}px;
-
+        
         // Text Colors 
         --theme-color-text-primary: ${({ theme }) => theme.colors.text.primary};
         --theme-color-text-secondary: ${({ theme }) => theme.colors.text.secondary};
@@ -68,7 +58,6 @@ const GlobalStyle = createGlobalStyle`
         --theme-background-layer-alt: ${({ theme }) => theme.colors.backgrounds.layer.alt};
 
         --theme-background-smoke-default: ${({ theme }) => theme.colors.backgrounds.smoke.default};
-
         --theme-background-acrylic-default: ${({ theme }) => theme.colors.backgrounds.acrylic.default};
 
         // Fonts
@@ -85,6 +74,31 @@ const GlobalStyle = createGlobalStyle`
         --theme-font-size-6: ${({ theme }) => theme.fontSizes[6]}px;
         --theme-font-size-7: ${({ theme }) => theme.fontSizes[7]}px;
         --theme-font-size-8: ${({ theme }) => theme.fontSizes[8]}px;
+
+        // Space
+        --theme-space-0: ${({ theme }) => theme.space[0]}px;
+        --theme-space-1: ${({ theme }) => theme.space[1]}px;
+        --theme-space-2: ${({ theme }) => theme.space[2]}px;
+        --theme-space-3: ${({ theme }) => theme.space[3]}px;
+        --theme-space-4: ${({ theme }) => theme.space[4]}px;
+        --theme-space-5: ${({ theme }) => theme.space[5]}px;
+        --theme-space-6: ${({ theme }) => theme.space[6]}px;
+        --theme-space-7: ${({ theme }) => theme.space[7]}px;
+        --theme-space-8: ${({ theme }) => theme.space[8]}px;
+        --theme-space-9: ${({ theme }) => theme.space[9]}px;
+        --theme-space-10: ${({ theme }) => theme.space[10]}px;
+        --theme-space-11: ${({ theme }) => theme.space[11]}px;
+        --theme-space-12: ${({ theme }) => theme.space[12]}px;
+        --theme-space-13: ${({ theme }) => theme.space[13]}px;
+        --theme-space-14: ${({ theme }) => theme.space[14]}px;
+
+        // Space alias
+        --theme-spacing-sm: ${(props) => props.theme.space.sm}px;
+        --theme-spacing-md: ${(props) => props.theme.space.md}px;
+        --theme-spacing-lg: ${(props) => props.theme.space.lg}px;
+        --theme-spacing-xl: ${(props) => props.theme.space.xl}px;
+        --theme-spacing-2xl: ${(props) => props.theme.space['2xl']}px;
+        --theme-spacing-3xl: ${(props) => props.theme.space['3xl']}px;
     }
 `
 
@@ -94,7 +108,7 @@ export function ThemeProvider({ theme, children }: ThemeProviderProps) {
     return (
         <ThemeContext.Provider value={{ name: theme, values }}>
             <StyledProvider theme={{ ...values, name: theme }}>
-                {Platform.OS === 'web' ? (<GlobalStyle />) : null}
+                {Platform.OS === 'web' ? <GlobalStyle /> : null}
                 {children}
             </StyledProvider>
         </ThemeContext.Provider>

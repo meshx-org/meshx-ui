@@ -16,7 +16,7 @@ const TextBase = styled.p<TextProps>`
 `
 
 export function Text(props: TextProps) {
-    const { selectable = false, as, ...restProps } = props
+    const { selectable = true, as, variant = 'body', ...restProps } = props
 
-    return <TextBase as={as} selectable={selectable} color='text.primary' {...restProps as any} />
+    return <TextBase as={as} selectable={selectable} variant={variant} {...(restProps as any)} />
 }
