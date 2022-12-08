@@ -6,10 +6,9 @@ import { Text } from '@meshx-org/mxui-text'
 import { TabsProps, TabPanelsProps, ItemProps, TabListProps } from './types'
 import styled from 'styled-components'
 
-const StyledTab = styled(Tab)`
-    background: none;
-    outline: 0;
+const StyledTab = styled.div`
     cursor: pointer;
+    outline: none;
 `
 
 const StyledTabContent = styled.div`
@@ -52,7 +51,7 @@ const SelectorWrapper = styled.div`
 /** @private */
 function TabInternal(props: any) {
     return (
-        <StyledTab>
+        <Tab as={StyledTab}>
             {({ selected }: any) => (
                 <SubtleFill state={selected ? ControlState.Hovered : ControlState.Rest}>
                     <StyledTabContent>
@@ -66,7 +65,7 @@ function TabInternal(props: any) {
                     </StyledTabContent>
                 </SubtleFill>
             )}
-        </StyledTab>
+        </Tab>
     )
 }
 
