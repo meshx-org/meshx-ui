@@ -1,14 +1,24 @@
 import { ReactNode } from 'react'
+import { PaddingProps } from 'styled-system'
 
-export interface TabsProps {
+export interface TabViewProps {
     children: ReactNode[]
+    onChange?: ((index: number) => void) | undefined
+    selectedIndex?: number
 }
 
-export interface TabPanelsProps {
-    children: ReactNode | ReactNode[]
+interface TabPanelsRenderProps {
+    selectedIndex: number
 }
 
-export interface TabListProps {
+export interface TabPanelsProps extends PaddingProps {
+    children:
+        | ReactNode
+        | ReactNode[]
+        | ((props: TabPanelsRenderProps) => React.ReactElement<any, string | React.JSXElementConstructor<any>>)
+}
+
+export interface TabListProps extends PaddingProps {
     children: ReactNode | ReactNode[]
 }
 

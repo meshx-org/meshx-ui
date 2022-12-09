@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { Children } from 'react'
 import { Tab } from '@headlessui/react'
 import { SubtleFill } from '@meshx-org/mxui-primitives'
 import { ControlState } from '@meshx-org/mxui-core'
 import { Text } from '@meshx-org/mxui-text'
-import { TabsProps, TabPanelsProps, ItemProps, TabListProps } from './types'
+import { TabViewProps, TabPanelsProps, ItemProps, TabListProps } from './types'
 import styled from 'styled-components'
+import { padding, PaddingProps } from 'styled-system'
 
 const StyledTab = styled.div`
     cursor: pointer;
@@ -22,15 +23,8 @@ const StyledTabContent = styled.div`
     position: relative;
 `
 
-const StyledTabList = styled(Tab.List)`
-    display: flex;
-    column-gap: ${(props) => props.theme.space[4]}px;
-    padding: ${(props) => props.theme.space[3]}px 0px;
-    border-bottom: 1px solid ${(props) => props.theme.colors.stroke.surface};
-`
-
 function Item(props: ItemProps) {
-    return null
+    return <>{props.children}</>
 }
 
 const Selector = styled.div`
@@ -69,12 +63,28 @@ function TabInternal(props: any) {
     )
 }
 
+const StyledTabList = styled(Tab.List)<TabListProps>`
+    display: flex;
+    column-gap: ${(props) => props.theme.space[4]}px;
+
+    border-bottom: 1px solid ${(props) => props.theme.colors.stroke.surface};
+    // padding: ${(props) => props.theme.space[3]}px 0px;
+
+    ${padding}
+`
+
 function TabList(props: TabListProps) {
+    const { children, py = 4, ...otherProps } = props
+
+    const arrayChildren = Children.toArray(children)
+
+    const tabs = Children.map(arrayChildren, (child, index) => {
+        return <TabInternal>{child}</TabInternal>
+    })
+
     return (
-        <StyledTabList>
-            <TabInternal children="Home" />
-            <TabInternal children="New Tab" />
-            <TabInternal children="Tab 3" />
+        <StyledTabList py={py} {...otherProps}>
+            {tabs}
         </StyledTabList>
     )
 }
@@ -82,22 +92,28 @@ function TabList(props: TabListProps) {
 const StyledTabPanels = styled(Tab.Panels)`
     flex: 1;
     background-color: var(--theme-background-layer-default);
+
+    ${padding}
 `
 
 function TabPanels(props: TabPanelsProps) {
-    return (
-        <StyledTabPanels>
+    const { children, ...otherProps } = props
+
+    if (typeof children === 'function') {
+        return <StyledTabPanels {...otherProps}>{children}</StyledTabPanels>
+    }
+
+    const arrayChildren = Children.toArray(children)
+
+    const panels = Children.map(arrayChildren, (child, index) => {
+        return (
             <Tab.Panel>
-                <Text variant="body">Content 1</Text>
+                <Text>{child}</Text>
             </Tab.Panel>
-            <Tab.Panel>
-                <Text>Content 2</Text>
-            </Tab.Panel>
-            <Tab.Panel>
-                <Text>Content 3</Text>
-            </Tab.Panel>
-        </StyledTabPanels>
-    )
+        )
+    })
+
+    return <StyledTabPanels {...otherProps}>{panels}</StyledTabPanels>
 }
 
 const StyledTabs = styled(Tab.List)`
@@ -105,12 +121,14 @@ const StyledTabs = styled(Tab.List)`
     flex-direction: column;
 `
 
-function Tabs(props: TabsProps) {
+function TabView(props: TabViewProps) {
+    const { children, ...otherProps } = props
+
     return (
-        <Tab.Group>
-            <StyledTabs>{props.children}</StyledTabs>
+        <Tab.Group {...otherProps}>
+            <StyledTabs>{children}</StyledTabs>
         </Tab.Group>
     )
 }
 
-export { Tabs, TabList, Item, TabPanels }
+export { TabView, TabList, Item, TabPanels }
