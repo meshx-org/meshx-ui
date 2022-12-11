@@ -116,9 +116,10 @@ function TabPanels(props: TabPanelsProps) {
     return <StyledTabPanels {...otherProps}>{panels}</StyledTabPanels>
 }
 
-const StyledTabs = styled(Tab.List)`
+const StyledTabView = styled(Tab.List)`
     display: flex;
     flex-direction: column;
+    height: 100%;
 `
 
 function TabView(props: TabViewProps) {
@@ -126,7 +127,7 @@ function TabView(props: TabViewProps) {
 
     return (
         <Tab.Group {...otherProps}>
-            <StyledTabs>{children}</StyledTabs>
+            <StyledTabView>{children}</StyledTabView>
         </Tab.Group>
     )
 }
