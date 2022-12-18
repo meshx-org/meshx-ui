@@ -1,2 +1,2 @@
-export { TextBox } from "./TextBox"
-export type { TextBoxProps } from "./TextBox.types"
+export { TextBox, PasswordBox } from "./TextBox"
+export type { TextBoxProps, PasswordBoxProps } from "./TextBox.types"

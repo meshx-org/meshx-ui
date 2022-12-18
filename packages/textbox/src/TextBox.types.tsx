@@ -1,15 +1,32 @@
-type ChangeHandler = (value: string) => void
-type VoidHandler = () => void
+import { PaddingProps, LayoutProps, MarginProps } from 'styled-system'
 
-export interface TextBoxProps {
+export type ChangeHandler = (value: string) => void
+export type VoidHandler = () => void
+
+export interface BaseInputProps extends PaddingProps, MarginProps, LayoutProps {
     placeholder?: string
-    header?: string
-    readonly?: boolean
     disabled?: boolean
-
-    value?: string
-    onChange?: ChangeHandler
 
     onFocus?: VoidHandler
     onBlur?: VoidHandler
+
+    value?: string | undefined
+    onChange?: ChangeHandler | undefined
+
+    readonly?: boolean
+
+    // keyHint?: 'go' | 'done' | 'next' | 'previous' | 'search' | 'send' | undefined
+    // inputMode?: 'default' | 'url' | 'email' | 'numeric' | 'decimal' | 'phone' | undefined
+}
+
+export interface TextBoxProps extends BaseInputProps {
+    // allow passing non-standard props to the underlying element
+    [key: string]: unknown
+}
+
+export interface PasswordBoxProps extends BaseInputProps {
+    passwordChar?: string
+
+    // allow passing non-standard props to the underlying element
+    [key: string]: unknown
 }

@@ -32,6 +32,7 @@ const ButtonContent = styled.div`
     font-size: 14px;
     line-height: 20px;
     min-width: 80px;
+    column-gap: 8px;
 `
 
 function Button(props: ButtonProps) {
@@ -42,6 +43,21 @@ function Button(props: ButtonProps) {
 
     const handleClick = (e: any) => {
         onPress && onPress(e)
+    }
+
+    let content = null
+    if (typeof children === 'string') {
+        content = (
+            <Text
+                variant="body"
+                selectable={false}
+                data-t={disabled ? 'text.disabled' : 'text.primary'}
+                color={disabled ? 'text.disabled' : 'text.primary'}
+                children={children}
+            />
+        )
+    } else {
+        content = children
     }
 
     return (
@@ -56,15 +72,7 @@ function Button(props: ButtonProps) {
         >
             <ControlStroke state={state}>
                 <ControlFill state={state}>
-                    <ButtonContent>
-                        <Text
-                            variant="body"
-                            selectable={false}
-                            data-t={disabled ? 'text.disabled' : 'text.primary'}
-                            color={disabled ? 'text.disabled' : 'text.primary'}
-                            children={children}
-                        />
-                    </ButtonContent>
+                    <ButtonContent>{content}</ButtonContent>
                 </ControlFill>
             </ControlStroke>
         </StyledButton>

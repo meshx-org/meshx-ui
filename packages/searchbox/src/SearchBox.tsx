@@ -5,20 +5,7 @@ import { TextBox } from '@meshx-org/mxui-textbox'
 import { Text } from '@meshx-org/mxui-text'
 import { FlyoutSurface, Box } from '@meshx-org/mxui-primitives'
 
- import styled from "styled-components";
-
-const Component = styled.div`
-  color: red;
-`;
-
-const s = (
-  <Component
-    as="button"
-    onClick={() => alert('It works!')}
-  >
-    Hello World!
-  </Component>
-)
+import styled from 'styled-components'
 
 export function SearchBox<H = Hit>(props: SearchBoxProps<H>) {
     const { minQueryLength = 3, onRenderHits, onQuery } = props
@@ -50,6 +37,8 @@ export function SearchBox<H = Hit>(props: SearchBoxProps<H>) {
                 placeholder="Search..."
                 value={query}
                 onChange={setQuery}
+                type="search"
+                aria-description="search results will appear below"
             />
             <FlyoutSurface width={350} p={1}>
                 {hasHits ? onRenderHits({ query, hits: props.hits }) : onRenderEmpty()}

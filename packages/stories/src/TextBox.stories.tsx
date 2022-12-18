@@ -1,6 +1,6 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
-import { TextBox, TextBoxProps } from '@meshx-org/mxui-textbox/src'
+import { TextBox, PasswordBox, TextBoxProps, PasswordBoxProps } from '@meshx-org/mxui-textbox/src'
 
 const meta: Meta = {
     title: 'Form/TextBox',
@@ -15,14 +15,31 @@ const meta: Meta = {
     }
 }
 
-const Template: Story<TextBoxProps> = (args) => <TextBox {...args} />
+const TextBoxTemplate: Story<TextBoxProps> = (args) => <TextBox {...args} />
+const PasswordBoxTemplate: Story<PasswordBoxProps> = (args) => <PasswordBox {...args} />
 
-export const Rest = Template.bind({})
+export const Rest = TextBoxTemplate.bind({})
 Rest.args = {
-    placeholder: 'Placeholder'
+    placeholder: 'Placeholder',
+    role: '',
+    name: 'input1'
 }
 
-export const Disabled = Template.bind({})
+export const Styled = TextBoxTemplate.bind({})
+Styled.args = {
+    placeholder: 'Placeholder',
+    py: 10,
+    display: 'flex'
+}
+
+export const Password = PasswordBoxTemplate.bind({})
+Password.args = {
+    placeholder: 'PasswordBox',
+    display: 'flex',
+    flex: 1
+}
+
+export const Disabled = TextBoxTemplate.bind({})
 Disabled.args = {
     placeholder: 'Placeholder',
     disabled: true

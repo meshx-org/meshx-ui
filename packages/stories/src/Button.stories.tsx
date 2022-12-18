@@ -1,6 +1,7 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
 import { Button, ButtonProps, LinkButton } from '@meshx-org/mxui-button/src'
+import { Text } from '@meshx-org/mxui-text'
 
 export default {
     title: 'Basic Input/Button',
@@ -11,7 +12,7 @@ export default {
         },
         docs: {
             page: null
-        },
+        }
     },
     argTypes: {
         apparance: {
@@ -30,6 +31,12 @@ Primary.args = {
     children: 'Button'
 }
 
+export const WithIcon = Template.bind({})
+WithIcon.args = {
+    apparance: 'default',
+    children: [<Text>😄</Text>, <Text>Text</Text>]
+}
+
 export const Secondary = Template.bind({})
 Secondary.args = {
     apparance: 'default',
@@ -45,12 +52,11 @@ Disabled.args = {
 const TemplateWithLinkButton: Story<ButtonProps> = (args) => {
     return (
         <div style={{ display: 'flex', gap: '8px' }}>
-            <LinkButton href="#" label="Sign in" />
+            <LinkButton href="#" children="Sign in" />
             <Button {...args} children="Create an account" />
         </div>
     )
 }
 
 export const WithLinkButton = TemplateWithLinkButton.bind({})
-WithLinkButton.args = { }
-
+WithLinkButton.args = {}
