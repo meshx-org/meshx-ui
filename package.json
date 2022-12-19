@@ -45,7 +45,7 @@
         "eslint-plugin-react-native": "^4.0.0",
         "husky": "^8",
         "metro-react-native-babel-preset": "^0.73.4",
-        "prettier": "^2.8.0",
+        "prettier": "^2.8.1",
         "react-native": "0.70.5",
         "styled-components": "^5.3.6",
         "turbo": "1.6.3",
