@@ -16,7 +16,7 @@
         "@meshx-org/mxui-slider": "0.7.14",
         "@meshx-org/mxui-treeview": "0.7.14",
         "@storybook/addon-react-native-web": "^0.0.19",
-        "@storybook/react": "^6.5.12",
+        "@storybook/react": "^6.5.15",
         "@storybook/manager-webpack5": "^6.5.12",
         "@storybook/builder-webpack5": "^6.5.12",
         "@storybook/addon-actions": "^6.5.14",
