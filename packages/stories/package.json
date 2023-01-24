@@ -21,7 +21,7 @@
         "@storybook/builder-webpack5": "^6.5.12",
         "@storybook/addon-actions": "^6.5.14",
         "@storybook/builder-vite": "^0.3.0",
-        "@storybook/addon-docs": "^6.5.12",
+        "@storybook/addon-docs": "^6.5.15",
         "@storybook/addon-essentials": "^6.5.12",
         "@whitespace/storybook-addon-html": "^5.0.3",
         "@storybook/addon-links": "^6.5.12",
