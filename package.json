@@ -30,7 +30,7 @@
         "@changesets/cli": "^2.25.2",
        
         "@typescript-eslint/eslint-plugin": "^5.49.0",
-        "@typescript-eslint/parser": "^5.45.1",
+        "@typescript-eslint/parser": "^5.50.0",
         "babel-loader": "^9.1.0",
         "babel-plugin-react-native-web": "^0.18.9",
         "babel-preset-react-app": "^10.0.1",
