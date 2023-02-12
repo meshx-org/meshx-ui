@@ -4,7 +4,15 @@ import { BorderRadiusProps } from 'styled-system'
 export type ButtonAppearance = 'primary' | 'secondary'
 
 export interface ControlFillProps extends BorderRadiusProps {
+    children: React.ReactNode
+}
+
+export interface TextControlFillProps extends BorderRadiusProps {
     state: ControlState
+    children: React.ReactNode
+}
+
+export interface SubtleFillProps extends BorderRadiusProps {
     children: React.ReactNode
 }
 

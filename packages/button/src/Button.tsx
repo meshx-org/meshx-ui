@@ -16,6 +16,7 @@ const StyledButton = styled.button`
 
     &[data-state='disabled'] {
         pointer-events: none;
+        cursor: not-allowed !important;
     }
 
     &[data-state='pressed'] .buttonContent {
@@ -72,7 +73,7 @@ function Button(props: ButtonProps) {
             {...handlers}
         >
             <ControlStroke borderRadius={5.5} state={state}>
-                <ControlFill borderRadius={5} state={state}>
+                <ControlFill data-state={state} borderRadius={5}>
                     <ButtonContent>{content}</ButtonContent>
                 </ControlFill>
             </ControlStroke>

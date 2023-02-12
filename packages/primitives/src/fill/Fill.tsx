@@ -1,5 +1,13 @@
 import React from 'react'
-import { ControlFillProps, SmokeFillProps, CardFillProps, LayerFillProps, AcrylicFillProps } from './Fill.types'
+import {
+    ControlFillProps,
+    SmokeFillProps,
+    CardFillProps,
+    LayerFillProps,
+    AcrylicFillProps,
+    TextControlFillProps,
+    SubtleFillProps
+} from './Fill.types'
 import { ControlState, useTheme } from '@meshx-org/mxui-core'
 import { borderRadius } from 'styled-system'
 import styled, { css, DefaultTheme, InterpolationFunction } from 'styled-components'
@@ -15,6 +23,10 @@ const TextControlFillBase = styled(FillBase)`
 
     &[data-theme='light'] {
         background: rgba(255, 255, 255, 0.7);
+    }
+
+    &[data-theme='dark'] {
+        background: rgba(255, 255, 255, 0.06);
     }
 
     &[data-theme='light']:hover,
@@ -33,10 +45,6 @@ const TextControlFillBase = styled(FillBase)`
 
     &[data-theme='light'][data-state='disabled'] {
         background: rgba(249, 249, 249, 0.3);
-    }
-
-    &[data-theme='dark'] {
-        background: rgba(255, 255, 255, 0.06);
     }
 
     &[data-theme='dark']:hover,
@@ -58,97 +66,61 @@ const TextControlFillBase = styled(FillBase)`
     }
 `
 
-const SubtleFillBase = styled(FillBase)`
+export const SubtleFill = styled(FillBase)<SubtleFillProps>`
     border-radius: 4px;
 
-    &[data-theme='light'] {
-        background: rgba(0, 0, 0, 0);
+    background: ${(props) => (props.theme.name == 'dark' ? ' rgba(255, 255, 255, 0)' : 'rgba(0, 0, 0, 0)')};
+
+    &:hover,
+    &[data-state='hovered'] {
+        background: ${(props) =>
+            props.theme.name == 'dark' ? 'rgba(255, 255, 255, 0.0837)' : 'rgb(0, 0, 0, 0.0373)'} !important;
     }
 
-    &[data-theme='light']:hover,
-    &[data-theme='light'][data-state='hovered'] {
-        background: rgb(0, 0, 0, 0.0373);
+    &:active,
+    &[data-state='pressed'] {
+        background: ${(props) =>
+            props.theme.name == 'dark' ? 'rgba(255, 255, 255, 0.0326)' : 'rgba(0, 0, 0, 0.0241)'} !important;
     }
 
-    &[data-theme='light']:active,
-    &[data-theme='light'][data-state='pressed'] {
-        background: rgb(0, 0, 0, 0.0241);
-    }
-
-    &[data-theme='light'][data-state='disabled'] {
-        background: rgb(0, 0, 0, 0);
-    }
-
-    &[data-theme='dark'] {
-        background: rgba(255, 255, 255, 0);
-    }
-
-    &[data-theme='dark']:hover,
-    &[data-theme='dark'][data-state='hovered'] {
-        background: rgba(255, 255, 255, 0.0837);
-    }
-
-    &[data-theme='dark']:active,
-    &[data-theme='dark'][data-state='pressed'] {
-        background: rgba(255, 255, 255, 0.0326);
-    }
-
-    &[data-theme='dark'][data-state='disabled'] {
-        background: rgba(255, 255, 255, 0.04);
+    &[data-state='disabled'] {
+        background: ${(props) =>
+            props.theme.name == 'dark' ? 'rgba(255, 255, 255, 0.04)' : 'rgb(0, 0, 0, 0)'} !important;
     }
 `
 
 export const ControlFill = styled(FillBase)<ControlFillProps>`
     ${borderRadius}
 
-    background: ${(props) => (props.theme.name == 'dark' ? 'rgba(255, 255, 255, 0.0605)' : 'rgba(255, 255, 255, 0.7)')};
+    background: ${(props) =>
+        props.theme.name == 'dark' ? 'hsla(210, 10%, 100%, 0.061)' : 'hsla(210, 10%, 100%, 0.7)'};
 
-    &[data-theme='light']:hover,
-    &[data-theme='light'][data-state='hovered'] {
-        background: rgb(249, 249, 249, 0.5);
+    &:hover,
+    &[data-state='hovered'] {
+        background: ${(props) =>
+            props.theme.name == 'dark' ? 'hsla(210, 10%, 100%, 0.084)' : 'rgba(249, 249, 249, 0.5)'} !important;
     }
 
-    &[data-theme='light']:active,
-    &[data-theme='light'][data-state='pressed'] {
-        background: rgb(249, 249, 249, 0.3);
+    &:active,
+    &[data-state='pressed'] {
+        background: ${(props) =>
+            props.theme.name == 'dark' ? 'hsla(210, 10%, 100%, 0.033)' : 'rgba(249, 249, 249, 0.3)'} !important;
     }
 
-    &[data-theme='light'][data-state='disabled'] {
-        background: rgb(249, 249, 249, 0.3);
-    }
-
-    &[data-theme='dark']:hover,
-    &[data-theme='dark'][data-state='hovered'] {
-        background: rgba(255, 255, 255, 0.0837);
-    }
-
-    &[data-theme='dark']:active,
-    &[data-theme='dark'][data-state='pressed'] {
-        background: rgba(255, 255, 255, 0.0326);
-    }
-
-    &[data-theme='dark'][data-state='disabled'] {
-        background: rgba(255, 255, 255, 0.04);
+    &:disabled,
+    [data-state='disabled'] {
+        background: ${(props) =>
+            props.theme.name == 'dark' ? 'rgba(249, 249, 249, 0.3)' : 'hsla(210, 10%, 100%, 0.04)'} !important;
     }
 `
 
-export function TextControlFill({ children, state }: ControlFillProps) {
+export function TextControlFill({ children, state }: TextControlFillProps) {
     const theme = useTheme()
 
     return (
         <TextControlFillBase data-state={state} data-theme={theme}>
             {children}
         </TextControlFillBase>
-    )
-}
-
-export function SubtleFill({ children, state }: ControlFillProps) {
-    const theme = useTheme()
-
-    return (
-        <SubtleFillBase data-state={state} data-theme={theme}>
-            {children}
-        </SubtleFillBase>
     )
 }
 

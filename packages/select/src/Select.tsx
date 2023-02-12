@@ -93,7 +93,7 @@ export function Select(props: SelectProps) {
     return (
         <StyledSelect as={as} {...otherProps} data-theme={theme} data-state={state} {...handlers}>
             <ControlStroke borderRadius={5.5} state={state}>
-                <ControlFill borderRadius={5} state={state}>
+                <ControlFill borderRadius={5} data-state={state}>
                     <SelectContent color={disabled ? 'text.disabled' : 'text.primary'}>
                         <option>test</option>
                         <option>test2</option>

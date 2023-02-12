@@ -5,8 +5,16 @@ import React, { useState } from 'react'
 import { Story, Meta } from '@storybook/react'
 
 import { Pressable, View, Animated } from 'react-native'
-import { Text } from "@meshx-org/mxui-text" 
-import { TreeView, ItemId, RenderItemParams, TreeItem, TreeViewProps, iterateTree, mutateTree } from '@meshx-org/mxui-treeview/src'
+import { Text } from '@meshx-org/mxui-text'
+import {
+    TreeView,
+    ItemId,
+    RenderItemParams,
+    TreeItem,
+    TreeViewProps,
+    iterateTree,
+    mutateTree
+} from '@meshx-org/mxui-treeview/src'
 
 // 👇 This default export determines where your story goes in the story list
 const meta: Meta = {
@@ -32,8 +40,8 @@ function getChevron(item: TreeItem<any>, onExpand: (itemId: ItemId) => void, onC
         >
             <Animated.View
                 style={{
-                    width: 12,
-                    height: 12,
+                    width: 24,
+                    height: 24,
                     alignItems: 'center',
                     justifyContent: 'center',
                     transform: [
@@ -46,11 +54,13 @@ function getChevron(item: TreeItem<any>, onExpand: (itemId: ItemId) => void, onC
                     ]
                 }}
             >
-                <svg xmlns="http://www.w3.org/2000/svg" width="5" height="10" viewBox="0 0 5 10" fill="none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path
-                        d="M0.148438 8.85547C0.0507812 8.75781 0.00195312 8.63867 0.00195312 8.49805C0.00195312 8.35742 0.0507812 8.24023 0.148438 8.14648L3.29492 5L0.148438 1.85352C0.0507812 1.75586 0.00195312 1.63867 0.00195312 1.50195C0.00195312 1.36133 0.0507812 1.24219 0.148438 1.14453C0.246094 1.04687 0.363281 0.998047 0.5 0.998047C0.640625 0.998047 0.757812 1.04687 0.851562 1.14453L4.35547 4.64844C4.45312 4.74609 4.50195 4.86328 4.50195 5C4.50195 5.13672 4.45312 5.25391 4.35547 5.35156L0.851562 8.85547C0.753906 8.95312 0.636719 9.00195 0.5 9.00195C0.371094 9.00195 0.253906 8.95312 0.148438 8.85547Z"
-                        fill="black"
-                        fill-opacity="0.8956"
+                        d="M9.74997 7.75082L14.25 12L9.74997 16.2493"
+                        stroke="rgba(0,0,0,0.5)"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
                     />
                 </svg>
             </Animated.View>

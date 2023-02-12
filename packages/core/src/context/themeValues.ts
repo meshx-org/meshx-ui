@@ -126,12 +126,12 @@ export const DEFAULT_DARK: ThemeValues = {
             },
             layer: {
                 default: 'hsla(210, 10%, 20%, 0.3)',
-                alt: '#FFFFFF0D'
+                alt: 'hsla(0, 0%, 100%, 0.050980392156862744)'
             },
             solid: {
                 default: 'hsl(210, 10%, 6%)',
                 secondary: 'hsl(210, 10%, 9%)',
-                tertiary: '#282828'
+                tertiary: 'hsl(210, 10%, 16%)'
             },
             acrylic: {
                 default: 'hsla(210, 10%, 17%, 0.9)'
