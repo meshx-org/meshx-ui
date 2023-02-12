@@ -21,11 +21,12 @@ a {
     border: 0;
 }
 
-input:focus {
+input:focus,
+select:focus {
     outline: none !important;
 }
 
 html {
     color: var(--theme-color-text-primary);
-    background: var(--theme-background-solid-default); 
+    background: var(--theme-background-solid-default);
 }

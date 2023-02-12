@@ -111,9 +111,9 @@ export const DEFAULT_DARK: ThemeValues = {
             disabled: 'rgb(3, 150, 255)'
         },
         stroke: {
-            divider: 'rgba(255,255,255,0.0837)',
-            card: 'rgba(0 0 0 / 10%)',
-            surface: 'rgba(0 0 0 / 20%)'
+            divider: 'rgba(255, 255, 255, 0.0837)',
+            card: 'rgba(255 255 255 / 14%)',
+            surface: 'rgba(255 255 255 / 18%)'
         },
         backgrounds: {
             card: {
@@ -129,12 +129,12 @@ export const DEFAULT_DARK: ThemeValues = {
                 alt: '#FFFFFF0D'
             },
             solid: {
-                default: 'hsl(210, 10%, 12%)',
+                default: 'hsl(210, 10%, 6%)',
                 secondary: 'hsl(210, 10%, 9%)',
                 tertiary: '#282828'
             },
             acrylic: {
-                default: 'rgba(44, 44, 44, 0.9)'
+                default: 'hsla(210, 10%, 17%, 0.9)'
             }
         },
         fill: {

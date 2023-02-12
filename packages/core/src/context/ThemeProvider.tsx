@@ -14,12 +14,6 @@ interface ThemeProviderProps {
     children: React.ReactNode
 }
 
-declare module 'react' {
-    //interface CSSProperties {
-    //    [key: `--${string}`]: string | number
-    //}u
-}
-
 declare module 'styled-components' {
     export interface DefaultTheme extends ThemeValues {
         name: string

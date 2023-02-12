@@ -1,9 +1,9 @@
 import { ControlState } from '@meshx-org/mxui-core'
-import { BorderRadiusProps } from "styled-system"
+import { BorderRadiusProps } from 'styled-system'
 
 export type ButtonAppearance = 'primary' | 'secondary'
 
-export interface ControlFillProps {
+export interface ControlFillProps extends BorderRadiusProps {
     state: ControlState
     children: React.ReactNode
 }

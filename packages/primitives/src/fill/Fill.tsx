@@ -1,7 +1,7 @@
 import React from 'react'
 import { ControlFillProps, SmokeFillProps, CardFillProps, LayerFillProps, AcrylicFillProps } from './Fill.types'
 import { ControlState, useTheme } from '@meshx-org/mxui-core'
-import { borderRadius } from "styled-system"
+import { borderRadius } from 'styled-system'
 import styled, { css, DefaultTheme, InterpolationFunction } from 'styled-components'
 
 const FillBase = styled.div`
@@ -60,7 +60,7 @@ const TextControlFillBase = styled(FillBase)`
 
 const SubtleFillBase = styled(FillBase)`
     border-radius: 4px;
-    
+
     &[data-theme='light'] {
         background: rgba(0, 0, 0, 0);
     }
@@ -98,12 +98,10 @@ const SubtleFillBase = styled(FillBase)`
     }
 `
 
-const ControlFillBase = styled(FillBase)`
-    border-radius: 4px;
+export const ControlFill = styled(FillBase)<ControlFillProps>`
+    ${borderRadius}
 
-    &[data-theme='light'] {
-        background: rgba(255, 255, 255, 0.7);
-    }
+    background: ${(props) => (props.theme.name == 'dark' ? 'rgba(255, 255, 255, 0.0605)' : 'rgba(255, 255, 255, 0.7)')};
 
     &[data-theme='light']:hover,
     &[data-theme='light'][data-state='hovered'] {
@@ -117,10 +115,6 @@ const ControlFillBase = styled(FillBase)`
 
     &[data-theme='light'][data-state='disabled'] {
         background: rgb(249, 249, 249, 0.3);
-    }
-
-    &[data-theme='dark'] {
-        background: rgba(255, 255, 255, 0.0605);
     }
 
     &[data-theme='dark']:hover,
@@ -148,16 +142,6 @@ export function TextControlFill({ children, state }: ControlFillProps) {
     )
 }
 
-export function ControlFill({ children, state }: ControlFillProps) {
-    const theme = useTheme()
-
-    return (
-        <ControlFillBase data-state={state} data-theme={theme}>
-            {children}
-        </ControlFillBase>
-    )
-}
-
 export function SubtleFill({ children, state }: ControlFillProps) {
     const theme = useTheme()
 
@@ -169,7 +153,7 @@ export function SubtleFill({ children, state }: ControlFillProps) {
 }
 
 function ariaHidden(props: any) {
-    return { ...props, "aria-hidden": true }
+    return { ...props, 'aria-hidden': true }
 }
 
 const fillBase = css`
@@ -187,7 +171,7 @@ export const SmokeFill = styled.div.attrs(ariaHidden)<SmokeFillProps>`
     background-color: ${({ theme }) => theme.colors.backgrounds.smoke.default};
 `
 
-export const LayerFill = styled.div.attrs(props => ({ ...props, 'aria-hidden': true }))<LayerFillProps>`
+export const LayerFill = styled.div.attrs((props) => ({ ...props, 'aria-hidden': true }))<LayerFillProps>`
     ${fillBase}
     ${borderRadius}
     background-color: ${({ theme }) => theme.colors.backgrounds.layer.default};
@@ -196,20 +180,23 @@ export const LayerFill = styled.div.attrs(props => ({ ...props, 'aria-hidden': t
 export const AcrylicFill = styled.div.attrs(ariaHidden)<AcrylicFillProps>`
     ${fillBase}
     ${borderRadius}
-    backdrop-filter: ${({ theme }) => theme.name === "light" ? "blur(20px) saturate(3)" : "blur(20px) saturate(3.5)" };
+    backdrop-filter: ${({ theme }) => (theme.name === 'light' ? 'blur(20px) saturate(3)' : 'blur(20px) saturate(3.5)')};
     background-color: ${({ theme }) => theme.colors.backgrounds.acrylic.default};
 `
 
 function cardFillState(theme: DefaultTheme, state: ControlState) {
     switch (state) {
-        case ControlState.Hovered: return theme.colors.backgrounds.card.tertiary
-        case ControlState.Pressed: return theme.colors.backgrounds.card.tertiary
-        default: return theme.colors.backgrounds.card.default
-    } 
+        case ControlState.Hovered:
+            return theme.colors.backgrounds.card.tertiary
+        case ControlState.Pressed:
+            return theme.colors.backgrounds.card.tertiary
+        default:
+            return theme.colors.backgrounds.card.default
+    }
 }
 
 export const CardFill = styled.div.attrs(ariaHidden)<CardFillProps>`
     ${fillBase}
     ${borderRadius}
-    background-color: ${props => cardFillState(props.theme, props.state)};
+    background-color: ${(props) => cardFillState(props.theme, props.state)};
 `

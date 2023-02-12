@@ -156,7 +156,7 @@ export function Slider(props: SliderProps) {
 
     const renderThumb = (thumbProps: HTMLProps<HTMLSpanElement>) => (
         <StyledThumb {...handlers} {...thumbProps as any}>
-            <CircleControlStroke state={state}>
+            <CircleControlStroke borderRadius={4} state={state}>
                 <StyledThumbInner>
                     <span />
                 </StyledThumbInner>

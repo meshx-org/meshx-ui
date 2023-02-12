@@ -68,7 +68,7 @@ export function PasswordBox(props: PasswordBoxProps) {
 
     return (
         <TextBoxWrapper {...otherProps}>
-            <TextControlStroke state={state} focused={focused}>
+            <TextControlStroke borderRadius={5} state={state} focused={focused}>
                 <TextControlFill state={state}>
                     <TextBoxInput
                         py="5px"
@@ -109,7 +109,7 @@ export function TextBox(props: TextBoxProps) {
 
     return (
         <TextBoxWrapper {...otherProps}>
-            <TextControlStroke state={state} focused={focused}>
+            <TextControlStroke borderRadius={5} state={state} focused={focused}>
                 <TextControlFill state={state}>
                     <TextBoxInput
                         py="5px"

@@ -5,6 +5,7 @@ export interface ControlStrokeProps {
     state: ControlState
     focused?: boolean
     children: React.ReactNode
+    borderRadius: number
 }
 
 export interface CardStrokeProps extends BorderRadiusProps { }

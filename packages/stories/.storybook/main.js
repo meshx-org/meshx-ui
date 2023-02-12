@@ -19,7 +19,10 @@ module.exports = {
         }
     ],
     core: {
-        builder: "webpack5",
+        builder: 'webpack5',
+        options: {
+            fsCache: true
+        }
     },
     framework: '@storybook/react',
     reactOptions: {

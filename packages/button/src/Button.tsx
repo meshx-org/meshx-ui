@@ -52,6 +52,7 @@ function Button(props: ButtonProps) {
                 variant="body"
                 selectable={false}
                 data-t={disabled ? 'text.disabled' : 'text.primary'}
+                fontWeight={600}
                 color={disabled ? 'text.disabled' : 'text.primary'}
                 children={children}
             />
@@ -70,8 +71,8 @@ function Button(props: ButtonProps) {
             data-state={state}
             {...handlers}
         >
-            <ControlStroke state={state}>
-                <ControlFill state={state}>
+            <ControlStroke borderRadius={5.5} state={state}>
+                <ControlFill borderRadius={5} state={state}>
                     <ButtonContent>{content}</ButtonContent>
                 </ControlFill>
             </ControlStroke>
