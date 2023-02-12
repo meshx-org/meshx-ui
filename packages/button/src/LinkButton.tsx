@@ -55,7 +55,7 @@ function LinkButton({ children, href, disabled = false, as, ...otherProps }: Lin
 
     return (
         <StyledButton as={as} href={href} type="button" {...otherProps} data-theme={theme} data-state={state} {...handlers}>
-            <SubtleFill state={state}>
+            <SubtleFill data-state={state}>
                 <StyledButtonContent>
                     <Text
                         variant="body"

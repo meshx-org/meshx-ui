@@ -47,7 +47,7 @@ function TabInternal(props: any) {
     return (
         <Tab as={StyledTab}>
             {({ selected }: any) => (
-                <SubtleFill state={selected ? ControlState.Hovered : ControlState.Rest}>
+                <SubtleFill data-state={selected ? ControlState.Hovered : ControlState.Rest}>
                     <StyledTabContent>
                         <Text
                             variant="body"
