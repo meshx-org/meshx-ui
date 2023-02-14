@@ -1641,44 +1641,44 @@
   "resolved" "https://registry.npmjs.org/@mdx-js/util/-/util-1.6.22.tgz"
   "version" "1.6.22"
 
-"@meshx-org/mxui-button@0.7.15", "@meshx-org/mxui-button@file:/Users/rolandsz.kovacs/Documents/Code/meshx-ui/packages/button":
+"@meshx-org/mxui-button@0.7.17", "@meshx-org/mxui-button@file:/Users/rolandsz.kovacs/Documents/Code/meshx-ui/packages/button":
   "resolved" "file:packages/button"
-  "version" "0.7.15"
+  "version" "0.7.17"
   dependencies:
-    "@meshx-org/mxui-core" "0.7.15"
-    "@meshx-org/mxui-primitives" "0.7.15"
-    "@meshx-org/mxui-text" "0.7.15"
+    "@meshx-org/mxui-core" "0.7.17"
+    "@meshx-org/mxui-primitives" "0.7.17"
+    "@meshx-org/mxui-text" "0.7.17"
 
-"@meshx-org/mxui-core@0.7.15", "@meshx-org/mxui-core@file:/Users/rolandsz.kovacs/Documents/Code/meshx-ui/packages/core":
+"@meshx-org/mxui-core@0.7.17", "@meshx-org/mxui-core@file:/Users/rolandsz.kovacs/Documents/Code/meshx-ui/packages/core":
   "resolved" "file:packages/core"
-  "version" "0.7.15"
+  "version" "0.7.17"
   dependencies:
     "styled-system" "^5.1.5"
 
-"@meshx-org/mxui-navigation@0.7.15", "@meshx-org/mxui-navigation@file:/Users/rolandsz.kovacs/Documents/Code/meshx-ui/packages/navigation":
+"@meshx-org/mxui-navigation@0.7.17", "@meshx-org/mxui-navigation@file:/Users/rolandsz.kovacs/Documents/Code/meshx-ui/packages/navigation":
   "resolved" "file:packages/navigation"
-  "version" "0.7.15"
+  "version" "0.7.17"
   dependencies:
     "@headlessui/react" "^1.7.7"
     "styled-system" "^5.1.5"
 
-"@meshx-org/mxui-overlays@0.7.15", "@meshx-org/mxui-overlays@file:/Users/rolandsz.kovacs/Documents/Code/meshx-ui/packages/overlays":
+"@meshx-org/mxui-overlays@0.7.17", "@meshx-org/mxui-overlays@file:/Users/rolandsz.kovacs/Documents/Code/meshx-ui/packages/overlays":
   "resolved" "file:packages/overlays"
-  "version" "0.7.15"
+  "version" "0.7.17"
   dependencies:
-    "@meshx-org/mxui-core" "0.7.15"
-    "@meshx-org/mxui-primitives" "0.7.15"
+    "@meshx-org/mxui-core" "0.7.17"
+    "@meshx-org/mxui-primitives" "0.7.17"
 
-"@meshx-org/mxui-primitives@0.7.15", "@meshx-org/mxui-primitives@file:/Users/rolandsz.kovacs/Documents/Code/meshx-ui/packages/primitives":
+"@meshx-org/mxui-primitives@0.7.17", "@meshx-org/mxui-primitives@file:/Users/rolandsz.kovacs/Documents/Code/meshx-ui/packages/primitives":
   "resolved" "file:packages/primitives"
-  "version" "0.7.15"
+  "version" "0.7.17"
   dependencies:
-    "@meshx-org/mxui-core" "0.7.15"
+    "@meshx-org/mxui-core" "0.7.17"
     "styled-system" "^5.1.5"
 
 "@meshx-org/mxui-searchbox@file:/Users/rolandsz.kovacs/Documents/Code/meshx-ui/packages/searchbox":
   "resolved" "file:packages/searchbox"
-  "version" "0.7.15"
+  "version" "0.7.17"
   dependencies:
     "@meshx-org/mxui-overlays" "0.7.15"
     "@meshx-org/mxui-textbox" "0.7.15"
@@ -1686,18 +1686,18 @@
 
 "@meshx-org/mxui-select@file:/Users/rolandsz.kovacs/Documents/Code/meshx-ui/packages/select":
   "resolved" "file:packages/select"
-  "version" "0.7.15"
+  "version" "0.7.17"
   dependencies:
     "@meshx-org/mxui-core" "0.7.15"
     "@meshx-org/mxui-primitives" "0.7.15"
     "@types/styled-components" "^5.1.26"
 
-"@meshx-org/mxui-slider@0.7.15", "@meshx-org/mxui-slider@file:/Users/rolandsz.kovacs/Documents/Code/meshx-ui/packages/slider":
+"@meshx-org/mxui-slider@0.7.17", "@meshx-org/mxui-slider@file:/Users/rolandsz.kovacs/Documents/Code/meshx-ui/packages/slider":
   "resolved" "file:packages/slider"
-  "version" "0.7.15"
+  "version" "0.7.17"
   dependencies:
-    "@meshx-org/mxui-core" "0.7.15"
-    "@meshx-org/mxui-primitives" "0.7.15"
+    "@meshx-org/mxui-core" "0.7.17"
+    "@meshx-org/mxui-primitives" "0.7.17"
     "react-slider" "^2.0.4"
     "styled-components" "^5.3.6"
 
@@ -1736,33 +1736,33 @@
     "storybook-dark-mode" "^2.0.4"
     "webpack" "^5.9.0"
 
-"@meshx-org/mxui-switch@0.7.15", "@meshx-org/mxui-switch@file:/Users/rolandsz.kovacs/Documents/Code/meshx-ui/packages/toggle-switch":
+"@meshx-org/mxui-switch@0.7.17", "@meshx-org/mxui-switch@file:/Users/rolandsz.kovacs/Documents/Code/meshx-ui/packages/toggle-switch":
   "resolved" "file:packages/toggle-switch"
-  "version" "0.7.15"
+  "version" "0.7.17"
   dependencies:
-    "@meshx-org/mxui-core" "0.7.15"
-    "@meshx-org/mxui-text" "0.7.15"
+    "@meshx-org/mxui-core" "0.7.17"
+    "@meshx-org/mxui-text" "0.7.17"
 
-"@meshx-org/mxui-text@0.7.15", "@meshx-org/mxui-text@file:/Users/rolandsz.kovacs/Documents/Code/meshx-ui/packages/text":
+"@meshx-org/mxui-text@0.7.17", "@meshx-org/mxui-text@file:/Users/rolandsz.kovacs/Documents/Code/meshx-ui/packages/text":
   "resolved" "file:packages/text"
-  "version" "0.7.15"
+  "version" "0.7.17"
   dependencies:
-    "@meshx-org/mxui-core" "0.7.15"
+    "@meshx-org/mxui-core" "0.7.17"
     "styled-system" "^5.1.5"
 
-"@meshx-org/mxui-textbox@0.7.15", "@meshx-org/mxui-textbox@file:/Users/rolandsz.kovacs/Documents/Code/meshx-ui/packages/textbox":
+"@meshx-org/mxui-textbox@0.7.17", "@meshx-org/mxui-textbox@file:/Users/rolandsz.kovacs/Documents/Code/meshx-ui/packages/textbox":
   "resolved" "file:packages/textbox"
-  "version" "0.7.15"
+  "version" "0.7.17"
   dependencies:
-    "@meshx-org/mxui-core" "0.7.15"
-    "@meshx-org/mxui-primitives" "0.7.15"
+    "@meshx-org/mxui-core" "0.7.17"
+    "@meshx-org/mxui-primitives" "0.7.17"
 
-"@meshx-org/mxui-treeview@0.7.15", "@meshx-org/mxui-treeview@file:/Users/rolandsz.kovacs/Documents/Code/meshx-ui/packages/treeview":
+"@meshx-org/mxui-treeview@0.7.17", "@meshx-org/mxui-treeview@file:/Users/rolandsz.kovacs/Documents/Code/meshx-ui/packages/treeview":
   "resolved" "file:packages/treeview"
-  "version" "0.7.15"
+  "version" "0.7.17"
   dependencies:
-    "@meshx-org/mxui-core" "0.7.15"
-    "@meshx-org/mxui-primitives" "0.7.15"
+    "@meshx-org/mxui-core" "0.7.17"
+    "@meshx-org/mxui-primitives" "0.7.17"
 
 "@meshx-org/mxui-tsconfig@*", "@meshx-org/mxui-tsconfig@file:/Users/rolandsz.kovacs/Documents/Code/meshx-ui/packages/tsconfig":
   "resolved" "file:packages/tsconfig"
@@ -1770,7 +1770,7 @@
 
 "@meshx-org/mxui@file:/Users/rolandsz.kovacs/Documents/Code/meshx-ui/packages/mxui":
   "resolved" "file:packages/mxui"
-  "version" "0.7.15"
+  "version" "0.7.17"
   dependencies:
     "@meshx-org/mxui-button" "0.7.15"
     "@meshx-org/mxui-navigation" "0.7.15"
@@ -11957,7 +11957,7 @@
     "postcss-value-parser" "^4.2.0"
     "styleq" "^0.1.2"
 
-"react-native@^0.69 || ^0.70", "react-native@^0.70.0 || ^0.71.0", "react-native@>=0.58", "react-native@>=0.68.5", "react-native@0.70.6":
+"react-native@>=0.58", "react-native@>=0.69.0", "react-native@0.70.6":
   "integrity" "sha512-xtQdImPHnwgraEx3HIZFOF+D1hJ9bC5mfpIdUGoMHRws6OmvHAjmFpO6qfdnaQ29vwbmZRq7yf14sbury74R/w=="
   "resolved" "https://registry.npmjs.org/react-native/-/react-native-0.70.6.tgz"
   "version" "0.70.6"

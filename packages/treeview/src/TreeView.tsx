@@ -65,7 +65,7 @@ function TreeViewNode<T = unknown>(props: TreeViewNodeProps<T>) {
             {(pressableState) => {
                 const state = rnToControlState(pressableState)
                 return (
-                    <SubtleFill date-state={item.isSelected ? ControlState.Hovered : state}>
+                    <SubtleFill data-state={item.isSelected ? ControlState.Hovered : state}>
                         <View style={style.selectorWrapper}>
                             <View
                                 style={[
