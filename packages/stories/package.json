@@ -30,7 +30,7 @@
         "react-syntax-highlighter": "^15.5",
         "webpack": "^5.9.0",
         "cross-env": "*",
-        "@mdx-js/react": "^2.1.5",
+        "@mdx-js/react": "^2.3.0",
         "react-native-svg-web": "^1.0.9",
         "react-native-web": "^0.18.12",
         "react-spring": "9.5.5",
