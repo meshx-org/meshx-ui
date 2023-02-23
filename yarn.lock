@@ -11592,40 +11592,40 @@ tty-table@^4.1.5:
     wcwidth "^1.0.1"
     yargs "^17.1.1"
 
-turbo-darwin-64@1.6.3:
-  version "1.6.3"
-  resolved "https://registry.yarnpkg.com/turbo-darwin-64/-/turbo-darwin-64-1.6.3.tgz#fad7e078784b0fafc0b1f75ce9378828918595f5"
+turbo-darwin-64@1.8.2:
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/turbo-darwin-64/-/turbo-darwin-64-1.8.2.tgz#14c52e97d128c63fd3c7b2f15963123f02b9aa0e"
 
-turbo-darwin-arm64@1.6.3:
-  version "1.6.3"
-  resolved "https://registry.npmjs.org/turbo-darwin-arm64/-/turbo-darwin-arm64-1.6.3.tgz"
+turbo-darwin-arm64@1.8.2:
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/turbo-darwin-arm64/-/turbo-darwin-arm64-1.8.2.tgz#ae5efdb89cbdd667feacd3fe8e9c8110691a4d95"
 
-turbo-linux-64@1.6.3:
-  version "1.6.3"
-  resolved "https://registry.yarnpkg.com/turbo-linux-64/-/turbo-linux-64-1.6.3.tgz#8ddc6ac55ef84641182fe5ff50647f1b355826b0"
+turbo-linux-64@1.8.2:
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/turbo-linux-64/-/turbo-linux-64-1.8.2.tgz#02442a48104db83c1e53409c85744fdeacbded56"
 
-turbo-linux-arm64@1.6.3:
-  version "1.6.3"
-  resolved "https://registry.yarnpkg.com/turbo-linux-arm64/-/turbo-linux-arm64-1.6.3.tgz#846c1dc84d8dc741651906613c16acccba30428c"
+turbo-linux-arm64@1.8.2:
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/turbo-linux-arm64/-/turbo-linux-arm64-1.8.2.tgz#890ad0691671cb252e756dcd56295895f61d369a"
 
-turbo-windows-64@1.6.3:
-  version "1.6.3"
-  resolved "https://registry.yarnpkg.com/turbo-windows-64/-/turbo-windows-64-1.6.3.tgz#89ac819fa76ad31d12fbfdeb3045bcebd0d308eb"
+turbo-windows-64@1.8.2:
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/turbo-windows-64/-/turbo-windows-64-1.8.2.tgz#a57b902cdccdb69d1efa18772bee9e277e079583"
 
-turbo-windows-arm64@1.6.3:
-  version "1.6.3"
-  resolved "https://registry.yarnpkg.com/turbo-windows-arm64/-/turbo-windows-arm64-1.6.3.tgz#977607c9a51f0b76076c8b158bafce06ce813070"
+turbo-windows-arm64@1.8.2:
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/turbo-windows-arm64/-/turbo-windows-arm64-1.8.2.tgz#0f976a2c6b8a46447fc277d5a9f7d8615792bdde"
 
-turbo@^1.6.3:
-  version "1.6.3"
-  resolved "https://registry.npmjs.org/turbo/-/turbo-1.6.3.tgz"
+turbo@^1.8.2:
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/turbo/-/turbo-1.8.2.tgz#869e674a524cde4f449ae4458f4651818e2ffe00"
   optionalDependencies:
-    turbo-darwin-64 "1.6.3"
-    turbo-darwin-arm64 "1.6.3"
-    turbo-linux-64 "1.6.3"
-    turbo-linux-arm64 "1.6.3"
-    turbo-windows-64 "1.6.3"
-    turbo-windows-arm64 "1.6.3"
+    turbo-darwin-64 "1.8.2"
+    turbo-darwin-arm64 "1.8.2"
+    turbo-linux-64 "1.8.2"
+    turbo-linux-arm64 "1.8.2"
+    turbo-windows-64 "1.8.2"
+    turbo-windows-arm64 "1.8.2"
 
 type-check@^0.4.0, type-check@~0.4.0:
   version "0.4.0"
