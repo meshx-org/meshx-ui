@@ -1,21 +1,22 @@
 import React, { useMemo } from 'react'
 import { ListRenderItem, View, VirtualizedList, StyleSheet, Pressable } from 'react-native'
-import { ControlState, useThemeValues, ThemeValues } from '@meshx-org/mxui-core'
-import { SubtleFill } from '@meshx-org/mxui-primitives'
+import { ControlState, ColorScheme, useThemeColors } from '@meshx-org/mxui-core'
+import { SubtleFillX } from '@meshx-org/mxui-primitives'
 import { FlattenedItem, TreeViewNodeProps, TreeViewProps } from './TreeView.types'
 import { flattenTree } from './utils'
 
-const styles = (theme: ThemeValues) =>
+const styles = (colors: ColorScheme) =>
     StyleSheet.create({
         treeViewNode: {
-            borderRadius: 5,
-            marginBottom: 4,
+            display: 'flex',
+            height: 32,
             flexDirection: 'row'
         },
         treeViewItem: {
-            paddingVertical: 6,
+            paddingVertical: 4,
+            // justifyContent: 'center',
             flex: 1,
-            color: theme.colors.text.primary
+            color: colors.text.primary
         },
         selectorWrapper: {
             overflow: 'hidden',
@@ -33,15 +34,15 @@ const styles = (theme: ThemeValues) =>
         }
     })
 
-function useThemedStyles<T>(styleWrapper: (values: ThemeValues) => T) {
-    const theme = useThemeValues()
-    return styleWrapper(theme)
+function useThemedStyles<T>(styleWrapper: (colors: ColorScheme) => T) {
+    const colors = useThemeColors()
+    return styleWrapper(colors)
 }
 
 function TreeViewNode<T = unknown>(props: TreeViewNodeProps<T>) {
-    const { item, renderTreeItem, path, onCollapse, onExpand, onInvoke } = props
+    const { item, renderTreeItem, path, onCollapse, onExpand, onInvoke, offsetPerLevel } = props
 
-    const themeValues = useThemeValues()
+    const colors = useThemeColors()
     const style = useThemedStyles(styles)
 
     const handlePress = () => {
@@ -65,21 +66,21 @@ function TreeViewNode<T = unknown>(props: TreeViewNodeProps<T>) {
             {(pressableState) => {
                 const state = rnToControlState(pressableState)
                 return (
-                    <SubtleFill data-state={item.isSelected ? ControlState.Hovered : state}>
+                    <>
                         <View style={style.selectorWrapper}>
                             <View
                                 style={[
                                     style.selector,
                                     {
-                                        backgroundColor: item.isSelected
-                                            ? themeValues.colors.fill.accent
-                                            : 'transparent'
+                                        backgroundColor: item.isSelected ? colors.fill.accent : 'transparent'
                                     }
                                 ]}
                             />
                         </View>
 
-                        <View style={[style.treeViewItem, { paddingLeft: (path.length - 1) * 20 }]}>
+                        <SubtleFillX borderRadius={5} data-state={item.isSelected ? ControlState.Hovered : state} />
+
+                        <View style={[style.treeViewItem, { paddingLeft: (path.length - 1) * offsetPerLevel }]}>
                             {renderTreeItem({
                                 item,
                                 state,
@@ -88,7 +89,7 @@ function TreeViewNode<T = unknown>(props: TreeViewNodeProps<T>) {
                                 onCollapse: (itemId) => onCollapse(itemId, path)
                             })}
                         </View>
-                    </SubtleFill>
+                    </>
                 )
             }}
         </Pressable>
@@ -107,7 +108,7 @@ export function TreeView<T = unknown>(props: TreeViewProps<T>) {
             onCollapse={props.onCollapse}
             onInvoke={props.onInvoke}
             renderTreeItem={props.children}
-            offsetPerLevel={props.offsetPerLevel ?? 28}
+            offsetPerLevel={props.offsetPerLevel ?? 24}
         />
     )
 
@@ -116,13 +117,12 @@ export function TreeView<T = unknown>(props: TreeViewProps<T>) {
             accessibilityRole="menu"
             // showsVerticalScrollIndicator={false}
             // contentInset={{ right: 0, top: 8, left: 8, bottom: 8 }}
-            style={{ marginBottom: -4 }}
             contentContainerStyle={{}}
             windowSize={11}
             maxToRenderPerBatch={5}
             getItemCount={(data) => data.length}
             getItem={(data, i) => data[i]}
-            getItemLayout={(data, index) => ({ length: 28, offset: 28 * index, index })}
+            // getItemLayout={(data, index) => ({ length: 28, offset: 28 * index, index })}
             keyExtractor={(item) => item.item.id.toString()}
             renderItem={renderTreeItem}
             data={flattenedTree}

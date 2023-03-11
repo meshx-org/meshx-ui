@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { layout, margin, padding, MarginProps, PaddingProps } from 'styled-system'
-import { CardStroke, SurfaceStroke } from '../stroke/Stroke'
-import { AcrylicFill, LayerFill, SmokeFill, CardFill } from '../fill/Fill'
+import { CardStroke, ControlStrokeX, SurfaceStroke } from '../stroke/Stroke'
+import { AcrylicFill, LayerFill, SmokeFill, CardFill, ControlFillX, SubtleFillX } from '../fill/Fill'
 import { CardShadow, FlyoutShadow } from '../shadow/Shadow'
 import { FlyoutSurfaceProps, LayerSurfaceProps, CardSurfaceProps } from './Surface.types'
 import { useControlState } from '@meshx-org/mxui-core'
@@ -14,58 +14,96 @@ const SurfaceWrapper = styled.div<MarginProps>`
     display: flex;
 `
 
-const SurfaceContent = styled.div<PaddingProps>`
+const SurfaceContent = styled('div')<PaddingProps>`
     ${padding}
+    width: 100%;
+    height: 100%;
     z-index: 3;
-    flex: 1;
 `
 
 export function FlyoutSurface(props: FlyoutSurfaceProps) {
-    const { children, ...restProps } = props
+    const { children, as, ...restProps } = props
 
     return (
         <SurfaceWrapper {...restProps}>
-            <SurfaceStroke borderRadius={4} {...restProps} />
-            <FlyoutShadow borderRadius={4} {...restProps} />
-            <AcrylicFill borderRadius={4} {...restProps} />
-            <SurfaceContent {...restProps}>{children}</SurfaceContent>
+            <SurfaceStroke borderRadius={5} {...restProps} />
+            <FlyoutShadow borderRadius={5} {...restProps} />
+            <AcrylicFill borderRadius={5} {...restProps} />
+            <SurfaceContent as={as} {...restProps}>
+                {children}
+            </SurfaceContent>
         </SurfaceWrapper>
     )
 }
 
 export function CardSurface(props: CardSurfaceProps) {
-    const { children, ...restProps } = props
+    const { children, as, ...restProps } = props
     const { state, handlers } = useControlState<HTMLDivElement>(false)
-    
+
     return (
         <SurfaceWrapper {...handlers} {...restProps}>
-            <CardStroke borderRadius={4} {...restProps} />
-            <CardShadow borderRadius={4} {...restProps} state={state}  />
-            <CardFill borderRadius={4} {...restProps}  state={state} />
-            <SurfaceContent {...restProps}>{children}</SurfaceContent>
+            <CardStroke borderRadius={5} {...restProps} />
+            <CardShadow borderRadius={5} {...restProps} state={state} />
+            <CardFill borderRadius={5} {...restProps} state={state} />
+            <SurfaceContent as={as} {...restProps}>
+                {children}
+            </SurfaceContent>
         </SurfaceWrapper>
     )
 }
 
 export function SmokeSurface(props: any) {
-    const { children, ...restProps } = props
+    const { children, as, ...restProps } = props
 
     return (
         <SurfaceWrapper {...restProps}>
-            <SmokeFill {...restProps} />
-            <SurfaceContent {...restProps}>{children}</SurfaceContent>
+            <SmokeFill borderRadius={5} {...restProps} />
+            <SurfaceContent as={as} {...restProps}>
+                {children}
+            </SurfaceContent>
+        </SurfaceWrapper>
+    )
+}
+
+export function SubtleSurface(props: any) {
+    const { children, as, ...restProps } = props
+    const { state, handlers } = useControlState<HTMLDivElement>(props.disabled)
+
+    return (
+        <SurfaceWrapper {...handlers}>
+            <SubtleFillX data-state={state} borderRadius={6} />
+            <SurfaceContent as={as} {...restProps}>
+                {children}
+            </SurfaceContent>
+        </SurfaceWrapper>
+    )
+}
+
+export function ControlSurface(props: any) {
+    const { children, as, ...restProps } = props
+    const { state, handlers } = useControlState<HTMLDivElement>(props.disabled)
+
+    return (
+        <SurfaceWrapper {...handlers}>
+            <ControlStrokeX state={state} borderRadius={6} />
+            <ControlFillX data-state={state} borderRadius={6} />
+            <SurfaceContent as={as} {...restProps}>
+                {children}
+            </SurfaceContent>
         </SurfaceWrapper>
     )
 }
 
 export function LayerSurface(props: LayerSurfaceProps) {
-    const { children, ...restProps } = props
+    const { children, as, ...restProps } = props
 
     return (
         <SurfaceWrapper {...restProps}>
-            <CardStroke borderRadius={4} {...restProps} />
+            <CardStroke borderRadius={5} {...restProps} />
             <LayerFill {...restProps} />
-            <SurfaceContent {...restProps}>{children}</SurfaceContent>
+            <SurfaceContent as={as} {...restProps}>
+                {children}
+            </SurfaceContent>
         </SurfaceWrapper>
     )
 }

@@ -13,7 +13,9 @@ import {
     LayerSurfaceProps,
     SmokeSurfaceProps,
     FlyoutSurfaceProps,
-    CardSurfaceProps
+    CardSurfaceProps,
+    ControlSurface,
+    SubtleSurface
 } from '@meshx-org/mxui-primitives/src'
 import { Text } from '@meshx-org/mxui-text/src'
 
@@ -26,6 +28,54 @@ export default {
         }
     }
 } as Meta
+
+const SubtleSurfaceTemplate: Story<FlyoutSurfaceProps> = (args) => (
+    <View>
+        <View
+            style={{
+                position: 'absolute',
+                backgroundColor: 'rgb(3, 150, 255)',
+                left: -10,
+                top: -10,
+                height: 100,
+                width: 70
+            }}
+        />
+
+        <SubtleSurface as="main" p={10} {...args} />
+    </View>
+)
+
+export const Subtle = SubtleSurfaceTemplate.bind({})
+
+Subtle.args = {
+    children: <Text variant="body">This is a SubtleSurface</Text>,
+    borderRadius: 5
+}
+
+const ControlSurfaceTemplate: Story<FlyoutSurfaceProps> = (args) => (
+    <View>
+        <View
+            style={{
+                position: 'absolute',
+                backgroundColor: 'rgb(3, 150, 255)',
+                left: -10,
+                top: -10,
+                height: 100,
+                width: 70
+            }}
+        />
+
+        <ControlSurface as="main" p={10} {...args} />
+    </View>
+)
+
+export const Control = ControlSurfaceTemplate.bind({})
+
+Control.args = {
+    children: <Text variant="body">This is a ControlSurface</Text>,
+    borderRadius: 5
+}
 
 const FlyoutSurfaceTemplate: Story<FlyoutSurfaceProps> = (args) => (
     <View>
@@ -40,7 +90,7 @@ const FlyoutSurfaceTemplate: Story<FlyoutSurfaceProps> = (args) => (
             }}
         />
 
-        <FlyoutSurface p={10} {...args} />
+        <FlyoutSurface as="main" p={10} {...args} />
     </View>
 )
 
@@ -72,7 +122,6 @@ export const Card = CardSurfaceTemplate.bind({})
 
 Card.args = {
     children: <Text variant="body">This is a CardSurface</Text>,
-    state: ControlState.Rest,
     borderRadius: 4
 }
 

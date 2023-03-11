@@ -1,8 +1,8 @@
 import React from 'react'
 import { LinkButtonProps } from './Button.types'
-import { useTheme, useControlState } from '@meshx-org/mxui-core'
+import { useControlState } from '@meshx-org/mxui-core'
 import { Text } from '@meshx-org/mxui-text'
-import { SubtleFill } from '@meshx-org/mxui-primitives'
+import { SubtleFillX } from '@meshx-org/mxui-primitives'
 import styled from 'styled-components'
 
 const StyledButton = styled.a`
@@ -12,34 +12,16 @@ const StyledButton = styled.a`
     background: transparent;
     display: flex;
     align-items: flex-start;
+    position: relative;
     cursor: pointer;
 
     &[data-state='disabled'] {
+        cursor: not-allowed;
         pointer-events: none;
-    }
-
-    &[data-theme='dark'] {
-        color: white;
-    }
-
-    &[data-state='disabled'][data-theme='dark'] {
-        color: rgba(255, 255, 255, 0.36);
-    }
-
-    &[data-theme='dark'] {
-        color: white;
-    }
-
-    &[data-state='disabled'][data-theme='light'] {
-        color: rgba(0, 0, 0, 0.36);
-    }
-
-    &[data-state='pressed'] .buttonContent {
-        opacity: 0.5;
     }
 `
 
-const StyledButtonContent = styled.div`
+const ButtonContent = styled.div`
     height: 32px;
     display: flex;
     align-items: center;
@@ -50,21 +32,28 @@ const StyledButtonContent = styled.div`
 `
 
 function LinkButton({ children, href, disabled = false, as, ...otherProps }: LinkButtonProps) {
-    const theme = useTheme()
     const { state, handlers } = useControlState<HTMLAnchorElement>(disabled)
 
+    let content = null
+    if (typeof children === 'string') {
+        content = (
+            <Text
+                variant="body"
+                selectable={false}
+                data-t={disabled ? 'text.disabled' : 'text.primary'}
+                fontWeight={600}
+                color={disabled ? 'text.disabled' : 'text.primary'}
+                children={children}
+            />
+        )
+    } else {
+        content = children
+    }
+
     return (
-        <StyledButton as={as} href={href} type="button" {...otherProps} data-theme={theme} data-state={state} {...handlers}>
-            <SubtleFill data-state={state}>
-                <StyledButtonContent>
-                    <Text
-                        variant="body"
-                        selectable={false}
-                        color={disabled ? 'text.disabled' : 'text.primary'}
-                        children={children}
-                    />
-                </StyledButtonContent>
-            </SubtleFill>
+        <StyledButton href={href} type="button" {...otherProps} data-state={state} {...handlers}>
+            <SubtleFillX data-state={state} borderRadius={5} />
+            <ButtonContent as={as}>{content}</ButtonContent>
         </StyledButton>
     )
 }

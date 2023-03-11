@@ -1,29 +1,24 @@
 import React, { createContext, useContext } from 'react'
 import { ThemeProvider as StyledProvider, createGlobalStyle } from 'styled-components'
-import type { ThemeContextValue, ThemeValues } from './types'
-import { DEFAULT_DARK, DEFAULT_LIGHT } from './themeValues'
+import type { ThemeContextValue } from './types'
+import { DEFAULT_DARK, DEFAULT_LIGHT, THEME_VALUES } from './themeValues'
 import { Platform } from '../platform'
 
-const ThemeContext = createContext<ThemeContextValue>({ name: 'light', values: DEFAULT_LIGHT })
+const ThemeContext = createContext<ThemeContextValue>({ name: 'light', values: THEME_VALUES, colors: DEFAULT_LIGHT })
 
 export const useTheme = () => useContext(ThemeContext).name
 export const useThemeValues = () => useContext(ThemeContext).values
+export const useThemeColors = () => useContext(ThemeContext).colors
 
 interface ThemeProviderProps {
     theme: 'light' | 'dark'
     children: React.ReactNode
 }
 
-declare module 'styled-components' {
-    export interface DefaultTheme extends ThemeValues {
-        name: string
-    }
-}
-
 const GlobalStyle = createGlobalStyle`
     :root {
         color-scheme: ${({ theme }) => theme.name};
-        
+
         // Text Colors 
         --theme-color-text-primary: ${({ theme }) => theme.colors.text.primary};
         --theme-color-text-secondary: ${({ theme }) => theme.colors.text.secondary};
@@ -53,7 +48,7 @@ const GlobalStyle = createGlobalStyle`
 
         --theme-background-smoke-default: ${({ theme }) => theme.colors.backgrounds.smoke.default};
         --theme-background-acrylic-default: ${({ theme }) => theme.colors.backgrounds.acrylic.default};
-
+        
         // Fonts
         --theme-font-default: ${({ theme }) => theme.fonts.default};
         --theme-font-mono: ${({ theme }) => theme.fonts.mono};
@@ -94,15 +89,91 @@ const GlobalStyle = createGlobalStyle`
         --theme-spacing-2xl: ${(props) => props.theme.space['2xl']}px;
         --theme-spacing-3xl: ${(props) => props.theme.space['3xl']}px;
     }
+
+    html[data-theme='light'] {
+        // Text Colors 
+        --theme-color-text-primary: ${({ theme }) => theme.lightScheme.text.primary};
+        --theme-color-text-secondary: ${({ theme }) => theme.lightScheme.text.secondary};
+        --theme-color-text-disabled: ${({ theme }) => theme.lightScheme.text.disabled};
+
+        // Accent Text Colors 
+        --theme-color-accent-text-primary: ${({ theme }) => theme.lightScheme.accentText.primary};
+        --theme-color-accent-text-secondary: ${({ theme }) => theme.lightScheme.accentText.secondary};
+        --theme-color-accent-text-disabled: ${({ theme }) => theme.lightScheme.accentText.disabled};
+        
+        // Stroke Colors
+        --theme-color-stroke-card: ${({ theme }) => theme.lightScheme.stroke.card};
+        --theme-color-stroke-divider: ${({ theme }) => theme.lightScheme.stroke.divider};
+        --theme-color-stroke-surface: ${({ theme }) => theme.lightScheme.stroke.surface};
+
+        // Backgrounds Colors
+        --theme-background-card-default: ${({ theme }) => theme.lightScheme.backgrounds.card.default};
+        --theme-background-card-secondary: ${({ theme }) => theme.lightScheme.backgrounds.card.secondary};
+        --theme-background-card-tertiary: ${({ theme }) => theme.lightScheme.backgrounds.card.tertiary};
+
+        --theme-background-solid-default: ${({ theme }) => theme.lightScheme.backgrounds.solid.default};
+        --theme-background-solid-secondary: ${({ theme }) => theme.lightScheme.backgrounds.solid.secondary};
+        --theme-background-solid-tertiary: ${({ theme }) => theme.lightScheme.backgrounds.solid.tertiary};
+
+        --theme-background-layer-default: ${({ theme }) => theme.lightScheme.backgrounds.layer.default};
+        --theme-background-layer-alt: ${({ theme }) => theme.lightScheme.backgrounds.layer.alt};
+
+        --theme-background-smoke-default: ${({ theme }) => theme.lightScheme.backgrounds.smoke.default};
+        --theme-background-acrylic-default: ${({ theme }) => theme.lightScheme.backgrounds.acrylic.default};
+    }
+
+    html[data-theme='dark'] {
+        // Text Colors 
+        --theme-color-text-primary: ${({ theme }) => theme.darkScheme.text.primary};
+        --theme-color-text-secondary: ${({ theme }) => theme.darkScheme.text.secondary};
+        --theme-color-text-disabled: ${({ theme }) => theme.darkScheme.text.disabled};
+
+        // Accent Text Colors 
+        --theme-color-accent-text-primary: ${({ theme }) => theme.darkScheme.accentText.primary};
+        --theme-color-accent-text-secondary: ${({ theme }) => theme.darkScheme.accentText.secondary};
+        --theme-color-accent-text-disabled: ${({ theme }) => theme.darkScheme.accentText.disabled};
+        
+        // Stroke Colors
+        --theme-color-stroke-card: ${({ theme }) => theme.darkScheme.stroke.card};
+        --theme-color-stroke-divider: ${({ theme }) => theme.darkScheme.stroke.divider};
+        --theme-color-stroke-surface: ${({ theme }) => theme.darkScheme.stroke.surface};
+
+        // Backgrounds Colors
+        --theme-background-card-default: ${({ theme }) => theme.darkScheme.backgrounds.card.default};
+        --theme-background-card-secondary: ${({ theme }) => theme.darkScheme.backgrounds.card.secondary};
+        --theme-background-card-tertiary: ${({ theme }) => theme.darkScheme.backgrounds.card.tertiary};
+
+        --theme-background-solid-default: ${({ theme }) => theme.darkScheme.backgrounds.solid.default};
+        --theme-background-solid-secondary: ${({ theme }) => theme.darkScheme.backgrounds.solid.secondary};
+        --theme-background-solid-tertiary: ${({ theme }) => theme.darkScheme.backgrounds.solid.tertiary};
+
+        --theme-background-layer-default: ${({ theme }) => theme.darkScheme.backgrounds.layer.default};
+        --theme-background-layer-alt: ${({ theme }) => theme.darkScheme.backgrounds.layer.alt};
+
+        --theme-background-smoke-default: ${({ theme }) => theme.darkScheme.backgrounds.smoke.default};
+        --theme-background-acrylic-default: ${({ theme }) => theme.darkScheme.backgrounds.acrylic.default};
+    }
 `
 
 export function ThemeProvider({ theme, children }: ThemeProviderProps) {
-    const values = theme === 'dark' ? DEFAULT_DARK : DEFAULT_LIGHT
+    const currentScheme = theme === 'dark' ? DEFAULT_DARK : DEFAULT_LIGHT
 
     return (
-        <ThemeContext.Provider value={{ name: theme, values }}>
-            <StyledProvider theme={{ ...values, name: theme }}>
-                {Platform.OS === 'web' ? <GlobalStyle /> : null}
+        <ThemeContext.Provider value={{ name: theme, colors: currentScheme, values: THEME_VALUES }}>
+            <StyledProvider
+                theme={{
+                    darkScheme: DEFAULT_DARK,
+                    lightScheme: DEFAULT_LIGHT,
+                    colors: currentScheme,
+                    ...THEME_VALUES,
+                    name: theme
+                }}
+            >
+                {Platform.OS === 'web' ? (
+                    <>
+                        <GlobalStyle />
+                    </>
+                ) : null}
                 {children}
             </StyledProvider>
         </ThemeContext.Provider>

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
 import { LinkButton, LinkButtonProps } from '@meshx-org/mxui-button/src'
+import { Text } from '@meshx-org/mxui-text'
 
 export default {
     title: 'Basic Input/LinkButton',
@@ -15,11 +16,15 @@ export default {
     }
 } as Meta
 
-const Template: Story<LinkButtonProps> = (args) => <LinkButton {...args} />
+const Template: Story<LinkButtonProps> = (args) => (
+    <div style={{ display: 'flex' }}>
+        <LinkButton {...args} />
+    </div>
+)
 
 export const Primary = Template.bind({})
 Primary.args = {
-    label: 'test',
+    children: [<Text>😄</Text>, <Text>Text</Text>],
     href: '#'
 }
 

@@ -42,8 +42,6 @@ function getChevron(item: TreeItem<any>, onExpand: (itemId: ItemId) => void, onC
                 style={{
                     width: 24,
                     height: 24,
-                    alignItems: 'center',
-                    justifyContent: 'center',
                     transform: [
                         {
                             rotate: value.interpolate({
@@ -72,9 +70,9 @@ const renderItem = ({ item, onExpand, onCollapse }: RenderItemParams<any>) => {
     const { title, glyph } = item.data
 
     return (
-        <View style={{ flexDirection: 'row', height: 20 }}>
+        <View style={{ flexDirection: 'row', height: 24 }}>
             {item.hasChildren && getChevron(item, onExpand, onCollapse)}
-            <Text ml="4px">
+            <Text>
                 {glyph} {title}
             </Text>
         </View>

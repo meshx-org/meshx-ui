@@ -1,12 +1,31 @@
 import React, { useMemo, useId } from 'react'
 import { ControlState, useTheme } from '@meshx-org/mxui-core'
-import { ControlStrokeProps, CardStrokeProps, SurfaceStrokeProps } from './Stroke.types'
+import { ControlStrokeProps, CardStrokeProps, SurfaceStrokeProps, ControlStrokeXProps } from './Stroke.types'
 import { borderRadius } from 'styled-system'
 import styled, { css } from 'styled-components'
 
 const StrokeBase = styled.div`
     position: relative;
     display: flex;
+
+    .stroke {
+        position: absolute;
+        pointer-events: none;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+    }
+`
+
+const StrokeBaseX = styled.div`
+    position: absolute;
+    z-index: -1;
+
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
 
     .stroke {
         position: absolute;
@@ -109,6 +128,57 @@ const CardStroke = styled.div.attrs((props) => ({ ...props, 'aria-hidden': true 
     ${borderRadius}
     box-shadow: 0 0 0 1px ${(props) => props.theme.colors.stroke.card};
 `
+
+export function ControlStrokeX({ state, borderRadius, focused = false }: ControlStrokeXProps) {
+    const theme = useTheme()
+    const uniqueId = useId()
+    const lightGradId = `stroke-${uniqueId}-light`
+    const darkGradId = `stroke-${uniqueId}-dark`
+
+    const definitions = useMemo(
+        () => (
+            <defs>
+                <linearGradient id={lightGradId} gradientTransform="rotate(90)">
+                    <stop offset="0.85" stopColor="rgba(0, 0, 0, 0.06)" />
+                    <stop offset="1" stopColor="rgba(0, 0, 0, 0.30)" />
+                </linearGradient>
+                <linearGradient id={darkGradId} gradientTransform="rotate(90)">
+                    <stop offset="0" stopColor="#FFF" stopOpacity="0.24" />
+                    <stop offset="0.15" stopColor="#FFF" stopOpacity="0.09" />
+                </linearGradient>
+            </defs>
+        ),
+        []
+    )
+
+    let stroke = url(theme === 'dark' ? darkGradId : lightGradId)
+
+    if (theme === 'dark') {
+        if (state === ControlState.Disabled || state === ControlState.Pressed) {
+            stroke = 'rgba(255, 255, 255, 0.09)'
+        }
+    } else if (theme === 'light') {
+        if (state === ControlState.Disabled || state === ControlState.Pressed) {
+            stroke = 'rgba(0, 0, 0, 0.06)'
+        }
+    }
+
+    return (
+        <StrokeBaseX>
+            <svg className="stroke" overflow="visible" fill="transparent" aria-hidden="true" tabIndex={-1}>
+                {definitions}
+                <rect
+                    width="calc(100% - 1px)"
+                    height="calc(100% - 1px)"
+                    x="0.5px"
+                    y="0.5px"
+                    stroke={stroke}
+                    rx={`${borderRadius ?? 0}px`}
+                />
+            </svg>
+        </StrokeBaseX>
+    )
+}
 
 function ControlStroke({ children, borderRadius, state, focused = false }: ControlStrokeProps) {
     const theme = useTheme()

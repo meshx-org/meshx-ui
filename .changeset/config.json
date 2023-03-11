@@ -12,6 +12,7 @@
     "baseBranch": "main",
     "updateInternalDependencies": "patch",
     "ignore": [
-        "@meshx-org/mxui-stories"
+        "@meshx-org/mxui-stories",
+        "@meshx-org/mxui-tsconfig"
     ]
 }

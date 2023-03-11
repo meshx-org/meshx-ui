@@ -128,13 +128,71 @@ function ariaHidden(props: any) {
     return { ...props, 'aria-hidden': true }
 }
 
+function cardFillState(theme: DefaultTheme, state: ControlState) {
+    switch (state) {
+        case ControlState.Hovered:
+            return theme.colors.backgrounds.card.tertiary
+        case ControlState.Pressed:
+            return theme.colors.backgrounds.card.tertiary
+        default:
+            return theme.colors.backgrounds.card.default
+    }
+}
+
 const fillBase = css`
-    z-index: 3;
+    z-index: -1;
     position: absolute;
     top: 1px;
     bottom: 1px;
     right: 1px;
     left: 1px;
+`
+
+export const SubtleFillX = styled.div.attrs(ariaHidden)<SubtleFillProps>`
+    ${fillBase}
+    ${borderRadius}
+  
+    background: transparent;
+
+    &:hover,
+    &[data-state='hovered'] {
+        background: ${(props) => props.theme.colors.backgrounds.subtle.default} !important;
+    }
+
+    &:active,
+    &[data-state='pressed'] {
+        background: ${(props) => props.theme.colors.backgrounds.subtle.secondary} !important;
+    }
+
+    &[data-state='disabled'] {
+        background: ${(props) => props.theme.colors.backgrounds.subtle.disabled} !important;
+    }
+`
+
+export const ControlFillX = styled.div.attrs(ariaHidden)<SmokeFillProps>`
+    ${fillBase}
+    ${borderRadius}
+
+    background: ${(props) =>
+        props.theme.name == 'dark' ? 'hsla(210, 10%, 100%, 0.061)' : 'hsla(210, 10%, 100%, 0.7)'};
+
+    &:hover,
+    &[data-state='hovered'] {
+        background: ${(props) =>
+            props.theme.name == 'dark' ? 'hsla(210, 10%, 100%, 0.084)' : 'rgba(249, 249, 249, 0.5)'} !important;
+    }
+
+    &:active,
+    &[data-state='pressed'] {
+        background: ${(props) =>
+            props.theme.name == 'dark' ? 'hsla(210, 10%, 100%, 0.033)' : 'rgba(249, 249, 249, 0.3)'} !important;
+    }
+
+    &:disabled,
+    [data-state='disabled'] {
+        background: ${(props) =>
+            props.theme.name == 'dark' ? 'rgba(249, 249, 249, 0.3)' : 'hsla(210, 10%, 100%, 0.04)'} !important;
+    }
 `
 
 export const SmokeFill = styled.div.attrs(ariaHidden)<SmokeFillProps>`
@@ -155,17 +213,6 @@ export const AcrylicFill = styled.div.attrs(ariaHidden)<AcrylicFillProps>`
     backdrop-filter: ${({ theme }) => (theme.name === 'light' ? 'blur(20px) saturate(3)' : 'blur(20px) saturate(3.5)')};
     background-color: ${({ theme }) => theme.colors.backgrounds.acrylic.default};
 `
-
-function cardFillState(theme: DefaultTheme, state: ControlState) {
-    switch (state) {
-        case ControlState.Hovered:
-            return theme.colors.backgrounds.card.tertiary
-        case ControlState.Pressed:
-            return theme.colors.backgrounds.card.tertiary
-        default:
-            return theme.colors.backgrounds.card.default
-    }
-}
 
 export const CardFill = styled.div.attrs(ariaHidden)<CardFillProps>`
     ${fillBase}
