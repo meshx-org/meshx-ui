@@ -6,7 +6,7 @@
     "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
     "homepage": "https://meshx.co/produts/mxui",
     "main": "lib/commonjs/index.js",
-    "types": "lib/typescript/index.d.ts",
+    "types": "src/index.ts",
     "files": [
         "src",
         "lib"
