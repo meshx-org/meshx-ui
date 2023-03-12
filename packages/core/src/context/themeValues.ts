@@ -51,7 +51,8 @@ export const DEFAULT_LIGHT: ColorScheme = {
     stroke: {
         divider: 'rgba(0,0,0,0.0803)',
         card: 'rgba(0 0 0 / 6%)',
-        surface: 'rgba(0 0 0 / 6%)'
+        surface: 'rgba(0 0 0 / 6%)',
+        control: 'rgba(0, 0, 0, 0.45)'
     },
     accentText: {
         primary: 'rgb(3, 150, 255)',
@@ -59,6 +60,12 @@ export const DEFAULT_LIGHT: ColorScheme = {
         disabled: 'rgb(3, 150, 255)'
     },
     backgrounds: {
+        control: {
+            default: 'hsla(210, 10%, 100%, 0.7)',
+            secondary: 'rgba(249, 249, 249, 0.5)',
+            tertiary: 'rgba(249, 249, 249, 0.3)',
+            disabled: 'hsla(210, 10%, 100%, 0.04)'
+        },
         card: {
             default: 'rgba(255,255,255,0.7)',
             secondary: 'rgba(246,246,246,0.5)',
@@ -117,9 +124,16 @@ export const DEFAULT_DARK: ColorScheme = {
     stroke: {
         divider: 'rgba(255, 255, 255, 0.0837)',
         card: 'rgba(255 255 255 / 14%)',
-        surface: 'rgba(255 255 255 / 18%)'
+        surface: 'rgba(255 255 255 / 18%)',
+        control: 'rgba(255, 255, 255, 0.54)'
     },
     backgrounds: {
+        control: {
+            default: 'hsla(210, 10%, 100%, 0.061)',
+            secondary: 'hsla(210, 10%, 100%, 0.084)',
+            tertiary: 'hsla(210, 10%, 100%, 0.033)',
+            disabled: 'rgba(249, 249, 249, 0.3)'
+        },
         card: {
             default: '#FFFFFF0D',
             secondary: '#FFFFFF08',

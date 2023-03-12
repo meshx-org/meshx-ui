@@ -33,11 +33,17 @@ const GlobalStyle = createGlobalStyle`
         --theme-color-stroke-card: ${({ theme }) => theme.colors.stroke.card};
         --theme-color-stroke-divider: ${({ theme }) => theme.colors.stroke.divider};
         --theme-color-stroke-surface: ${({ theme }) => theme.colors.stroke.surface};
+        --theme-color-stroke-control: ${({ theme }) => theme.colors.stroke.control};
 
         // Backgrounds Colors
         --theme-background-card-default: ${({ theme }) => theme.colors.backgrounds.card.default};
         --theme-background-card-secondary: ${({ theme }) => theme.colors.backgrounds.card.secondary};
         --theme-background-card-tertiary: ${({ theme }) => theme.colors.backgrounds.card.tertiary};
+
+        --theme-background-control-default: ${({ theme }) => theme.colors.backgrounds.control.default};
+        --theme-background-control-secondary: ${({ theme }) => theme.colors.backgrounds.control.secondary};
+        --theme-background-control-tertiary: ${({ theme }) => theme.colors.backgrounds.control.tertiary};
+        --theme-background-control-disabled: ${({ theme }) => theme.colors.backgrounds.control.disabled};
 
         --theme-background-solid-default: ${({ theme }) => theme.colors.backgrounds.solid.default};
         --theme-background-solid-secondary: ${({ theme }) => theme.colors.backgrounds.solid.secondary};
@@ -45,6 +51,10 @@ const GlobalStyle = createGlobalStyle`
 
         --theme-background-layer-default: ${({ theme }) => theme.colors.backgrounds.layer.default};
         --theme-background-layer-alt: ${({ theme }) => theme.colors.backgrounds.layer.alt};
+
+        --theme-background-subtle-default: ${({ theme }) => theme.colors.backgrounds.subtle.default};
+        --theme-background-subtle-secondary: ${({ theme }) => theme.colors.backgrounds.subtle.secondary};
+        --theme-background-subtle-disabled: ${({ theme }) => theme.colors.backgrounds.subtle.disabled};
 
         --theme-background-smoke-default: ${({ theme }) => theme.colors.backgrounds.smoke.default};
         --theme-background-acrylic-default: ${({ theme }) => theme.colors.backgrounds.acrylic.default};
@@ -105,6 +115,7 @@ const GlobalStyle = createGlobalStyle`
         --theme-color-stroke-card: ${({ theme }) => theme.lightScheme.stroke.card};
         --theme-color-stroke-divider: ${({ theme }) => theme.lightScheme.stroke.divider};
         --theme-color-stroke-surface: ${({ theme }) => theme.lightScheme.stroke.surface};
+        --theme-color-stroke-control: ${({ theme }) => theme.lightScheme.stroke.control};
 
         // Backgrounds Colors
         --theme-background-card-default: ${({ theme }) => theme.lightScheme.backgrounds.card.default};
@@ -117,6 +128,10 @@ const GlobalStyle = createGlobalStyle`
 
         --theme-background-layer-default: ${({ theme }) => theme.lightScheme.backgrounds.layer.default};
         --theme-background-layer-alt: ${({ theme }) => theme.lightScheme.backgrounds.layer.alt};
+
+        --theme-background-subtle-default: ${({ theme }) => theme.lightScheme.backgrounds.subtle.default};
+        --theme-background-subtle-secondary: ${({ theme }) => theme.lightScheme.backgrounds.subtle.secondary};
+        --theme-background-subtle-disabled: ${({ theme }) => theme.lightScheme.backgrounds.subtle.disabled};
 
         --theme-background-smoke-default: ${({ theme }) => theme.lightScheme.backgrounds.smoke.default};
         --theme-background-acrylic-default: ${({ theme }) => theme.lightScheme.backgrounds.acrylic.default};
@@ -137,6 +152,7 @@ const GlobalStyle = createGlobalStyle`
         --theme-color-stroke-card: ${({ theme }) => theme.darkScheme.stroke.card};
         --theme-color-stroke-divider: ${({ theme }) => theme.darkScheme.stroke.divider};
         --theme-color-stroke-surface: ${({ theme }) => theme.darkScheme.stroke.surface};
+        --theme-color-stroke-control: ${({ theme }) => theme.darkScheme.stroke.control};
 
         // Backgrounds Colors
         --theme-background-card-default: ${({ theme }) => theme.darkScheme.backgrounds.card.default};
@@ -149,6 +165,10 @@ const GlobalStyle = createGlobalStyle`
 
         --theme-background-layer-default: ${({ theme }) => theme.darkScheme.backgrounds.layer.default};
         --theme-background-layer-alt: ${({ theme }) => theme.darkScheme.backgrounds.layer.alt};
+
+        --theme-background-subtle-default: ${({ theme }) => theme.darkScheme.backgrounds.subtle.default};
+        --theme-background-subtle-secondary: ${({ theme }) => theme.darkScheme.backgrounds.subtle.secondary};
+        --theme-background-subtle-disabled: ${({ theme }) => theme.darkScheme.backgrounds.subtle.disabled};
 
         --theme-background-smoke-default: ${({ theme }) => theme.darkScheme.backgrounds.smoke.default};
         --theme-background-acrylic-default: ${({ theme }) => theme.darkScheme.backgrounds.acrylic.default};
@@ -169,11 +189,7 @@ export function ThemeProvider({ theme, children }: ThemeProviderProps) {
                     name: theme
                 }}
             >
-                {Platform.OS === 'web' ? (
-                    <>
-                        <GlobalStyle />
-                    </>
-                ) : null}
+                {Platform.OS === 'web' ? <GlobalStyle /> : null}
                 {children}
             </StyledProvider>
         </ThemeContext.Provider>

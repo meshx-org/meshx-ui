@@ -23,6 +23,7 @@ export interface ColorScheme {
         divider: RGBA
         card: RGBA
         surface: RGBA
+        control: RGBA
     }
     backgrounds: {
         // Used to create `cards` t
@@ -30,6 +31,13 @@ export interface ColorScheme {
             default: string
             secondary: string
             tertiary: string
+        }
+
+        control: {
+            default: string
+            secondary: string
+            tertiary: string
+            disabled: string
         }
 
         // Used over under dialogs to block them out as inaccessible.

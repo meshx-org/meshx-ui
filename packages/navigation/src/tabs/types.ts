@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import { PaddingProps } from 'styled-system'
+import { ColorProps, PaddingProps } from 'styled-system'
 
 export interface TabViewProps {
     children: ReactNode[]
@@ -11,7 +11,7 @@ interface TabPanelsRenderProps {
     selectedIndex: number
 }
 
-export interface TabPanelsProps extends PaddingProps {
+export interface TabPanelsProps extends PaddingProps, ColorProps {
     children:
         | ReactNode
         | ReactNode[]

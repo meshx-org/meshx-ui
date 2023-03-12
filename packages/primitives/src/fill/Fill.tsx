@@ -66,29 +66,6 @@ const TextControlFillBase = styled(FillBase)`
     }
 `
 
-export const SubtleFill = styled(FillBase)<SubtleFillProps>`
-    border-radius: 4px;
-
-    background: ${(props) => (props.theme.name == 'dark' ? ' rgba(255, 255, 255, 0)' : 'rgba(0, 0, 0, 0)')};
-
-    &:hover,
-    &[data-state='hovered'] {
-        background: ${(props) =>
-            props.theme.name == 'dark' ? 'rgba(255, 255, 255, 0.0837)' : 'rgb(0, 0, 0, 0.0373)'} !important;
-    }
-
-    &:active,
-    &[data-state='pressed'] {
-        background: ${(props) =>
-            props.theme.name == 'dark' ? 'rgba(255, 255, 255, 0.0326)' : 'rgba(0, 0, 0, 0.0241)'} !important;
-    }
-
-    &[data-state='disabled'] {
-        background: ${(props) =>
-            props.theme.name == 'dark' ? 'rgba(255, 255, 255, 0.04)' : 'rgb(0, 0, 0, 0)'} !important;
-    }
-`
-
 export const ControlFill = styled(FillBase)<ControlFillProps>`
     ${borderRadius}
 
@@ -128,17 +105,6 @@ function ariaHidden(props: any) {
     return { ...props, 'aria-hidden': true }
 }
 
-function cardFillState(theme: DefaultTheme, state: ControlState) {
-    switch (state) {
-        case ControlState.Hovered:
-            return theme.colors.backgrounds.card.tertiary
-        case ControlState.Pressed:
-            return theme.colors.backgrounds.card.tertiary
-        default:
-            return theme.colors.backgrounds.card.default
-    }
-}
-
 const fillBase = css`
     z-index: -1;
     position: absolute;
@@ -156,17 +122,17 @@ export const SubtleFillX = styled.div.attrs(ariaHidden)<SubtleFillProps>`
 
     &:hover,
     &[data-state='hovered'] {
-        background: ${(props) => props.theme.colors.backgrounds.subtle.default} !important;
+        background: var(--theme-background-subtle-default) !important;
     }
 
     &:active,
     &[data-state='pressed'] {
-        background: ${(props) => props.theme.colors.backgrounds.subtle.secondary} !important;
+        background: var(--theme-background-subtle-secondary) !important;
     }
 
     &:disabled,
     &[data-state='disabled'] {
-        background: ${(props) => props.theme.colors.backgrounds.subtle.disabled} !important;
+        background: var(--theme-background-subtle-disabled) !important;
     }
 `
 
@@ -174,49 +140,59 @@ export const ControlFillX = styled.div.attrs(ariaHidden)<SmokeFillProps>`
     ${fillBase}
     ${borderRadius}
 
-    background: ${(props) =>
-        props.theme.name == 'dark' ? 'hsla(210, 10%, 100%, 0.061)' : 'hsla(210, 10%, 100%, 0.7)'};
+    background: var(--theme-background-control-default);
 
     &:hover,
     &[data-state='hovered'] {
-        background: ${(props) =>
-            props.theme.name == 'dark' ? 'hsla(210, 10%, 100%, 0.084)' : 'rgba(249, 249, 249, 0.5)'} !important;
+        background: var(--theme-background-control-secondary) !important;
     }
 
     &:active,
     &[data-state='pressed'] {
-        background: ${(props) =>
-            props.theme.name == 'dark' ? 'hsla(210, 10%, 100%, 0.033)' : 'rgba(249, 249, 249, 0.3)'} !important;
+        background: var(--theme-background-control-tertiary) !important;
     }
 
     &:disabled,
     [data-state='disabled'] {
-        background: ${(props) =>
-            props.theme.name == 'dark' ? 'rgba(249, 249, 249, 0.3)' : 'hsla(210, 10%, 100%, 0.04)'} !important;
+        background: var(--theme-background-control-disabled) !important;
     }
 `
 
 export const SmokeFill = styled.div.attrs(ariaHidden)<SmokeFillProps>`
     ${fillBase}
     ${borderRadius}
-    background-color: ${({ theme }) => theme.colors.backgrounds.smoke.default};
+
+    background-color: var(--theme-background-smoke-default);
 `
 
 export const LayerFill = styled.div.attrs((props) => ({ ...props, 'aria-hidden': true }))<LayerFillProps>`
     ${fillBase}
     ${borderRadius}
-    background-color: ${({ theme }) => theme.colors.backgrounds.layer.default};
+
+    background-color: var(--theme-background-layer-default);
 `
 
 export const AcrylicFill = styled.div.attrs(ariaHidden)<AcrylicFillProps>`
     ${fillBase}
     ${borderRadius}
+
     backdrop-filter: ${({ theme }) => (theme.name === 'light' ? 'blur(20px) saturate(3)' : 'blur(20px) saturate(3.5)')};
-    background-color: ${({ theme }) => theme.colors.backgrounds.acrylic.default};
+    background-color: var(--theme-background-acrylic-default);
 `
 
 export const CardFill = styled.div.attrs(ariaHidden)<CardFillProps>`
     ${fillBase}
     ${borderRadius}
-    background-color: ${(props) => cardFillState(props.theme, props.state)};
+
+    background: var(--theme-background-card-default);
+
+    &:hover,
+    &[data-state='hovered'] {
+        background: var(--theme-background-card-tertiary) !important;
+    }
+
+    &:active,
+    &[data-state='pressed'] {
+        background: var(--theme-background-card-tertiary) !important;
+    }
 `

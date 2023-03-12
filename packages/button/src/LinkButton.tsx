@@ -27,7 +27,7 @@ const StyledButton = styled.div`
     }
 
     &[data-state='pressed'] ${StyledSubtleFillX}, &:active ${StyledSubtleFillX} {
-        transform: scale(0.9) !important;
+        transform: scale(0.95) !important;
     }
 
     &[data-state='hovered'] ${StyledSubtleFillX}, &:hover ${StyledSubtleFillX} {

@@ -31,14 +31,7 @@ const StyledRail = styled.div`
     top: 9px;
     bottom: 9px;
     border-radius: 12px;
-
-    ${StyledSliderWrapper}[data-theme='light'] & {
-        background: rgba(0, 0, 0, 0.45);
-    }
-
-    ${StyledSliderWrapper}[data-theme='dark'] & {
-        background: rgba(255, 255, 255, 0.54);
-    }
+    background: var(--theme-color-stroke-control);
 `
 
 const StyledTick = styled.span`
@@ -50,6 +43,7 @@ const StyledTick = styled.span`
         position: absolute;
         width: 1px;
         height: 4px;
+        background: var(--theme-color-stroke-control);
     }
 
     &::after {
@@ -58,16 +52,6 @@ const StyledTick = styled.span`
 
     &::before {
         top: 1px;
-    }
-
-    ${StyledSliderWrapper}[data-theme='light'] &::before,
-    ${StyledSliderWrapper}[data-theme='light'] &::after {
-        background: rgba(0, 0, 0, 0.45);
-    }
-
-    ${StyledSliderWrapper}[data-theme='dark'] &::before,
-    ${StyledSliderWrapper}[data-theme='dark'] &::after {
-        background: rgba(255, 255, 255, 0.54);
     }
 `
 
@@ -155,7 +139,7 @@ export function Slider(props: SliderProps) {
     )
 
     const renderThumb = (thumbProps: HTMLProps<HTMLSpanElement>) => (
-        <StyledThumb {...handlers} {...thumbProps as any}>
+        <StyledThumb {...handlers} {...(thumbProps as any)}>
             <CircleControlStroke borderRadius={4} state={state}>
                 <StyledThumbInner>
                     <span />
@@ -168,15 +152,15 @@ export function Slider(props: SliderProps) {
         const { left, right } = style as CSSProperties
 
         return trackState.index === 0 ? (
-            <StyledProgress {...trackProps as any} style={{ left: Number(left) + 1, right: Number(right) + 1 }} />
+            <StyledProgress {...(trackProps as any)} style={{ left: Number(left) + 1, right: Number(right) + 1 }} />
         ) : (
-            <StyledRail {...trackProps as any } style={{ left: Number(left) + 1, right: Number(right) + 1 }} />
+            <StyledRail {...(trackProps as any)} style={{ left: Number(left) + 1, right: Number(right) + 1 }} />
         )
     }
 
     const renderMark = ({ style, ...markProps }: HTMLProps<HTMLDivElement>) => {
         const { left, ...rest } = style as CSSProperties
-        return <StyledTick  {...markProps as any} style={{ left: Math.round(Number(left) + 10), ...rest }} />
+        return <StyledTick {...(markProps as any)} style={{ left: Math.round(Number(left) + 10), ...rest }} />
     }
 
     return (

@@ -44,7 +44,7 @@ export function CardSurface(props: CardSurfaceProps) {
         <SurfaceWrapper {...handlers} {...restProps}>
             <CardStroke borderRadius={5} {...restProps} />
             <CardShadow borderRadius={5} {...restProps} state={state} />
-            <CardFill borderRadius={5} {...restProps} state={state} />
+            <CardFill borderRadius={5} {...restProps} data-state={state} />
             <SurfaceContent as={as} {...restProps}>
                 {children}
             </SurfaceContent>
