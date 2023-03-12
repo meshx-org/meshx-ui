@@ -1,7 +1,7 @@
 {
     "name": "@meshx-org/mxui",
     "description": "Button component for MXUI",
-    "version": "0.7.19",
+    "version": "0.7.20",
     "license": "Apache-2.0",
     "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
     "homepage": "https://meshx.co/produts/mxui",
@@ -37,15 +37,15 @@
         "build": "bob build"
     },
     "dependencies": {
-        "@meshx-org/mxui-overlays": "0.7.19",
-        "@meshx-org/mxui-navigation": "0.7.19",
-        "@meshx-org/mxui-button": "0.7.19",
-        "@meshx-org/mxui-switch": "0.7.19",
-        "@meshx-org/mxui-textbox": "0.7.19",
-        "@meshx-org/mxui-slider": "0.7.19",
-        "@meshx-org/mxui-primitives": "0.7.19",
-        "@meshx-org/mxui-treeview": "0.7.19",
-        "@meshx-org/mxui-text": "0.7.19"
+        "@meshx-org/mxui-overlays": "0.7.20",
+        "@meshx-org/mxui-navigation": "0.7.20",
+        "@meshx-org/mxui-button": "0.7.20",
+        "@meshx-org/mxui-switch": "0.7.20",
+        "@meshx-org/mxui-textbox": "0.7.20",
+        "@meshx-org/mxui-slider": "0.7.20",
+        "@meshx-org/mxui-primitives": "0.7.20",
+        "@meshx-org/mxui-treeview": "0.7.20",
+        "@meshx-org/mxui-text": "0.7.20"
     },
     "devDependencies": {
         "@meshx-org/mxui-tsconfig": "*",
