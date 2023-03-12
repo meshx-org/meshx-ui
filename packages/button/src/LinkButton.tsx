@@ -26,11 +26,11 @@ const StyledButton = styled.div`
         cursor: not-allowed !important;
     }
 
-    &[data-state='pressed'] ${StyledSubtleFillX} {
+    &[data-state='pressed'] ${StyledSubtleFillX}, &:active ${StyledSubtleFillX} {
         transform: scale(0.9) !important;
     }
 
-    &:hover ${StyledSubtleFillX} {
+    &[data-state='hovered'] ${StyledSubtleFillX}, &:hover ${StyledSubtleFillX} {
         transform: scale(1);
     }
 `

@@ -53,7 +53,7 @@ Disabled.args = {
 const TemplateWithLinkButton: Story<ButtonProps> = (args) => {
     return (
         <div style={{ display: 'flex', gap: '8px' }}>
-            <LinkButton as="a" state={ControlState.Disabled}>
+            <LinkButton as="a" state={ControlState.Hovered}>
                 Sign in
             </LinkButton>
             <Button {...args} children="Create an account" />
