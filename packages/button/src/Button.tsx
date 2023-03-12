@@ -31,13 +31,13 @@ const ButtonContent = styled.div`
     z-index: 3;
     display: flex;
     align-items: center;
-
     justify-content: center;
     padding: 0px 12px;
+
     font-size: 14px;
     line-height: 20px;
     min-width: 80px;
-    column-gap: 8px;
+    column-gap: 6px;
 `
 
 function Button(props: ButtonProps) {

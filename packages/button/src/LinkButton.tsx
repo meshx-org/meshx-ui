@@ -1,11 +1,18 @@
 import React from 'react'
 import { LinkButtonProps } from './Button.types'
-import { useControlState } from '@meshx-org/mxui-core'
+import { ControlState, useControlState } from '@meshx-org/mxui-core'
 import { Text } from '@meshx-org/mxui-text'
 import { SubtleFillX } from '@meshx-org/mxui-primitives'
 import styled from 'styled-components'
 
-const StyledButton = styled.a`
+const StyledSubtleFillX = styled(SubtleFillX)`
+    transition: all 0.15s ease-out;
+    background-color: rgba(0, 0, 0, 0);
+    transform: scale(0);
+    transform-origin: 50% 50% 0px;
+`
+
+const StyledButton = styled.div`
     margin: 0;
     padding: 0;
     border: none;
@@ -16,23 +23,34 @@ const StyledButton = styled.a`
     cursor: pointer;
 
     &[data-state='disabled'] {
-        cursor: not-allowed;
-        pointer-events: none;
+        cursor: not-allowed !important;
+    }
+
+    &[data-state='pressed'] ${StyledSubtleFillX} {
+        transform: scale(0.9) !important;
+    }
+
+    &:hover ${StyledSubtleFillX} {
+        transform: scale(1);
     }
 `
 
-const ButtonContent = styled.div`
+const ButtonContent = styled.a`
     height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5px 12px;
+    padding: 0px 12px;
+
     font-size: 14px;
     line-height: 20px;
+    min-width: 80px;
+    column-gap: 6px;
 `
 
-function LinkButton({ children, href, disabled = false, as, ...otherProps }: LinkButtonProps) {
-    const { state, handlers } = useControlState<HTMLAnchorElement>(disabled)
+export function LinkButton<T>({ children, state: controlledState, ...otherProps }: LinkButtonProps<T>) {
+    const { state, handlers } = useControlState<HTMLDivElement>(false)
+    const disabled = controlledState === ControlState.Disabled
 
     let content = null
     if (typeof children === 'string') {
@@ -51,11 +69,9 @@ function LinkButton({ children, href, disabled = false, as, ...otherProps }: Lin
     }
 
     return (
-        <StyledButton href={href} type="button" {...otherProps} data-state={state} {...handlers}>
-            <SubtleFillX data-state={state} borderRadius={5} />
-            <ButtonContent as={as}>{content}</ButtonContent>
+        <StyledButton data-state={controlledState ?? state} {...handlers}>
+            <StyledSubtleFillX data-state={controlledState ?? state} borderRadius={5} />
+            <ButtonContent {...otherProps}>{content}</ButtonContent>
         </StyledButton>
     )
 }
-
-export { LinkButton }

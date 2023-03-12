@@ -164,6 +164,7 @@ export const SubtleFillX = styled.div.attrs(ariaHidden)<SubtleFillProps>`
         background: ${(props) => props.theme.colors.backgrounds.subtle.secondary} !important;
     }
 
+    &:disabled,
     &[data-state='disabled'] {
         background: ${(props) => props.theme.colors.backgrounds.subtle.disabled} !important;
     }

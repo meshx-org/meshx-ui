@@ -1,7 +1,7 @@
 import { LinkButtonProps } from './Button.types'
 
-function LinkButton({ label, href, ...props }: LinkButtonProps) {
-    return null
+function LinkButton<T>({ children, ...props }: LinkButtonProps<T>) {
+    return children
 }
 
 export { LinkButton }

@@ -2,6 +2,7 @@ import React from 'react'
 import { Story, Meta } from '@storybook/react'
 import { Button, ButtonProps, LinkButton } from '@meshx-org/mxui-button/src'
 import { Text } from '@meshx-org/mxui-text'
+import { ControlState } from '@meshx-org/mxui-core'
 
 export default {
     title: 'Basic Input/Button',
@@ -52,7 +53,9 @@ Disabled.args = {
 const TemplateWithLinkButton: Story<ButtonProps> = (args) => {
     return (
         <div style={{ display: 'flex', gap: '8px' }}>
-            <LinkButton href="#" children="Sign in" />
+            <LinkButton as="a" state={ControlState.Disabled}>
+                Sign in
+            </LinkButton>
             <Button {...args} children="Create an account" />
         </div>
     )

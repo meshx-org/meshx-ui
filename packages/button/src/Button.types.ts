@@ -1,3 +1,5 @@
+import { ControlState } from '@meshx-org/mxui-core'
+
 export type ButtonAppearance = 'primary' | 'secondary'
 
 export interface ButtonProps {
@@ -40,7 +42,7 @@ export interface ButtonProps {
     [key: string]: unknown
 }
 
-export interface LinkButtonProps {
+type LinkButtonBaseProps = {
     /**
      * A button can fill the width of its container.
      * @default false
@@ -54,13 +56,28 @@ export interface LinkButtonProps {
     disabled?: boolean
 
     /**
-     * Handler to be called when the button is pressed.
+     * Overrides the default state of the button.
+     * @default undefined
      */
-    href: string
-
-    as?: string | React.ComponentType<any>
-
+    state?: ControlState
+    
     children: React.ReactNode
-
-    [key: string]: unknown
 }
+
+export type LinkButtonProps<T > = LinkButtonBaseProps &
+    (
+        | (JSX.IntrinsicElements['a'] & {
+              /**
+               * @default undefined
+               */
+              as?: keyof JSX.IntrinsicElements
+          })
+        | ({
+              [key in keyof T]: T[key]
+          } & {
+              /**
+               * @default undefined
+               */
+              as?: React.ComponentType<T>
+          })
+    )
