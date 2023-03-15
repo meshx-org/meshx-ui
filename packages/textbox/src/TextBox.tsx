@@ -12,7 +12,6 @@ const TextBoxInput = styled.input<PaddingProps & { width?: any; height?: any; si
     background: transparent;
 
     ${padding}
-
     margin: 0;
 
     height: 32px;
@@ -20,26 +19,26 @@ const TextBoxInput = styled.input<PaddingProps & { width?: any; height?: any; si
     line-height: 20px;
 
     font-family: ${(props) => props.theme.fonts.default};
-    color: ${(props) => props.theme.colors.text.primary};
+    color: var(--theme-color-text-primary);
 
     &[data-state='disabled'] {
-        color: ${(props) => props.theme.colors.text.disabled};
+        color: var(--theme-color-text-disabled);
     }
 
     &::-webkit-input-placeholder {
-        color: ${(props) => props.theme.colors.text.secondary};
+        color: var(--theme-color-text-secondary);
     }
 
     &::placeholder {
-        color: ${(props) => props.theme.colors.text.secondary};
+        color: var(--theme-color-text-secondary);
     }
 
     &:-ms-input-placeholder {
-        color: ${(props) => props.theme.colors.text.secondary};
+        color: var(--theme-color-text-secondary);
     }
 
     &::-moz-placeholder {
-        color: ${(props) => props.theme.colors.text.secondary};
+        color: var(--theme-color-text-secondary);
     }
 `
 
@@ -48,47 +47,6 @@ const TextBoxWrapper = styled.div<LayoutProps & MarginProps>`
     ${margin}
     position: relative;
 `
-
-export function PasswordBox(props: PasswordBoxProps) {
-    const {
-        placeholder,
-        disabled = false,
-        value,
-        onChange,
-        onFocus,
-        onBlur,
-        inputMode,
-        keyHint,
-        readonly,
-        ...otherProps
-    } = props
-
-    const { focused, handlers: focusHandlers } = useFocus<HTMLInputElement>(onFocus, onBlur)
-    const { state, handlers } = useControlState<HTMLInputElement>(disabled)
-
-    return (
-        <TextBoxWrapper {...otherProps}>
-            <TextControlStroke borderRadius={5} state={state} focused={focused}>
-                <TextControlFill state={state}>
-                    <TextBoxInput
-                        py="5px"
-                        px="8px"
-                        role="textbox"
-                        type="password"
-                        {...otherProps}
-                        placeholder={placeholder}
-                        disabled={disabled}
-                        value={value}
-                        data-state={state}
-                        onChange={onChange && ((e) => onChange(e.target.value))}
-                        {...handlers}
-                        {...focusHandlers}
-                    />
-                </TextControlFill>
-            </TextControlStroke>
-        </TextBoxWrapper>
-    )
-}
 
 export function TextBox(props: TextBoxProps) {
     const {
@@ -129,4 +87,10 @@ export function TextBox(props: TextBoxProps) {
             </TextControlStroke>
         </TextBoxWrapper>
     )
+}
+
+export function PasswordBox(props: PasswordBoxProps) {
+    const { ...otherProps } = props
+
+    return <TextBox role="textbox" type="password" {...otherProps} />
 }

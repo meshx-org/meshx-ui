@@ -1,4 +1,4 @@
-import React, { useMemo, useId } from 'react'
+import React, { useMemo, useId, useRef } from 'react'
 import { ControlState, useTheme } from '@meshx-org/mxui-core'
 import { ControlStrokeProps, CardStrokeProps, SurfaceStrokeProps, ControlStrokeXProps } from './Stroke.types'
 import { borderRadius } from 'styled-system'
@@ -129,6 +129,75 @@ const CardStroke = styled.div.attrs((props) => ({ ...props, 'aria-hidden': true 
     box-shadow: 0 0 0 1px ${(props) => props.theme.colors.stroke.card};
 `
 
+import { useLayoutEffect, useCallback, useState } from 'react'
+
+export const useRect = (ref: any) => {
+    const [rect, setRect] = useState(getRect(ref ? ref.current : null))
+
+    const handleResize = useCallback(() => {
+        if (!ref.current) {
+            return
+        }
+
+        // Update client rect
+        setRect(getRect(ref.current))
+    }, [ref])
+
+    useLayoutEffect(() => {
+        const element = ref.current
+        if (!element) {
+            return
+        }
+
+        handleResize()
+
+        if (typeof ResizeObserver === 'function') {
+            let resizeObserver: ResizeObserver | null = new ResizeObserver(() => handleResize())
+            resizeObserver.observe(element)
+
+            return () => {
+                if (!resizeObserver) {
+                    return
+                }
+
+                resizeObserver.disconnect()
+                resizeObserver = null
+            }
+        } else {
+            // Browser support, remove freely
+            window.addEventListener('resize', handleResize)
+
+            return () => {
+                window.removeEventListener('resize', handleResize)
+            }
+        }
+    }, [ref.current])
+
+    return rect
+}
+
+function getRect(element: any): {
+    bottom: number
+    height: number
+    left: number
+    right: number
+    top: number
+    width: number
+} {
+    if (!element) {
+        return {
+            bottom: 0,
+            height: 0,
+            left: 0,
+            right: 0,
+            top: 0,
+            width: 0
+        }
+    }
+
+    return element.getBoundingClientRect()
+}
+
 export function ControlStrokeX({ state, borderRadius, focused = false }: ControlStrokeXProps) {
     const theme = useTheme()
     const uniqueId = useId()
@@ -163,15 +232,30 @@ export function ControlStrokeX({ state, borderRadius, focused = false }: Control
         }
     }
 
+    // get bounding box of the svg element
+    const svg = useRef(null)
+    const rect = useRect(svg)
+
     return (
         <StrokeBaseX>
-            <svg className="stroke" overflow="visible" fill="transparent" aria-hidden="true" tabIndex={-1}>
+            <svg
+                ref={svg}
+                width="100%"
+                height="100%"
+                viewBox={`0 0 ${Math.round(rect.width)} ${Math.round(rect.height)}`}
+                preserveAspectRatio="none"
+                className="stroke"
+                overflow="visible"
+                fill="transparent"
+                aria-hidden="true"
+                tabIndex={-1}
+            >
                 {definitions}
                 <rect
-                    width="calc(100% - 1px)"
-                    height="calc(100% - 1px)"
-                    x="0.5px"
-                    y="0.5px"
+                    width={Math.round(rect.width) - 1}
+                    height={Math.round(rect.height) - 1}
+                    x="0.5"
+                    y="0.5"
                     stroke={stroke}
                     rx={`${borderRadius ?? 0}px`}
                 />
