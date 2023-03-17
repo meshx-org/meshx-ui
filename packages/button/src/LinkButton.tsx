@@ -41,10 +41,11 @@ const ButtonContent = styled.a`
     align-items: center;
     justify-content: center;
     padding: 0px 12px;
+    min-width: 32px;
 
     font-size: 14px;
     line-height: 20px;
-    min-width: 80px;
+
     column-gap: 6px;
 `
 

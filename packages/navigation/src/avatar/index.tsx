@@ -17,7 +17,7 @@ const Stroke = styled.div<{ size: number }>`
     bottom: 0;
     border-radius: ${(props) => props.size / 2}px;
     z-index: 10;
-    border: 1px solid ${(props) => (props.theme.name === 'dark' ? 'rgba(255, 255, 255, 0.07)' : 'rgba(0, 0, 0, 0.06)')};
+    border: 1px solid ${(props) => (props.theme.name === 'dark' ? 'rgba(255, 255, 255, 0.07)' : 'rgba(0, 0, 0, 0.09)')};
 `
 
 const Container = styled.div<{ size: number }>`

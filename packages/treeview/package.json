@@ -1,7 +1,7 @@
 {
     "name": "@meshx-org/mxui-treeview",
     "description": "TreeView component for MXUI",
-    "version": "0.7.21",
+    "version": "0.7.22",
     "license": "Apache-2.0",
     "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
     "homepage": "https://meshx.co/produts/mxui",
@@ -38,8 +38,8 @@
         "build": "bob build"
     },
     "dependencies": {
-        "@meshx-org/mxui-core": "0.7.21",
-        "@meshx-org/mxui-primitives": "0.7.21"
+        "@meshx-org/mxui-core": "0.7.22",
+        "@meshx-org/mxui-primitives": "0.7.22"
     },
     "devDependencies": {
         "@meshx-org/mxui-tsconfig": "*",

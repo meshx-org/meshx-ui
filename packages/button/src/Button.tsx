@@ -11,10 +11,9 @@ const StyledButton = styled.button`
     padding: 0;
     border: none;
     background: transparent;
-    max-width: fit-content;
     align-items: flex-start;
     cursor: pointer;
-
+    width: 100%;
     height: 32px;
 
     &[data-state='disabled'] {
@@ -41,7 +40,7 @@ const ButtonContent = styled.div`
 `
 
 function Button(props: ButtonProps) {
-    const { children, apparance = 'default', disabled = false, onPress, as, ...otherProps } = props
+    const { children, apparance = 'default', disabled = false, fit = true, onPress, as, ...otherProps } = props
 
     const theme = useTheme()
     const { state, handlers } = useControlState<HTMLButtonElement>(disabled)
@@ -69,6 +68,7 @@ function Button(props: ButtonProps) {
     return (
         <StyledButton
             as={as}
+            style={{ maxWidth: fit ? 'fit-content' : undefined }}
             type="button"
             {...otherProps}
             onClick={handleClick}

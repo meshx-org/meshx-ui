@@ -6,10 +6,10 @@ export interface ButtonProps {
     apparance?: 'default' | 'accent'
 
     /**
-     * A button can fill the width of its container.
-     * @default false
+     * A button fits the content.
+     * @default true
      */
-    block?: boolean
+    fit?: boolean
 
     /**
      * A button can show that it cannot be interacted with.
