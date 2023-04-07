@@ -3922,9 +3922,10 @@
     "@webassemblyjs/wast-parser" "1.9.0"
     "@xtuc/long" "4.2.2"
 
-"@whitespace/storybook-addon-html@^5.0.3":
-  version "5.0.3"
-  resolved "https://registry.npmjs.org/@whitespace/storybook-addon-html/-/storybook-addon-html-5.0.3.tgz"
+"@whitespace/storybook-addon-html@^5.1.4":
+  version "5.1.4"
+  resolved "https://registry.yarnpkg.com/@whitespace/storybook-addon-html/-/storybook-addon-html-5.1.4.tgz#1fe39e67d41d4af085cfee10dfd14ce927af1b15"
+  integrity sha512-omDhn5Ceh0998YHKjRk6XHjslTg28WgNao6C0jkGW4NXeO0ZcKL0VCj4qV+jgJ4DOs/3K3Aj+wvQ81seataXqw==
 
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
