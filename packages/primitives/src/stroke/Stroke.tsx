@@ -19,9 +19,8 @@ const StrokeBase = styled.div`
 `
 
 const StrokeBaseX = styled.div`
+    z-index: 2;
     position: absolute;
-    z-index: -1;
-
     top: 0px;
     bottom: 0px;
     right: 0px;

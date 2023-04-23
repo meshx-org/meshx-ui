@@ -17,20 +17,6 @@ const styles = (theme: ThemeValues) =>
             paddingVertical: 6,
             flex: 1,
             color: theme.textColor.primary
-        },
-        selectorWrapper: {
-            overflow: 'hidden',
-            flexShrink: 0,
-            justifyContent: 'center',
-            marginRight: 4,
-            borderTopLeftRadius: 5,
-            borderBottomLeftRadius: 5
-        },
-        selector: {
-            // TODO: animate transform: [{ translateY: 10 }],
-            width: 3,
-            height: '50%',
-            borderRadius: 8
         }
     })
 
@@ -75,14 +61,26 @@ function TreeViewNode<T = unknown>(props: TreeViewNodeProps<T>) {
         >
             {(state) => (
                 <>
-                    <View style={style.selectorWrapper}>
-                        <View
-                            style={[
-                                style.selector,
-                                { backgroundColor: item.isSelected ? themeValues.fillColor.accent : 'transparent' }
-                            ]}
+                    <div
+                        style={{
+                            overflow: 'hidden',
+                            flexShrink: 0,
+                            marginLeft: 1,
+                            justifyContent: 'center',
+                            marginRight: 4,
+                            borderTopLeftRadius: 5,
+                            borderBottomLeftRadius: 5
+                        }}
+                    >
+                        <div
+                            style={{
+                                width: 3,
+                                height: '50%',
+                                borderRadius: 8,
+                                backgroundColor: item.isSelected ? themeValues.fillColor.accent : 'transparent'
+                            }}
                         />
-                    </View>
+                    </div>
 
                     <View style={[style.treeViewItem, { paddingLeft: (path.length - 1) * 20 }]}>
                         {renderTreeItem({

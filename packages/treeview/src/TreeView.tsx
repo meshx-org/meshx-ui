@@ -1,49 +1,21 @@
 import React, { useMemo } from 'react'
-import { ListRenderItem, View, VirtualizedList, StyleSheet, Pressable } from 'react-native'
-import { ControlState, ColorScheme, useThemeColors } from '@meshx-org/mxui-core'
+import { ControlState, useThemeColors } from '@meshx-org/mxui-core'
 import { SubtleFillX } from '@meshx-org/mxui-primitives'
 import { FlattenedItem, TreeViewNodeProps, TreeViewProps } from './TreeView.types'
 import { flattenTree } from './utils'
+import { CSSProperties } from 'styled-components'
 
-const styles = (colors: ColorScheme) =>
-    StyleSheet.create({
-        treeViewNode: {
-            display: 'flex',
-            height: 32,
-            flexDirection: 'row'
-        },
-        treeViewItem: {
-            paddingVertical: 4,
-            // justifyContent: 'center',
-            flex: 1,
-            color: colors.text.primary
-        },
-        selectorWrapper: {
-            overflow: 'hidden',
-            flexShrink: 0,
-            justifyContent: 'center',
-            marginRight: 4,
-            borderTopLeftRadius: 5,
-            borderBottomLeftRadius: 5
-        },
-        selector: {
-            // TODO: animate transform: [{ translateY: 10 }],
-            width: 3,
-            height: 16,
-            borderRadius: 8
-        }
-    })
+const rnToControlState = (pressableState: any): ControlState => {
+    if (pressableState.pressed) return ControlState.Pressed
+    if (pressableState.hovered) return ControlState.Hovered
 
-function useThemedStyles<T>(styleWrapper: (colors: ColorScheme) => T) {
-    const colors = useThemeColors()
-    return styleWrapper(colors)
+    return ControlState.Rest
 }
 
 function TreeViewNode<T = unknown>(props: TreeViewNodeProps<T>) {
     const { item, renderTreeItem, path, onCollapse, onExpand, onInvoke, offsetPerLevel } = props
 
     const colors = useThemeColors()
-    const style = useThemedStyles(styles)
 
     const handlePress = () => {
         onInvoke(item.id)
@@ -54,45 +26,108 @@ function TreeViewNode<T = unknown>(props: TreeViewNodeProps<T>) {
         }
     }
 
-    const rnToControlState = (pressableState: any): ControlState => {
-        if (pressableState.pressed) return ControlState.Pressed
-        if (pressableState.hovered) return ControlState.Hovered
-
-        return ControlState.Rest
-    }
+    const state = item.isSelected ? ControlState.Hovered : ControlState.Rest
 
     return (
-        <Pressable accessibilityRole="menuitem" onPress={handlePress} style={(state) => [style.treeViewNode]}>
-            {(pressableState) => {
-                const state = rnToControlState(pressableState)
-                return (
-                    <>
-                        <View style={style.selectorWrapper}>
-                            <View
-                                style={[
-                                    style.selector,
-                                    {
-                                        backgroundColor: item.isSelected ? colors.fill.accent : 'transparent'
-                                    }
-                                ]}
-                            />
-                        </View>
-
-                        <SubtleFillX borderRadius={5} data-state={item.isSelected ? ControlState.Hovered : state} />
-
-                        <View style={[style.treeViewItem, { paddingLeft: (path.length - 1) * offsetPerLevel }]}>
-                            {renderTreeItem({
-                                item,
-                                state,
-                                depth: path.length - 1,
-                                onExpand: (itemId) => onExpand(itemId, path),
-                                onCollapse: (itemId) => onCollapse(itemId, path)
-                            })}
-                        </View>
-                    </>
-                )
+        <button
+            role="menuitem"
+            onClick={handlePress}
+            style={{
+                display: 'flex',
+                width: '100%',
+                height: 32,
+                position: 'relative',
+                flexDirection: 'row',
+                alignItems: 'center',
+                background: 'none',
+                cursor: 'pointer'
             }}
-        </Pressable>
+        >
+            <>
+                <div
+                    style={{
+                        overflow: 'hidden',
+                        flexShrink: 0,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        height: '100%',
+                        justifyContent: 'center',
+                        marginRight: 4,
+                        borderTopLeftRadius: 5,
+                        borderBottomLeftRadius: 5
+                    }}
+                >
+                    <div
+                        style={{
+                            width: 3,
+                            height: '50%',
+                            borderRadius: 8,
+                            backgroundColor: item.isSelected ? colors.fill.accent : 'transparent'
+                        }}
+                    />
+                </div>
+
+                <SubtleFillX borderRadius={5} data-state={state} />
+
+                <div
+                    style={{
+                        padding: '0 4px',
+                        display: 'flex',
+                        flexDirection: 'row',
+                        flex: 1,
+                        color: colors.text.primary,
+                        paddingLeft: (path.length - 1) * offsetPerLevel
+                    }}
+                >
+                    {renderTreeItem({
+                        item,
+                        state,
+                        depth: path.length - 1,
+                        onExpand: (itemId) => onExpand(itemId, path),
+                        onCollapse: (itemId) => onCollapse(itemId, path)
+                    })}
+                </div>
+            </>
+        </button>
+    )
+}
+
+export interface ListRenderItemInfo<T> {
+    item: T
+    index: number
+}
+
+export type ListRenderItem<T> = (info: ListRenderItemInfo<T>) => React.ReactElement | null
+
+interface VirtualizedListProps<T> {
+    data: T[]
+    contentContainerStyle?: CSSProperties
+
+    renderItem: ListRenderItem<T>
+    getItemCount: (data: T[]) => number
+    getItem: (data: T[], index: number) => T
+    keyExtractor: (item: T, index: number) => string
+}
+
+function VirtualizedList<T>({
+    getItemCount,
+    renderItem,
+    keyExtractor,
+    getItem,
+    data,
+    contentContainerStyle
+}: VirtualizedListProps<T>) {
+    const itemCount = getItemCount(data)
+
+    return (
+        <div role="menu" style={contentContainerStyle}>
+            {Array.from({ length: itemCount }).map((_, index) =>
+                renderItem({
+                    item: data[index],
+                    index
+                })
+            )}
+        </div>
     )
 }
 
@@ -112,14 +147,13 @@ export function TreeView<T = unknown>(props: TreeViewProps<T>) {
         />
     )
 
+    // TODO: virtualize
+
     return (
         <VirtualizedList
-            accessibilityRole="menu"
             // showsVerticalScrollIndicator={false}
             // contentInset={{ right: 0, top: 8, left: 8, bottom: 8 }}
-            contentContainerStyle={{}}
-            windowSize={11}
-            maxToRenderPerBatch={5}
+            contentContainerStyle={{ width: '100%' }}
             getItemCount={(data) => data.length}
             getItem={(data, i) => data[i]}
             // getItemLayout={(data, index) => ({ length: 28, offset: 28 * index, index })}

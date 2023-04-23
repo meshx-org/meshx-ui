@@ -27,7 +27,9 @@ const StyledButton = styled.button`
 `
 
 const ButtonContent = styled.div`
+    position: relative;
     z-index: 3;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -76,9 +78,9 @@ function Button(props: ButtonProps) {
             data-state={state}
             {...handlers}
         >
+            <ButtonContent>{content}</ButtonContent>
             <ControlStrokeX borderRadius={5.5} state={state} />
             <ControlFillX data-state={state} borderRadius={5} />
-            <ButtonContent>{content}</ButtonContent>
         </StyledButton>
     )
 }

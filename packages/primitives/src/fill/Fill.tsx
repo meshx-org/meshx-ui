@@ -106,12 +106,12 @@ function ariaHidden(props: any) {
 }
 
 const fillBase = css`
-    z-index: -1;
+    z-index: 1;
     position: absolute;
-    top: 1px;
-    bottom: 1px;
-    right: 1px;
-    left: 1px;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
 `
 
 export const SubtleFillX = styled.div.attrs(ariaHidden)<SubtleFillProps>`
