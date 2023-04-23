@@ -1,6 +1,6 @@
 {
     "name": "@meshx-org/mxui-tsconfig",
-    "version": "0.7.3",
+    "version": "0.7.23",
     "private": true,
     "license": "Apache-2.0",
     "publishConfig": {
