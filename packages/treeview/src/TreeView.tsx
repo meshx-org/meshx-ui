@@ -17,7 +17,7 @@ function TreeViewNode<T = unknown>(props: TreeViewNodeProps<T>) {
 
     const colors = useThemeColors()
 
-    const handlePress = () => {
+    const handleClick = () => {
         onInvoke(item.id)
         if (item.isExpanded) {
             onCollapse(item.id, path)
@@ -29,9 +29,9 @@ function TreeViewNode<T = unknown>(props: TreeViewNodeProps<T>) {
     const state = item.isSelected ? ControlState.Hovered : ControlState.Rest
 
     return (
-        <button
+        <div
             role="menuitem"
-            onClick={handlePress}
+            onClick={handleClick}
             style={{
                 display: 'flex',
                 width: '100%',
@@ -88,7 +88,7 @@ function TreeViewNode<T = unknown>(props: TreeViewNodeProps<T>) {
                     })}
                 </div>
             </>
-        </button>
+        </div>
     )
 }
 
@@ -153,7 +153,7 @@ export function TreeView<T = unknown>(props: TreeViewProps<T>) {
         <VirtualizedList
             // showsVerticalScrollIndicator={false}
             // contentInset={{ right: 0, top: 8, left: 8, bottom: 8 }}
-            contentContainerStyle={{ width: '100%' }}
+            contentContainerStyle={{ width: '100%', display: 'flex', flexDirection: 'column', gap: 4 }}
             getItemCount={(data) => data.length}
             getItem={(data, i) => data[i]}
             // getItemLayout={(data, index) => ({ length: 28, offset: 28 * index, index })}
