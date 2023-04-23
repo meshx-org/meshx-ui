@@ -1,7 +1,7 @@
 {
     "name": "@meshx-org/mxui-navigation",
     "description": "Navigation components for MXUI",
-    "version": "0.7.24",
+    "version": "0.7.25",
     "license": "Apache-2.0",
     "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
     "homepage": "https://meshx.co/produts/mxui",

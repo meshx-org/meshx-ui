@@ -67,8 +67,6 @@ function TreeViewNode<T = unknown>(props: TreeViewNodeProps<T>) {
                     />
                 </div>
 
-                <SubtleFillX borderRadius={5} data-state={state} />
-
                 <div
                     style={{
                         padding: '0 4px',
@@ -87,6 +85,8 @@ function TreeViewNode<T = unknown>(props: TreeViewNodeProps<T>) {
                         onCollapse: (itemId) => onCollapse(itemId, path)
                     })}
                 </div>
+
+                <SubtleFillX borderRadius={5} data-state={state} />
             </>
         </div>
     )

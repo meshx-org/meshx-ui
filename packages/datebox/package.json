@@ -1,7 +1,7 @@
 {
     "name": "@meshx-org/mxui-datebox",
     "description": "DateBox component for MXUI",
-    "version": "0.7.24",
+    "version": "0.7.25",
     "license": "Apache-2.0",
     "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
     "homepage": "https://meshx.co/produts/mxui",
@@ -41,8 +41,8 @@
         "clsx": "1.2.1",
         "@internationalized/date": "3.1.0",
         "@internationalized/number": "3.2.0",
-        "@meshx-org/mxui-core": "0.7.24",
-        "@meshx-org/mxui-primitives": "0.7.24"
+        "@meshx-org/mxui-core": "0.7.25",
+        "@meshx-org/mxui-primitives": "0.7.25"
     },
     "devDependencies": {
         "@meshx-org/mxui-tsconfig": "*",
