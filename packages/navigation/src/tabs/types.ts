@@ -21,7 +21,3 @@ export interface TabPanelsProps extends PaddingProps, ColorProps {
 export interface TabListProps extends PaddingProps {
     children: ReactNode | ReactNode[]
 }
-
-export interface ItemProps {
-    children: ReactNode
-}

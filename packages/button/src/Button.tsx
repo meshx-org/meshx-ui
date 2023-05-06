@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
 import { useTheme, useControlState } from '@meshx-org/mxui-core'
 import { ControlFill, ControlFillX, ControlStroke, ControlStrokeX } from '@meshx-org/mxui-primitives'
 import { Text } from '@meshx-org/mxui-text'
@@ -34,15 +34,20 @@ const ButtonContent = styled.div`
     align-items: center;
     justify-content: center;
     padding: 0px 12px;
-
-    font-size: 14px;
-    line-height: 20px;
     min-width: 80px;
     column-gap: 6px;
+
+    *[data-theme='light'] &[data-variant='accent'] {
+        --theme-color-text-primary: white !important;
+    }
+
+    *[data-theme='dark'] &[data-variant='accent'] {
+        --theme-color-text-primary: rgb(142, 208, 255) !important;
+    }
 `
 
-function Button(props: ButtonProps) {
-    const { children, apparance = 'default', disabled = false, fit = true, onPress, as, ...otherProps } = props
+function Button(props: PropsWithChildren<ButtonProps>) {
+    const { children, variant = 'default', disabled = false, fit = true, onPress, as, ...otherProps } = props
 
     const theme = useTheme()
     const { state, handlers } = useControlState<HTMLButtonElement>(disabled)
@@ -55,9 +60,9 @@ function Button(props: ButtonProps) {
     if (typeof children === 'string') {
         content = (
             <Text
+                as="span"
                 variant="body"
                 selectable={false}
-                data-t={disabled ? 'text.disabled' : 'text.primary'}
                 fontWeight={600}
                 color={disabled ? 'text.disabled' : 'text.primary'}
                 children={children}
@@ -78,9 +83,9 @@ function Button(props: ButtonProps) {
             data-state={state}
             {...handlers}
         >
-            <ButtonContent>{content}</ButtonContent>
+            <ButtonContent data-variant={variant}>{content}</ButtonContent>
             <ControlStrokeX borderRadius={5.5} state={state} />
-            <ControlFillX data-state={state} borderRadius={5} />
+            <ControlFillX data-state={state} variant={variant} borderRadius={6} />
         </StyledButton>
     )
 }

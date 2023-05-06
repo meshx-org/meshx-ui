@@ -1,2 +1,4 @@
-export { Switch } from "./Switch"
-export type { SwitchProps } from "./Switch.types"
+'use client'
+
+export { Switch } from './Switch'
+export type { SwitchProps } from './Switch.types'

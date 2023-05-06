@@ -2,15 +2,18 @@ import './root.css'
 import { ThemeProvider } from '@meshx-org/mxui-core'
 import { useDarkMode } from 'storybook-dark-mode'
 import { themes } from '@storybook/theming'
-import { DEFAULT_DARK, DEFAULT_LIGHT } from '@meshx-org/mxui-core/src/context/themeValues'
+import { DEFAULT_DARK, DEFAULT_LIGHT } from '@meshx-org/mxui-core/src/context/colorSchemes'
 
 export const decorators = [
     (Story) => {
         const theme = useDarkMode() ? 'dark' : 'light'
+
         return (
-            <ThemeProvider theme={theme}>
-                <Story />
-            </ThemeProvider>
+            <div data-theme={theme}>
+                <ThemeProvider theme={theme}>
+                    <Story />
+                </ThemeProvider>
+            </div>
         )
     }
 ]
@@ -21,17 +24,17 @@ export const parameters = {
         dark: {
             ...themes.dark, // copy existing values
             brandTitle: 'MeshX UI',
-            colorPrimary: "red", 
+            colorPrimary: 'red',
             textColor: DEFAULT_DARK.text.primary,
             barTextColor: DEFAULT_DARK.text.primary,
             // textInverseColor: "purple",
             // textMutedColor: "blue",
-            appBorderColor:  DEFAULT_DARK.stroke.divider,
+            appBorderColor: DEFAULT_DARK.stroke.divider,
             inputBorder: DEFAULT_DARK.stroke.divider,
 
             appBg: DEFAULT_DARK.backgrounds.solid.secondary,
             appContentBg: DEFAULT_DARK.backgrounds.solid.default, // main story view frame
-            barBg: DEFAULT_DARK.backgrounds.solid.default, // top toolbar
+            barBg: DEFAULT_DARK.backgrounds.solid.default // top toolbar
         },
         light: {
             ...themes.light, // copy existing values
@@ -42,7 +45,7 @@ export const parameters = {
 
             appBg: DEFAULT_LIGHT.backgrounds.solid.secondary,
             appContentBg: DEFAULT_LIGHT.backgrounds.solid.default, // main story view frame
-            barBg: DEFAULT_LIGHT.backgrounds.solid.default, // top toolbar
+            barBg: DEFAULT_LIGHT.backgrounds.solid.default // top toolbar
         }
     },
     actions: { argTypesRegex: '^on[A-Z].*' },

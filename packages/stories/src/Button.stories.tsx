@@ -16,8 +16,8 @@ export default {
         }
     },
     argTypes: {
-        apparance: {
-            options: ['primary', 'default'],
+        variant: {
+            options: ['accent', 'default', 'danger', 'warning', 'success'],
             control: { type: 'radio' }
         },
         block: { control: 'boolean' }
@@ -28,19 +28,19 @@ const Template: Story<ButtonProps> = (args) => <Button {...args} />
 
 export const Primary = Template.bind({})
 Primary.args = {
-    apparance: 'default',
+    variant: 'default',
     children: 'Button'
 }
 
 export const WithIcon = Template.bind({})
 WithIcon.args = {
-    apparance: 'default',
+    variant: 'default',
     children: [<Text>😄</Text>, <Text>Text</Text>]
 }
 
 export const Secondary = Template.bind({})
 Secondary.args = {
-    apparance: 'default',
+    variant: 'default',
     children: '😄👍😍💯'
 }
 

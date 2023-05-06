@@ -7,9 +7,6 @@ import styled from 'styled-components'
 
 const StyledSubtleFillX = styled(SubtleFillX)`
     transition: all 0.15s ease-out;
-    background-color: rgba(0, 0, 0, 0);
-    transform: scale(0);
-    transform-origin: 50% 50% 0px;
 `
 
 const StyledButton = styled.div`

@@ -136,20 +136,61 @@ export const SubtleFillX = styled.div.attrs(ariaHidden)<SubtleFillProps>`
     }
 `
 
-export const ControlFillX = styled.div.attrs(ariaHidden)<SmokeFillProps>`
+function restVariant(props: { variant: string }) {
+    switch (props.variant) {
+        case 'accent':
+            return 'var(--theme-button-accent-default)'
+        case 'danger':
+            return 'var(--theme-button-danger-default)'
+        case 'warning':
+            return 'var(--theme-button-warning-default)'
+        default:
+            return 'var(--theme-background-control-default)'
+    }
+}
+
+function hoveredVariant(props: { variant: string }) {
+    switch (props.variant) {
+        case 'accent':
+            return 'var(--theme-button-accent-secondary)'
+        case 'danger':
+            return 'var(--theme-button-danger-secondary)'
+        case 'warning':
+            return 'var(--theme-button-warning-secondary)'
+        default:
+            return 'var(--theme-background-control-secondary)'
+    }
+}
+
+function pressedVariant(props: { variant: string }) {
+    switch (props.variant) {
+        case 'accent':
+            return 'var(--theme-button-accent-tertiary)'
+        case 'danger':
+            return 'var(--theme-button-danger-tertiary)'
+        case 'warning':
+            return 'var(--theme-button-warning-tertiary)'
+        default:
+            return 'var(--theme-background-control-tertiary)'
+    }
+}
+
+export const ControlFillX = styled.div.attrs(ariaHidden)`
     ${fillBase}
     ${borderRadius}
 
-    background: var(--theme-background-control-default);
+    background: ${restVariant};
+
+    transition: all 100ms cubic-bezier(0.4, 0, 0.2, 1);
 
     &:hover,
     &[data-state='hovered'] {
-        background: var(--theme-background-control-secondary) !important;
+        background: ${hoveredVariant} !important;
     }
 
     &:active,
     &[data-state='pressed'] {
-        background: var(--theme-background-control-tertiary) !important;
+        background: ${pressedVariant} !important;
     }
 
     &:disabled,

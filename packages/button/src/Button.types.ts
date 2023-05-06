@@ -3,7 +3,11 @@ import { ControlState } from '@meshx-org/mxui-core'
 export type ButtonAppearance = 'primary' | 'secondary'
 
 export interface ButtonProps {
-    apparance?: 'default' | 'accent'
+    /**
+     * The appearance of the button.
+     * @default "default"
+     */
+    variant?: 'default' | 'accent' | 'success' | 'warning' | 'error'
 
     /**
      * A button fits the content.
@@ -23,26 +27,16 @@ export interface ButtonProps {
      */
     iconPosition?: 'before' | 'after'
 
-    /**
-     * A button supports different sizes.
-     * @default medium
-     */
-    size?: 'small' | 'medium' | 'large'
-
-    /**
-     * Handler to be called when the button is pressed.
-     */
+    /** Handler to be called when the button is pressed. */
     onPress?: (e: any) => void
 
     as?: string | React.ComponentType<any>
-
-    children: React.ReactNode
 
     // allow other props
     [key: string]: unknown
 }
 
-type LinkButtonBaseProps = {
+export interface LinkButtonBaseProps {
     /**
      * A button can fill the width of its container.
      * @default false
@@ -60,11 +54,11 @@ type LinkButtonBaseProps = {
      * @default undefined
      */
     state?: ControlState
-    
+
     children: React.ReactNode
 }
 
-export type LinkButtonProps<T > = LinkButtonBaseProps &
+export type LinkButtonProps<T> = LinkButtonBaseProps &
     (
         | (JSX.IntrinsicElements['a'] & {
               /**

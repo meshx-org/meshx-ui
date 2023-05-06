@@ -31,8 +31,6 @@ const StyledSegment = styled.div`
     font-variant-numeric: tabular-nums;
     text-align: end;
 
-    font-family: 'system-ui', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue',
-        sans-serif;
     color: var(--theme-color-text-primary);
 
     &.placeholder {
@@ -182,6 +180,7 @@ function useDateField<T extends DateValue>(props: DateBoxProps<T>, state: DateFi
     }
 }
 
+/** @experimental */
 export function DateBox(props: DateBoxProps<DateValue>) {
     const state = useDateFieldState({
         ...props,

@@ -13,6 +13,7 @@ const BoxBase = styled.div`
     ${background}
 `
 
+/** @deprecated */
 export function Box({ children, ...props}: BoxProps) {
     return <BoxBase {...props as any} >{children}</BoxBase>
 }

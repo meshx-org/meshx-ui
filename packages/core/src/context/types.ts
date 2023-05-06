@@ -1,29 +1,52 @@
 export interface ThemeContextValue {
     name: string
     values: ThemeValues
-    colors: ColorScheme
+    colors: ColorScheme<CSSVariable>
 }
 
-type RGB = `rgb(${string})`
-type RGBA = `rgba(${string})`
-type HEX = `#${string}`
-type HSL = `hsl(${string})`
-type HSLA = `hsla(${string})`
+export type RGB = `rgb(${string})`
+export type RGBA = `rgba(${string})`
+export type HEX = `#${string}`
+export type HSL = `hsl(${string})`
+export type HSLA = `hsla(${string})`
+export type Color = RGB | RGBA | HEX | HSL | HSLA
+export type CSSVariable = `var(--${string})`
 
-export interface ColorScheme {
+export interface ColorScheme<T> {
     accent: {
-        default: RGBA
+        default: T
     }
+    accentText: Record<string, any>
     text: {
-        primary: RGBA
-        secondary: RGBA
-        disabled: RGBA
+        primary: T
+        secondary: T
+        disabled: T
+    }
+    button: {
+        // An accent button is used to indicate a positive action.
+        accent: {
+            default: T
+            secondary: T
+            tertiary: T
+        }
+        // A yellow button is used to indicate a dangerous action.
+        warning: {
+            default: T
+            secondary: T
+            tertiary: T
+        }
+        // A red button is used to indicate a destructive action.
+        danger: {
+            default: T
+            secondary: T
+            tertiary: T
+        }
     }
     stroke: {
-        divider: RGBA
-        card: RGBA
-        surface: RGBA
-        control: RGBA
+        divider: T
+        card: T
+        surface: T
+        control: T
     }
     backgrounds: {
         // Used to create `cards` t
@@ -69,7 +92,7 @@ export interface ColorScheme {
             default: string
         }
     }
-    accentText: Record<string, any>
+
     fill: {
         accent: string
 
@@ -95,8 +118,8 @@ export interface ThemeValues {
 declare module 'styled-components' {
     export interface DefaultTheme extends ThemeValues {
         name: string
-        colors: ColorScheme
-        darkScheme: ColorScheme
-        lightScheme: ColorScheme
+        colors: ColorScheme<CSSVariable>
+        darkScheme: ColorScheme<Color>
+        lightScheme: ColorScheme<Color>
     }
 }

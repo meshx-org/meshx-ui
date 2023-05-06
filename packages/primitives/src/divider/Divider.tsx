@@ -14,6 +14,8 @@ const DividerBase = styled.div<DividerProps>`
     border-style: solid;
     border-right-width: 1px;
     border-bottom-width: 1px;
+    border-top: 0px;
+    border-left: 0px;;
     margin: 5px;
 
     ${dividerColor}

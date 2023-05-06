@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;900&display=swap');
-
 #root {
     display: flex;
     flex-direction: column;
@@ -18,7 +16,6 @@ a {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    border: 0;
 }
 
 input:focus,
@@ -27,6 +24,7 @@ select:focus {
 }
 
 html {
+    font-family: var(--theme-font-default);
     color: var(--theme-color-text-primary);
     background: var(--theme-background-solid-default);
 }

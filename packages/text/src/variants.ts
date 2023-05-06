@@ -1,12 +1,10 @@
 const displayVariants = {
     display1: {
-        
         fontFamily: 'default',
         fontSize: 8,
         fontWeight: 700
     },
     display2: {
-      
         fontFamily: 'default',
         fontSize: 7,
         fontWeight: 700
@@ -15,25 +13,21 @@ const displayVariants = {
 
 const hVariants = {
     heading1: {
-       
         fontFamily: 'default',
         fontSize: 6,
         fontWeight: 700
     },
     heading2: {
-        
         fontFamily: 'default',
         fontSize: 5,
         fontWeight: 700
     },
     heading3: {
-        
         fontFamily: 'default',
         fontSize: 4,
         fontWeight: 700
     },
     heading4: {
-       
         fontFamily: 'default',
         fontSize: 3,
         fontWeight: 700
@@ -62,10 +56,22 @@ export const textVariants = {
         fontWeight: 400,
         fontSize: 1
     },
-    bodyAlt: {
+    'body.medium': {
+        fontFamily: 'default',
+        lineHeight: 'body',
+        fontWeight: 500,
+        fontSize: 1
+    },
+    'body.semibold': {
         fontFamily: 'default',
         lineHeight: 'body',
         fontWeight: 600,
+        fontSize: 1
+    },
+    'body.bold': {
+        fontFamily: 'default',
+        lineHeight: 'body',
+        fontWeight: 700,
         fontSize: 1
     },
     bodyLarge: {
@@ -88,7 +94,6 @@ export const textVariants = {
         fontSize: 0
     },
     captionAlt: {
-       
         fontFamily: 'default',
         lineHeight: 'body',
         opacity: 0.8,

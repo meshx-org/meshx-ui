@@ -1,4 +1,5 @@
 export * from './tabs'
+export * from './tabs/item'
 export * from './tabs/types'
 
 export * from './avatar'

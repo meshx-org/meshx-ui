@@ -70,12 +70,14 @@ const renderItem = ({ item, onExpand, onCollapse }: RenderItemParams<any>) => {
     const { title, glyph } = item.data
 
     return (
-        <View style={{ flexDirection: 'row', height: 24 }}>
-            {item.hasChildren && getChevron(item, onExpand, onCollapse)}
-            <Text>
-                {glyph} {title}
-            </Text>
-        </View>
+        <a href="/docs">
+            <View style={{ flexDirection: 'row', height: 24 }}>
+                {item.hasChildren && getChevron(item, onExpand, onCollapse)}
+                <Text>
+                    {glyph} {title}
+                </Text>
+            </View>{' '}
+        </a>
     )
 }
 
@@ -92,6 +94,7 @@ const Template: Story<TreeViewProps<any>> = (props) => {
     }
 
     const onInvoke = (itemId: ItemId) => {
+        console.log('onInvoke', itemId)
         setTree((oldTree) => {
             let newTree = iterateTree(oldTree, { isSelected: false })
             newTree = mutateTree(newTree, itemId, { isSelected: true })

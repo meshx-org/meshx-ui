@@ -1,4 +1,6 @@
-export { Text } from "./Text"
-export { Heading } from "./Heading"
+'use client'
 
-export type { TextProps, HeadingProps } from "./Text.types"
+export { Text } from './Text'
+export { Heading } from './Heading'
+
+export type { TextProps, HeadingProps } from './Text.types'

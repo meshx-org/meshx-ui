@@ -3,7 +3,7 @@ import { Tab } from '@headlessui/react'
 import { ControlState } from '@meshx-org/mxui-core'
 import { LinkButton } from '@meshx-org/mxui-button'
 import { Text } from '@meshx-org/mxui-text'
-import { TabViewProps, TabPanelsProps, ItemProps, TabListProps } from './types'
+import { TabViewProps, TabPanelsProps, TabListProps } from './types'
 import styled from 'styled-components'
 import { padding, color, ColorProps, PaddingProps } from 'styled-system'
 
@@ -12,21 +12,18 @@ const StyledTab = styled.div`
     outline: none;
 `
 
-function Item(props: ItemProps) {
-    return props.children
-}
-
 const Selector = styled.div`
-    height: 3px;
-    width: 32px;
+    width: 3px;
+    height: 16px;
+    margin: auto 0;
     border-radius: 8px;
     background-color: rgba(3, 150, 255, 1);
 `
 
 const SelectorWrapper = styled.div`
-    bottom: 1px;
+    left: 0px;
     position: absolute;
-    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
 `
@@ -38,12 +35,11 @@ function TabInternal(props: any) {
             {({ selected }) => (
                 <LinkButton state={selected ? ControlState.Hovered : undefined}>
                     <Text
-                        variant="body"
+                        variant="body.medium"
                         selectable={false}
                         color={false ? 'text.disabled' : 'text.primary'}
                         children={props.children}
                     />
-                    <SelectorWrapper>{selected ? <Selector /> : null}</SelectorWrapper>
                 </LinkButton>
             )}
         </Tab>
@@ -119,4 +115,4 @@ function TabView(props: TabViewProps) {
     )
 }
 
-export { TabView, TabList, Item, TabPanels }
+export { TabView, TabList, TabPanels }

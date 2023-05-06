@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { ControlState, getControlState } from '../shared'
+import { ControlState, getControlState } from '../utils'
 
 interface EventHandlers<T = Element> {
-    onMouseDown: React.MouseEventHandler<T>
+    onMouseDownCapture: React.MouseEventHandler<T>
     // onClick: React.MouseEventHandler<T>
 
     onMouseEnter: React.MouseEventHandler<T>
@@ -20,13 +20,13 @@ export function useControlState<T = Element>(disabled?: boolean): UseControlStat
 
     const handleMouseUp = (e: any) => {
         setPressed(false)
-        window.removeEventListener('mouseup', handleMouseUp, true)
+        window.removeEventListener('mouseup', handleMouseUp, false)
     }
 
     const handlers = {
-        onMouseDown: () => {
+        onMouseDownCapture: () => {
             console.log('handleMouseDown - add Listeners')
-            window.addEventListener('mouseup', handleMouseUp, true)
+            window.addEventListener('mouseup', handleMouseUp, false)
             setPressed(true)
         },
         onMouseEnter: () => setHovered(true),
