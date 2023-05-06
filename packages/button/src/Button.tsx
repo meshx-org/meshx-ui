@@ -7,11 +7,12 @@ import styled from 'styled-components'
 
 const StyledButton = styled.button`
     position: relative;
-    margin: 0px;
-    padding: 0;
+    display: flex; 
+    align-items: center;
+     
     border: none;
     background: transparent;
-    align-items: flex-start;
+   
     cursor: pointer;
     width: 100%;
     height: 32px;
@@ -92,7 +93,7 @@ function Button(props: ButtonProps) {
             {...handlers}
         >
             <ButtonContent data-variant={variant}>
-                <span>  {icon && icon} </span>
+                {icon && <span>{icon}</span>} 
                 <Text
                     as="span"
                     variant="body"
@@ -100,7 +101,7 @@ function Button(props: ButtonProps) {
                     color={disabled ? 'text.disabled' : 'text.primary'}
                     children={children}
                 />
-                {iconRight && iconRight}
+                {iconRight && <span>{iconRight}</span>}
             </ButtonContent>
             <ControlStrokeX borderRadius={5.5} state={state} />
             <ControlFillX data-state={state} variant={variant} borderRadius={6} />
