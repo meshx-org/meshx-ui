@@ -50,26 +50,20 @@ export function LinkButton<T>({ children, state: controlledState, ...otherProps 
     const { state, handlers } = useControlState<HTMLDivElement>(false)
     const disabled = controlledState === ControlState.Disabled
 
-    let content = null
-    if (typeof children === 'string') {
-        content = (
-            <Text
-                variant="body"
-                selectable={false}
-                data-t={disabled ? 'text.disabled' : 'text.primary'}
-                fontWeight={600}
-                color={disabled ? 'text.disabled' : 'text.primary'}
-                children={children}
-            />
-        )
-    } else {
-        content = children
-    }
-
     return (
         <StyledButton data-state={controlledState ?? state} {...handlers}>
             <StyledSubtleFillX data-state={controlledState ?? state} borderRadius={5} />
-            <ButtonContent {...otherProps}>{content}</ButtonContent>
+            <ButtonContent {...otherProps}>
+                <Text
+                    as="span"
+                    variant="body"
+                    selectable={false}
+                    data-t={disabled ? 'text.disabled' : 'text.primary'}
+                    fontWeight={600}
+                    color={disabled ? 'text.disabled' : 'text.primary'}
+                    children={children}
+                />
+            </ButtonContent>
         </StyledButton>
     )
 }

@@ -1,9 +1,8 @@
 import React, { createContext, useContext } from 'react'
-import { ThemeProvider as StyledProvider } from 'styled-components'
+import { ThemeProvider as SCProvider } from 'styled-components'
 import type { ThemeContextValue } from './types'
 import { THEME_VALUES } from './themeValues'
 import { DEFAULT_DARK, DEFAULT_LIGHT, VARIABLE } from './colorSchemes'
-import { Platform } from '../platform'
 import { GlobalStyle } from './globalStyles'
 
 const ThemeContext = createContext<ThemeContextValue>({ name: 'light', values: THEME_VALUES, colors: VARIABLE })
@@ -18,11 +17,12 @@ interface ThemeProviderProps {
 }
 
 export function ThemeProvider({ theme, children }: ThemeProviderProps) {
-    const currentScheme = theme === 'dark' ? DEFAULT_DARK : DEFAULT_LIGHT
+    // TODO: detect native platform
+    const isWeb = true
 
     return (
         <ThemeContext.Provider value={{ name: theme, colors: VARIABLE, values: THEME_VALUES }}>
-            <StyledProvider
+            <SCProvider
                 theme={{
                     darkScheme: DEFAULT_DARK,
                     lightScheme: DEFAULT_LIGHT,
@@ -31,9 +31,9 @@ export function ThemeProvider({ theme, children }: ThemeProviderProps) {
                     name: theme
                 }}
             >
-                {typeof window !== 'undefined' ? <GlobalStyle /> : null}
+                {isWeb ? <GlobalStyle /> : null}
                 {children}
-            </StyledProvider>
+            </SCProvider>
         </ThemeContext.Provider>
     )
 }
