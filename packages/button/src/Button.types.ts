@@ -21,6 +21,15 @@ export interface ButtonProps {
      */
     disabled?: boolean
 
+    /** Show icon in button @default undefined */
+    icon?: React.ReactNode
+
+    /** Show icon on the other side of the button @default undefined */
+    iconRight?: React.ReactNode
+
+    /** Text showed */
+    children: string
+
     /**
      * A button can format its icon to appear before or after its content.
      * @default before

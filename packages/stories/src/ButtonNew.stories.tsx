@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { SVGProps } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { Button } from '@meshx-org/mxui-button/src'
 import { Divider } from '@meshx-org/mxui-primitives/src'
 
+const CompassIcon = (props: SVGProps<SVGSVGElement>) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" {...props}>
+        <path
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={1.5}
+            d="M16.25 12h-8.5m8.5 0-3.5 3.25m3.5-3.25-3.5-3.25M3.75 7.75a4 4 0 0 1 4-4h8.5a4 4 0 0 1 4 4v8.5a4 4 0 0 1-4 4h-8.5a4 4 0 0 1-4-4v-8.5Z"
+        />
+    </svg>
+)
 
 const meta = {
     title: 'Basic Input/NewButton',
@@ -17,6 +28,14 @@ export const Default: Story = {
     args: {
         variant: 'default',
         children: 'Button'
+    }
+}
+
+export const WithIcon: Story = {
+    args: {
+        variant: 'default',
+        children: 'Action',
+        icon: <CompassIcon width={16} height={16} />
     }
 }
 
@@ -34,6 +53,7 @@ export const Variations: Story = {
     ),
     args: {
         variant: 'default',
-        children: 'Button'
+        children: 'Button',
+        icon: <CompassIcon width={16} height={16} />
     }
 }
