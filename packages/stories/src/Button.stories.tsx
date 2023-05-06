@@ -3,6 +3,7 @@ import { Story, Meta } from '@storybook/react'
 import { Button, ButtonProps, LinkButton } from '@meshx-org/mxui-button/src'
 import { Text } from '@meshx-org/mxui-text'
 import { ControlState } from '@meshx-org/mxui-core'
+import { Divider } from '@meshx-org/mxui-primitives'
 
 export default {
     title: 'Basic Input/Button',
@@ -63,3 +64,20 @@ const TemplateWithLinkButton: Story<ButtonProps> = (args) => {
 
 export const WithLinkButton = TemplateWithLinkButton.bind({})
 WithLinkButton.args = {}
+
+const TemplateWithVariations: Story<ButtonProps> = (args) => {
+    return (
+        <div style={{ display: 'flex', gap: '8px' }}>
+            <Button {...args} variant="default" children="Default" />
+            <Divider />
+            <Button {...args} variant="accent" children="Accent" />
+            <Divider />
+            <Button {...args} variant="warning" children="Warning" />
+            <Divider />
+            <Button {...args} variant="danger" children="Danger" />
+        </div>
+    )
+}
+
+export const WithVariations = TemplateWithVariations.bind({})
+

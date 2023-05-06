@@ -7,7 +7,7 @@ export interface ButtonProps {
      * The appearance of the button.
      * @default "default"
      */
-    variant?: 'default' | 'accent' | 'success' | 'warning' | 'error'
+    variant?: 'default' | 'accent' | 'warning' | 'danger'
 
     /**
      * A button fits the content.

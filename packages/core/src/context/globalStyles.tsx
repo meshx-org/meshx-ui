@@ -46,7 +46,7 @@ export const GlobalStyle = createGlobalStyle`
         --theme-spacing-3xl: ${(props) => props.theme.space['3xl']}px;
     }
 
-    [data-theme='light'] {
+    [data-theme='light'], .light:root {
         color-scheme: light;
 
         // Text Colors 
@@ -103,7 +103,7 @@ export const GlobalStyle = createGlobalStyle`
         --theme-background-acrylic-default: ${({ theme }) => theme.lightScheme.backgrounds.acrylic.default};
     }
 
-    [data-theme='dark'] {
+    [data-theme='dark'], .dark:root {
         color-scheme: dark;
 
         // Text Colors 

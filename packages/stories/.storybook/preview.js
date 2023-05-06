@@ -20,6 +20,7 @@ export const decorators = [
 
 export const parameters = {
     darkMode: {
+        classTarget: 'html',
         stylePreview: true,
         dark: {
             ...themes.dark, // copy existing values
