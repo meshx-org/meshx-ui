@@ -1893,10 +1893,10 @@
   version "1.2.1"
   resolved "https://registry.npmjs.org/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz"
 
-"@internationalized/date@3.1.0":
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/@internationalized/date/-/date-3.1.0.tgz#da48aeaa971df6ad410cd32597c174d6cab9a3b4"
-  integrity sha512-wjeur7K4AecT+YwoBmBXQ/+n5lP69tuZc34hw09s44EozZK7FZHSyfPvRp5/xEb2D6abLboskDY4jG+Nt0TNUQ==
+"@internationalized/date@3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@internationalized/date/-/date-3.2.0.tgz#1d266e5e5543a059cf8cca9b954fa033c3e58a75"
+  integrity sha512-VDMHN1m33L4eqPs5BaihzgQJXyaORbMoHOtrapFxx179J8ucY5CRIHYsq5RRLKPHZWgjNfa5v6amWWDkkMFywA==
   dependencies:
     "@swc/helpers" "^0.4.14"
 
