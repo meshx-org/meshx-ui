@@ -6,6 +6,12 @@ import { DateBoxProps } from './DateBox.types'
 import { DateFieldState, DateSegment, useDateFieldState } from './useDateBoxState'
 import { useSpinButton } from './useSpinButton'
 import styled from 'styled-components'
+import clsx from 'clsx'
+import { useDateFormatter } from './useDateFormater'
+import { createFocusManager, FocusManager } from './FocusScope'
+import { useEvent } from './useEvent'
+import { ControlFillX, ControlStrokeX } from '@meshx-org/mxui-primitives'
+import { ControlState } from '@meshx-org/mxui-core'
 
 const StyledWrapper = styled.div`
     display: flex;
@@ -56,13 +62,6 @@ const StyledSegment = styled.div`
         border-radius: 4px;
     }
 `
-
-import clsx from 'clsx'
-import { useDateFormatter } from './useDateFormater'
-import { createFocusManager, FocusManager } from './FocusScope'
-import { useEvent } from './useEvent'
-import { ControlFillX, ControlStrokeX, TextControlFill, TextControlStroke } from '@meshx-org/mxui-primitives'
-import { ControlState } from '@meshx-org/mxui-core'
 
 interface Props {
     [key: string]: any

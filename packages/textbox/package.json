@@ -1,7 +1,7 @@
 {
     "name": "@meshx-org/mxui-textbox",
     "description": "TextBox component for MXUI",
-    "version": "0.7.28",
+    "version": "0.7.29",
     "license": "Apache-2.0",
     "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
     "homepage": "https://meshx.co/produts/mxui",
@@ -38,8 +38,8 @@
         "build": "bob build"
     },
     "dependencies": {
-        "@meshx-org/mxui-core": "0.7.28",
-        "@meshx-org/mxui-primitives": "0.7.28"
+        "@meshx-org/mxui-core": "0.7.29",
+        "@meshx-org/mxui-primitives": "0.7.29"
     },
     "devDependencies": {
         "@meshx-org/mxui-tsconfig": "*",
