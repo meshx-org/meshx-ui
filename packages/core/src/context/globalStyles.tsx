@@ -62,7 +62,11 @@ export const GlobalStyle = createGlobalStyle`
         // Colored Buttons (oveeride)
         --theme-button-accent-default: ${({ theme }) => theme.lightScheme.button.accent.default};
         --theme-button-accent-secondary: ${({ theme }) => theme.lightScheme.button.accent.secondary};
-        --theme-button-accent-tertiary: ${({ theme }) => theme.darkScheme.button.accent.tertiary};
+        --theme-button-accent-tertiary: ${({ theme }) => theme.lightScheme.button.accent.tertiary};
+
+        --theme-button-outline-default: ${({ theme }) => theme.lightScheme.button.outline.default};
+        --theme-button-outline-secondary: ${({ theme }) => theme.lightScheme.button.outline.secondary};
+        --theme-button-outline-tertiary: ${({ theme }) => theme.lightScheme.button.outline.tertiary};
 
         --theme-button-warning-default: ${({ theme }) => theme.lightScheme.button.warning.default};
         --theme-button-warning-secondary: ${({ theme }) => theme.lightScheme.button.warning.secondary};
@@ -120,6 +124,10 @@ export const GlobalStyle = createGlobalStyle`
         --theme-button-accent-default: ${({ theme }) => theme.darkScheme.button.accent.default};
         --theme-button-accent-secondary: ${({ theme }) => theme.darkScheme.button.accent.secondary};
         --theme-button-accent-tertiary: ${({ theme }) => theme.darkScheme.button.accent.tertiary};
+
+        --theme-button-outline-default: ${({ theme }) => theme.darkScheme.button.outline.default};
+        --theme-button-outline-secondary: ${({ theme }) => theme.darkScheme.button.outline.secondary};
+        --theme-button-outline-tertiary: ${({ theme }) => theme.darkScheme.button.outline.tertiary};
 
         --theme-button-warning-default: ${({ theme }) => theme.darkScheme.button.warning.default};
         --theme-button-warning-secondary: ${({ theme }) => theme.darkScheme.button.warning.secondary};

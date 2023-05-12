@@ -7,7 +7,7 @@ export interface ButtonProps {
      * The appearance of the button.
      * @default "default"
      */
-    variant?: 'default' | 'accent' | 'warning' | 'danger'
+    variant?: 'default' | 'outline' | 'link' | 'accent' | 'warning' | 'danger'
 
     /**
      * A button fits the content.
@@ -26,6 +26,12 @@ export interface ButtonProps {
 
     /** Show icon on the other side of the button @default undefined */
     iconRight?: React.ReactNode
+
+    /**
+     * Overrides the default state of the button.
+     * @default undefined
+     */
+    state?: ControlState
 
     /** Text showed */
     children: string

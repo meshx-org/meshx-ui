@@ -46,6 +46,7 @@ const ButtonContent = styled.a`
     column-gap: 6px;
 `
 
+/** @depracated Use Button instead */
 export function LinkButton<T>({ children, state: controlledState, ...otherProps }: LinkButtonProps<T>) {
     const { state, handlers } = useControlState<HTMLDivElement>(false)
     const disabled = controlledState === ControlState.Disabled

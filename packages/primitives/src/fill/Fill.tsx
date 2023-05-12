@@ -140,6 +140,10 @@ function restVariant(props: { variant: string }) {
     switch (props.variant) {
         case 'accent':
             return 'var(--theme-button-accent-default)'
+        case 'link':
+            return 'transparent'
+        case 'outline':
+            return 'var(--theme-button-outline-default)'
         case 'danger':
             return 'var(--theme-button-danger-default)'
         case 'warning':
@@ -153,6 +157,10 @@ function hoveredVariant(props: { variant: string }) {
     switch (props.variant) {
         case 'accent':
             return 'var(--theme-button-accent-secondary)'
+        case 'link':
+            return 'var(--theme-button-outline-secondary)'
+        case 'outline':
+            return 'var(--theme-button-outline-secondary)'
         case 'danger':
             return 'var(--theme-button-danger-secondary)'
         case 'warning':
@@ -166,6 +174,10 @@ function pressedVariant(props: { variant: string }) {
     switch (props.variant) {
         case 'accent':
             return 'var(--theme-button-accent-tertiary)'
+        case 'link':
+            return 'var(--theme-button-outline-tertiary)'
+        case 'outline':
+            return 'var(--theme-button-outline-tertiary)'
         case 'danger':
             return 'var(--theme-button-danger-tertiary)'
         case 'warning':

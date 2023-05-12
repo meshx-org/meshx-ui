@@ -29,6 +29,12 @@ export interface ColorScheme<T> {
             secondary: T
             tertiary: T
         }
+        // A blue button is used to indicate a neutral action.
+        outline: {
+            default: T
+            secondary: T
+            tertiary: T
+        }
         // A yellow button is used to indicate a dangerous action.
         warning: {
             default: T

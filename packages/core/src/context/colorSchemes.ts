@@ -1,4 +1,4 @@
-import { CSSVariable, ColorScheme, RGBA } from './types'
+import { CSSVariable, ColorScheme, HSLA, RGBA } from './types'
 
 export const DEFAULT_LIGHT: ColorScheme<RGBA> = {
     accent: {
@@ -9,6 +9,11 @@ export const DEFAULT_LIGHT: ColorScheme<RGBA> = {
             default: 'rgba(0, 126, 217, 1)',
             secondary: 'rgba(3, 150, 255, 1)',
             tertiary: 'rgba(3, 150, 255, 0.7)'
+        },
+        outline: {
+            default: 'rgba(0, 0, 0, 0.03)',
+            secondary: 'rgba(0, 0, 0, 0.05)',
+            tertiary: 'rgba(0, 0, 0, 0)'
         },
         warning: {
             default: 'rgba(245, 166, 35, 1)', // #f5a623
@@ -78,7 +83,7 @@ export const DEFAULT_LIGHT: ColorScheme<RGBA> = {
     }
 }
 
-export const DEFAULT_DARK: ColorScheme<RGBA> = {
+export const DEFAULT_DARK: ColorScheme<RGBA | HSLA> = {
     accent: {
         default: 'rgba(3, 150, 255, 1)'
     },
@@ -87,6 +92,11 @@ export const DEFAULT_DARK: ColorScheme<RGBA> = {
             default: 'rgba(3, 150, 255, .4)',
             secondary: 'rgba(3, 150, 255, .5)',
             tertiary: 'rgba(3, 150, 255, .2)'
+        },
+        outline: {
+            default: 'hsla(210, 10%, 100%, 0.061)',
+            secondary: 'hsla(210, 10%, 100%, 0.084)',
+            tertiary: 'hsla(210, 10%, 100%, 0.033)'
         },
         warning: {
             default: 'rgba(245, 166, 35, .4)',
@@ -168,6 +178,11 @@ export const VARIABLE: ColorScheme<CSSVariable> = {
             default: 'var(--theme-button-accent-default)',
             secondary: 'var(--theme-button-accent-secondary)',
             tertiary: 'var(--theme-button-accent-tertiary)'
+        },
+        outline: {
+            default: 'var(--todo)',
+            secondary: 'var(--todo)',
+            tertiary: 'var(--todo)'
         },
         warning: {
             default: 'var(--theme-button-warning-default)',
