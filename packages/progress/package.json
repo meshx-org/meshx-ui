@@ -1,6 +1,6 @@
 {
-    "name": "@meshx-org/mxui-slider",
-    "description": "Slider component for MXUI",
+    "name": "@meshx-org/mxui-progress",
+    "description": "Progress component for MXUI",
     "version": "0.7.30",
     "license": "Apache-2.0",
     "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
