@@ -31,7 +31,7 @@
         "storybook-css-modules-preset": "^1.1.1",
         "storybook-dark-mode": "^3.0.0",
         "react-syntax-highlighter": "^15.5",
-        "webpack": "^5.9.0",
+        "webpack": "^5.82.1",
         "@stripe/react-stripe-js": "^2.1.0",
         "@stripe/stripe-js": "^1.52.1",
         "cross-env": "*",
