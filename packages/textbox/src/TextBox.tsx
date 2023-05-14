@@ -7,19 +7,17 @@ import { useControlState, useFocus, useTheme } from '@meshx-org/mxui-core'
 import { TextControlFillX, TextControlStrokeX } from '@meshx-org/mxui-primitives'
 
 const TextBoxInput = styled.input<PaddingProps & { width?: any; height?: any; size?: any }>`
+    ${padding}
+    margin: 0;
+
     position: relative;
     z-index: 3;
 
     border: none;
-    border-left: 1px solid var(--theme-color-stroke-divider);
-    border-right: 1px solid var(--theme-color-stroke-divider);
-
-    flex: 1;
-
     background: none;
 
-    ${padding}
-    margin: 0;
+    flex: 1;
+    font-size: 14px;
 
     height: 32px;
 
@@ -67,11 +65,15 @@ const Content = styled.div`
     span.right {
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
+
+        border-left: 1px solid var(--theme-color-stroke-divider);
     }
 
     span.left {
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
+
+        border-right: 1px solid var(--theme-color-stroke-divider);
     }
 `
 
@@ -94,8 +96,8 @@ export function TextBox(props: TextBoxProps) {
         onBlur,
         inputMode,
         keyHint,
-        label = 'username',
-        labelRight = '.com',
+        label,
+        labelRight,
         readonly,
         ...otherProps
     } = props
