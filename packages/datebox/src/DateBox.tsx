@@ -27,6 +27,8 @@ const StyledField = styled.div`
     height: 32px;
     padding: 4px 8px;
     border-radius: 4px;
+    position: relative;
+    z-index: 2;
 
     &:focus-within {
     }
@@ -54,10 +56,8 @@ const StyledSegment = styled.div`
     }
 
     &:focus {
-        // color: white;
-        // background: rgb(3, 150, 255);
-        box-shadow: 0 0 0 1px rgb(3, 150, 255) inset;
-        // outline: 1px solid rgb(3, 150, 255);
+        color: black;
+        background: var(--theme-accent-default);
         outline: none;
         border-radius: 4px;
     }
@@ -193,15 +193,16 @@ export function DateBox(props: DateBoxProps<DateValue>) {
     return (
         <StyledWrapper className="wrapper">
             <span {...labelProps}>{props.label}</span>
-
-            <ControlStrokeX borderRadius={5.5} state={ControlState.Rest} focused={false} />
-            <ControlFillX borderRadius={5} state={ControlState.Rest} />
+            
             <StyledField {...fieldProps} ref={ref} className="field">
                 {state.segments.map((segment, i) => (
                     <DS key={i} segment={segment} state={state} />
                 ))}
                 {state.validationState === 'invalid' && <span aria-hidden="true">🚫</span>}
             </StyledField>
+
+            <ControlStrokeX borderRadius={5.5} state={ControlState.Rest} focused={false} />
+            <ControlFillX borderRadius={5} state={ControlState.Rest} />
         </StyledWrapper>
     )
 }

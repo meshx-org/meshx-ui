@@ -37,6 +37,11 @@ const ButtonContent = styled.div`
     padding: 0px 12px;
     column-gap: 6px;
 
+    &[data-icon-only='true'] {
+        padding: 0px !important;
+        width: 32px;
+    }
+
     *[data-theme='light'] &[data-variant='accent'],
     *[data-theme='light'] &[data-variant='danger'],
     *[data-theme='light'] &[data-variant='warning'] {
@@ -79,6 +84,7 @@ function Button(props: ButtonProps) {
     const { state, handlers } = useControlState<HTMLButtonElement>(disabled)
 
     const hasStroke = variant === 'accent' || variant === 'default' || variant === 'danger' || variant === 'warning'
+    const hasChildren = children !== undefined
 
     const handleClick = (e: any) => {
         onPress && onPress(e)
@@ -95,15 +101,17 @@ function Button(props: ButtonProps) {
             data-state={controlledState ?? state}
             {...handlers}
         >
-            <ButtonContent data-variant={variant}>
+            <ButtonContent data-variant={variant} data-icon-only={!hasChildren}>
                 {icon && <span>{icon}</span>}
-                <Text
-                    as="span"
-                    variant="body"
-                    selectable={false}
-                    color={disabled ? 'text.disabled' : 'text.primary'}
-                    children={children}
-                />
+                {children && (
+                    <Text
+                        as="span"
+                        variant="body"
+                        selectable={false}
+                        color={disabled ? 'text.disabled' : 'text.primary'}
+                        children={children}
+                    />
+                )}
                 {iconRight && <span>{iconRight}</span>}
             </ButtonContent>
             {hasStroke && <ControlStrokeX borderRadius={5.5} state={controlledState ?? state} />}

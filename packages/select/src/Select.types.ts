@@ -11,11 +11,11 @@ export interface SelectProps {
      */
     disabled?: boolean
 
-    /**
-     * A button can format its icon to appear before or after its content.
-     * @default before
-     */
-    iconPosition?: 'before' | 'after'
+    /** Show icon in button @default undefined */
+    icon?: React.ReactNode
+
+    /** Show icon on the other side of the button @default undefined */
+    iconRight?: React.ReactNode
 
     /**
      * A button supports different sizes.

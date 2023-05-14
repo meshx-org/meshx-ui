@@ -7,6 +7,12 @@ export interface BaseInputProps extends PaddingProps, MarginProps, LayoutProps {
     placeholder?: string
     disabled?: boolean
 
+    // label for input	string
+    label?: string
+
+    // label at right for input	string
+    labelRight?: string
+
     onFocus?: VoidHandler
     onBlur?: VoidHandler
 

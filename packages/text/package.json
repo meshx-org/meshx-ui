@@ -1,7 +1,7 @@
 {
     "name": "@meshx-org/mxui-text",
     "description": "Text component for MXUI",
-    "version": "0.7.30",
+    "version": "0.7.31",
     "license": "Apache-2.0",
     "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
     "homepage": "https://meshx.co/produts/mxui",
@@ -36,7 +36,7 @@
         "build": "bob build"
     },
     "dependencies": {
-        "@meshx-org/mxui-core": "0.7.30",
+        "@meshx-org/mxui-core": "0.7.31",
         "styled-system": "^5.1.5"
     },
     "devDependencies": {

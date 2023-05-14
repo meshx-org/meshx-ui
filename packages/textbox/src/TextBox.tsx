@@ -3,23 +3,28 @@ import styled from 'styled-components'
 import { layout, margin, padding, size, PaddingProps, MarginProps, LayoutProps } from 'styled-system'
 
 import { PasswordBoxProps, TextBoxProps } from './TextBox.types'
-import { useControlState, useFocus } from '@meshx-org/mxui-core'
-import { TextControlStroke, TextControlFill } from '@meshx-org/mxui-primitives'
+import { useControlState, useFocus, useTheme } from '@meshx-org/mxui-core'
+import { TextControlFillX, TextControlStrokeX } from '@meshx-org/mxui-primitives'
 
 const TextBoxInput = styled.input<PaddingProps & { width?: any; height?: any; size?: any }>`
-    flex: 1;
+    position: relative;
+    z-index: 3;
+
     border: none;
-    background: transparent;
+    border-left: 1px solid var(--theme-color-stroke-divider);
+    border-right: 1px solid var(--theme-color-stroke-divider);
+
+    flex: 1;
+
+    background: none;
 
     ${padding}
     margin: 0;
 
     height: 32px;
-    font-size: 14px;
-    line-height: 20px;
 
-    font-family: ${(props) => props.theme.fonts.default};
     color: var(--theme-color-text-primary);
+    font-family: var(--theme-font-default);
 
     &[data-state='disabled'] {
         color: var(--theme-color-text-disabled);
@@ -42,10 +47,41 @@ const TextBoxInput = styled.input<PaddingProps & { width?: any; height?: any; si
     }
 `
 
+const Content = styled.div`
+    width: 100%;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    span {
+        display: flex;
+        align-items: center;
+        padding: 0 8px;
+        font-size: 14px;
+        line-height: 32px;
+        color: var(--theme-color-text-secondary);
+        background: var(--theme-background-control-disabled);
+    }
+
+    span.right {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    span.left {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+`
+
 const TextBoxWrapper = styled.div<LayoutProps & MarginProps>`
     ${layout}
     ${margin}
+
     position: relative;
+    width: fit-content;
+    height: 32px;
 `
 
 export function TextBox(props: TextBoxProps) {
@@ -58,17 +94,21 @@ export function TextBox(props: TextBoxProps) {
         onBlur,
         inputMode,
         keyHint,
+        label = 'username',
+        labelRight = '.com',
         readonly,
         ...otherProps
     } = props
 
     const { focused, handlers: focusHandlers } = useFocus<HTMLInputElement>(onFocus, onBlur)
     const { state, handlers } = useControlState<HTMLInputElement>(disabled)
+    const theme = useTheme()
 
     return (
         <TextBoxWrapper {...otherProps}>
-            <TextControlStroke borderRadius={5} state={state} focused={focused}>
-                <TextControlFill state={state}>
+            <Content>
+                {label && <span className="left">{label}</span>}
+                <div style={{ position: 'relative' }}>
                     <TextBoxInput
                         py="5px"
                         px="8px"
@@ -83,8 +123,12 @@ export function TextBox(props: TextBoxProps) {
                         {...handlers}
                         {...focusHandlers}
                     />
-                </TextControlFill>
-            </TextControlStroke>
+                    <TextControlFillX data-state={state} data-theme={theme} data-focused={focused} />
+                </div>
+                {labelRight && <span className="right">{labelRight}</span>}
+            </Content>
+
+            <TextControlStrokeX borderRadius={5} state={state} focused={focused} />
         </TextBoxWrapper>
     )
 }

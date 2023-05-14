@@ -34,7 +34,7 @@ export interface ButtonProps {
     state?: ControlState
 
     /** Text showed */
-    children: string
+    children?: string
 
     /**
      * A button can format its icon to appear before or after its content.

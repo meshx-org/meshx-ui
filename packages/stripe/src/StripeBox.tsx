@@ -1,16 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { CardElement, CardElementProps } from '@stripe/react-stripe-js'
 import { StripeBoxProps } from './StripeBox.types'
 import styled from 'styled-components'
-import { ControlFillX, ControlStrokeX } from '@meshx-org/mxui-primitives'
-import {
-    ControlState,
-    DEFAULT_DARK,
-    DEFAULT_LIGHT,
-    useTheme,
-    useThemeColors,
-    useThemeValues
-} from '@meshx-org/mxui-core'
+import { TextControlFillX, TextControlStrokeX } from '@meshx-org/mxui-primitives'
+import { ControlState, DEFAULT_DARK, DEFAULT_LIGHT, useTheme, useThemeValues } from '@meshx-org/mxui-core'
 
 const StyledWrapper = styled.div`
     position: relative;
@@ -19,10 +12,10 @@ const StyledWrapper = styled.div`
     height: 32px;
     padding: 0px 12px;
     min-width: 280px;
+    width: 100%;
 
     align-items: center;
     position: relative;
-    width: fit-content;
 `
 
 const StyledCardElement = styled(CardElement)`
@@ -35,6 +28,7 @@ const StyledCardElement = styled(CardElement)`
 export function StripeBox({ style, ...props }: StripeBoxProps) {
     const theme = useTheme()
     const values = useThemeValues()
+    const [focused, setFocused] = useState(false)
 
     const colors = theme === 'dark' ? DEFAULT_DARK : DEFAULT_LIGHT
 
@@ -65,9 +59,20 @@ export function StripeBox({ style, ...props }: StripeBoxProps) {
 
     return (
         <StyledWrapper className="wrapper">
-            <ControlStrokeX borderRadius={5.5} state={ControlState.Rest} focused={false} />
-            <ControlFillX borderRadius={5} state={ControlState.Rest} />
-            <StyledCardElement options={options} {...props} />
+            <StyledCardElement
+                onFocus={() => setFocused(true)}
+                onBlur={() => setFocused(false)}
+                options={options}
+                {...props}
+            />
+            <TextControlStrokeX borderRadius={5.5} state={ControlState.Rest} focused={focused} />
+            <TextControlFillX
+                data-state={ControlState.Rest}
+                data-theme={theme}
+                data-focused={focused}
+                borderRadius={5}
+                state={ControlState.Rest}
+            />
         </StyledWrapper>
     )
 }

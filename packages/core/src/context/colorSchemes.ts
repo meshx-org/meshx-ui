@@ -1,4 +1,4 @@
-import { CSSVariable, ColorScheme, HSLA, RGBA } from './types'
+import { CSSVariable, ColorScheme, RGBA } from './types'
 
 export const DEFAULT_LIGHT: ColorScheme<RGBA> = {
     accent: {
@@ -83,9 +83,9 @@ export const DEFAULT_LIGHT: ColorScheme<RGBA> = {
     }
 }
 
-export const DEFAULT_DARK: ColorScheme<RGBA | HSLA> = {
+export const DEFAULT_DARK: ColorScheme<RGBA> = {
     accent: {
-        default: 'rgba(3, 150, 255, 1)'
+        default: 'rgba(127, 212, 255, 1)'
     },
     button: {
         accent: {
@@ -94,9 +94,9 @@ export const DEFAULT_DARK: ColorScheme<RGBA | HSLA> = {
             tertiary: 'rgba(3, 150, 255, .2)'
         },
         outline: {
-            default: 'hsla(210, 10%, 100%, 0.061)',
-            secondary: 'hsla(210, 10%, 100%, 0.084)',
-            tertiary: 'hsla(210, 10%, 100%, 0.033)'
+            default: 'rgba(255, 255, 255, 0.061)',
+            secondary: 'rgba(255, 255, 255, 0.084)',
+            tertiary: 'rgba(255, 255, 255, 0.033)'
         },
         warning: {
             default: 'rgba(245, 166, 35, .4)',
@@ -130,7 +130,7 @@ export const DEFAULT_DARK: ColorScheme<RGBA | HSLA> = {
             default: 'hsla(210, 10%, 100%, 0.061)',
             secondary: 'hsla(210, 10%, 100%, 0.084)',
             tertiary: 'hsla(210, 10%, 100%, 0.033)',
-            disabled: 'rgba(249, 249, 249, 0.3)'
+            disabled: 'rgba(255, 255, 255, 0.04)'
         },
         card: {
             default: '#FFFFFF0D',
@@ -170,7 +170,7 @@ export const DEFAULT_DARK: ColorScheme<RGBA | HSLA> = {
 
 export const VARIABLE: ColorScheme<CSSVariable> = {
     accent: {
-        default: 'var(--todo)'
+        default: 'var(--theme-accent-default)'
     },
     // Button Accent (oveeride)
     button: {

@@ -49,6 +49,8 @@ export const GlobalStyle = createGlobalStyle`
     [data-theme='light'], .light:root {
         color-scheme: light;
 
+        --theme-accent-default: ${({ theme }) => theme.lightScheme.accent.default};
+
         // Text Colors 
         --theme-color-text-primary: ${({ theme }) => theme.lightScheme.text.primary};
         --theme-color-text-secondary: ${({ theme }) => theme.lightScheme.text.secondary};
@@ -109,6 +111,8 @@ export const GlobalStyle = createGlobalStyle`
 
     [data-theme='dark'], .dark:root {
         color-scheme: dark;
+
+        --theme-accent-default: ${({ theme }) => theme.darkScheme.accent.default};
 
         // Text Colors 
         --theme-color-text-primary: ${({ theme }) => theme.darkScheme.text.primary};

@@ -211,6 +211,55 @@ export const ControlFillX = styled.div.attrs(ariaHidden)`
     }
 `
 
+export const TextControlFillX = styled.div.attrs(ariaHidden)`
+    ${fillBase}
+    ${borderRadius}
+
+    &[data-theme='light'] {
+        background: rgba(255, 255, 255, 0.7);
+    }
+
+    &[data-theme='dark'] {
+        background: rgba(255, 255, 255, 0.06);
+    }
+
+    &[data-theme='light']:hover,
+    &[data-theme='light'][data-state='hovered'] {
+        background: rgba(249, 249, 249, 0.5);
+    }
+
+    &[data-theme='light']:active,
+    &[data-theme='light'][data-state='pressed'] {
+        background: rgba(255, 255, 255, 1);
+    }
+
+    &[data-theme='light'][data-focused='true'] {
+        background: rgba(255, 255, 255, 1) !important;
+    }
+
+    &[data-theme='light'][data-state='disabled'] {
+        background: rgba(249, 249, 249, 0.3);
+    }
+
+    &[data-theme='dark']:hover,
+    &[data-theme='dark'][data-state='hovered'] {
+        background: rgba(255, 255, 255, 0.083);
+    }
+
+    &[data-theme='dark']:active,
+    &[data-theme='dark'][data-state='pressed'] {
+        background: rgba(20, 20, 20, 0.6);
+    }
+
+    &[data-theme='dark'][data-focused='true'] {
+        background: rgba(20, 20, 20, 0.6) !important;
+    }
+
+    &[data-theme='dark'][data-state='disabled'] {
+        background: rgba(255, 255, 255, 0.042);
+    }
+`
+
 export const SmokeFill = styled.div.attrs(ariaHidden)<SmokeFillProps>`
     ${fillBase}
     ${borderRadius}

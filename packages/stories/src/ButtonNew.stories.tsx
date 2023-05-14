@@ -39,6 +39,13 @@ export const WithIcon: Story = {
     }
 }
 
+export const WithoutChildren: Story = {
+    args: {
+        variant: 'default',
+        icon: <CompassIcon width={16} height={16} />
+    }
+}
+
 export const Variations: Story = {
     render: (args) => (
         <div style={{ display: 'flex', gap: '4px' }}>
