@@ -3823,10 +3823,10 @@
     "@webassemblyjs/ast" "1.11.5"
     "@xtuc/long" "4.2.2"
 
-"@whitespace/storybook-addon-html@^5.1.4":
-  version "5.1.4"
-  resolved "https://registry.yarnpkg.com/@whitespace/storybook-addon-html/-/storybook-addon-html-5.1.4.tgz#1fe39e67d41d4af085cfee10dfd14ce927af1b15"
-  integrity sha512-omDhn5Ceh0998YHKjRk6XHjslTg28WgNao6C0jkGW4NXeO0ZcKL0VCj4qV+jgJ4DOs/3K3Aj+wvQ81seataXqw==
+"@whitespace/storybook-addon-html@^5.1.5":
+  version "5.1.5"
+  resolved "https://registry.yarnpkg.com/@whitespace/storybook-addon-html/-/storybook-addon-html-5.1.5.tgz#eae4019d97f05342b08540cc1359e78af6ed1604"
+  integrity sha512-RqIJ0kVtA4jOU9PKBjk9t4img8IJ0RV9wW9FiAWNdurDFH9IZTE/PU9pNWMw6vytDL8Oqq7I5o7C09pe4dFMlQ==
 
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"

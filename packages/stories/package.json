@@ -26,7 +26,7 @@
         "@storybook/addon-docs": "^7.0.9",
         "storybook": "^7.0.9",
         "@storybook/addon-essentials": "^7.0.9",
-        "@whitespace/storybook-addon-html": "^5.1.4",
+        "@whitespace/storybook-addon-html": "^5.1.5",
         "@storybook/addon-links": "^7.0.9",
         "storybook-css-modules-preset": "^1.1.1",
         "storybook-dark-mode": "^3.0.0",
