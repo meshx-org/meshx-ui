@@ -125,7 +125,7 @@ export function TextBox(props: TextBoxProps) {
                         {...handlers}
                         {...focusHandlers}
                     />
-                    <TextControlFillX data-state={state} data-theme={theme} data-focused={focused} />
+                    <TextControlFillX borderRadius={5} data-state={state} data-theme={theme} data-focused={focused} />
                 </div>
                 {labelRight && <span className="right">{labelRight}</span>}
             </Content>

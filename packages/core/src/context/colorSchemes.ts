@@ -153,7 +153,7 @@ export const DEFAULT_DARK: ColorScheme<RGBA> = {
             default: 'hsla(210, 10%, 17%, 0.9)'
         },
         subtle: {
-            default: 'rgba(255, 255, 255, 0.0837)',
+            default: 'rgba(255, 255, 255, 0.0637)',
             secondary: 'rgba(255, 255, 255, 0.0326)',
             disabled: 'rgba(255, 255, 255, 0.04)'
         }

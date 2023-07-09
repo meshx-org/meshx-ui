@@ -122,12 +122,12 @@ export const SubtleFillX = styled.div.attrs(ariaHidden)<SubtleFillProps>`
 
     &:hover,
     &[data-state='hovered'] {
-        background: var(--theme-background-subtle-default) !important;
+        background: var(--theme-background-subtle-secondary) !important;
     }
 
     &:active,
     &[data-state='pressed'] {
-        background: var(--theme-background-subtle-secondary) !important;
+        background: var(--theme-background-subtle-default) !important;
     }
 
     &:disabled,

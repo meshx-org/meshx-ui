@@ -62,7 +62,7 @@ function TreeViewNode<T = unknown>(props: TreeViewNodeProps<T>) {
                             width: 3,
                             height: '50%',
                             borderRadius: 8,
-                            backgroundColor: item.isSelected ? colors.fill.accent : 'transparent'
+                            backgroundColor: item.isSelected ? colors.accent.default : 'transparent'
                         }}
                     />
                 </div>

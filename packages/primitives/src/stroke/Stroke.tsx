@@ -73,8 +73,8 @@ export function TextControlStrokeX({ state, borderRadius, focused }: ControlStro
                     <stop offset="1" stopColor="rgba(0, 0, 0, 0.30)" />
                 </linearGradient>
                 <linearGradient id={darkGradId} gradientTransform="rotate(90)">
-                    <stop offset="0" stopColor="#FFF" stopOpacity="0.2" />
-                    <stop offset="0.15" stopColor="#FFF" stopOpacity="0.09" />
+                    <stop offset="0.96" stopColor="#FFF" stopOpacity="0.09" />
+                    <stop offset="1" stopColor="#FFF" stopOpacity="0.3" />
                 </linearGradient>
             </defs>
         ),
