@@ -112,7 +112,7 @@ export function Select(props: SelectProps) {
     const theme = useTheme()
 
     return (
-        <StyledSelect as={as} {...otherProps} data-theme={theme} data-state={state} {...handlers}>
+        <StyledSelect className="focusable" as={as} {...otherProps} data-theme={theme} data-state={state} {...handlers}>
             <SelectContent>
                 {icon && <span className="left">{icon}</span>}
                 <SelectInput

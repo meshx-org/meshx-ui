@@ -1,7 +1,7 @@
 import React, { Children } from 'react'
 import { Tab } from '@headlessui/react'
 import { ControlState } from '@meshx-org/mxui-core'
-import { LinkButton } from '@meshx-org/mxui-button'
+import { Button } from '@meshx-org/mxui-button'
 import { Text } from '@meshx-org/mxui-text'
 import { TabViewProps, TabPanelsProps, TabListProps } from './types'
 import styled from 'styled-components'
@@ -9,7 +9,6 @@ import { padding, color, ColorProps, PaddingProps } from 'styled-system'
 
 const StyledTab = styled.div`
     cursor: pointer;
-    outline: none;
 `
 
 const Selector = styled.div`
@@ -33,14 +32,9 @@ function TabInternal(props: any) {
     return (
         <Tab as={StyledTab}>
             {({ selected }) => (
-                <LinkButton state={selected ? ControlState.Hovered : undefined}>
-                    <Text
-                        variant="body.medium"
-                        selectable={false}
-                        color={false ? 'text.disabled' : 'text.primary'}
-                        children={props.children}
-                    />
-                </LinkButton>
+                <Button variant="outline" state={selected ? ControlState.Hovered : undefined}>
+                    {props.children}
+                </Button>
             )}
         </Tab>
     )

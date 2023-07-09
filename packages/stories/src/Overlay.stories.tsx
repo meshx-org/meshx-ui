@@ -1,6 +1,6 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
-import { Overlay, OverlayProps } from '@meshx-org/mxui-overlays/src'
+import { Overlay, OverlayProps2 } from '@meshx-org/mxui-overlays/src'
 
 const argTypes = {
     placement: {
@@ -28,7 +28,7 @@ export default {
     argTypes: argTypes
 } as Meta
 
-const OverlayTemplate: Story<OverlayProps> = (args) => <Overlay {...args} />
+const OverlayTemplate: Story<OverlayProps2> = (args) => <Overlay {...args} />
 
 export const Default = OverlayTemplate.bind({})
 Default.args = {

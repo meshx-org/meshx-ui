@@ -1,6 +1,19 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
+    select:focus, button:focus {
+        outline: none;
+    }
+
+    select:focus-visible, button:focus-visible {
+        border-radius: 6px;
+        box-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+        --tw-ring-offset-color: var(--theme-background-solid-default);
+        --tw-ring-inset: inset;
+        --tw-ring-offset-width: 2px;
+        --tw-ring-color: var(--theme-accent-default);
+    }
+
     :root {
         // debug color
         --todo: magenta;
@@ -170,5 +183,110 @@ export const GlobalStyle = createGlobalStyle`
 
         --theme-background-smoke-default: ${({ theme }) => theme.darkScheme.backgrounds.smoke.default};
         --theme-background-acrylic-default: ${({ theme }) => theme.darkScheme.backgrounds.acrylic.default};
+    }
+
+    .portal {
+        left: 0;
+        // take the portal out of the document flow to prevent browsers from autoscrolling to the bottom
+        // of the document (where portals are appended) when programmatically focusing within a portal
+        // child element. also, don't use 'fixed', because then Tether'd elements won't reposition
+        // themselves properly as the document scrolls.
+        position: absolute;
+        // ensure content won't be horizontally scrunched
+        right: 0;
+        // ensure content still offsets from the top of the document
+        top: 0;
+    }
+
+    // restricts scrolling of underlying content while the overlay is open
+    body.overlay-open {
+        overflow: hidden;
+    }
+
+    .overlay {
+        // 0-out all positions so page won't jump when position changes (0s already there)
+        bottom: 0;
+        left: 0;
+        position: static;
+        right: 0;
+        top: 0;
+
+        z-index: 20;
+
+        &:not(.overlay-open) {
+            // because of the 0-position covering the viewport,
+            // we must ignore the mouse when not open
+            pointer-events: none;
+        }
+
+        &.overlay-container {
+            overflow: hidden;
+            // container covers the entire viewport
+            position: fixed;
+
+            &.overlay-inline {
+                // when rendered inline, we want the overlay to position itself relative to
+                // its parent container, not relative to the whole window. thus, we change
+                // to position:absolute.
+                position: absolute;
+            }
+        }
+
+        &.overlay-scroll-container {
+            overflow: auto;
+            // scroll container covers the entire viewport
+            position: fixed;
+
+            &.overlay-inline {
+                // when rendered inline, we want the overlay to position itself relative to
+                // its parent container, not relative to the whole window. thus, we change
+                // to position:absolute.
+                position: absolute;
+            }
+        }
+
+        &.overlay-inline {
+            display: inline;
+            // inline overlays can overflow container by default (see Dialog & Popover)
+            overflow: visible;
+        }
+    }
+
+    // this class is added to each Overlay child so that users won't need to
+    // explicitly manage the position mode for inline and non-inline rendering.
+    .overlay-content {
+        // default fixed pulls it out of the flow and makes it viewport-relative
+        position: fixed;
+        z-index: 20;
+
+        .overlay-inline &,
+        .overlay-scroll-container & {
+            // but inline (or scrollable) overlays want their children to respect
+            // the parent positioning context. also allows the content to scroll.
+            position: absolute;
+        }
+    }
+
+    // fixed position so the backdrop forecefully covers the whole screen
+    .overlay-backdrop {
+        background-color: var(--theme-background-smoke-default);
+        bottom: 0;
+        left: 0;
+        opacity: 1;
+        overflow: auto;
+        position: fixed;
+        right: 0;
+        top: 0;
+        user-select: none;
+        z-index: 20;
+ 
+        &:focus {
+            outline: none;
+        }
+
+        // as mentioned above: when inline, Overlay backdrop must respect parent
+        .overlay-inline & {
+            position: absolute;
+        }
     }
 `

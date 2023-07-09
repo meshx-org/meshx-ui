@@ -5,5 +5,5 @@
     },
     "include": [
         "./src"
-    ],
+, "../core/src/components/portal/Portal.tsx"    ],
 }

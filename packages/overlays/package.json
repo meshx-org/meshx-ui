@@ -36,6 +36,9 @@
         "build": "bob build"
     },
     "dependencies": {
+        "classnames": "^2.3.2",
+        "react-transition-group": "4.4.5",
+        "@types/react-transition-group": "4.4.6",
         "@meshx-org/mxui-core": "0.7.32",
         "@meshx-org/mxui-primitives": "0.7.32",
         "@types/styled-components": "^5.1.26"

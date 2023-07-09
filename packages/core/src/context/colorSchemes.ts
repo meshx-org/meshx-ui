@@ -1,4 +1,4 @@
-import { CSSVariable, ColorScheme, RGBA } from './types'
+import { CSSVariable, ColorScheme, RGBA } from '../types'
 
 export const DEFAULT_LIGHT: ColorScheme<RGBA> = {
     accent: {

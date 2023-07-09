@@ -92,6 +92,7 @@ function Button(props: ButtonProps) {
 
     return (
         <StyledButton
+            className="focusable"
             as={as}
             style={{ maxWidth: fit ? 'fit-content' : undefined }}
             type="button"

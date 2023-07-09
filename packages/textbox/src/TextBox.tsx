@@ -82,8 +82,8 @@ const TextBoxWrapper = styled.div<LayoutProps & MarginProps>`
     ${margin}
 
     position: relative;
-    width: fit-content;
-    height: 32px;
+    //width: fit-content;
+    //height: 32px;
 `
 
 export function TextBox(props: TextBoxProps) {
@@ -110,7 +110,7 @@ export function TextBox(props: TextBoxProps) {
         <TextBoxWrapper {...otherProps}>
             <Content>
                 {label && <span className="left">{label}</span>}
-                <div style={{ position: 'relative' }}>
+                <div style={{  }}>
                     <TextBoxInput
                         py="5px"
                         px="8px"

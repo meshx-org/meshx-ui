@@ -1,4 +1,4 @@
-import type { ThemeValues } from './types'
+import type { ThemeValues } from '../types'
 
 function fontStack(fonts: string[]) {
     return fonts.map((font) => (font.includes(' ') ? `"${font}"` : font)).join(', ')
