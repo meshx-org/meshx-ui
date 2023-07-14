@@ -79,6 +79,7 @@ export function useShortcuts(
                 })),
         [keys]
     )
+    
     const globalKeys = React.useMemo(
         () =>
             keys
