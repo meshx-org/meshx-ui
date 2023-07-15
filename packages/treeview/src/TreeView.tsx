@@ -153,7 +153,7 @@ export function TreeView<T = unknown>(props: TreeViewProps<T>) {
         <VirtualizedList
             // showsVerticalScrollIndicator={false}
             // contentInset={{ right: 0, top: 8, left: 8, bottom: 8 }}
-            contentContainerStyle={{ width: '100%', display: 'flex', flexDirection: 'column', gap: 4 }}
+            contentContainerStyle={{ width: '100%', display: 'flex', flexDirection: 'column', rowGap: props.rowGap ?? 4 }}
             getItemCount={(data) => data.length}
             getItem={(data, i) => data[i]}
             // getItemLayout={(data, index) => ({ length: 28, offset: 28 * index, index })}

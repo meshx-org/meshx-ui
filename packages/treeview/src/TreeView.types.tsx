@@ -24,6 +24,8 @@ export interface TreeViewProps<T> {
 
     canDragItems?: boolean
     canReorderItems?: boolean
+    
+    rowGap?: number
 
     /** Function that will be called when a parent item needs to be expanded. */
     onExpand: (itemId: ItemId, path: Path) => void
