@@ -29,7 +29,7 @@
         "@whitespace/storybook-addon-html": "^5.1.4",
         "@storybook/addon-links": "^7.0.9",
         "storybook-css-modules-preset": "^1.1.1",
-        "storybook-dark-mode": "^3.0.0",
+        "storybook-dark-mode": "^3.0.1",
         "react-syntax-highlighter": "^15.5",
         "webpack": "^5.82.1",
         "@stripe/react-stripe-js": "^2.1.0",
