@@ -1900,12 +1900,12 @@
   version "1.2.1"
   resolved "https://registry.npmjs.org/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz"
 
-"@internationalized/date@3.1.0":
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/@internationalized/date/-/date-3.1.0.tgz#da48aeaa971df6ad410cd32597c174d6cab9a3b4"
-  integrity sha512-wjeur7K4AecT+YwoBmBXQ/+n5lP69tuZc34hw09s44EozZK7FZHSyfPvRp5/xEb2D6abLboskDY4jG+Nt0TNUQ==
+"@internationalized/date@3.4.0":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@internationalized/date/-/date-3.4.0.tgz#e843ac40b04afafe99fe0a41bae7abdd221a9a44"
+  integrity sha512-QUDSGCsvrEVITVf+kv9VSAraAmCgjQmU5CiXtesUBBhBe374NmnEIIaOFBZ72t29dfGMBP0zF+v6toVnbcc6jg==
   dependencies:
-    "@swc/helpers" "^0.4.14"
+    "@swc/helpers" "^0.5.0"
 
 "@internationalized/number@3.2.0":
   version "3.2.0"
@@ -3237,6 +3237,13 @@
   version "0.4.14"
   resolved "https://registry.yarnpkg.com/@swc/helpers/-/helpers-0.4.14.tgz#1352ac6d95e3617ccb7c1498ff019654f1e12a74"
   integrity sha512-4C7nX/dvpzB7za4Ql9K81xK3HPxCpHMgwTZVyf+9JQ6VUbn9jjZVN7/Nkdz/Ugzs2CSjqnL/UPXroiVBVHUWUw==
+  dependencies:
+    tslib "^2.4.0"
+
+"@swc/helpers@^0.5.0":
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/@swc/helpers/-/helpers-0.5.1.tgz#e9031491aa3f26bfcc974a67f48bd456c8a5357a"
+  integrity sha512-sJ902EfIzn1Fa+qYmjdQqh8tPsoxyBz+8yBKC2HKUxyezKJFwPGOn7pv4WY6QuQW//ySQi5lJjA/ZT9sNWWNTg==
   dependencies:
     tslib "^2.4.0"
 
