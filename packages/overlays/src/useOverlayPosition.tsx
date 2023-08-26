@@ -14,7 +14,7 @@ import { calculatePosition, PositionResult } from './calculatePosition'
 import { RefObject, useCallback, useRef, useState } from 'react'
 import { Placement, PlacementAxis, PositionProps } from './types'
 import { useResizeObserver } from "./utils/useResizeObserver"
-import { useLayoutEffect } from "./utils/useLayoutEffect"
+import { useLayoutEffect } from '@meshx-org/mxui-core'
 
 type DOMAttributes = any
 

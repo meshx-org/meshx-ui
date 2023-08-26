@@ -1,7 +1,7 @@
 {
     "name": "@meshx-org/mxui-select",
     "description": "Select component for MXUI",
-    "version": "0.7.35",
+    "version": "0.7.36",
     "license": "apache-2.0",
     "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
     "homepage": "https://meshx.co/produts/mxui",
@@ -37,8 +37,8 @@
         "build": "bob build"
     },
     "dependencies": {
-        "@meshx-org/mxui-core": "0.7.35",
-        "@meshx-org/mxui-primitives": "0.7.35",
+        "@meshx-org/mxui-core": "0.7.36",
+        "@meshx-org/mxui-primitives": "0.7.36",
         "@types/styled-components": "^5.1.26"
     },
     "devDependencies": {

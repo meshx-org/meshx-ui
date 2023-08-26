@@ -7,6 +7,7 @@ export * from './context/PortalProvider'
 export * from './components/portal/Portal'
 
 export * from './hooks/useControlState'
+export * from './hooks/useLayoutEffect'
 export * from './hooks/shortcuts/useShortcuts'
 export * from './hooks/useFocus'
 export * from './utils'
