@@ -48,8 +48,6 @@ export function TextControlStrokeX({ state, borderRadius, focused }: ControlStro
     const svg = useRef(null)
     const rect = useRect(svg)
 
-    console.log(rect)
-
     const clipId = `clip-${uniqueId}`
     const lightGradId = `stroke-${uniqueId}-light`
     const darkGradId = `stroke-${uniqueId}-dark`
@@ -224,27 +222,22 @@ const CardStroke = styled.div.attrs((props) => ({ ...props, 'aria-hidden': true 
 
 export function ControlStrokeX({ state, borderRadius, focused = false }: ControlStrokeXProps) {
     const theme = useTheme()
-    const uniqueId = useId()
-    const lightGradId = `stroke-${uniqueId}-light`
-    const darkGradId = `stroke-${uniqueId}-dark`
 
     const definitions = useMemo(
         () => (
             <defs>
-                <linearGradient id={lightGradId} gradientTransform="rotate(90)">
-                    <stop offset="0.85" stopColor="rgba(0, 0, 0, 0.06)" />
-                    <stop offset="1" stopColor="rgba(0, 0, 0, 0.30)" />
-                </linearGradient>
-                <linearGradient id={darkGradId} gradientTransform="rotate(90)">
-                    <stop offset="0" stopColor="#FFF" stopOpacity="0.24" />
-                    <stop offset="0.15" stopColor="#FFF" stopOpacity="0.09" />
+                <linearGradient id="grad" gradientTransform="rotate(90)">
+                    <stop className="color-1" offset="0" />
+                    <stop className="color-2" offset="0.15" />
+                    <stop className="color-3" offset="0.85" />
+                    <stop className="color-4" offset="1" />
                 </linearGradient>
             </defs>
         ),
         []
     )
 
-    let stroke = url(theme === 'dark' ? darkGradId : lightGradId)
+    let stroke = url('grad')
 
     if (theme === 'dark') {
         if (state === ControlState.Disabled || state === ControlState.Pressed) {

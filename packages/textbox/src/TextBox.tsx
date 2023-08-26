@@ -10,16 +10,16 @@ const TextBoxInput = styled.input<PaddingProps & { width?: any; height?: any; si
     ${padding}
     margin: 0;
 
+    height: 32px;
+    flex: 1;
+
+    font-size: 14px;
+
     position: relative;
     z-index: 3;
 
     border: none;
     background: none;
-
-    flex: 1;
-    font-size: 14px;
-
-    height: 32px;
 
     color: var(--theme-color-text-primary);
     font-family: var(--theme-font-default);
@@ -110,23 +110,22 @@ export function TextBox(props: TextBoxProps) {
         <TextBoxWrapper {...otherProps}>
             <Content>
                 {label && <span className="left">{label}</span>}
-                <div style={{  }}>
-                    <TextBoxInput
-                        py="5px"
-                        px="8px"
-                        role="textbox"
-                        type="text"
-                        {...otherProps}
-                        placeholder={placeholder}
-                        disabled={disabled}
-                        value={value}
-                        data-state={state}
-                        onChange={onChange && ((e) => onChange(e.target.value))}
-                        {...handlers}
-                        {...focusHandlers}
-                    />
-                    <TextControlFillX borderRadius={5} data-state={state} data-theme={theme} data-focused={focused} />
-                </div>
+
+                <TextBoxInput
+                    px="8px"
+                    role="textbox"
+                    type="text"
+                    {...otherProps}
+                    placeholder={placeholder}
+                    disabled={disabled}
+                    value={value}
+                    data-state={state}
+                    onChange={onChange && ((e) => onChange(e.target.value))}
+                    {...handlers}
+                    {...focusHandlers}
+                />
+                <TextControlFillX borderRadius={5} data-state={state} data-theme={theme} data-focused={focused} />
+
                 {labelRight && <span className="right">{labelRight}</span>}
             </Content>
 

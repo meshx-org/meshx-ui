@@ -14,6 +14,29 @@ export const GlobalStyle = createGlobalStyle`
         --tw-ring-color: var(--theme-accent-default);
     }
 
+    *[data-theme='dark'] .color-1 {
+        stop-color: #FFF;
+        stop-opacity: 0.24;
+    }
+
+    *[data-theme='dark'] .color-2, 
+    *[data-theme='dark'] .color-3, 
+    *[data-theme='dark'] .color-4 {
+        stop-color: #FFF;
+        stop-opacity: 0.09;
+    }
+ 
+    *[data-theme='light'] .color-4 {
+        stop-color: rgba(0, 0, 0, 0.30);
+        
+    }
+    
+    *[data-theme='light'] .color-1, 
+    *[data-theme='light'] .color-2 ,  
+    *[data-theme='light'] .color-3 {
+        stop-color: rgba(0, 0, 0, 0.06);
+    }
+     
     :root {
         // debug color
         --todo: magenta;
