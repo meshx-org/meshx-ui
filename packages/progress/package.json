@@ -1,7 +1,7 @@
 {
     "name": "@meshx-org/mxui-progress",
     "description": "Progress component for MXUI",
-    "version": "0.7.37",
+    "version": "0.7.38",
     "license": "Apache-2.0",
     "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
     "homepage": "https://meshx.co/produts/mxui",
@@ -37,8 +37,8 @@
         "build": "bob build"
     },
     "dependencies": {
-        "@meshx-org/mxui-core": "0.7.37",
-        "@meshx-org/mxui-primitives": "0.7.37",
+        "@meshx-org/mxui-core": "0.7.38",
+        "@meshx-org/mxui-primitives": "0.7.38",
         "styled-components": "^5.3.6",
         "react-slider": "^2.0.4"
     },
