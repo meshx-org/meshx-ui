@@ -88,7 +88,7 @@ export function TextControlStrokeX({ state, borderRadius, focused }: ControlStro
 
     const restFill: string = theme === 'dark' ? ' rgba(255, 255, 255, 0.3)' : 'rgba(0, 0, 0, 0.45)'
     const lineFill: string = focused ? 'var(--theme-accent-default)' : restFill
-    const lineHeight: number = focused ? 2 : 1
+    const lineHeight: number = focused ? 2 : 0
 
     return (
         <StrokeBaseX>
