@@ -64,7 +64,7 @@ export function TextControlStrokeX({ state, borderRadius, focused }: ControlStro
                         rx={`${borderRadius ?? 0}px`}
                     />
                 </clipPath>
-                <linearGradient id="grad" gradientTransform="rotate(90)">
+                <linearGradient id="text-control-grad" gradientTransform="rotate(90)">
                     <stop className="text-control-stroke-stop" offset="0" />
                     <stop className="text-control-stroke-stop" offset="0.9" />
                     <stop className="text-control-stroke-stop" offset="1" />
@@ -74,7 +74,7 @@ export function TextControlStrokeX({ state, borderRadius, focused }: ControlStro
         []
     )
 
-    let stroke = url('grad')
+    let stroke = url('text-control-grad')
 
     if (theme === 'dark') {
         if (focused || state === ControlState.Disabled || state === ControlState.Pressed) {
