@@ -49,8 +49,6 @@ export function TextControlStrokeX({ state, borderRadius, focused }: ControlStro
     const rect = useRect(svg)
 
     const clipId = `clip-${uniqueId}`
-    const lightGradId = `stroke-${uniqueId}-light`
-    const darkGradId = `stroke-${uniqueId}-dark`
 
     const definitions = useMemo(
         () => (
@@ -66,34 +64,31 @@ export function TextControlStrokeX({ state, borderRadius, focused }: ControlStro
                         rx={`${borderRadius ?? 0}px`}
                     />
                 </clipPath>
-                <linearGradient id={lightGradId} gradientTransform="rotate(90)">
-                    <stop offset="0.85" stopColor="rgba(0, 0, 0, 0.06)" />
-                    <stop offset="1" stopColor="rgba(0, 0, 0, 0.30)" />
-                </linearGradient>
-                <linearGradient id={darkGradId} gradientTransform="rotate(90)">
-                    <stop offset="0.96" stopColor="#FFF" stopOpacity="0.09" />
-                    <stop offset="1" stopColor="#FFF" stopOpacity="0.3" />
+                <linearGradient id="grad" gradientTransform="rotate(90)">
+                    <stop className="text-control-stroke-stop" offset="0" />
+                    <stop className="text-control-stroke-stop" offset="0.9" />
+                    <stop className="text-control-stroke-stop" offset="1" />
                 </linearGradient>
             </defs>
         ),
         []
     )
 
-    let stroke = url(theme === 'dark' ? darkGradId : lightGradId)
+    let stroke = url('grad')
 
     if (theme === 'dark') {
         if (focused || state === ControlState.Disabled || state === ControlState.Pressed) {
-            stroke = 'rgba(255, 255, 255, 0.09)'
+            stroke = 'rgba(255, 255, 255, 0.2)'
         }
     } else if (theme === 'light') {
         if (focused || state === ControlState.Disabled || state === ControlState.Pressed) {
-            stroke = 'rgba(0, 0, 0, 0.06)'
+            stroke = 'rgba(0, 0, 0, 0.15)'
         }
     }
 
     const restFill: string = theme === 'dark' ? ' rgba(255, 255, 255, 0.3)' : 'rgba(0, 0, 0, 0.45)'
     const lineFill: string = focused ? 'var(--theme-accent-default)' : restFill
-    const lineHeight: number = focused ? 2 : 0
+    const lineHeight: number = focused ? 2 : 1
 
     return (
         <StrokeBaseX>
