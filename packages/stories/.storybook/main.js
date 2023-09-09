@@ -1,3 +1,6 @@
+const { flowPlugin, esbuildFlowPlugin } = require('@bunchtogether/vite-plugin-flow')
+const { mergeConfig } = require('vite')
+
 module.exports = {
     stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
     addons: [
@@ -29,7 +32,26 @@ module.exports = {
         return config
     },
     core: {
-        disableTelemetry: true
+        disableTelemetry: true,
+        builder: '@storybook/builder-vite' // 👈 The builder enabled here.
+    },
+    async viteFinal(config) {
+        // Merge custom configuration into the default config
+        return mergeConfig(config, {
+            plugins: [flowPlugin()],
+            resolve: {
+                alias: {
+                    'react-native': 'react-native-web'
+                }
+            },
+            // Add dependencies to pre-optimization
+            optimizeDeps: {
+                esbuildOptions: {
+                    plugins: [esbuildFlowPlugin()]
+                },
+                include: ['storybook-dark-mode']
+            }
+        })
     },
     typescript: {
         // check: false
@@ -39,11 +61,11 @@ module.exports = {
     },
     framework: {
         // The name of the framework you want to use goes here
-        name: '@storybook/react-webpack5',
-        options: {
-            legacyRootApi: false,
-            strictMode: true
-        }
+        name: '@storybook/react-vite'
+        //    options: {
+        //        legacyRootApi: false,
+        //        strictMode: true
+        //    }
     },
     features: {
         storyStoreV7: true,

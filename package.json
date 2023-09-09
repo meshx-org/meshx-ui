@@ -3,9 +3,11 @@
     "description": "Component library used across MeshX Apps",
     "version": "0.0.3-unstable.9",
     "private": true,
-    "workspaces": [
-        "./packages/*"
-    ],
+    "workspaces": {
+        "packages": [
+            "./packages/*"
+        ]
+    },
     "license": "apache-2.0",
     "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
     "homepage": "https://github.com/meshx-org/meshx-ui",
