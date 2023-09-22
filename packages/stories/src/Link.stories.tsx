@@ -1,5 +1,6 @@
 import type { StoryObj, Meta } from '@storybook/react'
 import { Link } from '@meshx-org/mxui-link/src'
+import { Text } from '@meshx-org/mxui-text/src'
 import React from 'react'
 
 const meta = {
@@ -8,13 +9,15 @@ const meta = {
     argTypes: {},
     render: (args) => {
         return (
-            <div style={{ width: 300 }}>
+            <Text>
+                The missing{' '}
                 <Link {...args}>
                     <a href="https://www.imdb.com/title/tt6348138/" target="_blank">
-                        The missing link.
+                        link
                     </a>
                 </Link>
-            </div>
+                .
+            </Text>
         )
     }
 } satisfies Meta<typeof Link>

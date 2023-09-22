@@ -3,7 +3,7 @@ import { LinkProps } from './Link.types'
 import styled from 'styled-components'
 import { TypographyProps, typography } from 'styled-system'
 
-const LinkStyled = styled.p<TypographyProps>`
+const LinkStyled = styled.span<TypographyProps>`
     ${typography}
 
     & a {
@@ -32,7 +32,7 @@ export function Link(props: LinkProps) {
     const { children, variant = 'primary', onClick } = props
 
     return (
-        <LinkStyled fontSize={1} onClick={onClick} data-variant={variant}>
+        <LinkStyled onClick={onClick} data-variant={variant}>
             {typeof children == 'string' ? (
                 <span tabIndex={0} role="link">
                     {children}
