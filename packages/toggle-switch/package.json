@@ -1,7 +1,7 @@
 {
     "name": "@meshx-org/mxui-switch",
     "description": "Switch component for MXUI",
-    "version": "0.7.42",
+    "version": "0.7.43",
     "license": "Apache-2.0",
     "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
     "homepage": "https://meshx.co/produts/mxui",
@@ -39,8 +39,8 @@
         "build": "bob build"
     },
     "dependencies": {
-        "@meshx-org/mxui-core": "0.7.42",
-        "@meshx-org/mxui-text": "0.7.42"
+        "@meshx-org/mxui-core": "0.7.43",
+        "@meshx-org/mxui-text": "0.7.43"
     },
     "devDependencies": {
         "@types/styled-components": "^5.1.26",
