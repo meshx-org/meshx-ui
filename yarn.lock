@@ -1718,12 +1718,12 @@
   resolved "https://registry.npmjs.org/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@internationalized/date@3.1.0":
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/@internationalized/date/-/date-3.1.0.tgz#da48aeaa971df6ad410cd32597c174d6cab9a3b4"
-  integrity sha512-wjeur7K4AecT+YwoBmBXQ/+n5lP69tuZc34hw09s44EozZK7FZHSyfPvRp5/xEb2D6abLboskDY4jG+Nt0TNUQ==
+"@internationalized/date@3.5.0":
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/@internationalized/date/-/date-3.5.0.tgz#67f1dd62355f05140cc80e324842e9bfb4553abe"
+  integrity sha512-nw0Q+oRkizBWMioseI8+2TeUPEyopJVz5YxoYVzR0W1v+2YytiYah7s/ot35F149q/xAg4F1gT/6eTd+tsUpFQ==
   dependencies:
-    "@swc/helpers" "^0.4.14"
+    "@swc/helpers" "^0.5.0"
 
 "@internationalized/number@3.2.0":
   version "3.2.0"
@@ -3353,6 +3353,13 @@
   integrity sha512-5lxnyLEYFskErRPenYItLRSge5DjrJngYKdVjRSrWfza9G6KkgHEXi0vUZiyUeMU5JfXH1YnvXZzSp8ul88o2Q==
   dependencies:
     legacy-swc-helpers "npm:@swc/helpers@=0.4.14"
+    tslib "^2.4.0"
+
+"@swc/helpers@^0.5.0":
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/@swc/helpers/-/helpers-0.5.2.tgz#85ea0c76450b61ad7d10a37050289eded783c27d"
+  integrity sha512-E4KcWTpoLHqwPHLxidpOqQbcrZVgi0rsmmZXUle1jXmJfuIf/UWpczUJ7MZZ5tlxytgJXyp0w4PGkkeLiuIdZw==
+  dependencies:
     tslib "^2.4.0"
 
 "@types/babel__core@^7.0.0":
