@@ -3,7 +3,7 @@ import { Badge } from '@meshx-org/mxui-badge/src'
 import React from 'react'
 
 const meta = {
-    title: 'Form/Badge',
+    title: 'Status/Badge',
     component: Badge,
     argTypes: {},
     render: (args) => {

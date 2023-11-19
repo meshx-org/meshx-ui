@@ -1949,6 +1949,21 @@
     "@types/mdx" "^2.0.0"
     "@types/react" ">=16"
 
+"@meshx-org/mxui-badge@0.7.41":
+  version "0.7.41"
+  resolved "https://npm.pkg.github.com/download/@meshx-org/mxui-badge/0.7.41/8c61e7c01a6dcff525e3e17fb417ee9c35064c79#8c61e7c01a6dcff525e3e17fb417ee9c35064c79"
+  integrity sha512-xQ2Z9B1xb3nq+8i0RbNHDyT+LO+j3Bu1qKPyyE8a0GVd+KFoXDOpWVyqsjyRWXzXnDrcaf1GldaFMvRzULiTGw==
+  dependencies:
+    "@meshx-org/mxui-core" "0.7.41"
+    styled-system "^5.1.5"
+
+"@meshx-org/mxui-core@0.7.41":
+  version "0.7.41"
+  resolved "https://npm.pkg.github.com/download/@meshx-org/mxui-core/0.7.41/24a3d3b7636d843b6d9fa8e1b130aa7e75d5d94a#24a3d3b7636d843b6d9fa8e1b130aa7e75d5d94a"
+  integrity sha512-sQA+2T9cKOCLlCSnrPUBPOLmIHrfW6BMAh8jZlmqjoCgGMpZ2x8TVAyxUB8IIRK0HlK7IXxZdvpEwHhIMshtvA==
+  dependencies:
+    styled-system "^5.1.5"
+
 "@ndelangen/get-tarball@^3.0.7":
   version "3.0.9"
   resolved "https://registry.yarnpkg.com/@ndelangen/get-tarball/-/get-tarball-3.0.9.tgz#727ff4454e65f34707e742a59e5e6b1f525d8964"

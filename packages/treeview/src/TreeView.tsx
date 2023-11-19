@@ -35,7 +35,8 @@ function TreeViewNode<T = unknown>(props: TreeViewNodeProps<T>) {
             style={{
                 display: 'flex',
                 width: '100%',
-                height: 32,
+                lineHeight: 20,
+                padding: '6px 0px 6px 0px',
                 position: 'relative',
                 flexDirection: 'row',
                 alignItems: 'center',
@@ -43,51 +44,46 @@ function TreeViewNode<T = unknown>(props: TreeViewNodeProps<T>) {
                 cursor: 'pointer'
             }}
         >
-            <>
+            <div
+                style={{
+                    overflow: 'hidden',
+                    flexShrink: 0,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    marginRight: 4
+                }}
+            >
                 <div
                     style={{
-                        overflow: 'hidden',
-                        flexShrink: 0,
-                        display: 'flex',
-                        flexDirection: 'column',
-                        height: '100%',
-                        justifyContent: 'center',
-                        marginRight: 4,
-                        borderTopLeftRadius: 5,
-                        borderBottomLeftRadius: 5
+                        width: 3,
+                        height: 20,
+                        borderRadius: 2,
+                        backgroundColor: item.isSelected ? colors.accent.default : 'transparent'
                     }}
-                >
-                    <div
-                        style={{
-                            width: 3,
-                            height: '50%',
-                            borderRadius: 8,
-                            backgroundColor: item.isSelected ? colors.accent.default : 'transparent'
-                        }}
-                    />
-                </div>
+                />
+            </div>
 
-                <div
-                    style={{
-                        padding: '0 4px',
-                        display: 'flex',
-                        flexDirection: 'row',
-                        flex: 1,
-                        color: colors.text.primary,
-                        paddingLeft: (path.length - 1) * offsetPerLevel
-                    }}
-                >
-                    {renderTreeItem({
-                        item,
-                        state,
-                        depth: path.length - 1,
-                        onExpand: (itemId) => onExpand(itemId, path),
-                        onCollapse: (itemId) => onCollapse(itemId, path)
-                    })}
-                </div>
+            <div
+                style={{
+                    padding: '0 4px',
+                    display: 'flex',
+                    flexDirection: 'row',
+                    flex: 1,
+                    color: colors.text.primary,
+                    paddingLeft: (path.length - 1) * offsetPerLevel
+                }}
+            >
+                {renderTreeItem({
+                    item,
+                    state,
+                    depth: path.length - 1,
+                    onExpand: (itemId) => onExpand(itemId, path),
+                    onCollapse: (itemId) => onCollapse(itemId, path)
+                })}
+            </div>
 
-                <SubtleFillX borderRadius={5} data-state={state} />
-            </>
+            <SubtleFillX borderRadius={5} data-state={state} />
         </div>
     )
 }
@@ -151,17 +147,17 @@ export function TreeView<T = unknown>(props: TreeViewProps<T>) {
 
     return (
         <VirtualizedList
-            // showsVerticalScrollIndicator={false}
-            // contentInset={{ right: 0, top: 8, left: 8, bottom: 8 }}
-            contentContainerStyle={{ width: '100%', display: 'flex', flexDirection: 'column', rowGap: props.rowGap ?? 4 }}
+            contentContainerStyle={{
+                width: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                rowGap: props.rowGap ?? 4
+            }}
             getItemCount={(data) => data.length}
             getItem={(data, i) => data[i]}
-            // getItemLayout={(data, index) => ({ length: 28, offset: 28 * index, index })}
             keyExtractor={(item) => item.item.id.toString()}
             renderItem={renderTreeItem}
             data={flattenedTree}
         />
     )
 }
-
-// <TreeView.ItemTemplate>singleDataTemplate</TreeView.ItemTemplate>

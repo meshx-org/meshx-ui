@@ -1,7 +1,7 @@
 {
     "name": "@meshx-org/mxui-rating",
     "description": "Rating component for MXUI",
-    "version": "0.7.43",
+    "version": "0.7.44",
     "license": "apache-2.0",
     "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
     "homepage": "https://meshx.co/produts/mxui",
@@ -38,9 +38,9 @@
     },
     "dependencies": {
         "@types/styled-components": "^5.1.26",
-        "@meshx-org/mxui-core": "0.7.43",
-        "@meshx-org/mxui-text": "0.7.43",
-        "@meshx-org/mxui-primitives": "0.7.43"
+        "@meshx-org/mxui-core": "0.7.44",
+        "@meshx-org/mxui-text": "0.7.44",
+        "@meshx-org/mxui-primitives": "0.7.44"
     },
     "devDependencies": {
         "@meshx-org/mxui-tsconfig": "*",
