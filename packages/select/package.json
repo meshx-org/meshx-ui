@@ -52,5 +52,17 @@
         "react": "^17.0.0 || ^18.0.0",
         "react-dom": "^17.0.0 || ^18.0.0",
         "styled-components": ">=5.0.0"
+    },
+    "nx": {
+        "includedScripts": [
+            "build"
+        ],
+        "targets": {
+            "build": {
+                "outputs": [
+                    "{projectRoot}/lib/**"
+                ]
+            }
+        }
     }
 }

@@ -9,14 +9,8 @@ const meta = {
     argTypes: {},
     render: (args) => {
         return (
-            <Text>
-                The missing{' '}
-                <Link {...args}>
-                    <a href="https://www.imdb.com/title/tt6348138/" target="_blank">
-                        link
-                    </a>
-                </Link>
-                .
+            <Text variant="bodyLarge">
+                The missing <Link {...args}></Link>.
             </Text>
         )
     }
@@ -28,28 +22,22 @@ type Story = StoryObj<typeof Link>
 
 export const Primary: Story = {
     args: {
-        variant: 'primary'
+        variant: 'primary',
+        children: 'link'
     }
 }
 
 export const Secondary: Story = {
     args: {
-        variant: 'secondary'
+        variant: 'secondary',
+        children: 'link'
     }
 }
 
-export const StringContent: Story = {
-    render: (args) => {
-        return (
-            <div style={{ width: 300 }}>
-                <Link {...args}>The missing link.</Link>
-            </div>
-        )
-    },
+export const AsASpan: Story = {
     args: {
-        variant: 'primary',
-        onClick: () => {
-            console.log('clicked')
-        }
+        as: 'span',
+        children: 'link',
+        onClick: () => {}
     }
 }

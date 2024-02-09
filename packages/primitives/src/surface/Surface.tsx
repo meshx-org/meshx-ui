@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { layout, margin, padding, MarginProps, PaddingProps } from 'styled-system'
-import { CardStroke, ControlStrokeX, SurfaceStroke } from '../stroke/Stroke'
+import { LayerStroke, CardStroke, ControlStrokeX, SurfaceStroke } from '../stroke/Stroke'
 import { AcrylicFill, LayerFill, SmokeFill, CardFill, ControlFillX, SubtleFillX } from '../fill/Fill'
 import { CardShadow, FlyoutShadow } from '../shadow/Shadow'
 import { FlyoutSurfaceProps, LayerSurfaceProps, CardSurfaceProps } from './Surface.types'
@@ -99,7 +99,7 @@ export function LayerSurface(props: LayerSurfaceProps) {
 
     return (
         <SurfaceWrapper {...restProps}>
-            <CardStroke borderRadius={5} {...restProps} />
+            <LayerStroke borderRadius={5} {...restProps} />
             <LayerFill {...restProps} />
             <SurfaceContent as={as} {...restProps}>
                 {children}

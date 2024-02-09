@@ -1,6 +1,5 @@
-import React from 'react'
 import { LinkProps } from './Link.types'
 
-export function Badge(props: LinkProps) {
-    return null
+export function Link<C extends React.ElementType>(props: LinkProps<C>) {
+    throw "not implemted"
 }

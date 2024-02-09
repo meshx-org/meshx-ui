@@ -6,17 +6,13 @@ import { TypographyProps, typography } from 'styled-system'
 const LinkStyled = styled.span<TypographyProps>`
     ${typography}
 
-    & a {
+    & {
+        cursor: pointer;
         text-decoration: none;
     }
 
-    & a:hover,
-    & span:hover {
+    &:hover {
         text-decoration: underline;
-    }
-
-    & span {
-        cursor: pointer;
     }
 
     [data-theme='dark'] &[data-variant='primary'] {
@@ -28,18 +24,12 @@ const LinkStyled = styled.span<TypographyProps>`
     }
 `
 
-export function Link(props: LinkProps) {
-    const { children, variant = 'primary', onClick } = props
+export function Link<C extends React.ElementType = 'a'>(props: LinkProps<C>) {
+    const { children, as = 'a', variant = 'primary', onClick, ...restProps } = props
 
     return (
-        <LinkStyled onClick={onClick} data-variant={variant}>
-            {typeof children == 'string' ? (
-                <span tabIndex={0} role="link">
-                    {children}
-                </span>
-            ) : (
-                children
-            )}
+        <LinkStyled role="link" as={as} {...restProps} data-variant={variant}>
+            {children}
         </LinkStyled>
     )
 }

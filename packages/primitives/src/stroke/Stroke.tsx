@@ -215,6 +215,12 @@ const CardStroke = styled.div.attrs((props) => ({ ...props, 'aria-hidden': true 
     box-shadow: 0 0 0 1px ${(props) => props.theme.colors.stroke.card};
 `
 
+const LayerStroke = styled.div.attrs((props) => ({ ...props, 'aria-hidden': true }))<CardStrokeProps>`
+    ${strokeMixin}
+    ${borderRadius}
+    box-shadow: 0 0 0 1px ${(props) => props.theme.colors.stroke.surface};
+`
+
 export function ControlStrokeX({ state, borderRadius, focused = false }: ControlStrokeXProps) {
     const theme = useTheme()
 
@@ -373,4 +379,4 @@ function CircleControlStroke({ children, state, focused = false }: ControlStroke
     )
 }
 
-export { CardStroke, SurfaceStroke, ControlStroke, CircleControlStroke, TextControlStroke }
+export { CardStroke, LayerStroke, SurfaceStroke, ControlStroke, CircleControlStroke, TextControlStroke }

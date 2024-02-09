@@ -4,7 +4,6 @@ import React from 'react'
 
 import { Story, Meta } from '@storybook/react'
 import { View } from 'react-native'
-import { ControlState } from '@meshx-org/mxui-core'
 import {
     FlyoutSurface,
     CardSurface,
@@ -154,6 +153,6 @@ const LayerSurfaceTemplate: Story<LayerSurfaceProps> = (args) => <LayerSurface p
 export const Layer = LayerSurfaceTemplate.bind({})
 
 Layer.args = {
-    children: <Text variant="body">This is a SmokeSurface</Text>,
+    children: <Text variant="body">This is a LayerSurface</Text>,
     borderRadius: 4
 }

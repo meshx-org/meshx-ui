@@ -16,7 +16,7 @@ export default {
     }
 } as Meta
 
-const Template: Story<LinkButtonProps> = (args) => (
+const Template: Story<LinkButtonProps<unknown>> = (args: any) => (
     <div style={{ display: 'flex' }}>
         <LinkButton {...args} />
     </div>
@@ -31,6 +31,5 @@ Primary.args = {
 export const Disabled = Template.bind({})
 Disabled.args = {
     disabled: true,
-    label: 'test',
     href: '#'
 }

@@ -32,9 +32,9 @@ export const DEFAULT_LIGHT: ColorScheme<RGBA> = {
         disabled: 'rgba(10, 37, 64,0.5)'
     },
     stroke: {
-        divider: 'rgba(0,0,0,0.0803)',
-        card: 'rgba(0 0 0 / 6%)',
-        surface: 'rgba(0 0 0 / 6%)',
+        divider: 'rgba(0, 0, 0, 0.08)',
+        card: 'rgba(0, 0, 0, 0.09)',
+        surface: 'rgba(0, 0, 0, 0.15)',
         control: 'rgba(0, 0, 0, 0.45)'
     },
     accentText: {
