@@ -1,0 +1,49 @@
+{
+    "compilerOptions": {
+        "plugins": [
+            {
+                "name": "typescript-plugin-css-modules"
+            }
+        ],
+        "target": "es2020",
+        "jsx": "react",
+        "module": "esnext",
+        "lib": ["es2020", "es6", "dom"],
+        "paths": {
+            "@meshx-org/mxui-core": ["libs/core/src/index.ts"],
+            "@meshx-org/mxui-button": ["libs/button/src/index.ts"],
+            "@meshx-org/mxui-link": ["libs/link/src/index.ts"],
+            "@meshx-org/mxui-select": ["libs/select/src/index.ts"],
+            "@meshx-org/mxui-switch": ["libs/toggle-switch/src/index.ts"],
+            "@meshx-org/mxui-searchbox": ["libs/searchbox/src/index.ts"],
+            "@meshx-org/mxui-badge": ["libs/badge/src/index.ts"],
+            "@meshx-org/mxui-textbox": ["libs/textbox/src/index.ts"],
+            "@meshx-org/mxui-slider": ["libs/slider/src/index.ts"],
+            "@meshx-org/mxui-text": ["libs/text/src/index.ts"],
+            "@meshx-org/mxui-primitives": ["libs/primitives/src/index.ts"],
+            "@meshx-org/mxui-rating": ["libs/rating/src/index.ts"],
+            "@meshx-org/mxui-overlays": ["libs/overlays/src/index.ts"],
+            "@meshx-org/mxui-infobar": ["libs/infobar/src/index.ts"],
+            "@meshx-org/mxui-formgroup": ["libs/infobar/src/index.ts"],
+            "@meshx-org/mxui-navigation": ["libs/navigation/src/index.ts"],
+            "@meshx-org/mxui-treeview": ["libs/treeview/src/index.ts"]
+        },
+        "outDir": "./dist",
+
+        "forceConsistentCasingInFileNames": true,
+        "moduleResolution": "node",
+        "declaration": true,
+        "baseUrl": ".",
+        "noEmit": false,
+        "noImplicitAny": true,
+        "incremental": true,
+        "esModuleInterop": true,
+        "isolatedModules": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "strictNullChecks": true,
+        "alwaysStrict": true
+    },
+    "exclude": ["node_modules"],
+    "include": ["src"]
+}

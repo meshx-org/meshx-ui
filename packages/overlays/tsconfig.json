@@ -1,9 +1,0 @@
-{
-    "extends": "@meshx-org/mxui-tsconfig/base.json",
-    "compilerOptions": {
-        "outDir": "./lib",
-    },
-    "include": [
-        "./src"
-, "../core/src/components/portal/Portal.tsx"    ],
-}

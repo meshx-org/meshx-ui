@@ -1,7 +1,0 @@
-{
-    "extends": "@meshx-org/mxui-tsconfig/base.json",
-    "compilerOptions": {},
-    "include": [
-        "./src"
-    ],
-}
