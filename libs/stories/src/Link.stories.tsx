@@ -35,6 +35,9 @@ export const Secondary: Story = {
 }
 
 export const AsASpan: Story = {
+    argTypes: {
+        onClick: { action: 'clicked' }
+    },
     args: {
         as: 'span',
         children: 'link',
