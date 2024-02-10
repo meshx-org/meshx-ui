@@ -56,7 +56,6 @@
         "react-spring": "*"
     },
     "devDependencies": {
-        "@meshx-org/mxui-tsconfig": "*"
     },
     "nx": {
         "includedScripts": [

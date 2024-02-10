@@ -44,7 +44,6 @@
         "styled-system": "^5.1.5"
     },
     "devDependencies": {
-        "@meshx-org/mxui-tsconfig": "*",
         "@types/styled-components": "^5.1.26",
         "@types/styled-system": "^5.1.15",
         "react-native-builder-bob": "^0.20.3"

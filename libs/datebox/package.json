@@ -46,7 +46,6 @@
         "@meshx-org/mxui-primitives": "0.7.45"
     },
     "devDependencies": {
-        "@meshx-org/mxui-tsconfig": "*",
         "@types/styled-components": "^5.1.26",
         "react-native-builder-bob": "^0.20.3",
         "react": "18.1.0",

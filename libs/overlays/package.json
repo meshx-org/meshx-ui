@@ -46,7 +46,6 @@
         "@types/styled-components": "^5.1.26"
     },
     "devDependencies": {
-        "@meshx-org/mxui-tsconfig": "*",
         "react-native-builder-bob": "^0.20.3"
     },
     "peerDependencies": {

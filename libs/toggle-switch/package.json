@@ -44,10 +44,7 @@
     },
     "devDependencies": {
         "@types/styled-components": "^5.1.26",
-        "react-native-builder-bob": "^0.20.3",
-        "@meshx-org/mxui-tsconfig": "*",
-        "react": "18.1.0",
-        "react-dom": "18.1.0"
+        "react-native-builder-bob": "^0.20.3"
     },
     "peerDependencies": {
         "react-native": ">=0.69.0",

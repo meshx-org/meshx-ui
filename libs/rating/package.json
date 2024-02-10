@@ -43,7 +43,6 @@
         "@meshx-org/mxui-primitives": "0.7.45"
     },
     "devDependencies": {
-        "@meshx-org/mxui-tsconfig": "*",
         "react-native-builder-bob": "^0.20.3"
     },
     "peerDependencies": {
