@@ -17,7 +17,7 @@
         "format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
         "changeset": "changeset",
         "version-packages": "changeset version",
-        "release": "turbo run build --filter=docs^... && changeset publish"
+        "release": "nx run-many -t build && changeset publish"
     },
     "devDependencies": {
         "@babel/core": "^7.20.12",

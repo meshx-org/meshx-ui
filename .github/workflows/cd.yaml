@@ -22,22 +22,22 @@ jobs:
         steps:
             - uses: actions/checkout@v3
 
-            - uses: actions/setup-node@v3
+            - uses: actions/setup-node@v4
               with:
                   node-version: 16.x
-                  cache: yarn
+                  cache: pnpm
 
-            - run: yarn
-            - run: yarn build
+            - run: pnpm i
+            - run: pnpm build
 
             - name: Create Release Pull Request
               uses: changesets/action@v1
               env:
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               with:
-                # This expects you to have a script called release which does a build for your packages and calls changeset publish
-                publish: yarn release
+                  # This expects you to have a script called release which does a build for your packages and calls changeset publish
+                  publish: pnpm release
 
             - if: steps.publish.outputs.type != 'none'
               run: |
