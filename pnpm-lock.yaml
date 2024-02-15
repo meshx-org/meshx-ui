@@ -184,7 +184,7 @@ importers:
   libs/badge:
     dependencies:
       '@meshx/mxui-core':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../core
       react:
         specifier: ^17.0.0 || ^18.0.0
@@ -212,13 +212,13 @@ importers:
   libs/button:
     dependencies:
       '@meshx/mxui-core':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../core
       '@meshx/mxui-primitives':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../primitives
       '@meshx/mxui-text':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../text
       '@react-aria/button':
         specifier: ^3.9.2
@@ -280,10 +280,10 @@ importers:
         specifier: 3.2.0
         version: 3.2.0
       '@meshx/mxui-core':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../core
       '@meshx/mxui-primitives':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../primitives
       clsx:
         specifier: 1.2.1
@@ -311,22 +311,22 @@ importers:
   libs/dropdown:
     dependencies:
       '@meshx/mxui-button':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../button
       '@meshx/mxui-icons':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../icons
       '@meshx/mxui-listbox':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../listbox
       '@meshx/mxui-overlays':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../overlays
       '@meshx/mxui-primitives':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../primitives
       '@meshx/mxui-text':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../text
       '@react-aria/interactions':
         specifier: ^3.20.1
@@ -353,7 +353,7 @@ importers:
   libs/formgroup:
     dependencies:
       '@meshx/mxui-core':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../core
       react:
         specifier: ^17.0.0 || ^18.0.0
@@ -412,16 +412,16 @@ importers:
   libs/infobar:
     dependencies:
       '@meshx/mxui-badge':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../badge
       '@meshx/mxui-core':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../core
       '@meshx/mxui-primitives':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../primitives
       '@meshx/mxui-text':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../text
       react:
         specifier: ^17.0.0 || ^18.0.0
@@ -442,7 +442,7 @@ importers:
   libs/link:
     dependencies:
       '@meshx/mxui-core':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../core
       react:
         specifier: ^17.0.0 || ^18.0.0
@@ -470,13 +470,13 @@ importers:
   libs/listbox:
     dependencies:
       '@meshx/mxui-core':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../core
       '@meshx/mxui-icons':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../icons
       '@meshx/mxui-text':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../text
       '@react-aria/interactions':
         specifier: ^3.20.1
@@ -509,31 +509,31 @@ importers:
   libs/mxui:
     dependencies:
       '@meshx/mxui-button':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../button
       '@meshx/mxui-navigation':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../navigation
       '@meshx/mxui-overlays':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../overlays
       '@meshx/mxui-primitives':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../primitives
       '@meshx/mxui-slider':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../slider
       '@meshx/mxui-switch':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../toggle-switch
       '@meshx/mxui-text':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../text
       '@meshx/mxui-textbox':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../textbox
       '@meshx/mxui-treeview':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../treeview
     devDependencies:
       react-native-builder-bob:
@@ -546,13 +546,13 @@ importers:
         specifier: ^1.7.18
         version: 1.7.18(react-dom@18.2.0)(react@18.2.0)
       '@meshx/mxui-button':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../button
       '@meshx/mxui-core':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../core
       '@meshx/mxui-text':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../text
       react:
         specifier: ^17.0.0 || ^18.0.0
@@ -580,10 +580,10 @@ importers:
   libs/overlays:
     dependencies:
       '@meshx/mxui-core':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../core
       '@meshx/mxui-primitives':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../primitives
       '@react-spectrum/utils':
         specifier: 3.11.3
@@ -626,7 +626,7 @@ importers:
   libs/primitives:
     dependencies:
       '@meshx/mxui-core':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../core
       '@types/styled-components':
         specifier: ^5.1.26
@@ -660,10 +660,10 @@ importers:
   libs/progress:
     dependencies:
       '@meshx/mxui-core':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../core
       '@meshx/mxui-primitives':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../primitives
       react:
         specifier: ^17.0.0 || ^18.0.0
@@ -694,13 +694,13 @@ importers:
   libs/rating:
     dependencies:
       '@meshx/mxui-core':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../core
       '@meshx/mxui-primitives':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../primitives
       '@meshx/mxui-text':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../text
       '@types/styled-components':
         specifier: ^5.1.26
@@ -722,16 +722,16 @@ importers:
   libs/searchbox:
     dependencies:
       '@meshx/mxui-overlays':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../overlays
       '@meshx/mxui-primitives':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../primitives
       '@meshx/mxui-text':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../text
       '@meshx/mxui-textbox':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../textbox
       react:
         specifier: ^17.0.0 || ^18.0.0
@@ -759,10 +759,10 @@ importers:
   libs/select:
     dependencies:
       '@meshx/mxui-core':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../core
       '@meshx/mxui-primitives':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../primitives
       '@types/styled-components':
         specifier: ^5.1.26
@@ -784,10 +784,10 @@ importers:
   libs/slider:
     dependencies:
       '@meshx/mxui-core':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../core
       '@meshx/mxui-primitives':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../primitives
       react:
         specifier: ^17.0.0 || ^18.0.0
@@ -830,70 +830,70 @@ importers:
         specifier: '*'
         version: 2.3.0(react@18.2.0)
       '@meshx/mxui-badge':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../badge
       '@meshx/mxui-button':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../button
       '@meshx/mxui-core':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../core
       '@meshx/mxui-datebox':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../datebox
       '@meshx/mxui-dropdown':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../dropdown
       '@meshx/mxui-formgroup':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../formgroup
       '@meshx/mxui-infobar':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../infobar
       '@meshx/mxui-link':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../link
       '@meshx/mxui-navigation':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../navigation
       '@meshx/mxui-overlays':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../overlays
       '@meshx/mxui-primitives':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../primitives
       '@meshx/mxui-rating':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../rating
       '@meshx/mxui-searchbox':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../searchbox
       '@meshx/mxui-select':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../select
       '@meshx/mxui-slider':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../slider
       '@meshx/mxui-stripebox':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../stripe
       '@meshx/mxui-switch':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../toggle-switch
       '@meshx/mxui-tailwind':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../tailwind
       '@meshx/mxui-text':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../text
       '@meshx/mxui-textbox':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../textbox
       '@meshx/mxui-tooltip':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../tooltip
       '@meshx/mxui-treeview':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../treeview
       '@nx/react':
         specifier: ^18.0.3
@@ -983,10 +983,10 @@ importers:
   libs/stripe:
     dependencies:
       '@meshx/mxui-core':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../core
       '@meshx/mxui-primitives':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../primitives
       react:
         specifier: ^17.0.0 || ^18.0.0
@@ -1017,7 +1017,7 @@ importers:
   libs/tailwind:
     dependencies:
       '@meshx/mxui-core':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../core
       tailwindcss:
         specifier: ^3.4.1
@@ -1029,7 +1029,7 @@ importers:
   libs/text:
     dependencies:
       '@meshx/mxui-core':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../core
       react:
         specifier: ^17.0.0 || ^18.0.0
@@ -1047,10 +1047,10 @@ importers:
   libs/textbox:
     dependencies:
       '@meshx/mxui-core':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../core
       '@meshx/mxui-primitives':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../primitives
       '@react-stately/utils':
         specifier: 3.9.0
@@ -1084,10 +1084,10 @@ importers:
   libs/toggle-switch:
     dependencies:
       '@meshx/mxui-core':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../core
       '@meshx/mxui-text':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../text
       react:
         specifier: ^17.0.0 || ^18.0.0
@@ -1108,7 +1108,7 @@ importers:
   libs/tooltip:
     dependencies:
       '@meshx/mxui-overlays':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../overlays
       '@react-aria/focus':
         specifier: ^3.16.0
@@ -1150,10 +1150,10 @@ importers:
   libs/treeview:
     dependencies:
       '@meshx/mxui-core':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../core
       '@meshx/mxui-primitives':
-        specifier: 0.7.46
+        specifier: 0.7.47
         version: link:../primitives
       react:
         specifier: '>=17.0.0'
