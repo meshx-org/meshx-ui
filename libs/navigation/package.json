@@ -1,7 +1,7 @@
 {
     "name": "@meshx/mxui-navigation",
     "description": "Navigation components for MXUI",
-    "version": "0.7.46",
+    "version": "0.7.47",
     "license": "Apache-2.0",
     "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
     "homepage": "https://meshx.co/produts/mxui",
@@ -28,7 +28,7 @@
     },
     "publishConfig": {
         "access": "public",
-        "registry": "https://npm.pkg.github.com"
+        "provenance": true
     },
     "repository": {
         "type": "git",
@@ -38,9 +38,9 @@
         "build": "npx bob build"
     },
     "dependencies": {
-        "@meshx/mxui-core": "0.7.46",
-        "@meshx/mxui-button": "0.7.46",
-        "@meshx/mxui-text": "0.7.46",
+        "@meshx/mxui-core": "0.7.47",
+        "@meshx/mxui-button": "0.7.47",
+        "@meshx/mxui-text": "0.7.47",
         "@headlessui/react": "^1.7.18",
         "styled-system": "^5.1.5"
     },

@@ -1,7 +1,7 @@
 {
     "name": "@meshx/mxui-select",
     "description": "Select component for MXUI",
-    "version": "0.7.46",
+    "version": "0.7.47",
     "license": "apache-2.0",
     "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
     "homepage": "https://meshx.co/produts/mxui",
@@ -27,7 +27,8 @@
         ]
     },
     "publishConfig": {
-        "access": "public"
+        "access": "public",
+        "provenance": true
     },
     "repository": {
         "type": "git",
@@ -37,8 +38,8 @@
         "build": "pnpm exec bob build"
     },
     "dependencies": {
-        "@meshx/mxui-core": "0.7.46",
-        "@meshx/mxui-primitives": "0.7.46",
+        "@meshx/mxui-core": "0.7.47",
+        "@meshx/mxui-primitives": "0.7.47",
         "@types/styled-components": "^5.1.26"
     },
     "devDependencies": {

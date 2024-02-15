@@ -1,7 +1,7 @@
 {
     "name": "@meshx/mxui-datebox",
     "description": "DateBox component for MXUI",
-    "version": "0.7.46",
+    "version": "0.7.47",
     "license": "Apache-2.0",
     "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
     "homepage": "https://meshx.co/produts/mxui",
@@ -29,7 +29,7 @@
     },
     "publishConfig": {
         "access": "public",
-        "registry": "https://npm.pkg.github.com"
+        "provenance": true
     },
     "repository": {
         "type": "git",
@@ -42,8 +42,8 @@
         "clsx": "1.2.1",
         "@internationalized/date": "3.1.0",
         "@internationalized/number": "3.2.0",
-        "@meshx/mxui-core": "0.7.46",
-        "@meshx/mxui-primitives": "0.7.46"
+        "@meshx/mxui-core": "0.7.47",
+        "@meshx/mxui-primitives": "0.7.47"
     },
     "devDependencies": {
         "@types/styled-components": "^5.1.26",

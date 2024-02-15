@@ -1,7 +1,7 @@
 {
     "name": "@meshx/mxui",
     "description": "Button component for MXUI",
-    "version": "0.7.46",
+    "version": "0.7.47",
     "license": "Apache-2.0",
     "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
     "homepage": "https://meshx.co/produts/mxui",
@@ -28,7 +28,7 @@
     },
     "publishConfig": {
         "access": "public",
-        "registry": "https://npm.pkg.github.com"
+        "provenance": true
     },
     "repository": {
         "type": "git",
@@ -38,15 +38,15 @@
         "build": "nx exec -- bob build"
     },
     "dependencies": {
-        "@meshx/mxui-overlays": "0.7.46",
-        "@meshx/mxui-navigation": "0.7.46",
-        "@meshx/mxui-button": "0.7.46",
-        "@meshx/mxui-switch": "0.7.46",
-        "@meshx/mxui-textbox": "0.7.46",
-        "@meshx/mxui-slider": "0.7.46",
-        "@meshx/mxui-primitives": "0.7.46",
-        "@meshx/mxui-treeview": "0.7.46",
-        "@meshx/mxui-text": "0.7.46"
+        "@meshx/mxui-overlays": "0.7.47",
+        "@meshx/mxui-navigation": "0.7.47",
+        "@meshx/mxui-button": "0.7.47",
+        "@meshx/mxui-switch": "0.7.47",
+        "@meshx/mxui-textbox": "0.7.47",
+        "@meshx/mxui-slider": "0.7.47",
+        "@meshx/mxui-primitives": "0.7.47",
+        "@meshx/mxui-treeview": "0.7.47",
+        "@meshx/mxui-text": "0.7.47"
     },
     "devDependencies": {
         "react-native-builder-bob": "^0.20.3"

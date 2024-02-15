@@ -1,7 +1,7 @@
 {
     "name": "@meshx/mxui-listbox",
     "description": "ListBox components for MXUI",
-    "version": "0.7.46",
+    "version": "0.7.47",
     "license": "Apache-2.0",
     "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
     "homepage": "https://meshx.co/produts/mxui",
@@ -27,7 +27,8 @@
         ]
     },
     "publishConfig": {
-        "access": "public"
+        "access": "public",
+        "provenance": true
     },
     "repository": {
         "type": "git",
@@ -37,9 +38,9 @@
         "build": "bob build"
     },
     "dependencies": {
-        "@meshx/mxui-core": "0.7.46",
-        "@meshx/mxui-text": "0.7.46",
-        "@meshx/mxui-icons": "0.7.46",
+        "@meshx/mxui-core": "0.7.47",
+        "@meshx/mxui-text": "0.7.47",
+        "@meshx/mxui-icons": "0.7.47",
         "react-aria": "^3.31.1",
         "react-stately": "^3.29.1",
         "@react-aria/interactions": "^3.20.1",
