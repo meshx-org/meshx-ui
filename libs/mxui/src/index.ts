@@ -1,10 +1,10 @@
 'use client'
 
-export * from "@meshx-org/mxui-button"
-export * from "@meshx-org/mxui-switch"
-export * from "@meshx-org/mxui-textbox"
-export * from "@meshx-org/mxui-text"
-export * from "@meshx-org/mxui-slider"
-export * from "@meshx-org/mxui-primitives"
-export * from "@meshx-org/mxui-treeview"
-export * from "@meshx-org/mxui-navigation"
+export * from '@meshx/mxui-button'
+export * from '@meshx/mxui-switch'
+export * from '@meshx/mxui-textbox'
+export * from '@meshx/mxui-text'
+export * from '@meshx/mxui-slider'
+export * from '@meshx/mxui-primitives'
+export * from '@meshx/mxui-treeview'
+export * from '@meshx/mxui-navigation'

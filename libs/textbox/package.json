@@ -1,5 +1,5 @@
 {
-    "name": "@meshx-org/mxui-textbox",
+    "name": "@meshx/mxui-textbox",
     "description": "TextBox component for MXUI",
     "version": "0.7.46",
     "license": "Apache-2.0",
@@ -42,8 +42,8 @@
         "react-aria": "3.31.0",
         "react-stately": "3.29.1",
         "@react-stately/utils": "3.9.0",
-        "@meshx-org/mxui-core": "0.7.46",
-        "@meshx-org/mxui-primitives": "0.7.46"
+        "@meshx/mxui-core": "0.7.46",
+        "@meshx/mxui-primitives": "0.7.46"
     },
     "devDependencies": {
         "@types/styled-components": "^5.1.26",

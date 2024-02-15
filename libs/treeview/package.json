@@ -1,5 +1,5 @@
 {
-    "name": "@meshx-org/mxui-treeview",
+    "name": "@meshx/mxui-treeview",
     "description": "TreeView component for MXUI",
     "version": "0.7.46",
     "license": "Apache-2.0",
@@ -39,8 +39,8 @@
         "build": "pnpm exec bob build"
     },
     "dependencies": {
-        "@meshx-org/mxui-core": "0.7.46",
-        "@meshx-org/mxui-primitives": "0.7.46"
+        "@meshx/mxui-core": "0.7.46",
+        "@meshx/mxui-primitives": "0.7.46"
     },
     "devDependencies": {
         "@types/styled-components": "^5.1.26",

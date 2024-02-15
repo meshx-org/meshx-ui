@@ -1,5 +1,5 @@
 {
-    "name": "@meshx-org/mxui-navigation",
+    "name": "@meshx/mxui-navigation",
     "description": "Navigation components for MXUI",
     "version": "0.7.46",
     "license": "Apache-2.0",
@@ -38,9 +38,9 @@
         "build": "npx bob build"
     },
     "dependencies": {
-        "@meshx-org/mxui-core": "0.7.46",
-        "@meshx-org/mxui-button": "0.7.46",
-        "@meshx-org/mxui-text": "0.7.46",
+        "@meshx/mxui-core": "0.7.46",
+        "@meshx/mxui-button": "0.7.46",
+        "@meshx/mxui-text": "0.7.46",
         "@headlessui/react": "^1.7.18",
         "styled-system": "^5.1.5"
     },

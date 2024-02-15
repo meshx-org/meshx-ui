@@ -1,5 +1,5 @@
 {
-    "name": "@meshx-org/ui",
+    "name": "@meshx/ui",
     "$schema": "node_modules/nx/schemas/project-schema.json",
     "targets": {
         "local-registry": {

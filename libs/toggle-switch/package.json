@@ -1,5 +1,5 @@
 {
-    "name": "@meshx-org/mxui-switch",
+    "name": "@meshx/mxui-switch",
     "description": "Switch component for MXUI",
     "version": "0.7.46",
     "license": "Apache-2.0",
@@ -41,8 +41,8 @@
     "dependencies": {
         "react-stately": "3.29.0",
         "react-aria": "3.31.0",
-        "@meshx-org/mxui-core": "0.7.46",
-        "@meshx-org/mxui-text": "0.7.46"
+        "@meshx/mxui-core": "0.7.46",
+        "@meshx/mxui-text": "0.7.46"
     },
     "peerDependencies": {
         "react": "^17.0.0 || ^18.0.0",

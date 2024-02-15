@@ -1,5 +1,5 @@
 {
-    "name": "@meshx-org/mxui-datebox",
+    "name": "@meshx/mxui-datebox",
     "description": "DateBox component for MXUI",
     "version": "0.7.46",
     "license": "Apache-2.0",
@@ -42,8 +42,8 @@
         "clsx": "1.2.1",
         "@internationalized/date": "3.1.0",
         "@internationalized/number": "3.2.0",
-        "@meshx-org/mxui-core": "0.7.46",
-        "@meshx-org/mxui-primitives": "0.7.46"
+        "@meshx/mxui-core": "0.7.46",
+        "@meshx/mxui-primitives": "0.7.46"
     },
     "devDependencies": {
         "@types/styled-components": "^5.1.26",

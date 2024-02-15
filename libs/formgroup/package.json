@@ -1,5 +1,5 @@
 {
-    "name": "@meshx-org/mxui-formgroup",
+    "name": "@meshx/mxui-formgroup",
     "description": "FormGroup component for MXUI",
     "version": "0.7.46",
     "license": "Apache-2.0",
@@ -37,7 +37,7 @@
         "build": "bob build"
     },
     "dependencies": {
-        "@meshx-org/mxui-core": "0.7.46",
+        "@meshx/mxui-core": "0.7.46",
         "styled-system": "^5.1.5"
     },
     "devDependencies": {

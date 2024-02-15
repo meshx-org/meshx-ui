@@ -1,5 +1,5 @@
 {
-    "name": "@meshx-org/mxui-dropdown",
+    "name": "@meshx/mxui-dropdown",
     "description": "Dropdown component for MXUI",
     "version": "0.7.46",
     "license": "apache-2.0",
@@ -37,12 +37,12 @@
         "build": "pnpm exec bob build"
     },
     "dependencies": {
-        "@meshx-org/mxui-text": "0.7.46",
-        "@meshx-org/mxui-primitives": "0.7.46",
-        "@meshx-org/mxui-overlays": "0.7.46",
-        "@meshx-org/mxui-icons": "0.7.46",
-        "@meshx-org/mxui-button": "0.7.46",
-        "@meshx-org/mxui-listbox": "0.7.46",
+        "@meshx/mxui-text": "0.7.46",
+        "@meshx/mxui-primitives": "0.7.46",
+        "@meshx/mxui-overlays": "0.7.46",
+        "@meshx/mxui-icons": "0.7.46",
+        "@meshx/mxui-button": "0.7.46",
+        "@meshx/mxui-listbox": "0.7.46",
         "@react-spectrum/utils": "^3.11.3",
         "@react-aria/interactions": "^3.20.1",
         "react-stately": "^3.29.1",

@@ -1,5 +1,5 @@
 {
-    "name": "@meshx-org/mxui-tailwind",
+    "name": "@meshx/mxui-tailwind",
     "version": "0.7.46",
     "react-native-builder-bob": {
         "source": "src",
@@ -16,7 +16,7 @@
         "build": "bob build"
     },
     "dependencies": {
-        "@meshx-org/mxui-core": "0.7.46",
+        "@meshx/mxui-core": "0.7.46",
         "tailwindcss": "^3.4.1",
         "tslib": "^2.3.0"
     },

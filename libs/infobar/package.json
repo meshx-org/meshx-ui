@@ -1,5 +1,5 @@
 {
-    "name": "@meshx-org/mxui-infobar",
+    "name": "@meshx/mxui-infobar",
     "description": "InfoBar component for MXUI",
     "version": "0.7.46",
     "license": "Apache-2.0",
@@ -37,10 +37,10 @@
         "build": "bob build"
     },
     "dependencies": {
-        "@meshx-org/mxui-core": "0.7.46",
-        "@meshx-org/mxui-primitives": "0.7.46",
-        "@meshx-org/mxui-text": "0.7.46",
-        "@meshx-org/mxui-badge": "0.7.46",
+        "@meshx/mxui-core": "0.7.46",
+        "@meshx/mxui-primitives": "0.7.46",
+        "@meshx/mxui-text": "0.7.46",
+        "@meshx/mxui-badge": "0.7.46",
         "react-aria": "^3.32.0",
         "styled-system": "^5.1.5"
     },

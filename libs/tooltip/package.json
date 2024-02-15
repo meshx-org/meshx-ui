@@ -1,5 +1,5 @@
 {
-    "name": "@meshx-org/mxui-tooltip",
+    "name": "@meshx/mxui-tooltip",
     "description": "Tooltip component for MXUI",
     "version": "0.7.46",
     "license": "apache-2.0",
@@ -46,7 +46,7 @@
         "@react-aria/interactions": "^3.20.1",
         "@spectrum-icons/ui": "3.6.3",
         "clsx": "2.1.0",
-        "@meshx-org/mxui-overlays": "0.7.46"
+        "@meshx/mxui-overlays": "0.7.46"
     },
     "peerDependencies": {
         "react": "^17.0.0 || ^18.0.0",

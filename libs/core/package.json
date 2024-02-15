@@ -1,5 +1,5 @@
 {
-    "name": "@meshx-org/mxui-core",
+    "name": "@meshx/mxui-core",
     "description": "Button component for MXUI",
     "version": "0.7.46",
     "license": "apache-2.0",

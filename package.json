@@ -1,5 +1,5 @@
 {
-    "name": "@meshx-org/ui",
+    "name": "@meshx/ui",
     "description": "Component library used across MeshX Apps",
     "version": "0.0.3-unstable.9",
     "private": true,

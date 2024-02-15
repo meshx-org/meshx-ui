@@ -2,10 +2,10 @@
     "$schema": "https://unpkg.com/@changesets/config@2.0.0/schema.json",
     "changelog": false,
     "commit": false,
-    "linked": [["@meshx-org/mxui-*"]],
+    "linked": [["@meshx/mxui-*"]],
     "fixed": [],
     "access": "public",
     "baseBranch": "main",
     "updateInternalDependencies": "patch",
-    "ignore": ["@meshx-org/mxui-stories"]
+    "ignore": ["@meshx/mxui-stories"]
 }

@@ -1,5 +1,5 @@
 {
-    "name": "@meshx-org/mxui-listbox",
+    "name": "@meshx/mxui-listbox",
     "description": "ListBox components for MXUI",
     "version": "0.7.46",
     "license": "Apache-2.0",
@@ -37,9 +37,9 @@
         "build": "bob build"
     },
     "dependencies": {
-        "@meshx-org/mxui-core": "0.7.46",
-        "@meshx-org/mxui-text": "0.7.46",
-        "@meshx-org/mxui-icons": "0.7.46",
+        "@meshx/mxui-core": "0.7.46",
+        "@meshx/mxui-text": "0.7.46",
+        "@meshx/mxui-icons": "0.7.46",
         "react-aria": "^3.31.1",
         "react-stately": "^3.29.1",
         "@react-aria/interactions": "^3.20.1",

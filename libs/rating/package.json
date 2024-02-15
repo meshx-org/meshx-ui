@@ -1,5 +1,5 @@
 {
-    "name": "@meshx-org/mxui-rating",
+    "name": "@meshx/mxui-rating",
     "description": "Rating component for MXUI",
     "version": "0.7.46",
     "license": "apache-2.0",
@@ -38,9 +38,9 @@
     },
     "dependencies": {
         "@types/styled-components": "^5.1.26",
-        "@meshx-org/mxui-core": "0.7.46",
-        "@meshx-org/mxui-text": "0.7.46",
-        "@meshx-org/mxui-primitives": "0.7.46"
+        "@meshx/mxui-core": "0.7.46",
+        "@meshx/mxui-text": "0.7.46",
+        "@meshx/mxui-primitives": "0.7.46"
     },
     "devDependencies": {
         "react-native-builder-bob": "^0.20.3"
