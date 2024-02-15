@@ -1,8 +1,8 @@
- const { mergeConfig } = require('vite')
+import { mergeConfig } from 'vite'
 import type { StorybookConfig } from '@storybook/react-vite'
 
 const config: StorybookConfig = {
-    stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
+    stories: ['../src/**/*.stories.@(js|jsx|ts|tsx)'],
     addons: [
         {
             name: '@storybook/addon-essentials',
@@ -33,7 +33,7 @@ const config: StorybookConfig = {
     async viteFinal(config) {
         // Merge custom configuration into the default config
         return mergeConfig(config, {
-            plugins: [ ],
+            plugins: [],
             resolve: {
                 alias: {
                     'react-native': 'react-native-web'
@@ -42,7 +42,7 @@ const config: StorybookConfig = {
             // Add dependencies to pre-optimization
             optimizeDeps: {
                 esbuildOptions: {
-                    plugins: [ ]
+                    plugins: []
                 },
                 include: ['storybook-dark-mode']
             }
@@ -59,12 +59,12 @@ const config: StorybookConfig = {
         name: '@storybook/react-vite',
         options: {
             //        legacyRootApi: false,
-            strictMode: true
+            // strictMode: true
         }
     },
     features: {
-        storyStoreV7: true,
-        buildStoriesJson: true
+       // storyStoreV7: true,
+       // buildStoriesJson: true
     }
 }
 

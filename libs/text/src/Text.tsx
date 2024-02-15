@@ -6,7 +6,7 @@ import styled from 'styled-components'
 
 const textVariants = variant({ prop: 'variant', variants })
 
-const TextBase = styled.p<TextProps>`
+const TextBase = styled.p<TextProps<any>>`
     ${color}
     ${space}
     ${typography}
@@ -15,8 +15,8 @@ const TextBase = styled.p<TextProps>`
     user-select: ${(props) => (props.selectable ? 'auto' : 'none')};
 `
 
-export function Text(props: TextProps) {
-    const { selectable = true, as, variant = 'body', ...restProps } = props
+export function Text<C extends React.ElementType = 'span'>(props: TextProps<C>) {
+    const { selectable = true, as = 'span', variant = 'body', ...restProps } = props
 
-    return <TextBase as={as} selectable={selectable} variant={variant} {...(restProps as any)} />
+    return <TextBase as={as} selectable={selectable} variant={variant} {...restProps} />
 }

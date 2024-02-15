@@ -25,7 +25,6 @@ export function useControlState<T = Element>(disabled?: boolean): UseControlStat
 
     const handlers = {
         onMouseDownCapture: () => {
-            console.log('handleMouseDown - add Listeners')
             window.addEventListener('mouseup', handleMouseUp, false)
             setPressed(true)
         },

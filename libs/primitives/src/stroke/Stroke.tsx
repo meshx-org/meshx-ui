@@ -22,10 +22,8 @@ const StrokeBase = styled.div`
 const StrokeBaseX = styled.div`
     z-index: 2;
     position: absolute;
-    top: 0px;
-    bottom: 0px;
-    right: 0px;
-    left: 0px;
+    pointer-events: none;
+    inset: 0px;
 
     .stroke {
         position: absolute;
@@ -41,7 +39,7 @@ function url(id: string) {
     return `url(#${id})`
 }
 
-export function TextControlStrokeX({ state, borderRadius, focused }: ControlStrokeXProps) {
+export function TextControlStrokeX({ borderRadius, focused, ...props }: ControlStrokeXProps) {
     const theme = useTheme()
     const uniqueId = useId()
 
@@ -77,11 +75,11 @@ export function TextControlStrokeX({ state, borderRadius, focused }: ControlStro
     let stroke = url('text-control-grad')
 
     if (theme === 'dark') {
-        if (focused || state === ControlState.Disabled || state === ControlState.Pressed) {
+        if (focused || props['data-state'] === ControlState.Disabled || props['data-state'] === ControlState.Pressed) {
             stroke = 'rgba(255, 255, 255, 0.2)'
         }
     } else if (theme === 'light') {
-        if (focused || state === ControlState.Disabled || state === ControlState.Pressed) {
+        if (focused || props['data-state'] === ControlState.Disabled || props['data-state'] === ControlState.Pressed) {
             stroke = 'rgba(0, 0, 0, 0.15)'
         }
     }
@@ -195,11 +193,10 @@ function TextControlStroke({ children, state, focused = false }: ControlStrokePr
 }
 
 const strokeMixin = css`
+    z-index: 2;
     position: absolute;
-    top: 1px;
-    bottom: 1px;
-    right: 1px;
-    left: 1px;
+    pointer-events: none;
+    inset: 0px;
     background: transparent;
 `
 
@@ -221,7 +218,7 @@ const LayerStroke = styled.div.attrs((props) => ({ ...props, 'aria-hidden': true
     box-shadow: 0 0 0 1px ${(props) => props.theme.colors.stroke.surface};
 `
 
-export function ControlStrokeX({ state, borderRadius, focused = false }: ControlStrokeXProps) {
+export function ControlStrokeX({ borderRadius, focused = false, ...props }: ControlStrokeXProps) {
     const theme = useTheme()
 
     const definitions = useMemo(
@@ -241,11 +238,11 @@ export function ControlStrokeX({ state, borderRadius, focused = false }: Control
     let stroke = url('grad')
 
     if (theme === 'dark') {
-        if (state === ControlState.Disabled || state === ControlState.Pressed) {
+        if (props['data-state'] === ControlState.Disabled || props['data-state'] === ControlState.Pressed) {
             stroke = 'rgba(255, 255, 255, 0.09)'
         }
     } else if (theme === 'light') {
-        if (state === ControlState.Disabled || state === ControlState.Pressed) {
+        if (props['data-state'] === ControlState.Disabled || props['data-state'] === ControlState.Pressed) {
             stroke = 'rgba(0, 0, 0, 0.06)'
         }
     }
@@ -261,9 +258,9 @@ export function ControlStrokeX({ state, borderRadius, focused = false }: Control
                 width="100%"
                 height="100%"
                 viewBox={`0 0 ${Math.round(rect.width)} ${Math.round(rect.height)}`}
-                preserveAspectRatio="none"
-                className="stroke"
+                preserveAspectRatio="xMinYMin slice"
                 overflow="visible"
+                className="stroke"
                 fill="transparent"
                 aria-hidden="true"
                 tabIndex={-1}

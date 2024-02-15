@@ -9,7 +9,7 @@ import { surfaceVariants as variants } from './variants'
 
 const surfaceVariants = variant({ prop: 'variant', variants })
 
-export function FlyoutSurface(props: FlyoutSurfaceProps) {
+export function FlyoutSurface<C extends React.ElementType>(props: FlyoutSurfaceProps<C>) {
     const theme = useThemeValues()
 
     const propsWithTheme = { theme, ...props }

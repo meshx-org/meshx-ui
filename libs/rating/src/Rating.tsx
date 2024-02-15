@@ -3,7 +3,9 @@ import { MouseEvent } from 'react'
 import { RatingItemProps, RatingProps } from './Rating.types'
 import styled from 'styled-components'
 
-const RatingRoot = styled.span``
+const RatingRoot = styled.span`
+    display: flex;
+`
 const RatingIcon = styled.span``
 
 const RatingItemInput = styled.input`

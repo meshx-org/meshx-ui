@@ -1,10 +1,14 @@
-import React, { SVGProps } from 'react'
-import { InfoBarProps, InfoBarVariant, MaybeElement } from './InfoBar.types'
+import React, { ForwardedRef, useEffect, useRef } from 'react'
+import { InfoBarProps } from './InfoBar.types'
 import styled from 'styled-components'
+import { CardSurface } from '@meshx-org/mxui-primitives'
+import { Text } from '@meshx-org/mxui-text'
+import { Badge } from '@meshx-org/mxui-badge'
+import { FocusRing } from 'react-aria'
 
 const BadgeStyled = styled.div``
 
-const BadgeInner = styled.span`
+const StyledCardSurface = styled(CardSurface)`
     width: fit-content;
     border-radius: 20px;
 
@@ -85,8 +89,28 @@ const BadgeInner = styled.span`
     }
 `
 
-export function InfoBar(props: InfoBarProps) {
-    const { children, variant = 'default' } = props
+const ICON_ALTS = {
+    negative: 'Error',
+    notice: 'Warning',
+    info: 'Information',
+    positive: 'Success'
+} as const
+
+const ICONS = {
+    info: 'info',
+    positive: 'success',
+    notice: 'help',
+    negative: 'danger'
+} as const
+
+
+function useDOMRef(ref: any) {
+    return ref
+}
+
+function InfoBar(props: InfoBarProps, ref: ForwardedRef<HTMLDivElement>) {
+    const { children, autoFocus, variant = 'default' } = props
+    const domRef = useDOMRef(ref)
 
     /*const test = (icon?: InfoBarProps['icon'], intent?: Intent): MaybeElement => {
         // 1. no icon
@@ -118,7 +142,39 @@ export function InfoBar(props: InfoBarProps) {
         }
     }*/
 
-    return <BadgeStyled></BadgeStyled>
+    const autoFocusRef = useRef(props.autoFocus)
+    useEffect(() => {
+        if (autoFocusRef.current && domRef.current) {
+            domRef.current.focus()
+        }
+        autoFocusRef.current = false
+    }, [domRef])
+
+    return (
+        <FocusRing>
+            <CardSurface
+                borderRadius={6}
+                variant="well"
+                px="15px"
+                py="13px"
+                as="div"
+                style={{ display: 'flex', alignItems: 'center', width: 'fit-content', gap: '13px' }}
+            >
+                <Badge variant="info" />
+                <Text fontWeight={500} variant="body.semibold">
+                    {props.title}
+                </Text>
+                <Text fontWeight={500} variant="body">
+                    {props.description}
+                </Text>
+            </CardSurface>
+        </FocusRing>
+    )
 }
 
-InfoBar.displayName = `Badge`
+/**
+ * A Well is a content container that displays non-editable content separate from other content on the screen.
+ * Often this is used to display preformatted text, such as code/markup examples on a documentation page.
+ */
+const _InfoBar = React.forwardRef(InfoBar)
+export { _InfoBar as InfoBar }

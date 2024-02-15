@@ -1,4 +1,12 @@
-export type BadgeVariant = 'info' | 'help' | 'default' | 'success' | 'warning' | 'danger'
+export type BadgeVariant =
+    | 'info.subtle'
+    | 'info'
+    | 'help.subtle'
+    | 'help'
+    | 'default'
+    | 'success'
+    | 'warning'
+    | 'danger'
 
 export interface BadgeProps {
     children?: React.ReactNode

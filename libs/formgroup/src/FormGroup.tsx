@@ -14,19 +14,19 @@ const Label = styled.label`
 `
 
 const FormHelperText = styled.div`
-    color: var(--theme-color-text-secondary);
+    color: var(--theme-text-secondary);
     font-size: var(--theme-font-size-0);
     margin-top: calc(12px * 0.5);
 `
 
 const TextMuted = styled.span`
-    color: var(--theme-color-text-secondary);
+    color: var(--theme-text-secondary);
 `
 
 const FormContent = styled.div``
 
 const FormGroupSubLabel = styled.div`
-    color: var(--theme-color-text-secondary);
+    color: var(--theme-text-secondary);
     font-size: var(--theme-font-size-0);
     margin-bottom: calc(12px * 0.5);
 `

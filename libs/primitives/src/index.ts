@@ -12,5 +12,8 @@ export * from './box/Box.types'
 export * from './surface/Surface'
 export * from './surface/Surface.types'
 
+export * from './shadow/Shadow'
+export * from './shadow/Shadow.types'
+
 export * from './divider/Divider'
 export * from './divider/Divider.types'

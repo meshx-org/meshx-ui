@@ -9,9 +9,9 @@ export interface ControlStrokeProps {
 }
 
 export interface ControlStrokeXProps {
-    state: ControlState
     borderRadius?: number
     focused?: boolean
+    'data-state': ControlState
 }
 
 export interface CardStrokeProps extends BorderRadiusProps {}

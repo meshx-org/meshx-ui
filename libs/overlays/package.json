@@ -1,7 +1,7 @@
 {
     "name": "@meshx-org/mxui-overlays",
     "description": "Overlay component for MXUI",
-    "version": "0.7.45",
+    "version": "0.7.46",
     "license": "Apache-2.0",
     "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
     "homepage": "https://meshx.co",
@@ -41,9 +41,12 @@
         "react-spring": "^9.7.3",
         "react-transition-group": "4.4.5",
         "@types/react-transition-group": "4.4.6",
-        "@meshx-org/mxui-core": "0.7.45",
-        "@meshx-org/mxui-primitives": "0.7.45",
-        "@types/styled-components": "^5.1.26"
+        "@meshx-org/mxui-core": "0.7.46",
+        "@meshx-org/mxui-primitives": "0.7.46",
+        "@types/styled-components": "^5.1.26",
+        "@react-spectrum/utils": "3.11.3",
+        "react-aria": "3.31.0",
+        "react-stately": "3.29.1"
     },
     "devDependencies": {
         "react-native-builder-bob": "^0.20.3"

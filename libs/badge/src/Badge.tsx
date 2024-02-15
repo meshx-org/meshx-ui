@@ -23,65 +23,79 @@ const BadgeInner = styled.span`
     // ---
 
     [data-theme='dark'] &[data-variant='info'] {
-        border: 1px solid #8A8A8A;
-        background: #8A8A8A;
+        border: 1px solid #8a8a8a;
+        background: #8a8a8a;
     }
 
     [data-theme='dark'] &[data-variant='default'] {
-        border: solid 1px #60CDFF;
-        background: #60CDFF;
+        border: solid 1px #60cdff;
+        background: #60cdff;
     }
 
     [data-theme='dark'] &[data-variant='help'] {
-        border: 1px solid #8A8A8A;
-        background: #8A8A8A;
+        border: 1px solid #8a8a8a;
+        background: #8a8a8a;
+    }
+
+    [data-theme='dark'] &[data-variant='help.subtle'],
+    [data-theme='dark'] &[data-variant='info.subtle'] {
+        border: 1px solid var(--theme-subtle-default);
+        background: var(--theme-subtle-default);
+        color: white;
     }
 
     [data-theme='dark'] &[data-variant='warning'] {
-        border: 1px solid #FCE100;
-        background: #FCE100;
+        border: 1px solid #fde047;
+        background: #fde047;
     }
 
     [data-theme='dark'] &[data-variant='danger'] {
-        border: 1px solid #FF99A4;
-        background: #FF99A4;
+        border: 1px solid #fca5a5;
+        background: #fca5a5;
     }
 
     [data-theme='dark'] &[data-variant='success'] {
-        border: 1px solid #6CCB5F;
-        background: #6CCB5F;
+        border: 1px solid #86efac;
+        background: #86efac;
     }
 
     // ----
 
     [data-theme='light'] &[data-variant='info'] {
-        border: 1px solid #8A8A8A;
-        background: #8A8A8A;
-    }
-
-    [data-theme='light'] &[data-variant='default'] {
-        border: solid 1px #005FB7;
-        background: #005FB7;
+        border: 1px solid #8a8a8a;
+        background: #8a8a8a;
     }
 
     [data-theme='light'] &[data-variant='help'] {
-        border: 1px solid #8A8A8A;
-        background: #8A8A8A;
+        border: 1px solid #8a8a8a;
+        background: #8a8a8a;
+    }
+
+    [data-theme='light'] &[data-variant='help.subtle'],
+    [data-theme='light'] &[data-variant='info.subtle'] {
+        border: 1px solid var(--theme-subtle-default);
+        background: var(--theme-subtle-default);
+        color: black;
+    }
+
+    [data-theme='light'] &[data-variant='default'] {
+        border: solid 1px #005fb7;
+        background: #005fb7;
     }
 
     [data-theme='light'] &[data-variant='warning'] {
-        border: 1px solid #9D5D00;
-        background: #9D5D00;
+        border: 1px solid #d97706;
+        background: #d97706;
     }
 
     [data-theme='light'] &[data-variant='danger'] {
-        border: 1px solid #C42B1C;
-        background: #C42B1C;
+        border: 1px solid #dc2626;
+        background: #dc2626;
     }
 
     [data-theme='light'] &[data-variant='success'] {
-        border: 1px solid #0F7B0F;
-        background: #0F7B0F;
+        border: 1px solid #16a34a;
+        background: #16a34a;
     }
 `
 
@@ -159,7 +173,9 @@ const DangerIcon = (props: SVGProps<SVGSVGElement>) => (
 
 const iconVariants: Record<BadgeVariant, any> = {
     info: InfoIcon,
+    'info.subtle': InfoIcon,
     help: QuestionIcon,
+    'help.subtle': InfoIcon,
     default: AttentionIcon,
     warning: WarningIcon,
     success: SuccessIcon,

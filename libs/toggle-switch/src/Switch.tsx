@@ -1,8 +1,10 @@
-import React, { ChangeEventHandler, useCallback, useState, useEffect } from 'react'
+import React, { ChangeEventHandler, useCallback, useState, useEffect, useRef } from 'react'
 import { useTheme, useControlState } from '@meshx-org/mxui-core'
 import { Text } from '@meshx-org/mxui-text'
 import type { SwitchProps } from './Switch.types'
 import styled, { ThemeProvider } from 'styled-components'
+import { ToggleState, useToggleState } from 'react-stately'
+import { VisuallyHidden, useFocusRing, useSwitch, mergeProps, useHover } from 'react-aria'
 
 const StyledSwitchWrapper = styled.label`
     height: 32px;
@@ -10,7 +12,6 @@ const StyledSwitchWrapper = styled.label`
     column-gap: 10px;
     display: flex;
 
-    -webkit-user-select: none;
     user-select: none;
 
     line-height: 20px;
@@ -34,6 +35,9 @@ const StyledSwitchStroke = styled.div`
     transition: 0.2s ease;
 
     border: 1px solid ${(props) => (props.theme.name === 'dark' ? 'rgba(255, 255, 255, 0.54)' : 'rgba(0, 0, 0, 0.45)')};
+    &[data-selected='true'] {
+        border: 1px solid rgba(0, 0, 0, 0.06);
+    }
 `
 
 const StyledThumb = styled.div`
@@ -47,25 +51,28 @@ const StyledThumb = styled.div`
 
     background: ${({ theme }) => (theme.name === 'dark' ? 'rgba(255, 255, 255, 0.79)' : 'rgba(0, 0, 0, 0.61)')};
 
-    ${StyledSwitchWrapper} input:disabled ~ & {
-        transform: scale(1) !important;
-        width: 12px !important;
-    }
-
-    ${StyledSwitchWrapper} input:checked ~ & {
+    &[data-selected='true'] {
         left: 24px;
     }
 
-    ${StyledSwitchWrapper}:active input:checked ~ & {
+    &[data-selected='true'][data-pressed='true'] {
         left: 21px;
     }
 
-    ${StyledSwitchWrapper}[data-theme='light'] input:checked ~ & {
+    &[data-theme='light'][data-selected='true'] {
         background-color: white;
     }
 
-    ${StyledSwitchWrapper}[data-theme='dark'] input:checked ~ & {
+    &[data-theme='dark'][data-selected='true'] {
         background-color: black;
+    }
+
+    &[data-hovered='true'] {
+        transform: scale(1.125);
+    }
+
+    &[data-pressed='true'] {
+        width: 15px !important;
     }
 `
 
@@ -79,20 +86,25 @@ const StyledSlider = styled.div`
     transition: 0.2s ease;
     box-shadow: 0 0 0 1px transparent;
 
-    ${StyledSwitchWrapper}[data-theme='light'] & {
+    &[data-theme='light'] {
         background: rgba(0, 0, 0, 0.06);
     }
 
-    ${StyledSwitchWrapper}[data-theme='light'][data-state='rest'] & {
+    &[data-theme='light'][data-selected='true'] {
         background: rgba(0, 0, 0, 0.02);
     }
 
-    ${StyledSwitchWrapper}[data-theme='dark'] & {
+    &[data-theme='dark'][data-selected='true'] {
         background: rgba(255, 255, 255, 0.04);
     }
 
-    ${StyledSwitchWrapper}[data-theme='dark'][data-state='rest'] & {
+    &[data-theme='dark'] {
         background: rgba(0, 0, 0, 0.1);
+    }
+
+    &[data-selected='true'] {
+        background-color: var(--theme-accent-default) !important;
+        box-shadow: 0 0 0 1px var(--theme-accent-default) !important;
     }
 `
 
@@ -103,69 +115,64 @@ const StyledSwitch = styled.div`
     height: 20px;
     cursor: pointer;
 
-    input {
-        opacity: 0;
-        width: 0;
-        height: 0;
-    }
-
-    input:checked ~ ${StyledSlider} {
-        background-color: rgb(33, 150, 243) !important;
-        box-shadow: 0 0 0 1px rgb(33, 150, 243);
-    }
-
-    input:checked ~ ${StyledSwitchStroke} {
-        border: 1px solid rgba(0, 0, 0, 0.06);
-    }
-
-    &:active ${StyledThumb} {
-        width: 15px;
-    }
-
-    &:hover ${StyledThumb} {
-        transform: scale(1.125);
+    &[data-disabled='true'] {
+        cursor: not-allowed !important;
     }
 `
 
 export function Switch(props: SwitchProps) {
-    const { defaultValue, value, onChange, disabled } = props
-
+    const inputRef = useRef<HTMLInputElement>(null)
+    const state = useToggleState(props)
     const theme = useTheme()
-    const { handlers, state } = useControlState<HTMLLabelElement>(disabled)
-    const [checkedInternal, setCheckedInternal] = useState(defaultValue)
 
-    useEffect(() => {
-        setCheckedInternal(value)
-    }, [value])
-
-    const handleChange = useCallback<ChangeEventHandler<HTMLInputElement>>(
-        (event) => {
-            setCheckedInternal(event.target.checked)
-            if (onChange) {
-                onChange(event.target.checked)
-            }
+    const { isFocused, isFocusVisible, focusProps } = useFocusRing()
+    const { labelProps, inputProps, isSelected, isDisabled, isReadOnly, isPressed } = useSwitch(
+        {
+            ...props, // ...removeDataAttributes(props),
+            // ReactNode type doesn't allow function children.
+            children: typeof props.children === 'function' ? true : props.children
         },
-        [onChange]
+        state,
+        inputRef
     )
 
+    const { hoverProps, isHovered } = useHover({
+        ...props,
+        isDisabled: props.isDisabled || props.isReadOnly
+    })
+
     return (
-        <ThemeProvider theme={{ name: theme, state } as any}>
-            <StyledSwitchWrapper data-theme={theme} data-state={state} {...handlers}>
-                <StyledSwitch>
-                    <input
-                        autoFocus
-                        disabled={disabled}
-                        checked={checkedInternal}
-                        onChange={handleChange}
-                        title="Switch"
-                        type="checkbox"
-                    />
-                    <StyledSlider />
-                    <StyledSwitchStroke />
-                    <StyledThumb />
-                </StyledSwitch>
-                <Text>{checkedInternal ? 'On' : 'Off'} </Text>
-            </StyledSwitchWrapper>
-        </ThemeProvider>
+        <StyledSwitchWrapper
+            {...mergeProps(labelProps, hoverProps)}
+            data-theme={theme}
+            data-selected={isSelected || undefined}
+            data-pressed={isPressed || undefined}
+            data-hovered={isHovered || undefined}
+            data-focused={isFocused || undefined}
+            data-focus-visible={isFocusVisible || undefined}
+            data-disabled={isDisabled || undefined}
+            data-readonly={isReadOnly || undefined}
+        >
+            <StyledSwitch
+                data-theme={theme}
+                data-disabled={isDisabled || undefined}
+                data-pressed={isPressed || undefined}
+            >
+                <VisuallyHidden elementType="span">
+                    <input {...inputProps} {...focusProps} ref={inputRef} />
+                </VisuallyHidden>
+
+                <StyledSlider data-theme={theme} data-selected={isSelected || undefined} />
+                <StyledSwitchStroke data-theme={theme} data-selected={isSelected || undefined} />
+                <StyledThumb
+                    data-disabled={isDisabled}
+                    data-hovered={isHovered || undefined}
+                    data-pressed={isPressed || undefined}
+                    data-theme={theme}
+                    data-selected={isSelected || undefined}
+                />
+            </StyledSwitch>
+            <Text>{isSelected ? 'On' : 'Off'} </Text>
+        </StyledSwitchWrapper>
     )
 }

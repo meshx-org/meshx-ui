@@ -3,7 +3,15 @@ import { CardElement, CardElementProps } from '@stripe/react-stripe-js'
 import { StripeBoxProps } from './StripeBox.types'
 import styled from 'styled-components'
 import { TextControlFillX, TextControlStrokeX } from '@meshx-org/mxui-primitives'
-import { ControlState, DEFAULT_DARK, DEFAULT_LIGHT, useTheme, useThemeValues } from '@meshx-org/mxui-core'
+import {
+    ControlState,
+    DEFAULT_DARK,
+    DEFAULT_LIGHT,
+    useTheme,
+    useThemeValues,
+    rgba,
+    fontStack
+} from '@meshx-org/mxui-core'
 
 const StyledWrapper = styled.div`
     position: relative;
@@ -36,20 +44,20 @@ export function StripeBox({ style, ...props }: StripeBoxProps) {
         hidePostalCode: true,
         style: {
             base: {
-                iconColor: colors.text.primary,
+                iconColor: rgba(colors.text.primary),
                 fontSize: values.fontSizes[1] + 'px',
                 lineHeight: '20px',
-                fontFamily: values.fonts.default,
-                color: colors.text.primary,
+                fontFamily: fontStack(values.fonts.default),
+                color: rgba(colors.text.primary),
                 '::placeholder': {
-                    color: colors.text.disabled
+                    color: rgba(colors.text.disabled)
                 }
             },
             complete: {
-                iconColor: colors.accent.default
+                iconColor: rgba(colors.accent.default)
             },
             empty: {
-                color: colors.text.disabled
+                color: rgba(colors.text.disabled)
             },
             invalid: {
                 color: 'rgba(238, 0, 0, .7)'
@@ -65,7 +73,7 @@ export function StripeBox({ style, ...props }: StripeBoxProps) {
                 options={options}
                 {...props}
             />
-            <TextControlStrokeX borderRadius={5.5} state={ControlState.Rest} focused={focused} />
+            <TextControlStrokeX borderRadius={5.5} data-state={ControlState.Rest} focused={focused} />
             <TextControlFillX
                 data-state={ControlState.Rest}
                 data-theme={theme}

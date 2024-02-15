@@ -108,10 +108,7 @@ function ariaHidden(props: any) {
 const fillBase = css`
     z-index: 1;
     position: absolute;
-    top: 0px;
-    bottom: 0px;
-    right: 0px;
-    left: 0px;
+    inset: 0px;
 `
 
 export const SubtleFillX = styled.div.attrs(ariaHidden)<SubtleFillProps>`
@@ -122,17 +119,17 @@ export const SubtleFillX = styled.div.attrs(ariaHidden)<SubtleFillProps>`
 
     &:hover,
     &[data-state='hovered'] {
-        background: var(--theme-background-subtle-secondary) !important;
+        background: var(--theme-subtle-secondary) !important;
     }
 
     &:active,
     &[data-state='pressed'] {
-        background: var(--theme-background-subtle-default) !important;
+        background: var(--theme-subtle-default) !important;
     }
 
     &:disabled,
     &[data-state='disabled'] {
-        background: var(--theme-background-subtle-disabled) !important;
+        background: var(--theme-subtle-disabled) !important;
     }
 `
 
@@ -149,7 +146,7 @@ function restVariant(props: { variant: string }) {
         case 'warning':
             return 'var(--theme-button-warning-default)'
         default:
-            return 'var(--theme-background-control-default)'
+            return 'var(--theme-control-default)'
     }
 }
 
@@ -166,7 +163,7 @@ function hoveredVariant(props: { variant: string }) {
         case 'warning':
             return 'var(--theme-button-warning-secondary)'
         default:
-            return 'var(--theme-background-control-secondary)'
+            return 'var(--theme-control-secondary)'
     }
 }
 
@@ -183,7 +180,7 @@ function pressedVariant(props: { variant: string }) {
         case 'warning':
             return 'var(--theme-button-warning-tertiary)'
         default:
-            return 'var(--theme-background-control-tertiary)'
+            return 'var(--theme-control-tertiary)'
     }
 }
 
@@ -192,6 +189,7 @@ export const ControlFillX = styled.div.attrs(ariaHidden)`
     ${borderRadius}
 
     background: ${restVariant};
+    pointer-events: none;
 
     transition: all 100ms cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -207,7 +205,7 @@ export const ControlFillX = styled.div.attrs(ariaHidden)`
 
     &:disabled,
     [data-state='disabled'] {
-        background: var(--theme-background-control-disabled) !important;
+        background: var(--theme-control-disabled) !important;
     }
 `
 
@@ -264,14 +262,14 @@ export const SmokeFill = styled.div.attrs(ariaHidden)<SmokeFillProps>`
     ${fillBase}
     ${borderRadius}
 
-    background-color: var(--theme-background-smoke-default);
+    background-color: var(--theme-smoke-default);
 `
 
-export const LayerFill = styled.div.attrs((props) => ({ ...props, 'aria-hidden': true }))<LayerFillProps>`
+export const LayerFill = styled.div.attrs(ariaHidden)<LayerFillProps>`
     ${fillBase}
     ${borderRadius}
 
-    background-color: var(--theme-background-layer-default);
+    background-color: var(--theme-layer-default);
 `
 
 export const AcrylicFill = styled.div.attrs(ariaHidden)<AcrylicFillProps>`
@@ -279,22 +277,24 @@ export const AcrylicFill = styled.div.attrs(ariaHidden)<AcrylicFillProps>`
     ${borderRadius}
 
     backdrop-filter: ${({ theme }) => (theme.name === 'light' ? 'blur(20px) saturate(3)' : 'blur(20px) saturate(3.5)')};
-    background-color: var(--theme-background-acrylic-default);
+    
+    background-color: var(--theme-acrylic-default);
+    
 `
 
 export const CardFill = styled.div.attrs(ariaHidden)<CardFillProps>`
     ${fillBase}
     ${borderRadius}
 
-    background: var(--theme-background-card-default);
+    background: var(--theme-card-default);
 
     &:hover,
     &[data-state='hovered'] {
-        background: var(--theme-background-card-tertiary) !important;
+        background: var(--theme-card-tertiary) !important;
     }
 
     &:active,
     &[data-state='pressed'] {
-        background: var(--theme-background-card-tertiary) !important;
+        background: var(--theme-card-tertiary) !important;
     }
 `

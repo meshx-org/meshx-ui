@@ -1,0 +1,38 @@
+{
+    "name": "@meshx-org/mxui-tailwind",
+    "version": "0.7.46",
+    "react-native-builder-bob": {
+        "source": "src",
+        "output": "lib",
+        "targets": [
+            [
+                "commonjs"
+            ],
+            "module",
+            "typescript"
+        ]
+    },
+    "scripts": {
+        "build": "bob build"
+    },
+    "dependencies": {
+        "@meshx-org/mxui-core": "0.7.46",
+        "tailwindcss": "^3.4.1",
+        "tslib": "^2.3.0"
+    },
+    "module": "lib/module/index.js",
+    "main": "lib/commonjs/index.js",
+    "types": "src/index.ts",
+    "nx": {
+        "includedScripts": [
+            "build"
+        ],
+        "targets": {
+            "build": {
+                "outputs": [
+                    "{projectRoot}/lib/**"
+                ]
+            }
+        }
+    }
+}

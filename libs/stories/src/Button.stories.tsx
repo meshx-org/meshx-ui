@@ -1,73 +1,54 @@
-import React from 'react'
-import { Story, Meta } from '@storybook/react'
-import { Button, ButtonProps, LinkButton } from '@meshx-org/mxui-button'
-import { Text } from '@meshx-org/mxui-text'
-import { ControlState } from '@meshx-org/mxui-core'
+import React, { SVGProps } from 'react'
+import type { Meta, StoryObj } from '@storybook/react'
+
+import { Button } from '@meshx-org/mxui-button'
 import { Divider } from '@meshx-org/mxui-primitives'
 
-export default {
+const CompassIcon = (props: SVGProps<SVGSVGElement>) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" {...props}>
+        <path
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={1.5}
+            d="M16.25 12h-8.5m8.5 0-3.5 3.25m3.5-3.25-3.5-3.25M3.75 7.75a4 4 0 0 1 4-4h8.5a4 4 0 0 1 4 4v8.5a4 4 0 0 1-4 4h-8.5a4 4 0 0 1-4-4v-8.5Z"
+        />
+    </svg>
+)
+
+const meta = {
     title: 'Basic Input/Button',
-    component: Button,
-    parameters: {
-        backgrounds: {
-            grid: { cellSize: 1 }
-        },
-        docs: {
-            page: null
-        }
-    },
-    argTypes: {
-        variant: {
-            options: ['accent', 'default', 'danger', 'warning', 'success'],
-            control: { type: 'radio' }
-        },
-        block: { control: 'boolean' }
+    component: Button
+} satisfies Meta<typeof Button>
+
+export default meta
+type Story = StoryObj<typeof meta>
+
+export const Default: Story = {
+    args: {
+        variant: 'default',
+        children: 'Button'
     }
-} as Meta
-
-const Template: Story<ButtonProps> = (args) => <Button {...args} />
-
-export const Primary = Template.bind({})
-Primary.args = {
-    variant: 'default',
-    children: 'Button'
 }
 
-export const WithIcon = Template.bind({})
-WithIcon.args = {
-    variant: 'default',
-    children: [<Text>😄</Text>, <Text>Text</Text>]
+export const WithIcon: Story = {
+    args: {
+        variant: 'default',
+        children: 'Action',
+        icon: <CompassIcon width={16} height={16} />
+    }
 }
 
-export const Secondary = Template.bind({})
-Secondary.args = {
-    variant: 'default',
-    children: '😄👍😍💯'
+export const WithoutChildren: Story = {
+    args: {
+        variant: 'default',
+        icon: <CompassIcon width={16} height={16} />
+    }
 }
 
-export const Disabled = Template.bind({})
-Disabled.args = {
-    disabled: true,
-    children: 'Disabled'
-}
-
-const TemplateWithLinkButton: Story<ButtonProps> = (args) => {
-    return (
-        <div style={{ display: 'flex', gap: '8px' }}>
-            <LinkButton as="a" state={ControlState.Hovered}>
-                Sign in
-            </LinkButton>
-            <Button {...args} children="Create an account" />
-        </div>
-    )
-}
-
-export const WithLinkButton = TemplateWithLinkButton.bind({})
-WithLinkButton.args = {}
-
-const TemplateWithVariations: Story<ButtonProps> = (args) => {
-    return (
-        <div style={{ display: 'flex', gap: '8px' }}>
+export const Variations: Story = {
+    render: (args) => (
+        <div style={{ display: 'flex', gap: '4px' }}>
             <Button {...args} variant="default" children="Default" />
             <Divider />
             <Button {...args} variant="accent" children="Accent" />
@@ -76,8 +57,10 @@ const TemplateWithVariations: Story<ButtonProps> = (args) => {
             <Divider />
             <Button {...args} variant="danger" children="Danger" />
         </div>
-    )
+    ),
+    args: {
+        variant: 'default',
+        children: 'Button',
+        icon: <CompassIcon width={16} height={16} />
+    }
 }
-
-export const WithVariations = TemplateWithVariations.bind({})
-

@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { ForwardedRef } from 'react'
 import { useTheme, useControlState } from '@meshx-org/mxui-core'
 import { ControlFillX, ControlStrokeX } from '@meshx-org/mxui-primitives'
 import { Text } from '@meshx-org/mxui-text'
+import { useFocusable } from '@react-aria/focus'
+import { useObjectRef } from '@react-aria/utils'
 import { ButtonProps } from './Button.types'
 import styled from 'styled-components'
 
@@ -45,28 +47,28 @@ const ButtonContent = styled.div`
     *[data-theme='light'] &[data-variant='accent'],
     *[data-theme='light'] &[data-variant='danger'],
     *[data-theme='light'] &[data-variant='warning'] {
-        --theme-color-text-primary: white !important;
+        --theme-text-primary: white !important;
     }
 
     span {
         display: flex;
-        color: var(--theme-color-text-primary);
+        color: var(--theme-text-primary);
     }
 
     *[data-theme='dark'] &[data-variant='accent'] {
-        --theme-color-text-primary: rgb(142, 208, 255) !important;
+        --theme-text-primary: rgb(142, 208, 255) !important;
     }
 
     *[data-theme='dark'] &[data-variant='danger'] {
-        --theme-color-text-primary: rgb(238, 159, 159) !important;
+        --theme-text-primary: rgb(238, 159, 159) !important;
     }
 
     *[data-theme='dark'] &[data-variant='warning'] {
-        --theme-color-text-primary: rgb(237, 202, 146) !important;
+        --theme-text-primary: rgb(237, 202, 146) !important;
     }
 `
 
-function Button(props: ButtonProps) {
+function Button<C extends React.ElementType = 'button'>(props: ButtonProps<C>, ref: ForwardedRef<HTMLButtonElement>) {
     const {
         children,
         variant = 'default',
@@ -76,9 +78,13 @@ function Button(props: ButtonProps) {
         iconRight,
         state: controlledState,
         onPress,
-        as,
+        as = 'button',
         ...otherProps
     } = props
+
+    const refd = useObjectRef(ref)
+    const { focusableProps } = useFocusable(props, refd)
+    // const domRef = useFocusableRef(ref)
 
     const theme = useTheme()
     const { state, handlers } = useControlState<HTMLButtonElement>(disabled)
@@ -86,21 +92,17 @@ function Button(props: ButtonProps) {
     const hasStroke = variant === 'accent' || variant === 'default' || variant === 'danger' || variant === 'warning'
     const hasChildren = children !== undefined
 
-    const handleClick = (e: any) => {
-        onPress && onPress(e)
-    }
-
     return (
         <StyledButton
-            className="focusable"
-            as={as}
             style={{ maxWidth: fit ? 'fit-content' : undefined }}
             type="button"
             {...otherProps}
-            onClick={handleClick}
+            {...handlers}
+            {...focusableProps}
             data-theme={theme}
             data-state={controlledState ?? state}
-            {...handlers}
+            as={as}
+            ref={refd}
         >
             <ButtonContent data-variant={variant} data-icon-only={!hasChildren}>
                 {icon && <span>{icon}</span>}
@@ -115,10 +117,15 @@ function Button(props: ButtonProps) {
                 )}
                 {iconRight && <span>{iconRight}</span>}
             </ButtonContent>
-            {hasStroke && <ControlStrokeX borderRadius={5.5} state={controlledState ?? state} />}
+            {hasStroke && <ControlStrokeX borderRadius={5.5} data-state={controlledState ?? state} />}
             <ControlFillX data-state={controlledState ?? state} variant={variant} borderRadius={6} />
         </StyledButton>
     )
 }
 
-export { Button }
+/**
+ * ActionButtons allow users to perform an action.
+ * They’re used for similar, task-based options within a workflow, and are ideal for interfaces where buttons aren’t meant to draw a lot of attention.
+ */
+const _Button = React.forwardRef(Button)
+export { _Button as Button }

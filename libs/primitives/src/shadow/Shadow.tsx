@@ -17,7 +17,7 @@ function ariaHidden(props: any) {
     return { ...props, "aria-hidden": true }
 }
 
-function cardShadowState(theme: DefaultTheme, state: ControlState) {
+export function cardShadowState(theme: DefaultTheme, state: ControlState) {
     if(theme.name == "light") {
         switch (state) {
             case ControlState.Hovered: return "0 2px 4px 0 rgba(0 0 0 / 10%), 0 12px 24px rgb(0 0 0 / 10%)"

@@ -39,15 +39,15 @@ const StyledSegment = styled.div`
     font-variant-numeric: tabular-nums;
     text-align: end;
 
-    color: var(--theme-color-text-primary);
+    color: var(--theme-text-primary);
 
     &.placeholder {
-        color: var(--theme-color-text-secondary);
+        color: var(--theme-text-secondary);
     }
 
     &.literal {
         padding: 0 !important;
-        color: var(--theme-color-text-secondary);
+        color: var(--theme-text-secondary);
     }
 
     &.hour,

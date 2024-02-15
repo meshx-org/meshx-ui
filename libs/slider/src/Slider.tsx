@@ -31,7 +31,7 @@ const StyledRail = styled.div`
     top: 9px;
     bottom: 9px;
     border-radius: 12px;
-    background: var(--theme-color-stroke-control);
+    background: var(--theme-stroke-control);
 `
 
 const StyledTick = styled.span`
@@ -43,7 +43,7 @@ const StyledTick = styled.span`
         position: absolute;
         width: 1px;
         height: 4px;
-        background: var(--theme-color-stroke-control);
+        background: var(--theme-stroke-control);
     }
 
     &::after {

@@ -1,47 +1,34 @@
 import type { StoryObj, Meta } from '@storybook/react'
-import { InfoBar } from '@meshx-org/mxui-infobar'
-import { FormGroup } from '@meshx-org/mxui-formgroup'
+import { InfoBar } from '@meshx-org/mxui-infobar/src'
 import React from 'react'
 import { Text } from '@meshx-org/mxui-text'
 
 const meta = {
     title: 'Status/InfoBar',
-    component: FormGroup,
+    component: InfoBar,
     argTypes: {
-        label: {
-            control: 'check'
-        },
-        subLabel: {
-            defaultValue: 'Label helper text with details...'
-        },
-        labelInfo: {
-            defaultValue: '(required)'
-        },
-        helperText: {
-            type: 'string',
-            defaultValue: 'Helper text with details...'
+        title: {
+            defaultValue: 'Title'
         }
     },
     render: (args) => {
         return (
-            <div style={{ width: 300 }}>
-                <InfoBar {...args} title={true ? 'Visually important content' : undefined}>
+            <div>
+                <InfoBar {...args}>
                     <Text>Hello</Text>
                 </InfoBar>
             </div>
         )
     }
-} satisfies Meta<typeof FormGroup>
+} satisfies Meta<typeof InfoBar>
 
 export default meta
 
-type Story = StoryObj<typeof FormGroup>
+type Story = StoryObj<typeof InfoBar>
 
 export const Default: Story = {
     args: {
-        label: 'Label',
-        helperText: 'Helper text with details...',
-        subLabel: 'Label helper text with details...',
-        labelInfo: '(required)'
+        title: 'Title',
+        description: 'This is Body text. MeshX is faster and more intuitive.'
     }
 }

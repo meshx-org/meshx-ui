@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { ComponentPropsWithoutRef, ElementType, ReactNode } from 'react'
 import { ColorProps, SpaceProps, TypographyProps } from 'styled-system'
 import { textVariants, headingVariants } from './variants'
 
-interface BaseProps extends ColorProps, SpaceProps, TypographyProps {
-    children?: React.ReactNode
+type BaseProps<C extends ElementType> = {
+    children?: ReactNode
 
     /**
      * Lets the user select text, to use the native copy and paste functionality.
@@ -11,18 +11,16 @@ interface BaseProps extends ColorProps, SpaceProps, TypographyProps {
      */
     selectable?: boolean
 
-    as?: string | React.ComponentType<any>
+    as?: C
+} & ComponentPropsWithoutRef<C> &
+    ColorProps &
+    SpaceProps &
+    TypographyProps
 
-    // ellipsizeMode = "tail"
-    // numberOfLines = {1}
-
-    // selectionHighlightColor?: string
-}
-
-export interface TextProps extends BaseProps {
+export type TextProps<C extends React.ElementType> = {
     variant?: keyof typeof textVariants
-}
+} & BaseProps<C>
 
-export interface HeadingProps extends BaseProps {
+export type HeadingProps<C extends React.ElementType> = {
     variant?: keyof typeof headingVariants
-}
+} & BaseProps<C>

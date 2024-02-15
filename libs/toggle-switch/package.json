@@ -1,7 +1,7 @@
 {
     "name": "@meshx-org/mxui-switch",
     "description": "Switch component for MXUI",
-    "version": "0.7.45",
+    "version": "0.7.46",
     "license": "Apache-2.0",
     "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
     "homepage": "https://meshx.co/produts/mxui",
@@ -39,15 +39,12 @@
         "build": "bob build"
     },
     "dependencies": {
-        "@meshx-org/mxui-core": "0.7.45",
-        "@meshx-org/mxui-text": "0.7.45"
-    },
-    "devDependencies": {
-        "@types/styled-components": "^5.1.26",
-        "react-native-builder-bob": "^0.20.3"
+        "react-stately": "3.29.0",
+        "react-aria": "3.31.0",
+        "@meshx-org/mxui-core": "0.7.46",
+        "@meshx-org/mxui-text": "0.7.46"
     },
     "peerDependencies": {
-        "react-native": ">=0.69.0",
         "react": "^17.0.0 || ^18.0.0",
         "react-dom": "^17.0.0 || ^18.0.0",
         "styled-components": ">=5.0.0"
@@ -58,6 +55,9 @@
         ],
         "targets": {
             "build": {
+                "inputs": [
+                    "{projectRoot}/src/**"
+                ],
                 "outputs": [
                     "{projectRoot}/lib/**"
                 ]

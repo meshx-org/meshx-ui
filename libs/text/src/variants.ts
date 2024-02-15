@@ -71,16 +71,16 @@ export const textVariants = {
     'body.bold': {
         fontFamily: 'default',
         lineHeight: 'body',
-        fontWeight: 700,
+        fontWeight: 'bold',
         fontSize: 1
     },
-    bodyLarge: {
+    'body.large': {
         fontFamily: 'default',
         lineHeight: 'body',
         fontWeight: 400,
         fontSize: 2
     },
-    bodyLargeAlt: {
+    'body.large.semibold': {
         fontFamily: 'default',
         lineHeight: 'body',
         fontWeight: 600,

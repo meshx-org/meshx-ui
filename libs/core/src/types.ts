@@ -4,12 +4,7 @@ export interface ThemeContextValue {
     colors: ColorScheme<CSSVariable>
 }
 
-export type RGB = `rgb(${string})`
-export type RGBA = `rgba(${string})`
-export type HEX = `#${string}`
-export type HSL = `hsl(${string})`
-export type HSLA = `hsla(${string})`
-export type Color = RGB | RGBA | HEX | HSL | HSLA
+export type RGBA = [number, number, number, number]
 export type CSSVariable = `var(--${string})`
 
 export interface ColorScheme<T> {
@@ -44,78 +39,79 @@ export interface ColorScheme<T> {
         // A red button is used to indicate a destructive action.
         danger: {
             default: T
-            secondary: T
+            secondary:T
             tertiary: T
         }
     }
     stroke: {
         divider: T
         card: T
+        well: T
         surface: T
         control: T
     }
     backgrounds: {
         // Used to create `cards` t
         card: {
-            default: string
-            secondary: string
-            tertiary: string
+            default: T
+            secondary: T
+            tertiary: T
         }
 
         control: {
-            default: string
-            secondary: string
-            tertiary: string
-            disabled: string
+            default: T
+            secondary: T
+            tertiary: T
+            disabled: T
         }
 
         // Used over under dialogs to block them out as inaccessible.
         subtle: {
-            default: string
-            secondary: string
-            disabled: string
+            default: T
+            secondary: T
+            disabled: T
         }
 
         // Used over under dialogs to block them out as inaccessible.
         smoke: {
-            default: string
+            default: T
         }
 
         // Used on background colors of any material to create layering.
         layer: {
-            default: string
-            alt: string
+            default: T
+            alt: T
         }
 
         // Solid background colors to place layers, cards, or controls on.
         solid: {
-            default: string
-            secondary: string
-            tertiary: string
+            default: T
+            secondary: T
+            tertiary: T
         }
 
         acrylic: {
-            default: string
+            default: T
         }
     }
 
     fill: {
-        accent: string
+        accent: T
 
         // Used on background colors of any material to create layering.
-        layerDefault: string
-        layerAlt: string
+        layerDefault: T
+        layerAlt: T
 
         // TODO
-        secondary: string
+        secondary: T
     }
 }
 
 export interface ThemeValues {
     fontSizes: number[]
     fonts: {
-        default: string
-        mono: string
+        default: string[]
+        mono: string[]
     }
     space: number[] & { sm: number; md: number; base: number; lg: number; xl: number; '2xl': number; '3xl': number }
     lineHeights: Record<string, any>
@@ -125,7 +121,7 @@ declare module 'styled-components' {
     export interface DefaultTheme extends ThemeValues {
         name: string
         colors: ColorScheme<CSSVariable>
-        darkScheme: ColorScheme<Color>
-        lightScheme: ColorScheme<Color>
+        darkScheme: ColorScheme<RGBA>
+        lightScheme: ColorScheme<RGBA>
     }
 }

@@ -32,12 +32,12 @@ export function SearchBox<H = Hit>(props: SearchBoxProps<H>) {
             isOpen={focused && hasValidQuery}
         >
             <TextBox
-                onFocus={() => setFocused(true)}
-                onBlur={() => setFocused(false)}
+                //onFocus={() => setFocused(true)}
+                //onBlur={() => setFocused(false)}
                 placeholder="Search..."
                 value={query}
-                onChange={setQuery}
-                type="search"
+                //onChange={(v) => setQuery()}
+                //type="search"
                 aria-description="search results will appear below"
             />
             <FlyoutSurface width={350} p={1}>

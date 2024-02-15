@@ -1,6 +1,17 @@
-import React from 'react'
+import React, { ForwardedRef } from 'react'
 import styled from 'styled-components'
-import { layout, margin, padding, MarginProps, PaddingProps } from 'styled-system'
+import {
+    layout,
+    margin,
+    padding,
+    borderRadius,
+    MarginProps,
+    LayoutProps,
+    PaddingProps,
+    BorderRadiusProps,
+    opacity,
+    OpacityProps
+} from 'styled-system'
 import { LayerStroke, CardStroke, ControlStrokeX, SurfaceStroke } from '../stroke/Stroke'
 import { AcrylicFill, LayerFill, SmokeFill, CardFill, ControlFillX, SubtleFillX } from '../fill/Fill'
 import { CardShadow, FlyoutShadow } from '../shadow/Shadow'
@@ -21,34 +32,61 @@ const SurfaceContent = styled('div')<PaddingProps>`
     z-index: 3;
 `
 
-export function FlyoutSurface(props: FlyoutSurfaceProps) {
-    const { children, as, ...restProps } = props
+const StyledFlyoutSurface = styled.div<MarginProps & PaddingProps & LayoutProps & BorderRadiusProps & OpacityProps>`
+    ${margin}
+    ${layout}
+    ${padding}
+    ${opacity}
+    ${borderRadius}
+
+    backdrop-filter: ${({ theme }) => (theme.name === 'light' ? 'blur(20px) saturate(3)' : 'blur(20px) saturate(3.5)')};
+    background-color: var(--theme-acrylic-default);
+    box-shadow: 0 8px 16px 0 ${(props) => (props.theme.name === 'light' ? 'rgba(0 0 0 / 14%)' : 'rgba(0 0 0 / 26%)')},
+        0 0 0 1px var(--theme-stroke-surface);
+`
+
+const StyledCardSurface = styled.div<MarginProps & PaddingProps & LayoutProps & BorderRadiusProps & OpacityProps>`
+    ${margin}
+    ${padding}
+    ${layout}
+    ${opacity}
+    ${borderRadius}    
+
+    &[data-variant='default'] {
+        background-color: var(--theme-card-default);
+        box-shadow: 0 4px 8px 0 ${(props) => (props.theme.name === 'light' ? 'rgba(0 0 0 / 12%)' : 'rgba(0 0 0 / 26%)')},
+            0 0 0 1px var(--theme-stroke-card);
+    }
+
+    &[data-variant='well'] {
+        background-color: var(--theme-card-secondary);
+        box-shadow: 0 0 0 1px var(--theme-stroke-card);
+    }
+`
+
+function FlyoutSurface<C extends React.ElementType = 'div'>(props: FlyoutSurfaceProps<C>, ref: ForwardedRef<any>) {
+    const { children, as = 'div', borderRadius = 5, ...restProps } = props
 
     return (
-        <SurfaceWrapper {...restProps}>
-            <SurfaceStroke borderRadius={5} {...restProps} />
-            <FlyoutShadow borderRadius={5} {...restProps} />
-            <AcrylicFill borderRadius={5} {...restProps} />
-            <SurfaceContent as={as} {...restProps}>
-                {children}
-            </SurfaceContent>
-        </SurfaceWrapper>
+        <StyledFlyoutSurface ref={ref} role="presentation" borderRadius={borderRadius} {...restProps}>
+            {children}
+        </StyledFlyoutSurface>
     )
 }
 
-export function CardSurface(props: CardSurfaceProps) {
-    const { children, as, ...restProps } = props
-    const { state, handlers } = useControlState<HTMLDivElement>(false)
+function CardSurface<C extends React.ElementType = 'div'>(props: CardSurfaceProps<C>, ref: ForwardedRef<C>) {
+    const { children, as = 'div', variant = 'default', borderRadius = 5, ...restProps } = props
 
     return (
-        <SurfaceWrapper {...handlers} {...restProps}>
-            <CardStroke borderRadius={5} {...restProps} />
-            <CardShadow borderRadius={5} {...restProps} state={state} />
-            <CardFill borderRadius={5} {...restProps} data-state={state} />
-            <SurfaceContent as={as} {...restProps}>
-                {children}
-            </SurfaceContent>
-        </SurfaceWrapper>
+        <StyledCardSurface
+            ref={ref as any}
+            role="presentation"
+            data-variant={variant}
+            borderRadius={borderRadius}
+            {...restProps}
+        >
+            {children}
+        </StyledCardSurface>
     )
 }
 
@@ -85,7 +123,7 @@ export function ControlSurface(props: any) {
 
     return (
         <SurfaceWrapper {...handlers}>
-            <ControlStrokeX state={state} borderRadius={6} />
+            <ControlStrokeX data-state={state} borderRadius={6} />
             <ControlFillX data-state={state} borderRadius={6} />
             <SurfaceContent as={as} {...restProps}>
                 {children}
@@ -107,3 +145,9 @@ export function LayerSurface(props: LayerSurfaceProps) {
         </SurfaceWrapper>
     )
 }
+
+const _FlyoutSurface = React.forwardRef(FlyoutSurface)
+export { _FlyoutSurface as FlyoutSurface }
+
+const _CardSurface = React.forwardRef(CardSurface)
+export { _CardSurface as CardSurface }

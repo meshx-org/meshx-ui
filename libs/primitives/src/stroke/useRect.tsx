@@ -46,7 +46,7 @@ export const useRect = (ref: any) => {
     return rect
 }
 
-function getRect(element: any): {
+function getRect(element: HTMLElement): {
     bottom: number
     height: number
     left: number

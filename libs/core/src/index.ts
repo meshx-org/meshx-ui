@@ -12,6 +12,7 @@ export * from './hooks/shortcuts/useShortcuts'
 export * from './hooks/useFocus'
 export * from './utils'
 
-export type { ThemeValues, ColorScheme } from './types'
-export { THEME_VALUES } from './context/themeValues'
-export { DEFAULT_DARK, DEFAULT_LIGHT, VARIABLE } from './context/colorSchemes'
+export * from './collections'
+
+export type { ThemeValues, ColorScheme, RGBA } from './types'
+export * from './theme'

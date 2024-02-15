@@ -4,7 +4,7 @@ import { HeadingProps } from './Text.types'
 import { headingVariants } from './variants'
 import styled from 'styled-components'
 
-const HeadingBase = styled.h1<HeadingProps>`
+const HeadingBase = styled.h1<HeadingProps<any>>`
     ${color}
     ${space}
     ${typography}
@@ -22,12 +22,21 @@ const asMapping = {
     heading3: 'h3',
     heading4: 'h4',
     heading5: 'h5',
-    heading6: 'h6',
+    heading6: 'h6'
 }
 
-export function Heading(props: HeadingProps) {
-    const { selectable = false, variant = "heading1", ...restProps } = props
+export function Heading<C extends React.ElementType>(props: HeadingProps<C>) {
+    const { selectable = false, variant = 'heading1', ...restProps } = props
     const as = asMapping[variant]
 
-    return <HeadingBase ara as={as} selectable={selectable} variant={variant} color='text.primary' {...restProps as any} />
+    return (
+        <HeadingBase
+            ara
+            as={as}
+            selectable={selectable}
+            variant={variant}
+            color="text.primary"
+            {...(restProps as any)}
+        />
+    )
 }

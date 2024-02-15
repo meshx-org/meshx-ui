@@ -11,7 +11,7 @@
         "build": {
             "dependsOn": ["^build"],
             "inputs": ["default"],
-            "outputs": ["{projectRoot}/dist"],
+            "outputs": ["{projectRoot}/lib"],
             "cache": true
         },
         "test": {
@@ -28,6 +28,11 @@
             "dependsOn": ["build"],
             "inputs": ["default"],
             "cache": false
+        },
+        "@nx/js:tsc": {
+            "cache": true,
+            "dependsOn": ["^build"],
+            "inputs": ["production", "^production"]
         }
     },
     "plugins": [

@@ -1,5 +1,5 @@
 import { ButtonProps } from './Button.types'
 
-export function Button(props: ButtonProps) {
-    return null
+export function Button<C extends React.ElementType>(props: ButtonProps<C>) {
+    throw 'Button not implmented'
 }

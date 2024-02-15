@@ -125,7 +125,7 @@ export function Select(props: SelectProps) {
                 {iconRight && <span className="right">{iconRight}</span>}
             </SelectContent>
 
-            <ControlStrokeX borderRadius={5.5} state={state} />
+            <ControlStrokeX borderRadius={5.5} data-state={state} />
             <ControlFillX data-state={state} variant={'default'} borderRadius={6} />
         </StyledSelect>
     )

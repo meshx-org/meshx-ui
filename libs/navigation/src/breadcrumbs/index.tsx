@@ -13,7 +13,7 @@ const StyledBreadcrumbs = styled.ul`
     
     line-height: 20px;
     font-size: var(--h5-size,14px);
-    color: var(--theme-color-text-secondary);
+    color: var(--theme-text-secondary);
 `
 
 const Separator = styled.li`

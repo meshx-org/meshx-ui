@@ -1,15 +1,28 @@
-import type { LayoutProps, SpaceProps, BorderRadiusProps } from 'styled-system'
+import type { LayoutProps, SpaceProps, MarginProps, BorderRadiusProps, OpacityProps, PaddingProps } from 'styled-system'
 
-export interface FlyoutSurfaceProps extends LayoutProps, SpaceProps, BorderRadiusProps {
-    children?: React.ReactNode | React.ReactNode[]
-    as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
-}
+export type FlyoutSurfaceProps<C extends React.ElementType> = {
+    children: React.ReactNode
 
-export interface CardSurfaceProps extends LayoutProps, SpaceProps, BorderRadiusProps {
+    as?: C
+} & React.ComponentPropsWithoutRef<C> &
+    MarginProps &
+    PaddingProps &
+    LayoutProps &
+    BorderRadiusProps &
+    OpacityProps
+
+export type CardSurfaceProps<C extends React.ElementType> = {
     children?: React.ReactNode | React.ReactNode[]
-     
-    as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
-}
+
+    variant: "default" | "secondary"
+
+    as?: C
+} & React.ComponentPropsWithoutRef<C> &
+    MarginProps &
+    PaddingProps &
+    LayoutProps &
+    BorderRadiusProps &
+    OpacityProps
 
 export interface LayerSurfaceProps extends LayoutProps, SpaceProps, BorderRadiusProps {
     children?: React.ReactNode | React.ReactNode[]
