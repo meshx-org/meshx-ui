@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { ShortcutsProvider } from '@meshx-org/mxui-core'
-import { PortalProvider } from '@meshx-org/mxui-core'
-import { Overlay2 } from '@meshx-org/mxui-overlays'
-import { Button } from '@meshx-org/mxui-button'
+import { ShortcutsProvider } from '@meshx/mxui-core'
+import { PortalProvider } from '@meshx/mxui-core'
+import { Overlay2 } from '@meshx/mxui-overlays'
+import { Button } from '@meshx/mxui-button'
 
 const meta = {
     title: 'Containers/Overlay2',

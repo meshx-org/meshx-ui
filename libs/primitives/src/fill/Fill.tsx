@@ -8,7 +8,7 @@ import {
     TextControlFillProps,
     SubtleFillProps
 } from './Fill.types'
-import { ControlState, useTheme } from '@meshx-org/mxui-core'
+import { ControlState, useTheme } from '@meshx/mxui-core'
 import { borderRadius } from 'styled-system'
 import styled, { css, DefaultTheme, InterpolationFunction } from 'styled-components'
 
@@ -277,9 +277,8 @@ export const AcrylicFill = styled.div.attrs(ariaHidden)<AcrylicFillProps>`
     ${borderRadius}
 
     backdrop-filter: ${({ theme }) => (theme.name === 'light' ? 'blur(20px) saturate(3)' : 'blur(20px) saturate(3.5)')};
-    
+
     background-color: var(--theme-acrylic-default);
-    
 `
 
 export const CardFill = styled.div.attrs(ariaHidden)<CardFillProps>`

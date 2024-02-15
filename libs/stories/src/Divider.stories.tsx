@@ -1,8 +1,8 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
 import { View } from 'react-native'
-import { Divider, DividerProps } from '@meshx-org/mxui-primitives'
-import { Button } from '@meshx-org/mxui-button'
+import { Divider, DividerProps } from '@meshx/mxui-primitives'
+import { Button } from '@meshx/mxui-button'
 
 export default {
     title: 'Components/Divider',

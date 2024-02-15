@@ -2,7 +2,7 @@ import React from 'react'
 import { View as RNView } from 'react-native'
 import styled from 'styled-components/native'
 import { compose, space, color, layout, flexbox, border, position, background } from 'styled-system'
-import { useThemeValues } from '@meshx-org/mxui-core'
+import { useThemeValues } from '@meshx/mxui-core'
 import { BoxProps } from './Box.types'
 
 const StyledView = styled.View`

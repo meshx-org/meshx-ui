@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { Text } from '@meshx-org/mxui-text'
+import { Text } from '@meshx/mxui-text'
 import { AvatarProps } from './types'
 import styled from 'styled-components'
 

@@ -13,7 +13,7 @@
 import { LayoutInfo } from '@react-stately/virtualizer'
 import { layoutInfoToStyle, useVirtualizerItem, VirtualizerItemOptions } from '@react-aria/virtualizer'
 import { ListBoxContext } from './ListBoxContext'
-import { Node } from '@meshx-org/mxui-core'
+import { Node } from '@meshx/mxui-core'
 import React, { Fragment, ReactNode, useContext, useRef } from 'react'
 import { useListBoxSection } from 'react-aria'
 // import { useLocale } from '@react-aria/i18n'

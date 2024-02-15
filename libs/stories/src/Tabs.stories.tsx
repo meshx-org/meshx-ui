@@ -1,7 +1,7 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
-import { TabView, TabPanels, TabList, Item, TabViewProps } from '@meshx-org/mxui-navigation'
-import { Button } from '@meshx-org/mxui-button'
+import { TabView, TabPanels, TabList, Item, TabViewProps } from '@meshx/mxui-navigation'
+import { Button } from '@meshx/mxui-button'
 
 const argTypes = {}
 

@@ -1,5 +1,5 @@
 import type { StoryObj, Meta } from '@storybook/react'
-import { Badge } from '@meshx-org/mxui-badge/src'
+import { Badge } from '@meshx/mxui-badge/src'
 import React from 'react'
 
 const meta = {
@@ -30,7 +30,7 @@ export const Info: Story = {
 }
 
 export const InfoSubtle: Story = {
-    name: "Info (Subtle)",
+    name: 'Info (Subtle)',
     args: {
         variant: 'info.subtle'
     }

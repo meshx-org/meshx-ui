@@ -1,6 +1,6 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
-import { DateBox, DateBoxPropsBase } from '@meshx-org/mxui-datebox'
+import { DateBox, DateBoxPropsBase } from '@meshx/mxui-datebox'
 import { DateValue, parseAbsoluteToLocal } from '@internationalized/date'
 
 const meta: Meta = {

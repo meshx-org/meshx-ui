@@ -1,7 +1,7 @@
 import React from 'react'
 import { SelectProps } from './Select.types'
-import { ControlFill, ControlFillX, ControlStroke, ControlStrokeX } from '@meshx-org/mxui-primitives'
-import { useControlState, useTheme } from '@meshx-org/mxui-core'
+import { ControlFill, ControlFillX, ControlStroke, ControlStrokeX } from '@meshx/mxui-primitives'
+import { useControlState, useTheme } from '@meshx/mxui-core'
 import styled from 'styled-components'
 
 const Icon = () => {

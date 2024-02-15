@@ -16,9 +16,9 @@ import { isFocusVisible } from '@react-aria/interactions'
 
 import React, { useContext, useRef } from 'react'
 import { ListBoxContext } from './ListBoxContext'
-import { Node } from '@meshx-org/mxui-core'
-import { Text } from '@meshx-org/mxui-text'
-import { CheckmarkSmall } from '@meshx-org/mxui-icons'
+import { Node } from '@meshx/mxui-core'
+import { Text } from '@meshx/mxui-text'
+import { CheckmarkSmall } from '@meshx/mxui-icons'
 import styled from 'styled-components'
 // import { Grid } from '@react-spectrum/layout'
 

@@ -15,8 +15,8 @@ import {
     CardSurfaceProps,
     ControlSurface,
     SubtleSurface
-} from '@meshx-org/mxui-primitives'
-import { Text } from '@meshx-org/mxui-text'
+} from '@meshx/mxui-primitives'
+import { Text } from '@meshx/mxui-text'
 
 export default {
     title: 'Primitives/Surface',

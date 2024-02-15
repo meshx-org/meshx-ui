@@ -12,7 +12,7 @@
 
 import React, { JSX, ReactElement, useRef, useState } from 'react'
 
-import { Overlay } from '@meshx-org/mxui-overlays'
+import { Overlay } from '@meshx/mxui-overlays'
 import { TooltipTriggerProps } from './Tooltip.types'
 import { TooltipContext } from './context'
 import { useTooltipTriggerState } from '@react-stately/tooltip'
@@ -97,7 +97,6 @@ function TooltipTrigger(props: TooltipTriggerProps) {
                     ...tooltipProps
                 }}
             >
-                
                 <Overlay ref={overlayRef} isOpen={state.isOpen} nodeRef={overlayRef}>
                     {tooltip}
                 </Overlay>

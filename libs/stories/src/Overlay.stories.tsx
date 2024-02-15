@@ -1,6 +1,6 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
-import { Overlay, OverlayProps2 } from '@meshx-org/mxui-overlays'
+import { Overlay, OverlayProps2 } from '@meshx/mxui-overlays'
 
 const argTypes = {
     placement: {

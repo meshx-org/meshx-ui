@@ -19,7 +19,7 @@ import * as React from 'react'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 import { AbstractPureComponent } from '../abstractPureComponent'
-import { Portal } from '@meshx-org/mxui-core'
+import { Portal } from '@meshx/mxui-core'
 import { HTMLDivProps, OverlayProps2, OverlayState } from './Overlay2.types'
 import { createRef } from 'react'
 
@@ -291,7 +291,7 @@ export class Overlay2 extends AbstractPureComponent<OverlayProps2, OverlayState>
                 timeout={transitionDuration}
                 unmountOnExit={true}
             >
-                {<div tabIndex={0} {...props} /> as any}
+                {(<div tabIndex={0} {...props} />) as any}
             </CSSTransition>
         )
     }

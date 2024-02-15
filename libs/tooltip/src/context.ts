@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import { PlacementAxis } from '@meshx-org/mxui-overlays'
+import { PlacementAxis } from '@meshx/mxui-overlays'
 import React, { CSSProperties, HTMLAttributes, RefObject } from 'react'
 import { TooltipTriggerState } from '@react-stately/tooltip'
 

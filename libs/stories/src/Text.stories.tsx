@@ -4,7 +4,7 @@ import React from 'react'
 
 import { Story, Meta } from '@storybook/react'
 import { View } from 'react-native'
-import { Text, Heading, TextProps, HeadingProps } from '@meshx-org/mxui-text/src'
+import { Text, Heading, TextProps, HeadingProps } from '@meshx/mxui-text/src'
 
 export default {
     title: 'Primitives/Text',
@@ -29,8 +29,8 @@ export default {
 
 const HeadingsStory: Story<HeadingProps> = (args) => (
     <View>
-        <Heading {...args} children="Display 1"  variant="display1" />
-        <Heading {...args} children="Display 2"  variant="display2" />
+        <Heading {...args} children="Display 1" variant="display1" />
+        <Heading {...args} children="Display 2" variant="display2" />
         <Heading {...args} children="H1 heading" variant="heading1" />
         <Heading {...args} children="H2 heading" variant="heading2" />
         <Heading {...args} children="H3 heading" variant="heading3" />
@@ -42,9 +42,9 @@ const HeadingsStory: Story<HeadingProps> = (args) => (
 
 const TextStory: Story<TextProps> = (args) => (
     <View>
-        <Text {...args} variant="bodyAlt"    children="Body Alt" />
-        <Text {...args} variant="body"       children="Body" />
-        <Text {...args} variant="caption"    children="Caption" />
+        <Text {...args} variant="bodyAlt" children="Body Alt" />
+        <Text {...args} variant="body" children="Body" />
+        <Text {...args} variant="caption" children="Caption" />
         <Text {...args} variant="captionAlt" children="Caption Alt" />
     </View>
 )

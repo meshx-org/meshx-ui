@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import { layout, margin, padding, PaddingProps, MarginProps, LayoutProps } from 'styled-system'
 
 import { TextBoxProps } from './TextBox.types'
-import { ControlState, useTheme } from '@meshx-org/mxui-core'
-import { TextControlFillX, TextControlStrokeX } from '@meshx-org/mxui-primitives'
+import { ControlState, useTheme } from '@meshx/mxui-core'
+import { TextControlFillX, TextControlStrokeX } from '@meshx/mxui-primitives'
 
 import { useControlledState } from '@react-stately/utils'
 import { mergeProps, useFocusRing, useHover, usePress } from 'react-aria'

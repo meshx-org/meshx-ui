@@ -1,10 +1,10 @@
 import React, { useCallback, useRef, useState } from 'react'
 import { DropdownProps } from './Dropdown.types'
-import { ControlFillX, ControlStrokeX } from '@meshx-org/mxui-primitives'
-import { useLayoutEffect } from '@meshx-org/mxui-core'
-import { Text } from '@meshx-org/mxui-text'
-import { FlyoutSurface } from '@meshx-org/mxui-primitives'
-import { Popover } from '@meshx-org/mxui-overlays'
+import { ControlFillX, ControlStrokeX } from '@meshx/mxui-primitives'
+import { useLayoutEffect } from '@meshx/mxui-core'
+import { Text } from '@meshx/mxui-text'
+import { FlyoutSurface } from '@meshx/mxui-primitives'
+import { Popover } from '@meshx/mxui-overlays'
 
 import { useDOMRef, useIsMobileDevice, useResizeObserver, useUnwrapDOMRef } from '@react-spectrum/utils'
 import { useSelectState } from 'react-stately'
@@ -12,9 +12,9 @@ import { PressResponder } from '@react-aria/interactions'
 import { HiddenSelect, mergeProps, useHover, useId, useSelect } from 'react-aria'
 
 import styled from 'styled-components'
-import { ChevronBottomSmall } from '@meshx-org/mxui-icons'
-import { ListBoxBase, useListBoxLayout } from '@meshx-org/mxui-listbox'
-import { FieldButton } from '@meshx-org/mxui-button'
+import { ChevronBottomSmall } from '@meshx/mxui-icons'
+import { ListBoxBase, useListBoxLayout } from '@meshx/mxui-listbox'
+import { FieldButton } from '@meshx/mxui-button'
 
 const StyledChevronBottomSmall = styled(ChevronBottomSmall)`
     display: inline-block;

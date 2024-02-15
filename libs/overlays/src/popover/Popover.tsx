@@ -15,9 +15,9 @@ import { Overlay } from '../overlay/Overlay'
 import { PopoverProps, PopoverWrapperProps } from './Popover.types'
 import { mergeProps, useFocusWithin, usePopover } from 'react-aria'
 import { useDOMRef } from '@react-spectrum/utils'
-import { useLayoutEffect } from '@meshx-org/mxui-core'
+import { useLayoutEffect } from '@meshx/mxui-core'
 import { DOMRef } from '../types'
-import { FlyoutSurface, FlyoutShadow, SurfaceStroke, AcrylicFill } from '@meshx-org/mxui-primitives'
+import { FlyoutSurface, FlyoutShadow, SurfaceStroke, AcrylicFill } from '@meshx/mxui-primitives'
 
 function Popover(props: PopoverProps, ref: DOMRef<HTMLElement>) {
     const { children, state, ...otherProps } = props

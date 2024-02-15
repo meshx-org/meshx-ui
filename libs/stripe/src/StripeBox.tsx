@@ -2,16 +2,8 @@ import React, { useState } from 'react'
 import { CardElement, CardElementProps } from '@stripe/react-stripe-js'
 import { StripeBoxProps } from './StripeBox.types'
 import styled from 'styled-components'
-import { TextControlFillX, TextControlStrokeX } from '@meshx-org/mxui-primitives'
-import {
-    ControlState,
-    DEFAULT_DARK,
-    DEFAULT_LIGHT,
-    useTheme,
-    useThemeValues,
-    rgba,
-    fontStack
-} from '@meshx-org/mxui-core'
+import { TextControlFillX, TextControlStrokeX } from '@meshx/mxui-primitives'
+import { ControlState, DEFAULT_DARK, DEFAULT_LIGHT, useTheme, useThemeValues, rgba, fontStack } from '@meshx/mxui-core'
 
 const StyledWrapper = styled.div`
     position: relative;

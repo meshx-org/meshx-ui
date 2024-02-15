@@ -15,10 +15,10 @@ import { useHover, mergeProps, FocusRing } from 'react-aria'
 import { useButton } from '@react-aria/button'
 import { FieldButtonProps } from './FieldButton.types'
 import { useFocusableRef, FocusableRef } from '../focusableRef'
-import { ControlFillX, ControlStrokeX } from '@meshx-org/mxui-primitives'
-import { Text } from '@meshx-org/mxui-text'
+import { ControlFillX, ControlStrokeX } from '@meshx/mxui-primitives'
+import { Text } from '@meshx/mxui-text'
 import styled from 'styled-components'
-import { ControlState } from '@meshx-org/mxui-core'
+import { ControlState } from '@meshx/mxui-core'
 
 const Button = styled.button`
     position: relative;

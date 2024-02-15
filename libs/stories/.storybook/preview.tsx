@@ -1,9 +1,9 @@
 import './root.css'
 import React from 'react'
-import { ThemeProvider } from '@meshx-org/mxui-core'
+import { ThemeProvider } from '@meshx/mxui-core'
 import { useDarkMode } from 'storybook-dark-mode'
 import { themes, ThemeVars } from '@storybook/theming'
-import { DEFAULT_DARK, DEFAULT_LIGHT } from '@meshx-org/mxui-core'
+import { DEFAULT_DARK, DEFAULT_LIGHT } from '@meshx/mxui-core'
 
 export const decorators = [
     (Story) => {
@@ -52,7 +52,7 @@ const light: ThemeVars = {
     textColor: toRgba(DEFAULT_LIGHT.text.primary),
     textMutedColor: toRgba(DEFAULT_LIGHT.text.disabled),
 
-    textInverseColor: "white",
+    textInverseColor: 'white',
 
     appBorderColor: toRgba(DEFAULT_LIGHT.stroke.divider),
     inputBorder: toRgba(DEFAULT_LIGHT.stroke.divider),

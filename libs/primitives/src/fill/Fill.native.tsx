@@ -1,6 +1,6 @@
 import React from 'react'
 import { View } from 'react-native'
-import { useTheme } from '@meshx-org/mxui-core'
+import { useTheme } from '@meshx/mxui-core'
 import { ControlFillProps } from './Fill.types'
 
 export function TextControlFill({ children }: ControlFillProps) {

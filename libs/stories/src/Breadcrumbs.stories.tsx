@@ -1,8 +1,8 @@
 import React from 'react'
 import type { StoryObj, Meta } from '@storybook/react'
-import { Breadcrumbs } from '@meshx-org/mxui-navigation'
-import { BreadcrumbProps } from '@meshx-org/mxui-navigation/src/breadcrumbs/types'
-import { Link } from '@meshx-org/mxui-link'
+import { Breadcrumbs } from '@meshx/mxui-navigation'
+import { BreadcrumbProps } from '@meshx/mxui-navigation/src/breadcrumbs/types'
+import { Link } from '@meshx/mxui-link'
 
 const meta = {
     title: 'Navigation/Breadcrumbs',

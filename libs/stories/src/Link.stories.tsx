@@ -1,6 +1,6 @@
 import type { StoryObj, Meta } from '@storybook/react'
-import { Link } from '@meshx-org/mxui-link'
-import { Text } from '@meshx-org/mxui-text'
+import { Link } from '@meshx/mxui-link'
+import { Text } from '@meshx/mxui-text'
 import React from 'react'
 
 const meta = {

@@ -10,8 +10,8 @@ import clsx from 'clsx'
 import { useDateFormatter } from './useDateFormater'
 import { createFocusManager, FocusManager } from './FocusScope'
 import { useEvent } from './useEvent'
-import { ControlFillX, ControlStrokeX } from '@meshx-org/mxui-primitives'
-import { ControlState } from '@meshx-org/mxui-core'
+import { ControlFillX, ControlStrokeX } from '@meshx/mxui-primitives'
+import { ControlState } from '@meshx/mxui-core'
 
 const StyledWrapper = styled.div`
     display: flex;
@@ -193,7 +193,7 @@ export function DateBox(props: DateBoxProps<DateValue>) {
     return (
         <StyledWrapper className="wrapper">
             <span {...labelProps}>{props.label}</span>
-            
+
             <StyledField {...fieldProps} ref={ref} className="field">
                 {state.segments.map((segment, i) => (
                     <DS key={i} segment={segment} state={state} />

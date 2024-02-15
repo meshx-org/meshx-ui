@@ -1,5 +1,5 @@
 import type { StoryObj, Meta } from '@storybook/react'
-import { TextBox } from '@meshx-org/mxui-textbox/src'
+import { TextBox } from '@meshx/mxui-textbox/src'
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 

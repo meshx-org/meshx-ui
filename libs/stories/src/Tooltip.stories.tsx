@@ -11,7 +11,7 @@
  */
 
 import type { StoryObj, Meta } from '@storybook/react'
-import { Tooltip } from '@meshx-org/mxui-tooltip/src'
+import { Tooltip } from '@meshx/mxui-tooltip/src'
 import React from 'react'
 
 const argTypes = {

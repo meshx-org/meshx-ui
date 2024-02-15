@@ -1,7 +1,7 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { StripeBox } from '@meshx-org/mxui-stripebox'
+import { StripeBox } from '@meshx/mxui-stripebox'
 import { loadStripe } from '@stripe/stripe-js'
 import { Elements } from '@stripe/react-stripe-js'
 

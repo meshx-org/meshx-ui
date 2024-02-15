@@ -5,7 +5,7 @@ import React, { useState } from 'react'
 import { Story, Meta } from '@storybook/react'
 
 import { Pressable, View, Animated } from 'react-native'
-import { Text } from '@meshx-org/mxui-text'
+import { Text } from '@meshx/mxui-text'
 import {
     TreeView,
     ItemId,
@@ -14,7 +14,7 @@ import {
     TreeViewProps,
     iterateTree,
     mutateTree
-} from '@meshx-org/mxui-treeview'
+} from '@meshx/mxui-treeview'
 
 // 👇 This default export determines where your story goes in the story list
 const meta: Meta = {
@@ -131,7 +131,12 @@ Default.args = {
             },
             1: { id: 1, children: [3, 4], data: { title: 'Lovely', glyph: '😍' }, hasChildren: true },
             2: { id: 2, children: [5, 6], data: { title: 'Funny', glyph: '😁' }, hasChildren: true, isSelected: true },
-            3: { id: 3, children: [], data: { title: 'Perfect todo adssad asd dsad s asd dfasd s', glyph: '🎨' }, hasChildren: false },
+            3: {
+                id: 3,
+                children: [],
+                data: { title: 'Perfect todo adssad asd dsad s asd dfasd s', glyph: '🎨' },
+                hasChildren: false
+            },
             4: { id: 4, children: [], data: { title: 'Fire', glyph: '🔥' }, hasChildren: false },
             5: { id: 5, children: [], data: { title: 'Ideas', glyph: '💡' }, hasChildren: false },
             6: { id: 6, children: [], data: { title: 'Party', glyph: '🎉' }, hasChildren: false }

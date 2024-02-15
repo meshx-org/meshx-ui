@@ -1,5 +1,5 @@
 import createPlugin from 'tailwindcss/plugin'
-import { ColorScheme, THEME_VALUES, VARIABLE } from '@meshx-org/mxui-core'
+import { ColorScheme, THEME_VALUES, VARIABLE } from '@meshx/mxui-core'
 
 THEME_VALUES.fonts.default
 

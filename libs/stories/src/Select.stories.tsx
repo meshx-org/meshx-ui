@@ -1,6 +1,6 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
-import { Select, SelectProps } from '@meshx-org/mxui-select'
+import { Select, SelectProps } from '@meshx/mxui-select'
 
 export default {
     title: 'Basic Input/Select',

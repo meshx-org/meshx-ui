@@ -1,9 +1,9 @@
 import React, { ForwardedRef, useEffect, useRef } from 'react'
 import { InfoBarProps } from './InfoBar.types'
 import styled from 'styled-components'
-import { CardSurface } from '@meshx-org/mxui-primitives'
-import { Text } from '@meshx-org/mxui-text'
-import { Badge } from '@meshx-org/mxui-badge'
+import { CardSurface } from '@meshx/mxui-primitives'
+import { Text } from '@meshx/mxui-text'
+import { Badge } from '@meshx/mxui-badge'
 import { FocusRing } from 'react-aria'
 
 const BadgeStyled = styled.div``
@@ -102,7 +102,6 @@ const ICONS = {
     notice: 'help',
     negative: 'danger'
 } as const
-
 
 function useDOMRef(ref: any) {
     return ref

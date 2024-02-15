@@ -1,6 +1,6 @@
 import React, { ChangeEventHandler, useCallback, useState, useEffect, useRef } from 'react'
-import { useTheme, useControlState } from '@meshx-org/mxui-core'
-import { Text } from '@meshx-org/mxui-text'
+import { useTheme, useControlState } from '@meshx/mxui-core'
+import { Text } from '@meshx/mxui-text'
 import type { SwitchProps } from './Switch.types'
 import styled, { ThemeProvider } from 'styled-components'
 import { ToggleState, useToggleState } from 'react-stately'

@@ -16,7 +16,7 @@ import { LayerStroke, CardStroke, ControlStrokeX, SurfaceStroke } from '../strok
 import { AcrylicFill, LayerFill, SmokeFill, CardFill, ControlFillX, SubtleFillX } from '../fill/Fill'
 import { CardShadow, FlyoutShadow } from '../shadow/Shadow'
 import { FlyoutSurfaceProps, LayerSurfaceProps, CardSurfaceProps } from './Surface.types'
-import { useControlState } from '@meshx-org/mxui-core'
+import { useControlState } from '@meshx/mxui-core'
 
 const SurfaceWrapper = styled.div<MarginProps>`
     ${margin}

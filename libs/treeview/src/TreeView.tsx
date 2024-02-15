@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
-import { ControlState, useThemeColors } from '@meshx-org/mxui-core'
-import { SubtleFillX } from '@meshx-org/mxui-primitives'
+import { ControlState, useThemeColors } from '@meshx/mxui-core'
+import { SubtleFillX } from '@meshx/mxui-primitives'
 import { FlattenedItem, TreeViewNodeProps, TreeViewProps } from './TreeView.types'
 import { flattenTree } from './utils'
 import { CSSProperties } from 'styled-components'

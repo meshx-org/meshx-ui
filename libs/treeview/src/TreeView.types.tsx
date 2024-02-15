@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import { ControlState } from '@meshx-org/mxui-core'
+import { ControlState } from '@meshx/mxui-core'
 
 export interface TreeViewNodeProps<T> {
     item: TreeItem<T>
@@ -24,7 +24,7 @@ export interface TreeViewProps<T> {
 
     canDragItems?: boolean
     canReorderItems?: boolean
-    
+
     rowGap?: number
 
     /** Function that will be called when a parent item needs to be expanded. */

@@ -13,7 +13,7 @@
 import React, { ForwardedRef, HTMLAttributes, ReactElement, ReactNode, RefObject, useMemo } from 'react'
 import styled from 'styled-components'
 
-import { Node, useLayoutEffect } from '@meshx-org/mxui-core'
+import { Node, useLayoutEffect } from '@meshx/mxui-core'
 import { ListLayout } from '@react-stately/layout'
 import { ListState } from 'react-stately'
 import { AriaListBoxOptions, FocusScope, mergeProps, useListBox } from 'react-aria'

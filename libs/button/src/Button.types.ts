@@ -1,4 +1,4 @@
-import { ControlState } from '@meshx-org/mxui-core'
+import { ControlState } from '@meshx/mxui-core'
 import { FocusableOptions } from '@react-aria/focus'
 
 export type ButtonAppearance = 'primary' | 'secondary'
@@ -44,5 +44,5 @@ export type ButtonProps<C extends React.ElementType> = {
     iconPosition?: 'before' | 'after'
 
     as?: C
-} & React.ComponentPropsWithoutRef<C> & FocusableOptions
-
+} & React.ComponentPropsWithoutRef<C> &
+    FocusableOptions

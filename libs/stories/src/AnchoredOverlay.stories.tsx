@@ -1,7 +1,7 @@
-import React from "react"
+import React from 'react'
 import { Story, Meta } from '@storybook/react'
-import { AnchoredOverlay, AnchoredOverlayProps } from '@meshx-org/mxui-overlays'
-import { Button } from '@meshx-org/mxui-button'
+import { AnchoredOverlay, AnchoredOverlayProps } from '@meshx/mxui-overlays'
+import { Button } from '@meshx/mxui-button'
 
 const argTypes = {
     placement: {
@@ -118,4 +118,3 @@ Default.args = {
     children: [<Button>target</Button>, <div>overlay</div>]
     // onOpenChange: action('openChange')
 }
- 

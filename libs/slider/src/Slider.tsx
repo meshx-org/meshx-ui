@@ -1,8 +1,8 @@
 import React, { useRef, useEffect, useState, useCallback, ChangeEventHandler, HTMLProps } from 'react'
 import ReactSlider from 'react-slider'
 
-import { useControlState, useTheme } from '@meshx-org/mxui-core'
-import { CircleControlStroke } from '@meshx-org/mxui-primitives'
+import { useControlState, useTheme } from '@meshx/mxui-core'
+import { CircleControlStroke } from '@meshx/mxui-primitives'
 import { SliderProps } from './Slider.types'
 import styled, { CSSProperties } from 'styled-components'
 

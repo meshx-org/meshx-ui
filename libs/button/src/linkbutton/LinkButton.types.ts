@@ -1,4 +1,4 @@
-import { ControlState } from '@meshx-org/mxui-core'
+import { ControlState } from '@meshx/mxui-core'
 
 export interface LinkButtonBaseProps {
     /**

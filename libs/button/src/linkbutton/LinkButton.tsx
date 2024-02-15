@@ -1,8 +1,8 @@
 import React from 'react'
 import { LinkButtonProps } from './LinkButton.types'
-import { ControlState, useControlState } from '@meshx-org/mxui-core'
-import { Text } from '@meshx-org/mxui-text'
-import { SubtleFillX } from '@meshx-org/mxui-primitives'
+import { ControlState, useControlState } from '@meshx/mxui-core'
+import { Text } from '@meshx/mxui-text'
+import { SubtleFillX } from '@meshx/mxui-primitives'
 import styled from 'styled-components'
 
 const StyledSubtleFillX = styled(SubtleFillX)`

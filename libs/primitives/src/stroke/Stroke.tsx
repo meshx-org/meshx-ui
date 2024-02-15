@@ -1,5 +1,5 @@
 import React, { useMemo, useId, useRef } from 'react'
-import { ControlState, useTheme } from '@meshx-org/mxui-core'
+import { ControlState, useTheme } from '@meshx/mxui-core'
 import { ControlStrokeProps, CardStrokeProps, SurfaceStrokeProps, ControlStrokeXProps } from './Stroke.types'
 import { borderRadius } from 'styled-system'
 import styled, { css } from 'styled-components'

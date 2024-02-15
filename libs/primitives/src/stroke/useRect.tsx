@@ -1,4 +1,4 @@
-import { useLayoutEffect } from '@meshx-org/mxui-core'
+import { useLayoutEffect } from '@meshx/mxui-core'
 import { useCallback, useState } from 'react'
 
 export const useRect = (ref: any) => {

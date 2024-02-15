@@ -1,7 +1,7 @@
 import type { StoryObj, Meta } from '@storybook/react'
-import { TextBox } from '@meshx-org/mxui-textbox'
-import { Switch } from '@meshx-org/mxui-switch'
-import { FormGroup } from '@meshx-org/mxui-formgroup'
+import { TextBox } from '@meshx/mxui-textbox'
+import { Switch } from '@meshx/mxui-switch'
+import { FormGroup } from '@meshx/mxui-formgroup'
 import React from 'react'
 
 const meta = {

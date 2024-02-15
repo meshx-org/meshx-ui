@@ -1,9 +1,9 @@
 import React, { useState, useMemo, useEffect } from 'react'
 import { SearchBoxProps, Hit } from './SearchBox.types'
-import { AnchoredOverlay } from '@meshx-org/mxui-overlays'
-import { TextBox } from '@meshx-org/mxui-textbox'
-import { Text } from '@meshx-org/mxui-text'
-import { FlyoutSurface, Box } from '@meshx-org/mxui-primitives'
+import { AnchoredOverlay } from '@meshx/mxui-overlays'
+import { TextBox } from '@meshx/mxui-textbox'
+import { Text } from '@meshx/mxui-text'
+import { FlyoutSurface, Box } from '@meshx/mxui-primitives'
 
 import styled from 'styled-components'
 

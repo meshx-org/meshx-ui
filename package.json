@@ -1,7 +1,7 @@
 {
     "name": "@meshx/ui",
     "description": "Component library used across MeshX Apps",
-    "version": "0.0.3-unstable.9",
+    "version": "0.0.0",
     "private": true,
     "workspaces": [
         "./libs/*"

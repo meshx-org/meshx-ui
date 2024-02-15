@@ -1,6 +1,6 @@
 import type { Config } from 'tailwindcss'
 
-import { preset } from '@meshx-org/mxui-tailwind'
+import { preset } from '@meshx/mxui-tailwind'
 import { createGlobPatternsForDependencies } from '@nx/react/tailwind'
 import { join } from 'path'
 

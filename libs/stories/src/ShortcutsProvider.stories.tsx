@@ -1,13 +1,13 @@
 import React, { useCallback, useMemo, useRef } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { ControlState, ShortcutsProvider, useShortcuts } from '@meshx-org/mxui-core'
+import { ControlState, ShortcutsProvider, useShortcuts } from '@meshx/mxui-core'
 
-import { useTheme } from '@meshx-org/mxui-core'
-import { ControlFillX, ControlStrokeX } from '@meshx-org/mxui-primitives'
-import { Text } from '@meshx-org/mxui-text'
+import { useTheme } from '@meshx/mxui-core'
+import { ControlFillX, ControlStrokeX } from '@meshx/mxui-primitives'
+import { Text } from '@meshx/mxui-text'
 import styled from 'styled-components'
-import { ShortcutsConfig } from '@meshx-org/mxui-core/src/hooks/shortcuts/shortcutConfig'
-import { normalizeKeyCombo } from '@meshx-org/mxui-core/src/hooks/shortcuts/shortcutParser'
+import { ShortcutsConfig } from '@meshx/mxui-core/src/hooks/shortcuts/shortcutConfig'
+import { normalizeKeyCombo } from '@meshx/mxui-core/src/hooks/shortcuts/shortcutParser'
 
 const StyledKey = styled.kbd`
     position: relative;
@@ -107,7 +107,7 @@ function Example({ onActivate }: { onActivate: () => void }) {
 
 const meta = {
     title: 'Core/ShortcutsProvider',
-    component: ShortcutsProvider,
+    component: ShortcutsProvider
 } satisfies Meta<typeof ShortcutsProvider>
 
 export default meta

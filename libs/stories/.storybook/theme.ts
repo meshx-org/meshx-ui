@@ -1,4 +1,4 @@
-import { VARIABLE } from '@meshx-org/mxui-core'
+import { VARIABLE } from '@meshx/mxui-core'
 import { create } from '@storybook/theming/create'
 
 export const dark = create({
