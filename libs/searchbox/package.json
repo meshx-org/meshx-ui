@@ -1,7 +1,7 @@
 {
     "name": "@meshx/mxui-searchbox",
     "description": "SearchBox component for MXUI",
-    "version": "0.7.48",
+    "version": "0.7.49",
     "license": "Apache-2.0",
     "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
     "homepage": "https://meshx.co",
@@ -38,10 +38,10 @@
         "build": "bob build"
     },
     "dependencies": {
-        "@meshx/mxui-textbox": "0.7.48",
-        "@meshx/mxui-overlays": "0.7.48",
-        "@meshx/mxui-primitives": "0.7.48",
-        "@meshx/mxui-text": "0.7.48",
+        "@meshx/mxui-textbox": "0.7.49",
+        "@meshx/mxui-overlays": "0.7.49",
+        "@meshx/mxui-primitives": "0.7.49",
+        "@meshx/mxui-text": "0.7.49",
         "styled-system": "^5.1.5"
     },
     "devDependencies": {
