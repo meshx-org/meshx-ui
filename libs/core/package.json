@@ -1,7 +1,7 @@
 {
     "name": "@meshx/mxui-core",
     "description": "Button component for MXUI",
-    "version": "0.7.47",
+    "version": "0.7.48",
     "license": "apache-2.0",
     "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
     "homepage": "https://meshx.co/produts/mxui",
@@ -39,7 +39,7 @@
     },
     "dependencies": {
         "styled-system": "^5.1.5",
-         "react-stately": "^3.29.1"
+        "react-stately": "^3.29.1"
     },
     "devDependencies": {
         "@types/styled-system": "^5.1.15",
