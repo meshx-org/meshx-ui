@@ -22,6 +22,7 @@
             "@meshx/mxui-navigation": ["libs/navigation/src/index.ts"],
             "@meshx/mxui-dropdown": ["libs/dropdown/src/index.ts"],
             "@meshx/mxui-overlays": ["libs/overlays/src/index.ts"],
+            "@meshx/mxui-checkbox": ["libs/checkbox/src/index.ts"],
             "@meshx/mxui-primitives": ["libs/primitives/src/index.ts"],
             "@meshx/mxui-rating": ["libs/rating/src/index.ts"],
             "@meshx/mxui-searchbox": ["libs/searchbox/src/index.ts"],

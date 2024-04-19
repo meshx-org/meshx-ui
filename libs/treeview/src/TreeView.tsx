@@ -35,7 +35,6 @@ function TreeViewNode<T = unknown>(props: TreeViewNodeProps<T>) {
             style={{
                 display: 'flex',
                 width: '100%',
-                lineHeight: 20,
                 padding: '6px 0px 6px 0px',
                 position: 'relative',
                 flexDirection: 'row',

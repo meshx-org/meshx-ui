@@ -38,7 +38,8 @@
         "build": "nx exec -- npx bob build"
     },
     "dependencies": {
-        "styled-system": "^5.1.5"
+        "styled-system": "^5.1.5",
+         "react-stately": "^3.29.1"
     },
     "devDependencies": {
         "@types/styled-system": "^5.1.15",

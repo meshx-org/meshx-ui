@@ -38,10 +38,15 @@
         "build": "npx bob build"
     },
     "dependencies": {
+        "react-stately": "^3.30.1",
+        "react-aria": "^3.32.1",
+        "@react-stately/list": "^3.10.3",
+        "@react-stately/collections": "3.10.5",
+        "@react-spectrum/utils": "^3.11.5",
         "@meshx/mxui-core": "0.7.47",
+        "@meshx/mxui-dropdown": "0.7.47",
         "@meshx/mxui-button": "0.7.47",
         "@meshx/mxui-text": "0.7.47",
-        "@headlessui/react": "^1.7.18",
         "styled-system": "^5.1.5"
     },
     "devDependencies": {

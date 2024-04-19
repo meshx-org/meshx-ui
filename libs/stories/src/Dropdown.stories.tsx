@@ -125,8 +125,7 @@ export const Dynamic: Story = {
     args: {
         children: (item: any) => <Item>{item.name}</Item>,
         items: flatOptions
-    },
-    name: 'dynamic'
+    }
 }
 
 export default meta

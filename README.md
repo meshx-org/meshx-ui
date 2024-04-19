@@ -35,7 +35,7 @@ It is used across the MeshX ecosystem to provide a consistent UI across all Mesh
 
 ### Install
 
-This repository is distributed with npm. After installing npm, you can install @meshx-org/ui with this command:
+This repository is distributed with npm. After installing npm, you can install @meshx/mxui with this command:
 
 ```
 $ npm install         # install npm dependencies
@@ -43,7 +43,7 @@ $ npm install         # install npm dependencies
 
 ### Import
 
-You can import individual UI components directly from the @meshx-org/ui package:
+You can import individual UI components directly from the @meshx/mxui package:
 
 ```tsx
 import { Button } from '@meshx/mxui' // or import { Button } from '@meshx/mxui-button';

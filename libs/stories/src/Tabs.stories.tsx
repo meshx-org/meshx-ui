@@ -1,50 +1,71 @@
+import { useState } from 'react'
+import type { Meta, StoryObj } from '@storybook/react'
+import { Tabs, TabList, TabPanels, Item, Spacer } from '@meshx/mxui-navigation/src'
 import React from 'react'
-import { Story, Meta } from '@storybook/react'
-import { TabView, TabPanels, TabList, Item, TabViewProps } from '@meshx/mxui-navigation'
-import { Button } from '@meshx/mxui-button'
 
-const argTypes = {}
+const meta = {
+    title: 'Navigation/Tabs',
+    component: Tabs,
+    render(args) {
+        return (
+            <Tabs aria-label="History of Ancient Rome" {...args}>
+                <TabList>
+                    <Item key="FoR">Founding of Rome</Item>
+                    <Item key="MaR">Monarchy and Republic</Item>
+                    <Item key="Emp">Empire</Item>
+                </TabList>
+                <TabPanels>
+                    <Item key="FoR">Arma virumque cano, Troiae qui primus ab oris.</Item>
+                    <Item key="MaR">Senatus Populusque Romanus.</Item>
+                    <Item key="Emp">Alea jacta est.</Item>
+                </TabPanels>
+            </Tabs>
+        )
+    }
+} satisfies Meta<typeof Tabs>
 
-export default {
-    title: 'Navigation/TabView',
-    component: TabView,
-    argTypes: argTypes
-} as Meta
+export default meta
+type Story = StoryObj<typeof Tabs>
 
-const TabsTemplate: Story<TabViewProps> = (args) => {
-    return (
-        <TabView aria-label="History of Ancient Rome">
-            <TabList px={6}>
-                <Item key="FoR">Home</Item>
-                <Item key="MaR">Analytics</Item>
-                <Item key="Emp">Settings</Item>
-            </TabList>
-            <TabPanels p={4}>
-                <Item key="FoR">Arma virumque cano, Troiae qui primus ab oris.</Item>
-                <Item key="MaR">Senatus Populusque Romanus. </Item>
-                <Item key="Emp">
-                    <Button>Hello</Button>
-                </Item>
-            </TabPanels>
-        </TabView>
-    )
+export const Default: Story = {
+    args: {}
 }
 
-export const Default = TabsTemplate.bind({})
-Default.args = {}
+export const DynamicItems: Story = {
+    args: {},
+    render(args) {
+        const [tabs, setTabs] = useState([
+            { id: 1, title: 'Tab 2', content: 'Tab body 2' },
+            { id: 2, title: 'spacer', content: '' },
+            { id: 3, title: 'Tab 3', content: 'Tab body 3' },
+            { id: 4, title: 'Tab 4', content: 'Tab body 4' }
+        ])
 
-const ControlledTabsTemplate: Story<TabViewProps> = (args) => {
-    return (
-        <TabView aria-label="History of Ancient Rome">
-            <TabList px={6}>
-                <Item key="FoR">Home</Item>
-                <Item key="MaR">Analytics</Item>
-                <Item key="Emp">Settings</Item>
-            </TabList>
-            <TabPanels p={4}>{(props) => <Item key="FoR">{props.selectedIndex}</Item>}</TabPanels>
-        </TabView>
-    )
+        type Tab = (typeof tabs)[0]
+        const [tabId, setTabId] = useState<any>(1)
+        
+        const items = [
+            { id: "item1", content: "1" },
+            { id: "item2", content: "2" },
+            { id: "item3", content: "3" }
+        ]
+
+        return (
+            <>
+                <p>Current tab id: {tabId}</p>
+                <Tabs aria-label="History of Ancient Rome" items={items} onSelectionChange={k => setTabId(k)}>
+                    <TabList>
+                        <Item key="item1">John Doe</Item>
+                        <Item key="item2">Jane Doe</Item>
+                        <Spacer key="spacer" />
+                        <Item key="item3">Joe Bloggs</Item>
+                    </TabList>
+
+                    <TabPanels>
+                        {(item: any) => <Item key={item.id}>{item.content}</Item>}
+                    </TabPanels>
+                </Tabs>
+            </>
+        )
+    }
 }
-
-export const Controlled = ControlledTabsTemplate.bind({})
-Controlled.args = {}

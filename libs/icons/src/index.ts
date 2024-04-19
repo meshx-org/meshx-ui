@@ -1,4 +1,6 @@
 export { default as CheckmarkSmall } from './checkmark-small'
 export { default as ChevronBottomSmall } from './chevron-bottom-small'
+export { default as Setting } from './setting'
+export { default as SettingLineHorizontal } from './setting-line-horizontal'
 export { default as WindowSidebarLeft } from './window-sidebar-left'
 export { default as WindowSidebarRight } from './window-sidebar-right'

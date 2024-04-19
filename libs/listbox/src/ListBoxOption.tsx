@@ -35,20 +35,51 @@ const StyledCheckmarkSmall = styled(CheckmarkSmall)`
     align-self: flex-start;
     justify-self: end;
     grid-area: checkmark;
+    stroke: var(--theme-accent-default);
+`
+
+const ItemGrid = styled.div`
+    border-radius: 4px;
+    margin: 2px 4px;
+
+    display: grid;
+    grid-template-columns: 12px auto 1fr auto auto auto auto 4px;
+    /*
+        Renamed from padding-y to padding-height to fix docs issue where fallback var replaced this value
+        (due to old spectrum-css postcss-custom-properties-custom-mapping plugin).
+        */
+    grid-template-rows: 4px 1fr auto 4px;
+
+    grid-template-areas:
+        '. .    .            .         .     .         .        .'
+        '. icon text         checkmark end   keyboard  chevron  .'
+        '. icon description  checkmark end   keyboard  chevron  .'
+        '. .    .            .         .     .         .        .';
 `
 
 const StyledOption = styled.div`
-    &:focus {
-        outline: none;
-    }
-
     cursor: default;
     position: relative;
     display: block;
+    height: 32px;
 
     box-sizing: border-box;
 
     margin: 0;
+
+    // border-inline-start: 12px solid transparent;
+
+    &:focus {
+        outline: none;
+    }
+
+    &[data-selectable='true'] ${ItemGrid} {
+        grid-template-columns: 12px auto 1fr calc(24px + 8px) auto auto 12px;
+    }
+
+    &[data-selected='true'] ${StyledCheckmarkSmall} {
+        display: block;
+    }
 
     &[data-disabled='true'] {
         cursor: not-allowed;
@@ -58,28 +89,14 @@ const StyledOption = styled.div`
         cursor: pointer;
     }
 
-    &:focus {
+    &:focus ${ItemGrid} {
         background: var(--theme-subtle-default);
     }
 
     &[data-selected='true'] {
-        background: var(--theme-accent-default);
-        color: var(--theme-text-inverted);
+        // background: var(--theme-accent-default);
+        color: var(--theme-accent-default);
     }
-
-    display: grid;
-    grid-template-columns: 2px auto 1fr auto auto auto auto 2px;
-    /*
-        Renamed from padding-y to padding-height to fix docs issue where fallback var replaced this value
-        (due to old spectrum-css postcss-custom-properties-custom-mapping plugin).
-        */
-    grid-template-rows: 2px 1fr auto 2px;
-
-    grid-template-areas:
-        '. .    .            .         .     .         .        .'
-        '. icon text         checkmark end   keyboard  chevron  .'
-        '. icon description  checkmark end   keyboard  chevron  .'
-        '. .    .            .         .     .         .        .';
 `
 
 /** @private */
@@ -87,6 +104,8 @@ export function ListBoxOption<T, C extends React.ElementType = 'div'>(props: Opt
     const { item, shouldSelectOnPressUp, shouldFocusOnHover, shouldUseVirtualFocus } = props
 
     const { rendered, key } = item
+    const as = item.props.href ? 'a' : 'div'
+
     const state = useContext(ListBoxContext)
 
     if (!state) {
@@ -120,6 +139,7 @@ export function ListBoxOption<T, C extends React.ElementType = 'div'>(props: Opt
         <FocusRing /*focusRingClass={classNames(styles, 'focus-ring')} */>
             <StyledOption
                 {...mergeProps(optionProps, shouldFocusOnHover ? {} : hoverProps)}
+                as={as}
                 ref={ref}
                 data-focused={shouldUseVirtualFocus && isFocused && isKeyboardModality}
                 data-disabled={isDisabled}
@@ -137,13 +157,17 @@ export function ListBoxOption<T, C extends React.ElementType = 'div'>(props: Opt
                 //    'is-hovered': (isHovered && !shouldFocusOnHover) || (isFocused && !isKeyboardModality)
                 //})}
             >
-                <span style={{ gridArea: 'text' }}>{contents}</span>
-                {isSelected && (
-                    <StyledCheckmarkSmall
-                    //slot="checkmark"
-                    // UNSAFE_className={classNames(styles, 'spectrum-Menu-checkmark')}
-                    />
-                )}
+                <ItemGrid>
+                    <span style={{ gridArea: 'text' }}>{contents}</span>
+                    {isSelected && (
+                        <StyledCheckmarkSmall
+                            style={{ gridArea: 'checkmark' }}
+                            className="h-5 w-5"
+                            //slot="checkmark"
+                            // UNSAFE_className={classNames(styles, 'spectrum-Menu-checkmark')}
+                        />
+                    )}
+                </ItemGrid>
             </StyledOption>
         </FocusRing>
     )

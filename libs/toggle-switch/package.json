@@ -39,7 +39,7 @@
         "build": "bob build"
     },
     "dependencies": {
-        "react-stately": "3.29.0",
+        "react-stately": "3.29.1",
         "react-aria": "3.31.0",
         "@meshx/mxui-core": "0.7.47",
         "@meshx/mxui-text": "0.7.47"

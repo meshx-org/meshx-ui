@@ -1,9 +1,7 @@
 import React, { useCallback, useRef, useState } from 'react'
 import { DropdownProps } from './Dropdown.types'
-import { ControlFillX, ControlStrokeX } from '@meshx/mxui-primitives'
 import { useLayoutEffect } from '@meshx/mxui-core'
 import { Text } from '@meshx/mxui-text'
-import { FlyoutSurface } from '@meshx/mxui-primitives'
 import { Popover } from '@meshx/mxui-overlays'
 
 import { useDOMRef, useIsMobileDevice, useResizeObserver, useUnwrapDOMRef } from '@react-spectrum/utils'
@@ -27,6 +25,7 @@ const StyledChevronBottomSmall = styled(ChevronBottomSmall)`
 const DropdownWrapper = styled.div`
     --spectrum-global-dimension-size-2400: 192px;
     --spectrum-global-dimension-size-3000: 240px;
+    --spectrum-dropdown-min-width: 240px;
 
     --spectrum-dropdown-popover-max-width: var(--spectrum-global-dimension-size-3000);
     --spectrum-dropdown-width: var(--spectrum-global-dimension-size-2400);
@@ -205,7 +204,7 @@ function Dropdown<T extends object, C extends React.ElementType = 'div'>(props: 
             state={state}
             width={isMobile ? '100%' : undefined}
             // Set max height: inherit so Tray scrolling works
-            // UNSAFE_style={{ maxHeight: 'inherit' }}
+            UNSAFE_style={{ maxHeight: 'inherit' }}
             isLoading={props.isLoading}
             onLoadMore={props.onLoadMore}
         />

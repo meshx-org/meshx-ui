@@ -8,6 +8,7 @@
     "dependencies": {
         "@meshx/mxui-button": "0.7.47",
         "@meshx/mxui-switch": "0.7.47",
+        "@meshx/mxui-listbox": "0.7.47",
         "@meshx/mxui-overlays": "0.7.47",
         "@meshx/mxui-rating": "0.7.47",
         "@meshx/mxui-dropdown": "0.7.47",
@@ -26,8 +27,10 @@
         "@meshx/mxui-tailwind": "0.7.47",
         "@meshx/mxui-datebox": "0.7.47",
         "@meshx/mxui-text": "0.7.47",
+        "@meshx/mxui-checkbox": "0.7.47",
         "@meshx/mxui-slider": "0.7.47",
         "@meshx/mxui-treeview": "0.7.47",
+        "react-stately": "3.29.1",
         "@storybook/addon-actions": "7.6.13",
         "@storybook/addon-docs": "7.6.13",
         "@storybook/react": "7.6.13",

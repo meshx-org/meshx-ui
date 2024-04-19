@@ -46,7 +46,7 @@ const PopoverWrapper = forwardRef((props: PopoverWrapperProps, ref: ForwardedRef
     } = props
 
     const { size, borderWidth, arrowRef } = useArrowSize()
-    const borderRadius = 4 // usePopoverBorderRadius(ref as any)
+    const borderRadius = 5 // usePopoverBorderRadius(ref as any)
     const borderDiagonal = borderWidth * Math.SQRT2
     const primary = size + borderDiagonal
     const secondary = primary * 2

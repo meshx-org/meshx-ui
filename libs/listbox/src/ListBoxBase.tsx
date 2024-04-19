@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import React, { ForwardedRef, HTMLAttributes, ReactElement, ReactNode, RefObject, useMemo } from 'react'
+import React, { CSSProperties, ForwardedRef, HTMLAttributes, ReactElement, ReactNode, RefObject, useMemo } from 'react'
 import styled from 'styled-components'
 
 import { Node, useLayoutEffect } from '@meshx/mxui-core'
@@ -22,6 +22,7 @@ import { Virtualizer, VirtualizerItem } from '@react-aria/virtualizer'
 import { ListBoxContext } from './ListBoxContext'
 import { ListBoxOption } from './ListBoxOption'
 import { ListBoxSection } from './ListBoxSection'
+import { ListBoxBaseProps } from './ListBoxBase.types'
 
 const StyledVirtualizer = styled(Virtualizer)`
     --spectrum-popover-padding: 6px;
@@ -56,10 +57,10 @@ const StyledVirtualizer = styled(Virtualizer)`
 ` as typeof Virtualizer
 
 /** @private */
-export function useListBoxLayout<T>(state: ListState<T>, isLoading: boolean): ListLayout<T> {
-    //let { scale } = useProvider()
+export function useListBoxLayout<T>(state: ListState<T>, isLoading?: boolean): ListLayout<T> {
+    // let { scale } = useProvider()
     // let collator = useCollator({ usage: 'search', sensitivity: 'base' })
-    const scale = 'large'
+    const scale = 'small' as string
 
     const layout = useMemo(
         () =>
@@ -80,7 +81,7 @@ export function useListBoxLayout<T>(state: ListState<T>, isLoading: boolean): Li
     useLayoutEffect(() => {
         // Sync loading state into the layout.
         if (layout.isLoading !== isLoading) {
-            layout.isLoading = isLoading
+            layout.isLoading = isLoading!
             layout.virtualizer?.relayoutNow()
         }
     }, [layout, isLoading])
@@ -88,27 +89,7 @@ export function useListBoxLayout<T>(state: ListState<T>, isLoading: boolean): Li
     return layout
 }
 
-type ListBoxBaseProps<T> = {
-    layout: ListLayout<T>
-    state: ListState<T>
-    // TODO - autoFocus?: boolean | FocusStrategy
-    shouldFocusWrap?: boolean
-    shouldSelectOnPressUp?: boolean
-    focusOnPointerEnter?: boolean
-    domProps?: HTMLAttributes<HTMLElement>
-    disallowEmptySelection?: boolean
-    shouldUseVirtualFocus?: boolean
-    transitionDuration?: number
-    isLoading?: boolean
-    onLoadMore?: () => void
-    renderEmptyState?: () => ReactNode
-    onScroll?: () => void
-} & AriaListBoxOptions<T> & {
-        width?: string
-    }
-//&DOMProps &
-//AriaLabelingProps &
-//StyleProps
+
 
 function useForwardedRef<T>(ref: React.ForwardedRef<T>) {
     const innerRef = React.useRef<T>(null)
@@ -123,6 +104,14 @@ function useForwardedRef<T>(ref: React.ForwardedRef<T>) {
     })
 
     return innerRef
+}
+
+function useStyleProps<T>(props: ListBoxBaseProps<T>): { styleProps: { style: CSSProperties } } {
+    return {
+        styleProps: {
+            style: { width: props.width, ...props.UNSAFE_style }
+        }
+    }
 }
 
 function ListBoxBase<T>(props: ListBoxBaseProps<T>, forwardedRef: ForwardedRef<HTMLDivElement>) {
@@ -149,7 +138,7 @@ function ListBoxBase<T>(props: ListBoxBaseProps<T>, forwardedRef: ForwardedRef<H
         ref
     )
 
-    // let { styleProps } = useStyleProps(props)
+    const { styleProps } = useStyleProps(props)
     // let stringFormatter = useLocalizedStringFormatter(intlMessages, '@react-spectrum/listbox')
 
     // This overrides collection view's renderWrapper to support heirarchy of items in sections.
@@ -192,7 +181,7 @@ function ListBoxBase<T>(props: ListBoxBaseProps<T>, forwardedRef: ForwardedRef<H
         <ListBoxContext.Provider value={state}>
             <FocusScope>
                 <StyledVirtualizer
-                    //{...styleProps}
+                    {...styleProps}
                     {...mergeProps(listBoxProps, domProps)}
                     ref={ref}
                     focusedKey={state.selectionManager.focusedKey}

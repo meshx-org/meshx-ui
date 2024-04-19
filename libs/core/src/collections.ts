@@ -13,8 +13,7 @@
 // import { Key } from '@react-types/shared'
 //import { LinkDOMProps } from './dom'
 import { ReactElement, ReactNode } from 'react'
-
-type Key = any
+import { Key } from 'react-stately'
 
 export interface ItemProps<T> /*extends LinkDOMProps*/ {
     /** Rendered contents of the item or child items. */
@@ -57,11 +56,14 @@ export type SectionElement<T> = ReactElement<SectionProps<T>>
 
 export type CollectionElement<T> = SectionElement<T> | ItemElement<T>
 export type CollectionChildren<T> = CollectionElement<T> | CollectionElement<T>[] | ((item: T) => CollectionElement<T>)
-export interface CollectionBase<T> {
+
+export type CollectionBase<T> = {
     /** The contents of the collection. */
     children: CollectionChildren<T>
+
     /** Item objects in the collection. */
     items?: Iterable<T>
+
     /** The item keys that are disabled. These items cannot be selected, focused, or otherwise interacted with. */
     disabledKeys?: Iterable<Key>
 }
@@ -72,25 +74,29 @@ export interface CollectionStateBase<T, C extends Collection<Node<T>> = Collecti
     collection?: C
 }
 
-export interface Expandable {
+export type Expandable = {
     /** The currently expanded keys in the collection (controlled). */
     expandedKeys?: Iterable<Key>
+
     /** The initial expanded keys in the collection (uncontrolled). */
     defaultExpandedKeys?: Iterable<Key>
+
     /** Handler that is called when items are expanded or collapsed. */
     onExpandedChange?: (keys: Set<Key>) => any
 }
 
-export interface Sortable {
+export type Sortable  = {
     /** The current sorted column and direction. */
     sortDescriptor?: SortDescriptor
+
     /** Handler that is called when the sorted column or direction changes. */
     onSortChange?: (descriptor: SortDescriptor) => any
 }
 
-export interface SortDescriptor {
+export type SortDescriptor = {
     /** The key of the column to sort by. */
     column?: Key
+
     /** The direction to sort by. */
     direction?: SortDirection
 }
