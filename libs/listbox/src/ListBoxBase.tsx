@@ -10,16 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import React, {
-    CSSProperties,
-    ForwardedRef,
-    ReactElement,
-    ReactNode,
-    RefObject,
-    useCallback,
-    useContext,
-    useMemo
-} from 'react'
+import React, { CSSProperties, ReactElement, RefObject, useCallback, useContext, useMemo } from 'react'
 import styled from 'styled-components'
 import clsx from 'clsx'
 
@@ -28,10 +19,10 @@ import { Node } from '@meshx/mxui-core'
 import { useListBox } from '@react-aria/listbox'
 import { mergeProps } from '@react-aria/utils'
 import { ReusableView } from '@react-stately/virtualizer'
-import { Virtualizer, VirtualizerItem } from '@react-aria/virtualizer'
 import { ListBoxContext } from './ListBoxContext'
 import { ListBoxOption } from './ListBoxOption'
 import { ListBoxSection } from './ListBoxSection'
+import { Virtualizer, VirtualizerItem } from '@react-aria/virtualizer'
 import { ListBoxBaseProps } from './ListBoxBase.types'
 import { ListBoxLayout } from './ListBoxLayout'
 
@@ -109,12 +100,11 @@ function useStyleProps<T>(props: ListBoxBaseProps<T>): { styleProps: { style: CS
 
 /** @private */
 function LoadingState() {
-    let { state } = useContext(ListBoxContext)!
+    const { state } = useContext(ListBoxContext)!
     //let stringFormatter = useLocalizedStringFormatter(intlMessages, '@react-spectrum/listbox')
 
     return (
         // aria-selected isn't needed here since this option is not selectable.
-        // eslint-disable-next-line jsx-a11y/role-has-required-aria-props
         <div role="option" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
             ...loading
         </div>
@@ -123,8 +113,8 @@ function LoadingState() {
 
 /** @private */
 function EmptyState() {
-    let { renderEmptyState } = useContext(ListBoxContext)!
-    let emptyState = renderEmptyState ? renderEmptyState() : null
+    const { renderEmptyState } = useContext(ListBoxContext)!
+    const emptyState = renderEmptyState ? renderEmptyState() : null
     if (emptyState == null) {
         return null
     }
@@ -132,7 +122,6 @@ function EmptyState() {
     return (
         <div
             // aria-selected isn't needed here since this option is not selectable.
-            // eslint-disable-next-line jsx-a11y/role-has-required-aria-props
             role="option"
         >
             {emptyState}
@@ -142,7 +131,7 @@ function EmptyState() {
 
 /** @private */
 function ListBoxBase<T>(props: ListBoxBaseProps<T>, ref: RefObject<HTMLDivElement | null>) {
-    let {
+    const {
         layout,
         state,
         shouldFocusOnHover = false,
@@ -153,7 +142,7 @@ function ListBoxBase<T>(props: ListBoxBaseProps<T>, ref: RefObject<HTMLDivElemen
         onScroll,
         renderEmptyState
     } = props
-    let { listBoxProps } = useListBox(
+    const { listBoxProps } = useListBox(
         {
             ...props,
             layoutDelegate: layout,
@@ -162,12 +151,12 @@ function ListBoxBase<T>(props: ListBoxBaseProps<T>, ref: RefObject<HTMLDivElemen
         state,
         ref
     )
-    let { styleProps } = useStyleProps(props)
+    const { styleProps } = useStyleProps(props)
 
     // This overrides collection view's renderWrapper to support hierarchy of items in sections.
     // The header is extracted from the children so it can receive ARIA labeling properties.
     type View = ReusableView<Node<T>, ReactElement>
-    let renderWrapper = useCallback(
+    const renderWrapper = useCallback(
         (parent: View, reusableView: View, children: View[], renderChildren: (views: View[]) => ReactElement[]) => {
             if (reusableView.viewType === 'section') {
                 return (
@@ -197,8 +186,8 @@ function ListBoxBase<T>(props: ListBoxBaseProps<T>, ref: RefObject<HTMLDivElemen
         []
     )
 
-    let focusedKey = state.selectionManager.focusedKey
-    let persistedKeys = useMemo(() => (focusedKey != null ? new Set([focusedKey]) : null), [focusedKey])
+    const focusedKey = state.selectionManager.focusedKey
+    const persistedKeys = useMemo(() => (focusedKey != null ? new Set([focusedKey]) : null), [focusedKey])
 
     return (
         <ListBoxContext.Provider value={{ state, renderEmptyState, shouldFocusOnHover, shouldUseVirtualFocus }}>

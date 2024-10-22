@@ -12,7 +12,7 @@ interface ListBoxLayoutOptions extends ListLayoutOptions {
 }
 
 export class ListBoxLayout<T> extends ListLayout<T, ListBoxLayoutProps> {
-    private isLoading: boolean = false
+    private isLoading = false
     private placeholderHeight: number
     private padding: number
 
@@ -28,13 +28,13 @@ export class ListBoxLayout<T> extends ListLayout<T, ListBoxLayoutProps> {
     }
 
     protected buildCollection(): LayoutNode[] {
-        let nodes = super.buildCollection(this.padding)
+        const nodes = super.buildCollection(this.padding)
         let y = this.contentSize.height
 
         if (this.isLoading) {
-            let rect = new Rect(0, y, this.virtualizer.visibleRect.width, 40)
-            let loader = new LayoutInfo('loader', 'loader', rect)
-            let node = {
+            const rect = new Rect(0, y, this.virtualizer.visibleRect.width, 40)
+            const loader = new LayoutInfo('loader', 'loader', rect)
+            const node = {
                 layoutInfo: loader,
                 validRect: loader.rect
             }
@@ -44,14 +44,14 @@ export class ListBoxLayout<T> extends ListLayout<T, ListBoxLayoutProps> {
         }
 
         if (nodes.length === 0) {
-            let rect = new Rect(
+            const rect = new Rect(
                 0,
                 y,
                 this.virtualizer.visibleRect.width,
                 this.placeholderHeight ?? this.virtualizer.visibleRect.height
             )
-            let placeholder = new LayoutInfo('placeholder', 'placeholder', rect)
-            let node = {
+            const placeholder = new LayoutInfo('placeholder', 'placeholder', rect)
+            const node = {
                 layoutInfo: placeholder,
                 validRect: placeholder.rect
             }
@@ -66,7 +66,7 @@ export class ListBoxLayout<T> extends ListLayout<T, ListBoxLayoutProps> {
 
     protected buildSection(node: Node<T>, x: number, y: number): LayoutNode {
         // Synthesize a collection node for the header.
-        let headerNode = {
+        const headerNode = {
             type: 'header',
             key: node.key + ':header',
             parentKey: node.key,
@@ -79,13 +79,13 @@ export class ListBoxLayout<T> extends ListLayout<T, ListBoxLayoutProps> {
         }
 
         // Build layout node for it and adjust y offset of section children.
-        let header = this.buildSectionHeader(headerNode, x, y)
+        const header = this.buildSectionHeader(headerNode, x, y)
         header.node = headerNode
         header.layoutInfo.parentKey = node.key
         this.layoutNodes.set(headerNode.key, header)
         y += header.layoutInfo.rect.height
 
-        let section = super.buildSection(node, x, y)
+        const section = super.buildSection(node, x, y)
         section.children!.unshift(header)
         return section
     }

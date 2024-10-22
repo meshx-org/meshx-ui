@@ -1,8 +1,8 @@
 import { HTMLAttributes, ReactNode } from 'react'
 
 import { ListState } from '@react-stately/list'
-import { AriaListBoxOptions } from '@react-aria/listbox'
 import { StyleProps } from './ListBox.types'
+import { AriaListBoxOptions } from '@react-aria/listbox'
 import { ListBoxLayout } from './ListBoxLayout'
 
 export interface ListBoxBaseProps<T> extends AriaListBoxOptions<T>, StyleProps {
@@ -17,7 +17,7 @@ export interface ListBoxBaseProps<T> extends AriaListBoxOptions<T>, StyleProps {
     shouldUseVirtualFocus?: boolean
     transitionDuration?: number
     isLoading?: boolean
-    showLoadingSpinner?: boolean,
+    showLoadingSpinner?: boolean
     onLoadMore?: () => void
     renderEmptyState?: () => ReactNode
     onScroll?: () => void

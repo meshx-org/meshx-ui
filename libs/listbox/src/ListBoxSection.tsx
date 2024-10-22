@@ -34,21 +34,21 @@ type ListBoxSectionProps<T> = {
 
 /** @private */
 export function ListBoxSection<T>(props: ListBoxSectionProps<T>) {
-    let { children, layoutInfo, headerLayoutInfo, virtualizer, item } = props
-    let { headingProps, groupProps } = useListBoxSection({
+    const { children, layoutInfo, headerLayoutInfo, virtualizer, item } = props
+    const { headingProps, groupProps } = useListBoxSection({
         heading: item.rendered,
         'aria-label': item['aria-label']
     })
 
-    let headerRef = useRef(null)
+    const headerRef = useRef(null)
     useVirtualizerItem({
         layoutInfo: headerLayoutInfo!,
         virtualizer,
         ref: headerRef
     })
 
-    let { direction } = useLocale()
-    let { state } = useContext(ListBoxContext)!
+    const { direction } = useLocale()
+    const { state } = useContext(ListBoxContext)!
 
     return (
         <>

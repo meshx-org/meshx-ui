@@ -1,8 +1,0 @@
-{
-    "name": "use-viewport-size",
-    "$schema": "../../node_modules/nx/schemas/project-schema.json",
-    "sourceRoot": "libs/use-viewport-size/src",
-    "projectType": "library",
-    "tags": [],
-    "targets": {}
-}

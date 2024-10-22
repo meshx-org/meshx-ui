@@ -1,11 +1,7 @@
 {
     "root": true,
     "parser": "@typescript-eslint/parser",
-    "plugins": [
-        "@typescript-eslint",
-        "promise",
-        "react-native"
-    ],
+    "plugins": ["@typescript-eslint", "simple-import-sort", "promise", "react-native"],
     "extends": [
         "airbnb-base",
         "airbnb-typescript/base",
@@ -15,7 +11,10 @@
         "plugin:promise/recommended",
         "prettier"
     ],
+
     "rules": {
+        "simple-import-sort/imports": "error",
+        "simple-import-sort/exports": "error",
         // "react-hooks/rules-of-hooks": "error",
         // "react-hooks/exhaustive-deps": "warn",
         "import/extensions": "off",
@@ -24,6 +23,13 @@
         "import/no-cycle": "warn",
         "max-classes-per-file": "off",
         "lines-between-class-members": "off",
+        "sort-imports": [
+            "error",
+            {
+                "ignoreCase": true,
+                "ignoreDeclarationSort": true
+            }
+        ],
         /*"@typescript-eslint/naming-convention": [
       "error",
       {
@@ -36,10 +42,7 @@
       }
     ],*/
         "@typescript-eslint/lines-between-class-members": "off",
-        "no-restricted-globals": [
-            "off",
-            "self"
-        ],
+        "no-restricted-globals": ["off", "self"],
         "@typescript-eslint/no-unused-vars": [
             "warn",
             {
@@ -47,12 +50,7 @@
             }
         ]
     },
-    "ignorePatterns": [
-        "packages/electron/**/*",
-        "metro.config.js",
-        "babel.config.js",
-        "webpack.config.mjs"
-    ],
+    "ignorePatterns": ["packages/electron/**/*", "dist", "babel.config.js"],
     "env": {
         // "react-native/react-native": true,
         "browser": true,

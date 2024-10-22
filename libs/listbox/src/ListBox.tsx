@@ -16,8 +16,8 @@ import { useListState } from '@react-stately/list'
 import { ListBoxProps } from './ListBox.types'
 
 function ListBox<T extends object>(props: ListBoxProps<T>, ref: any) {
-    let state = useListState(props)
-    let layout = useListBoxLayout()
+    const state = useListState(props)
+    const layout = useListBoxLayout()
     //let domRef = useDOMRef(ref);
 
     return <ListBoxBase {...props} state={state} layout={layout} />

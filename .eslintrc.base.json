@@ -1,11 +1,18 @@
 {
     "root": true,
     "ignorePatterns": ["**/*"],
-    "plugins": ["@nx"],
+    "plugins": ["plugin:@nx/react", "@nx"],
     "overrides": [
         {
             "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
             "rules": {
+                "sort-imports": [
+                    "error",
+                    {
+                        "ignoreCase": true,
+                        "ignoreDeclarationSort": true
+                    }
+                ],
                 "@nx/enforce-module-boundaries": [
                     "error",
                     {
