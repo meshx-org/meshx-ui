@@ -10,7 +10,14 @@
  * governing permissions and limitations under the License.
  */
 
-import { ListState } from 'react-stately'
-import React from 'react'
+import { ListState } from '@react-stately/list'
+import React, { ReactNode } from 'react'
 
-export const ListBoxContext = React.createContext<ListState<unknown> | null>(null)
+interface ListBoxContextValue {
+    state: ListState<unknown>
+    renderEmptyState?: () => ReactNode
+    shouldFocusOnHover: boolean
+    shouldUseVirtualFocus: boolean
+}
+
+export const ListBoxContext = React.createContext<ListBoxContextValue | null>(null)

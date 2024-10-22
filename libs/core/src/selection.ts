@@ -1,4 +1,4 @@
-import { Key } from 'react-stately'
+export type Key = string | number
 
 export interface SingleSelection {
     /** Whether the collection allows empty selection. */

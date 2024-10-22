@@ -1,7 +1,5 @@
-import { AsyncLoadable, CollectionBase } from '@meshx/mxui-core'
+import { AsyncLoadable, CollectionBase, Key, Selection, SelectionBehavior, SelectionMode } from '@meshx/mxui-core'
 import { CSSProperties, ReactNode } from 'react'
-import { FocusEvents } from 'react-aria'
-import { Key, SelectionBehavior, SelectionMode, Selection } from 'react-stately'
 
 export type FocusStrategy = 'first' | 'last'
 
@@ -20,10 +18,9 @@ export type MultipleSelection = {
     disabledKeys?: Iterable<Key>
 }
 
-export interface ListBoxPropsBase<T> extends CollectionBase<T>, MultipleSelection, FocusEvents {
+export interface ListBoxPropsBase<T> extends CollectionBase<T>, MultipleSelection {
     /** Whether to auto focus the listbox or an option. */
     autoFocus?: boolean | FocusStrategy
-
     /** Whether focus should wrap around when the end/start is reached. */
     shouldFocusWrap?: boolean
 }

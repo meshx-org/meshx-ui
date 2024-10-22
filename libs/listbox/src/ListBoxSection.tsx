@@ -10,13 +10,13 @@
  * governing permissions and limitations under the License.
  */
 
+import React, { ReactNode, useContext, useRef } from 'react'
 import { LayoutInfo } from '@react-stately/virtualizer'
 import { layoutInfoToStyle, useVirtualizerItem, VirtualizerItemOptions } from '@react-aria/virtualizer'
 import { ListBoxContext } from './ListBoxContext'
 import { Node } from '@meshx/mxui-core'
-import React, { Fragment, ReactNode, useContext, useRef } from 'react'
-import { useListBoxSection } from 'react-aria'
-// import { useLocale } from '@react-aria/i18n'
+import { useListBoxSection } from '@react-aria/listbox'
+import clsx from 'clsx'
 
 function useLocale() {
     return {
@@ -34,38 +34,37 @@ type ListBoxSectionProps<T> = {
 
 /** @private */
 export function ListBoxSection<T>(props: ListBoxSectionProps<T>) {
-    const { children, layoutInfo, headerLayoutInfo, virtualizer, item } = props
-    const { headingProps, groupProps } = useListBoxSection({
+    let { children, layoutInfo, headerLayoutInfo, virtualizer, item } = props
+    let { headingProps, groupProps } = useListBoxSection({
         heading: item.rendered,
         'aria-label': item['aria-label']
     })
 
-    const headerRef = useRef(null)
+    let headerRef = useRef(null)
     useVirtualizerItem({
         layoutInfo: headerLayoutInfo!,
         virtualizer,
         ref: headerRef
     })
 
-    const { direction } = useLocale()
-    const state = useContext(ListBoxContext)
-
-    if (!state) {
-        throw new Error('ListBoxOption must be under a ListBoxContext')
-    }
+    let { direction } = useLocale()
+    let { state } = useContext(ListBoxContext)!
 
     return (
-        <Fragment>
-            <div role="presentation" ref={headerRef} style={layoutInfoToStyle(headerLayoutInfo!, direction)}>
-                {item.key !== state.collection.getFirstKey() && (
-                    <div role="presentation" /*className={classNames(styles, 'spectrum-Menu-divider')} */ />
-                )}
-                {item.rendered && (
-                    <div {...headingProps} /* className={classNames(styles, 'spectrum-Menu-sectionHeading')} */>
-                        {item.rendered}
-                    </div>
-                )}
-            </div>
+        <>
+            {headerLayoutInfo && (
+                <div role="presentation" ref={headerRef} style={layoutInfoToStyle(headerLayoutInfo, direction)}>
+                    {item.key !== state.collection.getFirstKey() && (
+                        <div role="presentation" className={clsx('spectrum-Menu-divider')} />
+                    )}
+                    {item.rendered && (
+                        <div {...headingProps} className={clsx('spectrum-Menu-sectionHeading')}>
+                            {item.rendered}
+                        </div>
+                    )}
+                </div>
+            )}
+
             <div
                 {...groupProps}
                 style={layoutInfoToStyle(layoutInfo, direction)}
@@ -73,6 +72,6 @@ export function ListBoxSection<T>(props: ListBoxSectionProps<T>) {
             >
                 {children}
             </div>
-        </Fragment>
+        </>
     )
 }

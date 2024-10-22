@@ -11,8 +11,10 @@
  */
 
 // import CheckmarkMedium from '@spectrum-icons/ui/CheckmarkMedium'
-import { FocusRing, useOption, useHover, mergeProps, AriaOptionProps } from 'react-aria'
-import { isFocusVisible } from '@react-aria/interactions'
+import { FocusRing } from '@react-aria/focus'
+import { useOption } from '@react-aria/listbox'
+import { isFocusVisible, useHover } from '@react-aria/interactions'
+import { mergeProps } from '@react-aria/utils'
 
 import React, { useContext, useRef } from 'react'
 import { ListBoxContext } from './ListBoxContext'
@@ -20,7 +22,7 @@ import { Node } from '@meshx/mxui-core'
 import { Text } from '@meshx/mxui-text'
 import { CheckmarkSmall } from '@meshx/mxui-icons'
 import styled from 'styled-components'
-// import { Grid } from '@react-spectrum/layout'
+import clsx from 'clsx'
 
 type OptionProps<T, C extends React.ElementType> = {
     item: Node<T>
@@ -62,12 +64,8 @@ const StyledOption = styled.div`
     position: relative;
     display: block;
     height: 32px;
-
     box-sizing: border-box;
-
     margin: 0;
-
-    // border-inline-start: 12px solid transparent;
 
     &:focus {
         outline: none;
@@ -101,42 +99,39 @@ const StyledOption = styled.div`
 
 /** @private */
 export function ListBoxOption<T, C extends React.ElementType = 'div'>(props: OptionProps<T, C>) {
-    const { item, shouldSelectOnPressUp, shouldFocusOnHover, shouldUseVirtualFocus } = props
+    let { item } = props
 
-    const { rendered, key } = item
-    const as = item.props.href ? 'a' : 'div'
+    let { rendered, key } = item
+    let as = item.props.href ? 'a' : ('div' as any)
 
-    const state = useContext(ListBoxContext)
+    let { state, shouldFocusOnHover, shouldUseVirtualFocus } = useContext(ListBoxContext)!
 
     if (!state) {
         throw new Error('ListBoxOption must be under a ListBoxContext')
     }
 
-    const ref = useRef<any>()
-    const { optionProps, labelProps, descriptionProps, isSelected, isDisabled, isFocused } = useOption(
+    let ref = useRef<any>()
+    let { optionProps, labelProps, descriptionProps, isSelected, isDisabled, isFocused } = useOption(
         {
             'aria-label': item['aria-label'],
             key,
-            shouldSelectOnPressUp,
-            shouldFocusOnHover,
-            isVirtualized: true,
-            shouldUseVirtualFocus
+            isVirtualized: true
         },
         state,
         ref
     )
 
-    const { hoverProps, isHovered } = useHover({
+    let { hoverProps, isHovered } = useHover({
         ...props,
         isDisabled
     })
 
-    const contents = typeof rendered === 'string' ? <Text>{rendered}</Text> : rendered
+    let contents = typeof rendered === 'string' ? <Text>{rendered}</Text> : rendered
 
-    const isKeyboardModality = isFocusVisible()
+    let isKeyboardModality = isFocusVisible()
 
     return (
-        <FocusRing /*focusRingClass={classNames(styles, 'focus-ring')} */>
+        <FocusRing focusRingClass={clsx('focus-ring')}>
             <StyledOption
                 {...mergeProps(optionProps, shouldFocusOnHover ? {} : hoverProps)}
                 as={as}

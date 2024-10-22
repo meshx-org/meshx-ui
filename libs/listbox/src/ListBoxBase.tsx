@@ -10,21 +10,32 @@
  * governing permissions and limitations under the License.
  */
 
-import React, { CSSProperties, ForwardedRef, HTMLAttributes, ReactElement, ReactNode, RefObject, useMemo } from 'react'
+import React, {
+    CSSProperties,
+    ForwardedRef,
+    ReactElement,
+    ReactNode,
+    RefObject,
+    useCallback,
+    useContext,
+    useMemo
+} from 'react'
 import styled from 'styled-components'
+import clsx from 'clsx'
 
-import { Node, useLayoutEffect } from '@meshx/mxui-core'
-import { ListLayout } from '@react-stately/layout'
-import { ListState } from 'react-stately'
-import { AriaListBoxOptions, FocusScope, mergeProps, useListBox } from 'react-aria'
+import { FocusScope } from '@react-aria/focus'
+import { Node } from '@meshx/mxui-core'
+import { useListBox } from '@react-aria/listbox'
+import { mergeProps } from '@react-aria/utils'
 import { ReusableView } from '@react-stately/virtualizer'
 import { Virtualizer, VirtualizerItem } from '@react-aria/virtualizer'
 import { ListBoxContext } from './ListBoxContext'
 import { ListBoxOption } from './ListBoxOption'
 import { ListBoxSection } from './ListBoxSection'
 import { ListBoxBaseProps } from './ListBoxBase.types'
+import { ListBoxLayout } from './ListBoxLayout'
 
-const StyledVirtualizer = styled(Virtualizer)`
+const StyledVirtualizer = styled(Virtualizer as any)`
     --spectrum-popover-padding: 6px;
 
     /*
@@ -57,39 +68,21 @@ const StyledVirtualizer = styled(Virtualizer)`
 ` as typeof Virtualizer
 
 /** @private */
-export function useListBoxLayout<T>(state: ListState<T>, isLoading?: boolean): ListLayout<T> {
-    // let { scale } = useProvider()
-    // let collator = useCollator({ usage: 'search', sensitivity: 'base' })
+export function useListBoxLayout<T>(): ListBoxLayout<T> {
     const scale = 'small' as string
-
     const layout = useMemo(
         () =>
-            new ListLayout<T>({
+            new ListBoxLayout<T>({
                 estimatedRowHeight: scale === 'large' ? 48 : 32,
                 estimatedHeadingHeight: scale === 'large' ? 33 : 26,
                 padding: scale === 'large' ? 5 : 4, // TODO: get from DNA
-                loaderHeight: 40,
-                placeholderHeight: scale === 'large' ? 48 : 32,
-                collator: new Intl.Collator()
+                placeholderHeight: scale === 'large' ? 48 : 32
             }),
         [scale]
     )
 
-    layout.collection = state.collection
-    layout.disabledKeys = state.disabledKeys
-
-    useLayoutEffect(() => {
-        // Sync loading state into the layout.
-        if (layout.isLoading !== isLoading) {
-            layout.isLoading = isLoading!
-            layout.virtualizer?.relayoutNow()
-        }
-    }, [layout, isLoading])
-
     return layout
 }
-
-
 
 function useForwardedRef<T>(ref: React.ForwardedRef<T>) {
     const innerRef = React.useRef<T>(null)
@@ -114,131 +107,133 @@ function useStyleProps<T>(props: ListBoxBaseProps<T>): { styleProps: { style: CS
     }
 }
 
-function ListBoxBase<T>(props: ListBoxBaseProps<T>, forwardedRef: ForwardedRef<HTMLDivElement>) {
-    const {
+/** @private */
+function LoadingState() {
+    let { state } = useContext(ListBoxContext)!
+    //let stringFormatter = useLocalizedStringFormatter(intlMessages, '@react-spectrum/listbox')
+
+    return (
+        // aria-selected isn't needed here since this option is not selectable.
+        // eslint-disable-next-line jsx-a11y/role-has-required-aria-props
+        <div role="option" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
+            ...loading
+        </div>
+    )
+}
+
+/** @private */
+function EmptyState() {
+    let { renderEmptyState } = useContext(ListBoxContext)!
+    let emptyState = renderEmptyState ? renderEmptyState() : null
+    if (emptyState == null) {
+        return null
+    }
+
+    return (
+        <div
+            // aria-selected isn't needed here since this option is not selectable.
+            // eslint-disable-next-line jsx-a11y/role-has-required-aria-props
+            role="option"
+        >
+            {emptyState}
+        </div>
+    )
+}
+
+/** @private */
+function ListBoxBase<T>(props: ListBoxBaseProps<T>, ref: RefObject<HTMLDivElement | null>) {
+    let {
         layout,
         state,
-        shouldSelectOnPressUp,
-        focusOnPointerEnter,
-        shouldUseVirtualFocus,
+        shouldFocusOnHover = false,
+        shouldUseVirtualFocus = false,
         domProps = {},
-        transitionDuration = 0,
-        onScroll
+        isLoading,
+        showLoadingSpinner = isLoading,
+        onScroll,
+        renderEmptyState
     } = props
-
-    const ref = useForwardedRef(forwardedRef)
-
-    const { listBoxProps } = useListBox(
+    let { listBoxProps } = useListBox(
         {
             ...props,
-            keyboardDelegate: layout,
+            layoutDelegate: layout,
             isVirtualized: true
         },
         state,
         ref
     )
+    let { styleProps } = useStyleProps(props)
 
-    const { styleProps } = useStyleProps(props)
-    // let stringFormatter = useLocalizedStringFormatter(intlMessages, '@react-spectrum/listbox')
-
-    // This overrides collection view's renderWrapper to support heirarchy of items in sections.
+    // This overrides collection view's renderWrapper to support hierarchy of items in sections.
     // The header is extracted from the children so it can receive ARIA labeling properties.
-    type View = ReusableView<Node<T>, ReactNode>
+    type View = ReusableView<Node<T>, ReactElement>
+    let renderWrapper = useCallback(
+        (parent: View, reusableView: View, children: View[], renderChildren: (views: View[]) => ReactElement[]) => {
+            if (reusableView.viewType === 'section') {
+                return (
+                    <ListBoxSection
+                        key={reusableView.key}
+                        item={reusableView.content}
+                        layoutInfo={reusableView.layoutInfo!}
+                        virtualizer={reusableView.virtualizer}
+                        headerLayoutInfo={children.find((c) => c.viewType === 'header')?.layoutInfo}
+                    >
+                        {renderChildren(children.filter((c) => c.viewType === 'item'))}
+                    </ListBoxSection>
+                )
+            }
 
-    const renderWrapper = (
-        parent: View | null,
-        reusableView: View,
-        children: View[],
-        renderChildren: (views: View[]) => ReactElement[]
-    ) => {
-        if (reusableView.viewType === 'section') {
             return (
-                <ListBoxSection
+                <VirtualizerItem
                     key={reusableView.key}
-                    item={reusableView.content}
                     layoutInfo={reusableView.layoutInfo!}
                     virtualizer={reusableView.virtualizer}
-                    headerLayoutInfo={children.find((c) => c.viewType === 'header')?.layoutInfo}
+                    parent={parent?.layoutInfo}
                 >
-                    {renderChildren(children.filter((c) => c.viewType === 'item'))}
-                </ListBoxSection>
+                    {reusableView.rendered}
+                </VirtualizerItem>
             )
-        }
+        },
+        []
+    )
 
-        return (
-            <VirtualizerItem
-                key={reusableView.key}
-                layoutInfo={reusableView.layoutInfo!}
-                virtualizer={reusableView.virtualizer}
-                parent={parent?.layoutInfo ?? undefined}
-            >
-                {reusableView.rendered}
-            </VirtualizerItem>
-        )
-    }
+    let focusedKey = state.selectionManager.focusedKey
+    let persistedKeys = useMemo(() => (focusedKey != null ? new Set([focusedKey]) : null), [focusedKey])
 
     return (
-        <ListBoxContext.Provider value={state}>
+        <ListBoxContext.Provider value={{ state, renderEmptyState, shouldFocusOnHover, shouldUseVirtualFocus }}>
             <FocusScope>
                 <StyledVirtualizer
                     {...styleProps}
                     {...mergeProps(listBoxProps, domProps)}
+                    contentEditable="false"
                     ref={ref}
-                    focusedKey={state.selectionManager.focusedKey}
-                    autoFocus={!!props.autoFocus}
-                    sizeToFit="height"
+                    persistedKeys={persistedKeys}
+                    autoFocus={!!props.autoFocus || undefined}
                     scrollDirection="vertical"
-                    //className={classNames(styles, 'spectrum-Menu', styleProps.className)}
+                    className={clsx('spectrum-Menu')}
                     layout={layout}
+                    layoutOptions={useMemo(
+                        () => ({
+                            isLoading: showLoadingSpinner
+                        }),
+                        [showLoadingSpinner]
+                    )}
                     collection={state.collection}
                     renderWrapper={renderWrapper}
-                    transitionDuration={transitionDuration}
-                    isLoading={props.isLoading}
+                    isLoading={isLoading}
                     onLoadMore={props.onLoadMore}
-                    shouldUseVirtualFocus={shouldUseVirtualFocus}
                     onScroll={onScroll}
                 >
-                    {(type, item: Node<T>) => {
+                    {useCallback((type, item: Node<T>) => {
                         if (type === 'item') {
-                            return (
-                                <ListBoxOption
-                                    item={item}
-                                    shouldSelectOnPressUp={shouldSelectOnPressUp}
-                                    shouldFocusOnHover={focusOnPointerEnter}
-                                    shouldUseVirtualFocus={shouldUseVirtualFocus}
-                                />
-                            )
+                            return <ListBoxOption item={item} />
                         } else if (type === 'loader') {
-                            return (
-                                <div
-                                    role="option"
-                                    style={{
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        height: '100%'
-                                    }}
-                                >
-                                    loading...
-                                </div>
-                            )
+                            return <LoadingState />
                         } else if (type === 'placeholder') {
-                            let emptyState = props.renderEmptyState ? props.renderEmptyState() : null
-                            if (emptyState == null) {
-                                return null
-                            }
-
-                            return (
-                                <div
-                                    // aria-selected isn't needed here since this option is not selectable.
-                                    // eslint-disable-next-line jsx-a11y/role-has-required-aria-props
-                                    role="option"
-                                >
-                                    {emptyState}
-                                </div>
-                            )
+                            return <EmptyState />
                         }
-                    }}
+                    }, [])}
                 </StyledVirtualizer>
             </FocusScope>
         </ListBoxContext.Provider>
