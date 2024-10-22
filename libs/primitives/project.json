@@ -1,15 +1,4 @@
 {
     "name": "primitives",
-    "targets": {
-        "build": {
-            "executor": "@nx/rollup:rollup",
-            "options": {
-                "main": "libs/primitives/src/index.ts",
-                "format": ["esm"],
-                "tsConfig": "libs/primitives/tsconfig.json",
-                "outputPath": "dist/primitives",
-                "generateExportsField": true
-            }
-        }
-    }
+    "targets": {}
 }
