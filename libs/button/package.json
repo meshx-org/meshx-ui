@@ -5,27 +5,13 @@
     "license": "apache-2.0",
     "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
     "homepage": "https://meshx.co/produts/mxui",
-    "module": "lib/module/index.js",
-    "main": "lib/commonjs/index.js",
+    "module": "lib/index.mjs",
+    "main": "lib/index.js",
     "types": "src/index.ts",
     "files": [
         "src",
         "lib"
     ],
-    "react-native-builder-bob": {
-        "source": "src",
-        "output": "lib",
-        "targets": [
-            [
-                "commonjs",
-                {
-                    "copyFlow": true
-                }
-            ],
-            "module",
-            "typescript"
-        ]
-    },
     "publishConfig": {
         "access": "public",
         "provenance": true
