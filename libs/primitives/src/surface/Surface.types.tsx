@@ -1,8 +1,8 @@
+import type { ReactNode } from 'react'
 import type { LayoutProps, SpaceProps, MarginProps, BorderRadiusProps, OpacityProps, PaddingProps } from 'styled-system'
 
 export type FlyoutSurfaceProps<C extends React.ElementType> = {
-    children: React.ReactNode
-
+    children?: ReactNode
     as?: C
 } & React.ComponentPropsWithoutRef<C> &
     MarginProps &
@@ -13,9 +13,7 @@ export type FlyoutSurfaceProps<C extends React.ElementType> = {
 
 export type CardSurfaceProps<C extends React.ElementType> = {
     children?: React.ReactNode | React.ReactNode[]
-
-    variant: "default" | "secondary"
-
+    variant?: "default" | "secondary"
     as?: C
 } & React.ComponentPropsWithoutRef<C> &
     MarginProps &

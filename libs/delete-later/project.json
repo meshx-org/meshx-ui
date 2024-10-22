@@ -1,0 +1,29 @@
+{
+    "name": "delete-later",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/delete-later/src",
+    "projectType": "library",
+    "tags": [],
+    "targets": {
+        "build": {
+            "executor": "@nx/rollup:rollup",
+            "outputs": ["{options.outputPath}"],
+            "options": {
+                "outputPath": "dist/libs/delete-later",
+                "tsConfig": "libs/delete-later/tsconfig.lib.json",
+                "project": "libs/delete-later/package.json",
+                "entryFile": "libs/delete-later/src/index.ts",
+                "external": ["react", "react-dom", "react/jsx-runtime"],
+                "rollupConfig": "@nx/react/plugins/bundle-rollup",
+                "compiler": "babel",
+                "assets": [
+                    {
+                        "glob": "libs/delete-later/README.md",
+                        "input": ".",
+                        "output": "."
+                    }
+                ]
+            }
+        }
+    }
+}

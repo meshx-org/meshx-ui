@@ -5,8 +5,6 @@ import { TextBox } from '@meshx/mxui-textbox'
 import { Text } from '@meshx/mxui-text'
 import { FlyoutSurface, Box } from '@meshx/mxui-primitives'
 
-import styled from 'styled-components'
-
 export function SearchBox<H = Hit>(props: SearchBoxProps<H>) {
     const { minQueryLength = 3, onRenderHits, onQuery } = props
     const [query, setQuery] = useState('')

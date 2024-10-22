@@ -11,21 +11,7 @@
     "files": [
         "src",
         "lib"
-    ],
-    "react-native-builder-bob": {
-        "source": "src",
-        "output": "lib",
-        "targets": [
-            [
-                "commonjs",
-                {
-                    "copyFlow": true
-                }
-            ],
-            "module",
-            "typescript"
-        ]
-    },
+    ], 
     "publishConfig": {
         "access": "public",
         "provenance": true
@@ -33,10 +19,7 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/meshx-org/meshx-ui.git"
-    },
-    "scripts": {
-        "build": "bob build"
-    },
+    }, 
     "dependencies": {
         "@meshx/mxui-textbox": "0.7.49",
         "@meshx/mxui-overlays": "0.7.49",
@@ -45,6 +28,7 @@
         "styled-system": "^5.1.5"
     },
     "devDependencies": {
+        "@types/react": "^18.3.6",
         "@types/styled-components": "^5.1.26",
         "@types/styled-system": "^5.1.15",
         "react-native-builder-bob": "^0.20.3"
@@ -53,17 +37,5 @@
         "react": "^17.0.0 || ^18.0.0",
         "react-dom": "^17.0.0 || ^18.0.0",
         "styled-components": ">=5.0.0"
-    },
-    "nx": {
-        "includedScripts": [
-            "build"
-        ],
-        "targets": {
-            "build": {
-                "outputs": [
-                    "{projectRoot}/lib/**"
-                ]
-            }
-        }
     }
 }

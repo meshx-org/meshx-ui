@@ -1,5 +1,14 @@
 {
     "extends": "../../tsconfig.base.json",
-    "compilerOptions": {},
-    "include": ["./src"]
+    "compilerOptions": {
+        "types": ["node"],
+        "target": "es2020"
+    },
+    "include": [],
+    "files": [],
+    "references": [
+        {
+            "path": "./tsconfig.lib.json"
+        }
+    ]
 }

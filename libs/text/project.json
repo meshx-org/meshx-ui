@@ -1,0 +1,15 @@
+{
+    "name": "text",
+    "targets": {
+        "build": {
+            "executor": "@nx/rollup:rollup",
+            "options": {
+                "main": "libs/text/src/index.ts",
+                "format": ["esm"],
+                "tsConfig": "libs/text/tsconfig.json",
+                "outputPath": "dist/text",
+                "generateExportsField": true
+            }
+        }
+    }
+}

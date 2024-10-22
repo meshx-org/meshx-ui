@@ -1,0 +1,39 @@
+.Checkbox {
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.02);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.6);
+    width: 20px;
+    height:20px;
+    transition: all 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &[data-hovered='true'] {
+        background: rgba(0, 0, 0, 0.06);
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.6);
+    }
+
+    &[data-pressed='true'] {
+        background: rgba(0, 0, 0, 0.09) !important;
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2) !important;
+    }
+
+    &[data-checked='true'] {
+        background: var(--theme-accent-default);
+        box-shadow: 0 0 0 1px var(--theme-accent-default);
+    }
+}
+
+.CheckboxInput {
+    border: 0px;
+    clip: rect(0px, 0px, 0px, 0px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0px;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+}

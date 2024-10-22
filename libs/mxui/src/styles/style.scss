@@ -1,0 +1,66 @@
+body {
+    background-color: red;
+}
+
+:root {
+    // debug color
+    --todo: magenta;
+
+    --theme-font-default: ;
+    --theme-font-mono: ;
+
+    // Font sizes
+    --theme-font-size-0: 0px;
+    --theme-font-size-1: 0px;
+    --theme-font-size-2: 0px;
+    --theme-font-size-3: 0px;
+    --theme-font-size-4: 0px;
+    --theme-font-size-5: 0px;
+    --theme-font-size-6: 0px;
+    --theme-font-size-7: 0px;
+    --theme-font-size-8: 0px;
+}
+
+[data-theme='light'],
+.light:root {
+    color-scheme: light;
+
+    // Colored Buttons (oveeride)
+    --theme-button-accent-default: 0, 126, 217, 1;
+    --theme-button-accent-secondary: 3, 150, 255, 1;
+    --theme-button-accent-tertiary: 3, 150, 255, 0.7;
+
+    --theme-button-outline-default: 0, 0, 0, 0.03;
+    --theme-button-outline-secondary: 0, 0, 0, 0.05;
+    --theme-button-outline-tertiary: 0, 0, 0, 0.05;
+
+    --theme-button-warning-default: 245, 166, 35, 1;
+    --theme-button-warning-secondary: 255, 0, 255, 1;
+    --theme-button-warning-tertiary: 255, 0, 255, 1;
+
+    --theme-button-danger-default: 238, 0, 0, 1;
+    --theme-button-danger-secondary: 255, 0, 255, 1;
+    --theme-button-danger-tertiary: 255, 0, 255, 1;
+}
+
+[data-theme='dark'],
+.dark:root {
+    color-scheme: dark;
+
+    // Colored Buttons (oveeride)
+    --theme-button-accent-default: 3, 150, 255, 0.4;
+    --theme-button-accent-secondary: 3, 150, 255, 0.5;
+    --theme-button-accent-tertiary: 3, 150, 255, 0.2;
+
+    --theme-button-outline-default: 255, 255, 255, 0.061;
+    --theme-button-outline-secondary: 255, 255, 255, 0.084;
+    --theme-button-outline-tertiary: 255, 255, 255, 0.033;
+
+    --theme-button-warning-default: 245, 166, 35, 0.4;
+    --theme-button-warning-secondary: 245, 166, 35, 0.5;
+    --theme-button-warning-tertiary: 245, 166, 35, 0.2;
+
+    --theme-button-danger-default: 238, 0, 0, 0.4;
+    --theme-button-danger-secondary: 238, 0, 0, 0.5;
+    --theme-button-danger-tertiary: 238, 0, 0, 0.2;
+}

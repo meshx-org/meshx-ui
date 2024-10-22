@@ -5,27 +5,13 @@
     "license": "Apache-2.0",
     "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
     "homepage": "https://meshx.co/produts/mxui",
-    "module": "lib/module/index.js",
-    "main": "lib/commonjs/index.js",
+    "module": "lib/index.mjs",
+    "main": "lib/index.js",
     "types": "src/index.ts",
     "files": [
         "src",
         "lib"
     ],
-    "react-native-builder-bob": {
-        "source": "src",
-        "output": "lib",
-        "targets": [
-            [
-                "commonjs",
-                {
-                    "copyFlow": true
-                }
-            ],
-            "module",
-            "typescript"
-        ]
-    },
     "publishConfig": {
         "access": "public",
         "provenance": true
@@ -33,9 +19,6 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/meshx-org/meshx-ui.git"
-    },
-    "scripts": {
-        "build": "bob build"
     },
     "dependencies": {
         "@meshx/mxui-core": "0.7.49",
@@ -45,21 +28,12 @@
         "react-aria": "^3.32.0",
         "styled-system": "^5.1.5"
     },
+    "devDependencies": {
+        "@types/react": "^18.3.6"
+    },
     "peerDependencies": {
         "react": "^17.0.0 || ^18.0.0",
         "react-dom": "^17.0.0 || ^18.0.0",
         "styled-components": ">=5.0.0"
-    },
-    "nx": {
-        "includedScripts": [
-            "build"
-        ],
-        "targets": {
-            "build": {
-                "outputs": [
-                    "{projectRoot}/lib/**"
-                ]
-            }
-        }
     }
 }

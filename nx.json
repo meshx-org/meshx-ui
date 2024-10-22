@@ -4,8 +4,12 @@
         "defaultBase": "main"
     },
     "namedInputs": {
-        "default": ["{projectRoot}/**/*"],
-        "production": ["default"]
+        "default": ["{projectRoot}/src/**/*"],
+        "production": [
+            "default",
+            "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+            "!{projectRoot}/tsconfig.spec.json"
+        ]
     },
     "targetDefaults": {
         "build": {
@@ -33,6 +37,11 @@
             "cache": true,
             "dependsOn": ["^build"],
             "inputs": ["production", "^production"]
+        },
+        "@nx/rollup:rollup": {
+            "cache": true,
+            "dependsOn": ["^build"],
+            "inputs": ["production", "^production"]
         }
     },
     "plugins": [
@@ -55,6 +64,24 @@
                 "syncDepsTargetName": "sync-deps",
                 "upgradeTargetname": "upgrade"
             }
+        },
+        {
+            "plugin": "@nx/vite/plugin",
+            "options": {
+                "generatePackageJson": true,
+                "buildTargetName": "build",
+                "previewTargetName": "preview",
+                "testTargetName": "test",
+                "serveTargetName": "serve",
+                "serveStaticTargetName": "serve-static"
+            }
         }
-    ]
+    ],
+    "generators": {
+        "@nx/react": {
+            "library": {
+                "unitTestRunner": "none"
+            }
+        }
+    }
 }

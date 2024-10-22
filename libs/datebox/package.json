@@ -6,8 +6,8 @@
     "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
     "homepage": "https://meshx.co/produts/mxui",
     "sideEffects": false,
-    "module": "lib/module/index.js",
-    "main": "lib/commonjs/index.js",
+    "module": "lib/index.mjs",
+    "main": "lib/index.js",
     "types": "src/index.ts",
     "files": [
         "src",
@@ -46,6 +46,7 @@
         "@meshx/mxui-primitives": "0.7.49"
     },
     "devDependencies": {
+        "@types/react": "^18.3.6",
         "@types/styled-components": "^5.1.26",
         "react-native-builder-bob": "^0.20.3"
     },

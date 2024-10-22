@@ -1,0 +1,15 @@
+{
+    "name": "slider",
+    "targets": {
+        "build": {
+            "executor": "@nx/rollup:rollup",
+            "options": {
+                "main": "libs/slider/src/index.ts",
+                "format": ["esm"],
+                "tsConfig": "libs/slider/tsconfig.json",
+                "outputPath": "dist/slider",
+                "generateExportsField": true
+            }
+        }
+    }
+}
