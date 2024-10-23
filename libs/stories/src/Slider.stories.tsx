@@ -1,6 +1,6 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
-import { Slider, SliderProps } from '@meshx/mxui-slider'
+import { Slider, SliderProps } from '@meshx/mxui'
 
 const meta: Meta = {
     title: 'Form/Slider',

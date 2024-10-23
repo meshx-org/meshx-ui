@@ -1,8 +1,7 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
-import { View } from 'react-native'
-import { Divider, DividerProps } from '@meshx/mxui-primitives'
-import { Button } from '@meshx/mxui-button'
+import { Divider, DividerProps } from '@meshx/mxui'
+import { Button } from '@meshx/mxui'
 
 export default {
     title: 'Components/Divider',
@@ -19,17 +18,17 @@ export default {
 
 const Template: Story<{ vertical: boolean }> = ({ vertical }) =>
     vertical ? (
-        <View>
+        <div>
             <Button>Button1</Button>
             <Divider />
             <Button>Hello</Button>
-        </View>
+        </div>
     ) : (
-        <View style={{ flexDirection: 'row' }}>
+        <div style={{ flexDirection: 'row' }}>
             <Button>Hello</Button>
             <Divider />
             <Button>Hello</Button>
-        </View>
+        </div>
     )
 
 export const Default = Template.bind({ test: 'true' })

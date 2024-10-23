@@ -1,7 +1,7 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
-import { AnchoredOverlay, AnchoredOverlayProps } from '@meshx/mxui-overlays'
-import { Button } from '@meshx/mxui-button'
+import { AnchoredOverlay, AnchoredOverlayProps } from '@meshx/mxui'
+import { Button } from '@meshx/mxui'
 
 const argTypes = {
     placement: {

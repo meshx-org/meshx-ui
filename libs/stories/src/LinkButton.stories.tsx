@@ -1,7 +1,7 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
-import { LinkButton, LinkButtonProps } from '@meshx/mxui-button'
-import { Text } from '@meshx/mxui-text'
+import { LinkButton, LinkButtonProps } from '@meshx/mxui'
+import { Text } from '@meshx/mxui'
 
 export default {
     title: 'Basic Input/LinkButton',

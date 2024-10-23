@@ -1,7 +1,3 @@
-body {
-    background-color: red;
-}
-
 :root {
     // debug color
     --todo: magenta;
@@ -25,6 +21,9 @@ body {
 .light:root {
     color-scheme: light;
 
+    --theme-text-default: 0, 0, 0, 1;
+    --theme-text-inverted: 255, 255, 255, 1;
+
     // Colored Buttons (oveeride)
     --theme-button-accent-default: 0, 126, 217, 1;
     --theme-button-accent-secondary: 3, 150, 255, 1;
@@ -46,6 +45,9 @@ body {
 [data-theme='dark'],
 .dark:root {
     color-scheme: dark;
+
+    --theme-text-default: 255, 255, 255, 1;
+    --theme-text-inverted: 0, 0, 0, 1;
 
     // Colored Buttons (oveeride)
     --theme-button-accent-default: 3, 150, 255, 0.4;

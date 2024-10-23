@@ -1,6 +1,6 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
-import { Avatar, AvatarProps } from '@meshx/mxui-navigation'
+import { Avatar, AvatarProps } from '@meshx/mxui'
 
 const argTypes = {
     size: {

@@ -60,7 +60,7 @@ function Checkbox(props: CheckboxProps, ref: FocusableRef<HTMLLabelElement>) {
     const markIcon = isIndeterminate ? (
         <span>i</span> //<DashSmall UNSAFE_className={classNames(styles, 'spectrum-Checkbox-partialCheckmark')} />
     ) : (
-        <CheckmarkSmall /> ///<CheckmarkSmall UNSAFE_className={classNames(styles, 'spectrum-Checkbox-checkmark')} />
+        <CheckmarkSmall className={clsx(styles.CheckboxIcon, 'Checkbox-input')} /> ///<CheckmarkSmall UNSAFE_className={classNames(styles, 'spectrum-Checkbox-checkmark')} />
     )
 
     return (
@@ -75,7 +75,7 @@ function Checkbox(props: CheckboxProps, ref: FocusableRef<HTMLLabelElement>) {
             //ref={domRef}
             className={clsx(
                 // styles,
-                styles.Checkbox,
+                styles.CheckboxLabel,
                 {
                     'is-checked': inputProps.checked,
                     'is-indeterminate': isIndeterminate,
@@ -83,7 +83,7 @@ function Checkbox(props: CheckboxProps, ref: FocusableRef<HTMLLabelElement>) {
                     'is-invalid': isInvalid,
                     'is-disabled': isDisabled,
                     'is-hovered': isHovered
-                },
+                }
                 //styleProps.className
             )}
         >

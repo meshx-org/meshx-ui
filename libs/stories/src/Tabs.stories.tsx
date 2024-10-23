@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Tabs, TabList, TabPanels, Item, Spacer } from '@meshx/mxui-navigation/src'
+import { Tabs, TabList, TabPanels, Item, Spacer } from '@meshx/mxui'
 import React from 'react'
 
 const meta = {

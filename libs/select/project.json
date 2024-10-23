@@ -1,15 +1,4 @@
 {
     "name": "select",
-    "targets": {
-        "build": {
-            "executor": "@nx/rollup:rollup",
-            "options": {
-                "main": "libs/select/src/index.ts",
-                "format": ["esm"],
-                "tsConfig": "libs/select/tsconfig.json",
-                "outputPath": "dist/select",
-                "generateExportsField": true
-            }
-        }
-    }
+    "targets": {}
 }

@@ -1,5 +1,5 @@
 import type { StoryObj, Meta } from '@storybook/react'
-import { Link } from '@meshx/mxui-link'
+import { Link } from '@meshx/mxui'
 import React from 'react'
 
 function ColorCard({ className }: { className: string }) {

@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-
-import { Rating } from '@meshx/mxui-rating/src'
+import { Rating } from '@meshx/mxui'
 
 const meta = {
     title: 'Basic Input/Rating',

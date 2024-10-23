@@ -1,15 +1,4 @@
 {
     "name": "link",
-    "targets": {
-        "build": {
-            "executor": "@nx/rollup:rollup",
-            "options": {
-                "main": "libs/link/src/index.ts",
-                "format": ["esm"],
-                "tsConfig": "libs/link/tsconfig.json",
-                "outputPath": "dist/link",
-                "generateExportsField": true
-            }
-        }
-    }
+    "targets": {}
 }

@@ -1,5 +1,5 @@
 import type { StoryObj, Meta } from '@storybook/react'
-import { Dropdown, Item } from '@meshx/mxui-dropdown/src'
+import { Dropdown, Item } from '@meshx/mxui'
 import React from 'react'
 
 const flatOptions = [

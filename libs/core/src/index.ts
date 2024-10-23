@@ -20,3 +20,5 @@ export * from './input'
 
 export type { ThemeValues, ColorScheme, RGBA } from './types'
 export * from './theme'
+
+import './styles.scss'

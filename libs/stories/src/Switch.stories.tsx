@@ -11,7 +11,7 @@
  */
 
 import type { StoryObj, Meta } from '@storybook/react'
-import { Switch } from '@meshx/mxui-switch/src'
+import { Switch } from '@meshx/mxui'
 import { action } from '@storybook/addon-actions'
 
 const argTypes = {

@@ -1,6 +1,6 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Divider, LayerSurface, CardSurface, SmokeSurface, FlyoutSurface } from '@meshx/mxui-primitives/src'
+import { Divider, LayerSurface, CardSurface, SmokeSurface, FlyoutSurface } from '@meshx/mxui'
 
 const meta = {
     title: 'Primitives/Surface2',

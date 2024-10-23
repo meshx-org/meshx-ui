@@ -4,7 +4,7 @@ import React from 'react'
 
 import { Story, Meta } from '@storybook/react'
 import { View } from 'react-native'
-import { Text, Heading, TextProps, HeadingProps } from '@meshx/mxui-text/src'
+import { Text, Heading, TextProps, HeadingProps } from '@meshx/mxui'
 
 export default {
     title: 'Primitives/Text',

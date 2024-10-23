@@ -1,7 +1,7 @@
 import type { StoryObj, Meta } from '@storybook/react'
-import { InfoBar } from '@meshx/mxui-infobar/src'
+import { InfoBar } from '@meshx/mxui'
 import React from 'react'
-import { Text } from '@meshx/mxui-text'
+import { Text } from '@meshx/mxui'
 
 const meta = {
     title: 'Status/InfoBar',

@@ -5,16 +5,8 @@ import React, { useState } from 'react'
 import { Story, Meta } from '@storybook/react'
 
 import { Pressable, View, Animated } from 'react-native'
-import { Text } from '@meshx/mxui-text'
-import {
-    TreeView,
-    ItemId,
-    RenderItemParams,
-    TreeItem,
-    TreeViewProps,
-    iterateTree,
-    mutateTree
-} from '@meshx/mxui-treeview'
+import { Text } from '@meshx/mxui'
+import { TreeView, ItemId, RenderItemParams, TreeItem, TreeViewProps, iterateTree, mutateTree } from '@meshx/mxui'
 
 // 👇 This default export determines where your story goes in the story list
 const meta: Meta = {

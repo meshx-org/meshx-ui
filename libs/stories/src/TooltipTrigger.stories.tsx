@@ -1,7 +1,7 @@
 import type { StoryObj, Meta } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import { Button } from '@meshx/mxui-button/src'
-import { Tooltip, TooltipTrigger } from '@meshx/mxui-tooltip/src'
+import { Button } from '@meshx/mxui'
+import { Tooltip, TooltipTrigger } from '@meshx/mxui'
 import React from 'react'
 
 const argTypes = {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Story, Meta } from '@storybook/react'
-import { SearchBox, SearchBoxProps, Hit } from '@meshx/mxui-searchbox'
-import { Text } from '@meshx/mxui-text'
+import { SearchBox, SearchBoxProps, Hit } from '@meshx/mxui'
+import { Text } from '@meshx/mxui'
 
 const argTypes = {}
 

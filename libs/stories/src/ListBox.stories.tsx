@@ -1,5 +1,5 @@
 import type { StoryObj, Meta } from '@storybook/react'
-import { ListBox, Item } from '@meshx/mxui-listbox/src'
+import { ListBox, Item } from '@meshx/mxui'
 import { Section, useAsyncList, useListData } from 'react-stately'
 import { Selection } from '@meshx/mxui-core'
 import React, { useState } from 'react'

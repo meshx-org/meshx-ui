@@ -1,6 +1,6 @@
 import type { StoryObj, Meta } from '@storybook/react'
-import { Link } from '@meshx/mxui-link'
-import { Text } from '@meshx/mxui-text'
+import { Link } from '@meshx/mxui'
+import { Text } from '@meshx/mxui'
 import React from 'react'
 
 const meta = {
@@ -9,7 +9,7 @@ const meta = {
     argTypes: {},
     render: (args) => {
         return (
-            <Text variant="bodyLarge">
+            <Text variant="body.large">
                 The missing <Link {...args}></Link>.
             </Text>
         )

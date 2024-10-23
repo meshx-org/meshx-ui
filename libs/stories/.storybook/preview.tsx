@@ -1,9 +1,9 @@
-import './root.css'
 import React from 'react'
-import { ThemeProvider } from '@meshx/mxui-core'
+import { ThemeProvider, DEFAULT_DARK, DEFAULT_LIGHT } from '@meshx/mxui'
 import { useDarkMode } from 'storybook-dark-mode'
 import { themes, ThemeVars } from '@storybook/theming'
-import { DEFAULT_DARK, DEFAULT_LIGHT } from '@meshx/mxui-core'
+
+import './root.css'
 
 export const decorators = [
     (Story) => {
