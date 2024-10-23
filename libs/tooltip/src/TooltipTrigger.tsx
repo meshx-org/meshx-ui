@@ -107,19 +107,17 @@ function TooltipTrigger(props: TooltipTriggerProps) {
 
 // Support TooltipTrigger inside components using CollectionBuilder.
 TooltipTrigger.getCollectionNode = function* (props: TooltipTriggerProps) {
-    // Replaced the use of React.Childern.toArray because it mutates the key prop.
-    let childArray: ReactElement[] = []
-
+    // Replaced the use of React.Children.toArray because it mutates the key prop.
+    const childArray: ReactElement[] = []
     React.Children.forEach(props.children, (child) => {
         if (React.isValidElement(child)) {
             childArray.push(child)
         }
     })
-
-    let [trigger, tooltip] = childArray
+    const [trigger, tooltip] = childArray
     yield {
         element: trigger,
-        wrapper: (element: React.ReactElement) => (
+        wrapper: (element: any) => (
             <TooltipTrigger key={element.key} {...props}>
                 {element}
                 {tooltip}
@@ -134,5 +132,5 @@ TooltipTrigger.getCollectionNode = function* (props: TooltipTriggerProps) {
  * relative to the trigger.
  */
 // We don't want getCollectionNode to show up in the type definition
-let _TooltipTrigger = TooltipTrigger as (props: TooltipTriggerProps) => JSX.Element
+const _TooltipTrigger = TooltipTrigger as (props: TooltipTriggerProps) => JSX.Element
 export { _TooltipTrigger as TooltipTrigger }

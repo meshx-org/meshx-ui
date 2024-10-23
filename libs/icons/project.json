@@ -1,15 +1,4 @@
 {
     "name": "icons",
-    "targets": {
-        "build": {
-            "executor": "@nx/rollup:rollup",
-            "options": {
-                "main": "libs/icons/src/index.ts",
-                "format": ["esm"],
-                "tsConfig": "libs/icons/tsconfig.json",
-                "outputPath": "dist/icons",
-                "generateExportsField": true
-            }
-        }
-    }
+    "targets": {}
 }

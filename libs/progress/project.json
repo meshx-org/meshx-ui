@@ -1,15 +1,4 @@
 {
     "name": "progress",
-    "targets": {
-        "build": {
-            "executor": "@nx/rollup:rollup",
-            "options": {
-                "main": "libs/progress/src/index.ts",
-                "format": ["esm"],
-                "tsConfig": "libs/progress/tsconfig.json",
-                "outputPath": "dist/progress",
-                "generateExportsField": true
-            }
-        }
-    }
+    "targets": {}
 }

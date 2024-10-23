@@ -1,1 +1,1 @@
-export * from './lib/delete-later'
+export * from './src/delete-later'

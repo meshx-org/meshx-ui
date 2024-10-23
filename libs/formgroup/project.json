@@ -1,15 +1,4 @@
 {
     "name": "formgroup",
-    "targets": {
-        "build": {
-            "executor": "@nx/rollup:rollup",
-            "options": {
-                "main": "libs/formgroup/src/index.ts",
-                "format": ["esm"],
-                "tsConfig": "libs/formgroup/tsconfig.json",
-                "outputPath": "dist/formgroup",
-                "generateExportsField": true
-            }
-        }
-    }
+    "targets": {}
 }

@@ -13,20 +13,6 @@
         "src",
         "lib"
     ],
-    "react-native-builder-bob": {
-        "source": "src",
-        "output": "lib",
-        "targets": [
-            [
-                "commonjs",
-                {
-                    "copyFlow": true
-                }
-            ],
-            "module",
-            "typescript"
-        ]
-    },
     "publishConfig": {
         "access": "public",
         "provenance": true
@@ -47,25 +33,12 @@
     },
     "devDependencies": {
         "@types/react": "^18.3.6",
-        "@types/styled-components": "^5.1.26",
-        "react-native-builder-bob": "^0.20.3"
+        "@types/styled-components": "^5.1.26"
     },
     "peerDependencies": {
         "react-native": ">=0.69.0",
         "react": "^17.0.0 || ^18.0.0",
         "react-dom": "^17.0.0 || ^18.0.0",
         "styled-components": ">=5.0.0"
-    },
-    "nx": {
-        "includedScripts": [
-            "build"
-        ],
-        "targets": {
-            "build": {
-                "outputs": [
-                    "{projectRoot}/lib/**"
-                ]
-            }
-        }
     }
 }

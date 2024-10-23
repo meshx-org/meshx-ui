@@ -23,7 +23,7 @@ export default defineConfig({
     // Configuration for building your library.
     // See: https://vitejs.dev/guide/build.html#library-mode
     build: {
-        outDir: '../../dist/libs/treeview',
+        outDir: './lib',
         reportCompressedSize: true,
         commonjsOptions: {
             transformMixedEsModules: true

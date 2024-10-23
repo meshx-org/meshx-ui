@@ -25,7 +25,7 @@
         "@internationalized/date": "3.1.0",
         "@mdx-js/react": "^2.3.0",
         "@nx/eslint": "18.0.3",
-        "@nx/eslint-plugin": "18.0.3",
+        "@nx/eslint-plugin": "20.0.3",
         "@nx/js": "18.0.3",
         "@nx/react": "18.0.3",
         "@nx/react-native": "18.0.3",
@@ -59,7 +59,7 @@
         "copyfiles": "^2.4.1",
         "cross-env": "7.0.3",
         "eslint-config-airbnb-base": "^15.0.0",
-        "eslint-config-airbnb-typescript": "^17.0.0",
+        "eslint-config-airbnb-typescript": "^18.0.0",
         "eslint-config-prettier": "^8.6.0",
         "eslint-plugin-import": "^2.27.5",
         "eslint-plugin-jsx-a11y": "6.7.1",
@@ -73,7 +73,6 @@
         "nx": "18.0.3",
         "prettier": "^2.8.4",
         "react-native": "0.70.6",
-        "react-native-builder-bob": "^0.20.3",
         "react-native-svg-web": "^1.0.9",
         "react-native-web": "^0.18.12",
         "react-spring": "9.5.5",
@@ -94,9 +93,6 @@
         "react-dom": "18.2.0",
         "react-is": "18.2.0",
         "eslint": "^8.56.0"
-    },
-    "nx": {
-        "includedScripts": []
     },
     "packageManager": "pnpm@9.7.0+sha512.dc09430156b427f5ecfc79888899e1c39d2d690f004be70e05230b72cb173d96839587545d09429b55ac3c429c801b4dc3c0e002f653830a420fa2dd4e3cf9cf"
 }

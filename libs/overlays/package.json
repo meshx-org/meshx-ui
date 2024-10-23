@@ -5,8 +5,8 @@
     "license": "Apache-2.0",
     "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
     "homepage": "https://meshx.co",
-    "module": "lib/module/index.js",
-    "main": "lib/commonjs/index.js",
+    "module": "lib/index.mjs",
+    "main": "lib/index.js",
     "types": "src/index.ts",
     "files": [
         "src",

@@ -5,13 +5,13 @@
     "license": "Apache-2.0",
     "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
     "homepage": "https://meshx.co",
-    "module": "lib/module/index.js",
-    "main": "lib/commonjs/index.js",
+    "module": "lib/index.mjs",
+    "main": "lib/index.js",
     "types": "src/index.ts",
     "files": [
         "src",
         "lib"
-    ], 
+    ],
     "publishConfig": {
         "access": "public",
         "provenance": true
@@ -19,7 +19,7 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/meshx-org/meshx-ui.git"
-    }, 
+    },
     "dependencies": {
         "@meshx/mxui-textbox": "0.7.49",
         "@meshx/mxui-overlays": "0.7.49",
@@ -30,8 +30,7 @@
     "devDependencies": {
         "@types/react": "^18.3.6",
         "@types/styled-components": "^5.1.26",
-        "@types/styled-system": "^5.1.15",
-        "react-native-builder-bob": "^0.20.3"
+        "@types/styled-system": "^5.1.15"
     },
     "peerDependencies": {
         "react": "^17.0.0 || ^18.0.0",

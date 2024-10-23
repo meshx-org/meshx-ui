@@ -1,4 +1,4 @@
-import { PositionProps, OverlayTriggerProps } from '@meshx/mxui-overlays'
+import { OverlayTriggerProps, PositionProps } from '@meshx/mxui-overlays'
 
 // A set of common DOM props that are allowed on any component
 // Ensure this is synced with DOMPropNames in filterDOMProps

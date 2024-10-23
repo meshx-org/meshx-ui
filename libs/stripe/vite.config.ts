@@ -7,7 +7,7 @@ import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 
 export default defineConfig({
     root: __dirname,
-    cacheDir: '../../node_modules/.vite/libs/tooltip',
+    cacheDir: '../../node_modules/.vite/libs/stripe',
 
     plugins: [
         react(),
@@ -31,7 +31,7 @@ export default defineConfig({
         lib: {
             // Could also be a dictionary or array of multiple entry points.
             entry: 'src/index.ts',
-            name: 'treeview',
+            name: 'stripe',
             fileName: 'index',
             // Change this to the formats you want to support.
             // Don't forget to update your package.json as well.

@@ -31,7 +31,7 @@ import {
     useTooltipTrigger
 } from 'react-aria'
 
-let iconMap = {
+const iconMap = {
     neutral: () => null,
     info: InfoSmall,
     positive: SuccessSmall,

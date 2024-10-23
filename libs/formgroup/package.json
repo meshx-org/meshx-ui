@@ -27,8 +27,7 @@
     "devDependencies": {
         "@types/react": "^18.3.6",
         "@types/styled-system": "^5.1.15",
-        "@types/styled-components": "^5.1.26",
-        "react-native-builder-bob": "^0.20.3"
+        "@types/styled-components": "^5.1.26"
     },
     "peerDependencies": {
         "react": "^17.0.0 || ^18.0.0",

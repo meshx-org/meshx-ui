@@ -1,15 +1,4 @@
 {
     "name": "navigation",
-    "targets": {
-        "build": {
-            "executor": "@nx/rollup:rollup",
-            "options": {
-                "main": "libs/navigation/src/index.ts",
-                "format": ["esm"],
-                "tsConfig": "libs/navigation/tsconfig.json",
-                "outputPath": "dist/navigation",
-                "generateExportsField": true
-            }
-        }
-    }
+    "targets": {}
 }

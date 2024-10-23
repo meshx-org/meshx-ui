@@ -62,11 +62,5 @@
         "react-native-svg-web": "*",
         "react-native-web": "*",
         "react-spring": "*"
-    },
-    "devDependencies": {},
-    "nx": {
-        "includedScripts": [
-            "storybook"
-        ]
     }
 }
