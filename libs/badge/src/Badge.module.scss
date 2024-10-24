@@ -16,16 +16,13 @@
 
     // --------------------------------------- //
 
+    [data-theme="dark"] &[data-variant="default"],
     [data-theme="dark"] &[data-variant="info"] {
-        border: 1px solid #8a8a8a;
-        background: #8a8a8a;
-    }
-
-    [data-theme="dark"] &[data-variant="default"] {
         border: solid 1px #60cdff;
         background: #60cdff;
     }
 
+    [data-theme="dark"] &[data-variant="info.alt"],
     [data-theme="dark"] &[data-variant="help"] {
         border: 1px solid #8a8a8a;
         background: #8a8a8a;
@@ -55,7 +52,7 @@
 
     // --------------------------------------- //
 
-    [data-theme="light"] &[data-variant="info"] {
+    [data-theme="light"] &[data-variant="info.alt"] {
         border: 1px solid #8a8a8a;
         background: #8a8a8a;
     }
@@ -72,7 +69,8 @@
         color: black;
     }
 
-    [data-theme="light"] &[data-variant="default"] {
+    [data-theme="light"] &[data-variant="default"],
+    [data-theme="light"] &[data-variant="info"] {
         border: solid 1px #005fb7;
         background: #005fb7;
     }

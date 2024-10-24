@@ -12,11 +12,12 @@ import {
     opacity,
     OpacityProps
 } from 'styled-system'
-import { LayerStroke, CardStroke, ControlStrokeX, SurfaceStroke } from '../stroke/Stroke'
-import { AcrylicFill, LayerFill, SmokeFill, CardFill, ControlFillX, SubtleFillX } from '../fill/Fill'
-import { CardShadow, FlyoutShadow } from '../shadow/Shadow'
+import { LayerStroke, ControlStrokeX } from '../stroke/Stroke'
+import { LayerFill, SmokeFill, ControlFillX, SubtleFillX } from '../fill/Fill'
 import { FlyoutSurfaceProps, LayerSurfaceProps, CardSurfaceProps } from './Surface.types'
-import { useControlState } from '@meshx/mxui-core'
+import { useControlState, sx } from '@meshx/mxui-core'
+import styles from './Surface.module.scss'
+import clsx from 'clsx'
 
 const SurfaceWrapper = styled.div<MarginProps>`
     ${margin}
@@ -45,25 +46,6 @@ const StyledFlyoutSurface = styled.div<MarginProps & PaddingProps & LayoutProps 
         0 0 0 1px var(--theme-stroke-surface);
 `
 
-const StyledCardSurface = styled.div<MarginProps & PaddingProps & LayoutProps & BorderRadiusProps & OpacityProps>`
-    ${margin}
-    ${padding}
-    ${layout}
-    ${opacity}
-    ${borderRadius}    
-
-    &[data-variant='default'] {
-        background-color: var(--theme-card-default);
-        box-shadow: 0 4px 8px 0 ${(props) => (props.theme.name === 'light' ? 'rgba(0 0 0 / 12%)' : 'rgba(0 0 0 / 26%)')},
-            0 0 0 1px var(--theme-stroke-card);
-    }
-
-    &[data-variant='well'] {
-        background-color: var(--theme-card-secondary);
-        box-shadow: 0 0 0 1px var(--theme-stroke-card);
-    }
-`
-
 function FlyoutSurface<C extends React.ElementType = 'div'>(props: FlyoutSurfaceProps<C>, ref: ForwardedRef<any>) {
     const { children, as = 'div', borderRadius = 5, ...restProps } = props
 
@@ -75,18 +57,20 @@ function FlyoutSurface<C extends React.ElementType = 'div'>(props: FlyoutSurface
 }
 
 function CardSurface<C extends React.ElementType = 'div'>(props: CardSurfaceProps<C>, ref: ForwardedRef<C>) {
-    const { children, as = 'div', variant = 'default', borderRadius = 5, ...restProps } = props
+    const { children, as = 'div', variant = 'default', className, sx: s, ...restProps } = props
+    const css = sx({ sx: s })
 
     return (
-        <StyledCardSurface
+        <div
             ref={ref as any}
+            style={css()}
             role="presentation"
-            data-variant={variant}
-            borderRadius={borderRadius}
             {...restProps}
+            className={clsx(className, styles.CardSurface)}
+            data-variant={variant}
         >
             {children}
-        </StyledCardSurface>
+        </div>
     )
 }
 

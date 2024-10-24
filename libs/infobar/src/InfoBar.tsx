@@ -1,93 +1,10 @@
 import React, { ForwardedRef, useEffect, useRef } from 'react'
-import { InfoBarProps } from './InfoBar.types'
-import styled from 'styled-components'
-import { CardSurface } from '@meshx/mxui-primitives'
+import { InfoBarProps, InfoBarVariant } from './InfoBar.types'
+import { CardSurface, CardSurfaceVariant } from '@meshx/mxui-primitives'
 import { Text } from '@meshx/mxui-text'
 import { Badge } from '@meshx/mxui-badge'
 import { FocusRing } from 'react-aria'
-
-const BadgeStyled = styled.div``
-
-const StyledCardSurface = styled(CardSurface)`
-    width: fit-content;
-    border-radius: 20px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    [data-theme='dark'] & {
-        color: rgb(0, 0, 0);
-    }
-
-    [data-theme='light'] & {
-        color: rgb(255, 255, 255);
-    }
-
-    // ---
-
-    [data-theme='dark'] &[data-variant='info'] {
-        border: 1px solid #8a8a8a;
-        background: #8a8a8a;
-    }
-
-    [data-theme='dark'] &[data-variant='default'] {
-        border: solid 1px #60cdff;
-        background: #60cdff;
-    }
-
-    [data-theme='dark'] &[data-variant='help'] {
-        border: 1px solid #8a8a8a;
-        background: #8a8a8a;
-    }
-
-    [data-theme='dark'] &[data-variant='warning'] {
-        border: 1px solid #fce100;
-        background: #fce100;
-    }
-
-    [data-theme='dark'] &[data-variant='danger'] {
-        border: 1px solid #ff99a4;
-        background: #ff99a4;
-    }
-
-    [data-theme='dark'] &[data-variant='success'] {
-        border: 1px solid #6ccb5f;
-        background: #6ccb5f;
-    }
-
-    // ----
-
-    [data-theme='light'] &[data-variant='info'] {
-        border: 1px solid #8a8a8a;
-        background: #8a8a8a;
-    }
-
-    [data-theme='light'] &[data-variant='default'] {
-        border: solid 1px #005fb7;
-        background: #005fb7;
-    }
-
-    [data-theme='light'] &[data-variant='help'] {
-        border: 1px solid #8a8a8a;
-        background: #8a8a8a;
-    }
-
-    [data-theme='light'] &[data-variant='warning'] {
-        border: 1px solid #9d5d00;
-        background: #9d5d00;
-    }
-
-    [data-theme='light'] &[data-variant='danger'] {
-        border: 1px solid #c42b1c;
-        background: #c42b1c;
-    }
-
-    [data-theme='light'] &[data-variant='success'] {
-        border: 1px solid #0f7b0f;
-        background: #0f7b0f;
-    }
-`
+import styles from './InfoBar.module.scss'
 
 const ICON_ALTS = {
     negative: 'Error',
@@ -103,12 +20,21 @@ const ICONS = {
     negative: 'danger'
 } as const
 
+const SURFACE_MAPPING: Record<InfoBarVariant, CardSurfaceVariant> = {
+    info: 'well',
+    help: 'well',
+    default: 'well',
+    success: 'success',
+    danger: 'danger',
+    warning: 'warning'
+} as const
+
 function useDOMRef(ref: any) {
     return ref
 }
 
 function InfoBar(props: InfoBarProps, ref: ForwardedRef<HTMLDivElement>) {
-    const { children, autoFocus, variant = 'default' } = props
+    const { children, autoFocus, variant = 'help' } = props
     const domRef = useDOMRef(ref)
 
     /*const test = (icon?: InfoBarProps['icon'], intent?: Intent): MaybeElement => {
@@ -152,14 +78,16 @@ function InfoBar(props: InfoBarProps, ref: ForwardedRef<HTMLDivElement>) {
     return (
         <FocusRing>
             <CardSurface
-                borderRadius={6}
-                variant="well"
-                px="15px"
-                py="13px"
+                sx={{
+                    borderRadius: 6,
+                    px: '15px',
+                    py: '13px'
+                }}
+                variant={SURFACE_MAPPING[variant]}
                 as="div"
-                style={{ display: 'flex', alignItems: 'center', width: 'fit-content', gap: '13px' }}
+                className={styles.InfoBar}
             >
-                <Badge variant="info" />
+                <Badge variant={variant} />
                 <Text fontWeight={500} variant="body.semibold">
                     {props.title}
                 </Text>
@@ -172,7 +100,7 @@ function InfoBar(props: InfoBarProps, ref: ForwardedRef<HTMLDivElement>) {
 }
 
 /**
- * A Well is a content container that displays non-editable content separate from other content on the screen.
+ * A InfoBar is a content container that displays non-editable content separate from other content on the screen.
  * Often this is used to display preformatted text, such as code/markup examples on a documentation page.
  */
 const _InfoBar = React.forwardRef(InfoBar)

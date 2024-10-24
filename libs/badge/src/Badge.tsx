@@ -77,6 +77,7 @@ const DangerIcon = (props: SVGProps<SVGSVGElement>) => (
 const iconVariants: Record<BadgeVariant, any> = {
     info: InfoIcon,
     'info.subtle': InfoIcon,
+    'info.alt': InfoIcon,
     help: QuestionIcon,
     'help.subtle': InfoIcon,
     default: AttentionIcon,

@@ -1,5 +1,6 @@
 export type BadgeVariant =
     | 'info.subtle'
+    | 'info.alt'
     | 'info'
     | 'help.subtle'
     | 'help'

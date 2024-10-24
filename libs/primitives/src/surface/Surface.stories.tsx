@@ -1,31 +1,34 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Divider, LayerSurface, CardSurface, SmokeSurface, FlyoutSurface } from '@meshx/mxui'
+import { CardSurface, SmokeSurface, FlyoutSurface } from './Surface'
+import { Divider } from '../divider/Divider'
 
 const meta = {
     title: 'Primitives/Surface2',
-    component: LayerSurface
-} satisfies Meta<typeof LayerSurface>
+    component: CardSurface
+} satisfies Meta<typeof CardSurface>
 
 export default meta
-type Story = StoryObj<typeof meta>
+type Story = StoryObj<typeof CardSurface>
 
 export const Default: Story = {
     args: {
-        children: 'Button',
-        p: 5,
-        borderRadius: 6
+        children: 'Button'
     }
 }
 
 export const Variations: Story = {
     render: (args) => (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-            <LayerSurface {...args} children="Layer" />
-            <Divider />
             <CardSurface {...args} variant="default" children="Card: default" />
             <Divider />
             <CardSurface {...args} variant="well" children="Card: well" />
+            <Divider />
+            <CardSurface {...args} variant="warning" children="Card: warning" />
+            <Divider />
+            <CardSurface {...args} variant="danger" children="Card: danger" />
+            <Divider />
+            <CardSurface {...args} variant="success" children="Card: success" />
             <Divider />
             <SmokeSurface {...args} children="Smoke" />
             <Divider />
@@ -33,7 +36,9 @@ export const Variations: Story = {
         </div>
     ),
     args: {
-        p: 5,
-        borderRadius: 6
+        sx: {
+            p: 4,
+            borderRadius: 6
+        }
     }
 }

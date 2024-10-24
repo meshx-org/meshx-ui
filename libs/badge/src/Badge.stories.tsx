@@ -36,6 +36,13 @@ export const InfoSubtle: Story = {
     }
 }
 
+export const InfoAlt: Story = {
+    name: 'Info (Alt)',
+    args: {
+        variant: 'info.alt'
+    }
+}
+
 export const Help: Story = {
     args: {
         variant: 'help'

@@ -1,13 +1,13 @@
 export interface ThemeContextValue {
     name: string
     values: ThemeValues
-    colors: ColorScheme<CSSVariable>
+    colors: ThemeColors<CSSVariable>
 }
 
 export type RGBA = [number, number, number, number]
 export type CSSVariable = `var(--${string})`
 
-export interface ColorScheme<T> {
+export interface ThemeColors<T> {
     accent: {
         default: T
     }
@@ -39,7 +39,7 @@ export interface ColorScheme<T> {
         // A red button is used to indicate a destructive action.
         danger: {
             default: T
-            secondary:T
+            secondary: T
             tertiary: T
         }
     }
@@ -107,6 +107,17 @@ export interface ColorScheme<T> {
     }
 }
 
+// Produces a union of dot-delimited keypaths to the string values in a nested object:
+export type KeyPaths<O> = {
+    [K in keyof O]: K extends string
+        ? O[K] extends Record<string, unknown>
+            ? `${K}.${KeyPaths<O[K]>}`
+            : `${K}`
+        : never
+}[keyof O]
+
+export type ThemeColorPaths = KeyPaths<ThemeColors<RGBA>>
+
 export interface ThemeValues {
     fontSizes: number[]
     fonts: {
@@ -120,8 +131,8 @@ export interface ThemeValues {
 declare module 'styled-components' {
     export interface DefaultTheme extends ThemeValues {
         name: string
-        colors: ColorScheme<CSSVariable>
-        darkScheme: ColorScheme<RGBA>
-        lightScheme: ColorScheme<RGBA>
+        colors: ThemeColors<CSSVariable>
+        darkScheme: ThemeColors<RGBA>
+        lightScheme: ThemeColors<RGBA>
     }
 }

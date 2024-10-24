@@ -1,6 +1,6 @@
 import React, { createContext, useContext } from 'react'
 import { ThemeProvider as SCProvider } from 'styled-components'
-import type { ThemeContextValue } from '../types'
+import type { ThemeContextValue } from '../theme/types'
 import { THEME_VALUES } from '../theme/themeValues'
 import { DEFAULT_DARK, DEFAULT_LIGHT, VARIABLE } from '../theme/colorSchemes'
 import { GlobalStyle } from '../theme/globalStyles'

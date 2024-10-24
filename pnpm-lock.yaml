@@ -74,7 +74,7 @@ importers:
         version: 18.0.3(@babel/traverse@7.25.6)(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6))(@types/node@18.16.9)(js-yaml@4.1.0)(nx@18.0.3(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6)))(typescript@5.3.3)(verdaccio@5.29.0(typanion@3.14.0))
       '@nx/vite':
         specifier: 18.0.3
-        version: 18.0.3(@babel/traverse@7.25.6)(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6))(@types/node@18.16.9)(nx@18.0.3(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6)))(typescript@5.3.3)(verdaccio@5.29.0(typanion@3.14.0))(vite@5.1.1(@types/node@18.16.9)(less@4.1.3)(sass@1.70.0)(stylus@0.59.0)(terser@5.27.0))(vitest@1.2.2(@types/node@18.16.9)(@vitest/ui@1.6.0)(jsdom@22.1.0)(less@4.1.3)(sass@1.70.0)(stylus@0.59.0)(terser@5.27.0))
+        version: 18.0.3(@babel/traverse@7.25.6)(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6))(@types/node@18.16.9)(nx@18.0.3(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6)))(typescript@5.3.3)(verdaccio@5.29.0(typanion@3.14.0))(vite@5.1.1(@types/node@18.16.9)(less@4.1.3)(sass@1.70.0)(stylus@0.59.0)(terser@5.27.0))(vitest@1.2.2)
       '@nx/web':
         specifier: 18.0.3
         version: 18.0.3(@babel/traverse@7.25.6)(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6))(@types/node@18.16.9)(nx@18.0.3(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6)))(typescript@5.3.3)(verdaccio@5.29.0(typanion@3.14.0))
@@ -238,8 +238,8 @@ importers:
   libs/badge:
     dependencies:
       '@meshx/mxui-core':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../core
       react:
         specifier: ^17.0.0 || ^18.0.0
         version: 18.2.0
@@ -263,14 +263,14 @@ importers:
   libs/button:
     dependencies:
       '@meshx/mxui-core':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../core
       '@meshx/mxui-primitives':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../primitives
       '@meshx/mxui-text':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../text
       '@react-aria/button':
         specifier: ^3.9.2
         version: 3.9.2(react@18.2.0)
@@ -306,14 +306,14 @@ importers:
   libs/checkbox:
     dependencies:
       '@meshx/mxui-core':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../core
       '@meshx/mxui-icons':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../icons
       '@meshx/mxui-text':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../text
       clsx:
         specifier: 2.1.0
         version: 2.1.0
@@ -342,6 +342,12 @@ importers:
 
   libs/core:
     dependencies:
+      '@styled-system/css':
+        specifier: 5.1.5
+        version: 5.1.5
+      deepmerge:
+        specifier: 4.3.1
+        version: 4.3.1
       react:
         specifier: ^17.0.0 || ^18.0.0
         version: 18.2.0
@@ -370,6 +376,9 @@ importers:
       '@types/styled-system':
         specifier: ^5.1.15
         version: 5.1.22
+      '@types/styled-system__css':
+        specifier: 5.0.21
+        version: 5.0.21
 
   libs/datebox:
     dependencies:
@@ -380,11 +389,11 @@ importers:
         specifier: 3.2.0
         version: 3.2.0
       '@meshx/mxui-core':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../core
       '@meshx/mxui-primitives':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../primitives
       clsx:
         specifier: 1.2.1
         version: 1.2.1
@@ -413,26 +422,26 @@ importers:
   libs/dropdown:
     dependencies:
       '@meshx/mxui-button':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../button
       '@meshx/mxui-core':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../core
       '@meshx/mxui-icons':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../icons
       '@meshx/mxui-listbox':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../listbox
       '@meshx/mxui-overlays':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react-spring@9.7.3(@react-three/fiber@8.15.16(react-dom@18.2.0(react@18.2.0))(react-native@0.70.6(@babel/core@7.25.2)(@babel/preset-env@7.23.9(@babel/core@7.25.2))(react@18.2.0))(react@18.2.0)(three@0.161.0))(konva@9.3.3)(react-dom@18.2.0(react@18.2.0))(react-konva@16.8.6(konva@9.3.3)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-native@0.70.6(@babel/core@7.25.2)(@babel/preset-env@7.23.9(@babel/core@7.25.2))(react@18.2.0))(react-zdog@1.2.2)(react@18.2.0)(three@0.161.0)(zdog@1.1.3))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../overlays
       '@meshx/mxui-primitives':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../primitives
       '@meshx/mxui-text':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../text
       '@react-aria/interactions':
         specifier: ^3.20.1
         version: 3.21.0(react@18.2.0)
@@ -462,8 +471,8 @@ importers:
   libs/formgroup:
     dependencies:
       '@meshx/mxui-core':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../core
       react:
         specifier: ^17.0.0 || ^18.0.0
         version: 18.2.0
@@ -524,17 +533,17 @@ importers:
   libs/infobar:
     dependencies:
       '@meshx/mxui-badge':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../badge
       '@meshx/mxui-core':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../core
       '@meshx/mxui-primitives':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../primitives
       '@meshx/mxui-text':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../text
       react:
         specifier: ^17.0.0 || ^18.0.0
         version: 18.2.0
@@ -544,13 +553,13 @@ importers:
       react-dom:
         specifier: ^17.0.0 || ^18.0.0
         version: 18.2.0(react@18.2.0)
-      styled-components:
-        specifier: '>=5.0.0'
-        version: 5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0)
       styled-system:
         specifier: ^5.1.5
         version: 5.1.5
     devDependencies:
+      '@storybook/react':
+        specifier: ^7.3.16
+        version: 7.6.13(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.4.2)
       '@types/react':
         specifier: ^18.3.6
         version: 18.3.6
@@ -586,14 +595,14 @@ importers:
   libs/listbox:
     dependencies:
       '@meshx/mxui-core':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../core
       '@meshx/mxui-icons':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../icons
       '@meshx/mxui-text':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../text
       '@react-aria/focus':
         specifier: ^3.18.4
         version: 3.18.4(react@18.2.0)
@@ -716,17 +725,17 @@ importers:
   libs/navigation:
     dependencies:
       '@meshx/mxui-button':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../button
       '@meshx/mxui-core':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../core
       '@meshx/mxui-dropdown':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react-spring@9.7.3(@react-three/fiber@8.15.16(react-dom@18.2.0(react@18.2.0))(react-native@0.70.6(@babel/core@7.25.2)(@babel/preset-env@7.23.9(@babel/core@7.25.2))(react@18.2.0))(react@18.2.0)(three@0.161.0))(konva@9.3.3)(react-dom@18.2.0(react@18.2.0))(react-konva@16.8.6(konva@9.3.3)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-native@0.70.6(@babel/core@7.25.2)(@babel/preset-env@7.23.9(@babel/core@7.25.2))(react@18.2.0))(react-zdog@1.2.2)(react@18.2.0)(three@0.161.0)(zdog@1.1.3))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../dropdown
       '@meshx/mxui-text':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../text
       '@react-spectrum/utils':
         specifier: ^3.11.5
         version: 3.11.5(react@18.2.0)
@@ -768,11 +777,11 @@ importers:
   libs/overlays:
     dependencies:
       '@meshx/mxui-core':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../core
       '@meshx/mxui-primitives':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../primitives
       '@react-spectrum/utils':
         specifier: 3.11.3
         version: 3.11.3(react@18.2.0)
@@ -814,8 +823,11 @@ importers:
   libs/primitives:
     dependencies:
       '@meshx/mxui-core':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../core
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
       react:
         specifier: ^17.0.0 || ^18.0.0
         version: 18.2.0
@@ -829,18 +841,15 @@ importers:
         specifier: ^5.1.5
         version: 5.1.5
     devDependencies:
+      '@storybook/react':
+        specifier: ^7.3.16
+        version: 7.6.13(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.4.2)
       '@types/react':
         specifier: ^18.3.6
         version: 18.3.6
-      '@types/react-native':
-        specifier: ^0.70.8
-        version: 0.70.19
       '@types/styled-components':
         specifier: ^5.1.26
         version: 5.1.34
-      '@types/styled-components-react-native':
-        specifier: ^5.1.3
-        version: 5.2.5
       '@types/styled-system':
         specifier: ^5.1.15
         version: 5.1.22
@@ -848,11 +857,11 @@ importers:
   libs/progress:
     dependencies:
       '@meshx/mxui-core':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../core
       '@meshx/mxui-primitives':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../primitives
       react:
         specifier: ^17.0.0 || ^18.0.0
         version: 18.2.0
@@ -882,14 +891,14 @@ importers:
   libs/rating:
     dependencies:
       '@meshx/mxui-core':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../core
       '@meshx/mxui-primitives':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../primitives
       '@meshx/mxui-text':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../text
       react:
         specifier: ^17.0.0 || ^18.0.0
         version: 18.2.0
@@ -910,17 +919,17 @@ importers:
   libs/searchbox:
     dependencies:
       '@meshx/mxui-overlays':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react-spring@9.7.3(@react-three/fiber@8.15.16(react-dom@18.2.0(react@18.2.0))(react-native@0.70.6(@babel/core@7.25.2)(@babel/preset-env@7.23.9(@babel/core@7.25.2))(react@18.2.0))(react@18.2.0)(three@0.161.0))(konva@9.3.3)(react-dom@18.2.0(react@18.2.0))(react-konva@16.8.6(konva@9.3.3)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-native@0.70.6(@babel/core@7.25.2)(@babel/preset-env@7.23.9(@babel/core@7.25.2))(react@18.2.0))(react-zdog@1.2.2)(react@18.2.0)(three@0.161.0)(zdog@1.1.3))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../overlays
       '@meshx/mxui-primitives':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../primitives
       '@meshx/mxui-text':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../text
       '@meshx/mxui-textbox':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react-native@0.70.6(@babel/core@7.25.2)(@babel/preset-env@7.23.9(@babel/core@7.25.2))(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../textbox
       react:
         specifier: ^17.0.0 || ^18.0.0
         version: 18.2.0
@@ -947,11 +956,11 @@ importers:
   libs/select:
     dependencies:
       '@meshx/mxui-core':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../core
       '@meshx/mxui-primitives':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../primitives
       react:
         specifier: ^17.0.0 || ^18.0.0
         version: 18.2.0
@@ -972,11 +981,11 @@ importers:
   libs/slider:
     dependencies:
       '@meshx/mxui-core':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../core
       '@meshx/mxui-primitives':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../primitives
       react:
         specifier: ^17.0.0 || ^18.0.0
         version: 18.2.0
@@ -1114,11 +1123,11 @@ importers:
   libs/stripe:
     dependencies:
       '@meshx/mxui-core':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../core
       '@meshx/mxui-primitives':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../primitives
       react:
         specifier: ^17.0.0 || ^18.0.0
         version: 18.2.0
@@ -1148,8 +1157,8 @@ importers:
   libs/tailwind:
     dependencies:
       '@meshx/mxui-core':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../core
       tailwindcss:
         specifier: ^3.4.1
         version: 3.4.1(ts-node@10.9.1(@swc/core@1.3.107(@swc/helpers@0.5.13))(@types/node@18.16.9)(typescript@5.4.2))
@@ -1160,8 +1169,8 @@ importers:
   libs/text:
     dependencies:
       '@meshx/mxui-core':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../core
       react:
         specifier: ^17.0.0 || ^18.0.0
         version: 18.2.0
@@ -1182,11 +1191,11 @@ importers:
   libs/textbox:
     dependencies:
       '@meshx/mxui-core':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../core
       '@meshx/mxui-primitives':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../primitives
       '@react-stately/utils':
         specifier: 3.9.0
         version: 3.9.0(react@18.2.0)
@@ -1219,11 +1228,11 @@ importers:
   libs/toggle-switch:
     dependencies:
       '@meshx/mxui-core':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../core
       '@meshx/mxui-text':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../text
       react:
         specifier: ^17.0.0 || ^18.0.0
         version: 18.2.0
@@ -1247,8 +1256,8 @@ importers:
   libs/tooltip:
     dependencies:
       '@meshx/mxui-overlays':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react-spring@9.7.3(@react-three/fiber@8.15.16(react-dom@18.2.0(react@18.2.0))(react-native@0.70.6(@babel/core@7.25.2)(@babel/preset-env@7.23.9(@babel/core@7.25.2))(react@18.2.0))(react@18.2.0)(three@0.161.0))(konva@9.3.3)(react-dom@18.2.0(react@18.2.0))(react-konva@16.8.6(konva@9.3.3)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-native@0.70.6(@babel/core@7.25.2)(@babel/preset-env@7.23.9(@babel/core@7.25.2))(react@18.2.0))(react-zdog@1.2.2)(react@18.2.0)(three@0.161.0)(zdog@1.1.3))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../overlays
       '@react-aria/focus':
         specifier: ^3.18.4
         version: 3.18.4(react@18.2.0)
@@ -1293,11 +1302,11 @@ importers:
   libs/treeview:
     dependencies:
       '@meshx/mxui-core':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../core
       '@meshx/mxui-primitives':
-        specifier: 0.7.49
-        version: 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: workspace:0.7.49
+        version: link:../primitives
       react:
         specifier: ^17.0.0 || ^18.0.0
         version: 18.2.0
@@ -2970,76 +2979,11 @@ packages:
     peerDependencies:
       react: '>=16'
 
-  '@meshx/mxui-badge@0.7.49':
-    resolution: {integrity: sha512-D/+PM4EU6eamECnld0M/B5Y4kHzuDXu8XrjJ0ozPnRXRArsAC/OIgOQPWMWoWeXQgkWvjTxNhE86tEF37qlETQ==}
-    peerDependencies:
-      react: ^17.0.0 || ^18.0.0
-      react-dom: ^17.0.0 || ^18.0.0
-      styled-components: '>=5.0.0'
-
-  '@meshx/mxui-button@0.7.49':
-    resolution: {integrity: sha512-dnNi04UjHj185BbbpqBZYB7YVP2yL3YW5T33qDxws/IYXAvuvp/XF9+mMHjXwsws+6fiZpf/JweHABXgeh5joA==}
-    peerDependencies:
-      react: ^17.0.0 || ^18.0.0
-      react-dom: ^17.0.0 || ^18.0.0
-      styled-components: '>=5.0.0'
-
   '@meshx/mxui-core@0.7.49':
     resolution: {integrity: sha512-3sKfdVBz6ahLwN22BtFrvz/Wx15EueIy3X51Dcr3Jc5oqDmhOLIjA3fRS0YLpvPQcC+QNWHYzDrRMHAWz3zKxA==}
     peerDependencies:
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
-      styled-components: '>=5.0.0'
-
-  '@meshx/mxui-dropdown@0.7.49':
-    resolution: {integrity: sha512-BgZ7XlVjDESnc/2/FAO7il+VF+bFxKGVvZ+kLLTcYTCnisBl+P4CjyCTg2i898jn+E9Hu55romk7K7Bw78lnpw==}
-    peerDependencies:
-      react: ^17.0.0 || ^18.0.0
-      react-dom: ^17.0.0 || ^18.0.0
-      styled-components: '>=5.0.0'
-
-  '@meshx/mxui-icons@0.7.49':
-    resolution: {integrity: sha512-F9JiLsj7tAGI3BnfPVZ5mms3WBv5x1wERXFPcHsWzXHhGe9+kSWAASqyPsbsm9nN5b6iS1FZJ5sJT3TB9kKeRg==}
-    peerDependencies:
-      react: ^17.0.0 || ^18.0.0
-      react-dom: ^17.0.0 || ^18.0.0
-      styled-components: '>=5.0.0'
-
-  '@meshx/mxui-listbox@0.7.49':
-    resolution: {integrity: sha512-Ngh49ALUhFYAUJoQdIEx6Q+xy4+KZzcxTJbgCsEU1XpZ7hwrdhAfrfY69gLk0YWvAV/Bx4RseA3EoROjte0gWw==}
-    peerDependencies:
-      react: ^17.0.0 || ^18.0.0
-      react-dom: ^17.0.0 || ^18.0.0
-      styled-components: '>=5.0.0'
-
-  '@meshx/mxui-overlays@0.7.49':
-    resolution: {integrity: sha512-KZDaassVC0j2vIYKILrHleEtozaFgBDwPyy2y7EbH05k35p1N/2gpwWpEvbtaSYLeMVOsq0fvejVHDxZp0j2IA==}
-    peerDependencies:
-      react: ^17.0.0 || ^18.0.0
-      react-dom: ^17.0.0 || ^18.0.0
-      react-spring: '*'
-      styled-components: '>=5.0.0'
-
-  '@meshx/mxui-primitives@0.7.49':
-    resolution: {integrity: sha512-xSuzY7K2qkNIjJjiQwEHz+aXDxFp1AWxDNqIjOj0GL6ZjlGrl8FxgPDcTkr4eRgT3vnpcl/adedSyCVF7uZeOw==}
-    peerDependencies:
-      react: ^17 || ^18
-      react-dom: ^17 || ^18
-      styled-components: '>=5.0.0'
-
-  '@meshx/mxui-text@0.7.49':
-    resolution: {integrity: sha512-qMf2UtlDVcWOWd5sawYg53u9jnyJyprTZEmhAzdYXF10uq8/MuaYzMEYatvRo4zYjT1JpbamQPJElcHsq3LycA==}
-    peerDependencies:
-      react: ^17.0.0 || ^18.0.0
-      react-dom: ^17.0.0 || ^18.0.0
-      styled-components: '>=5.0.0'
-
-  '@meshx/mxui-textbox@0.7.49':
-    resolution: {integrity: sha512-Jix+TQyah8GeLvfXQKSSXUOjpc2Jot+CL/eV2wLwpMyuIr8rv4oUK4ZcQRLpt4y7XHPw0MPKwHgmKyTelHjScg==}
-    peerDependencies:
-      react: ^17.0.0 || ^18.0.0
-      react-dom: ^17.0.0 || ^18.0.0
-      react-native: '>=0.69.0'
       styled-components: '>=5.0.0'
 
   '@microsoft/api-extractor-model@7.29.8':
@@ -4464,12 +4408,6 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0
 
-  '@react-aria/virtualizer@3.9.8':
-    resolution: {integrity: sha512-AHmziZZQPoK3buFgoEtGEKZZCYfskYskqHEHrFJxnO5tRPOd71ZWAR3nyjKpHRcQNbNCBrsj5ks1Uo2PPtruMA==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
-      react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
-
   '@react-aria/virtualizer@4.0.4':
     resolution: {integrity: sha512-DszWqS29B9UoLS4mb5tAgLZKSVKR7IuDfjT+On9TSpcvm+HKS9wG6MVbqO0bh4zE+JGmp8Pnxfg92E7NUF0vgA==}
     peerDependencies:
@@ -4783,11 +4721,6 @@ packages:
     resolution: {integrity: sha512-P5KgCNYwm/n8bbLx6527li89RQWoESikrsg2MMyUpUd6IJ321t2pGONGRRQzxE0SBMolPRDJKV0Do2OlsjYKhQ==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0
-
-  '@react-stately/layout@3.13.5':
-    resolution: {integrity: sha512-JuT7nC+1tUdn2YdJAGCMV4EtGRfwdSTixcxZTuVppDU3xJ3PtIHWJQXiEKIGcAkPe9YV2k3omWcopfXvTXy11A==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
 
   '@react-stately/layout@4.0.3':
     resolution: {integrity: sha512-zFLXnPalWWVCdFGcPAb+nywSTz/xAnKRxb7zT+YDa5U80DHArDGKZcQ+by0+2Sf8yaYolROco4my+BERPXJB6A==}
@@ -6179,9 +6112,6 @@ packages:
   '@types/react-is@18.2.2':
     resolution: {integrity: sha512-bNmRDADVsOivYLvqYQATYRbf60SlK++spu97SK65pSCjdtuTqczFexBQtOK+gQdG6cqOsvQZ3mR12ueEoaq5iA==}
 
-  '@types/react-native@0.70.19':
-    resolution: {integrity: sha512-c6WbyCgWTBgKKMESj/8b4w+zWcZSsCforson7UdXtXMecG3MxCinYi6ihhrHVPyUrVzORsvEzK8zg32z4pK6Sg==}
-
   '@types/react-reconciler@0.26.7':
     resolution: {integrity: sha512-mBDYl8x+oyPX/VBb3E638N0B7xG+SPk/EAMcVPeexqus/5aTpTphQi0curhhshOqRrc9t6OPoJfEUkbymse/lQ==}
 
@@ -6230,14 +6160,14 @@ packages:
   '@types/stack-utils@2.0.3':
     resolution: {integrity: sha512-9aEbYZ3TbYMznPdcdr3SmIrLXwC/AKZXQeCf9Pgao5CKb8CyHuEX5jzWPTkvregvhRJHcpRO6BFoGW9ycaOkYw==}
 
-  '@types/styled-components-react-native@5.2.5':
-    resolution: {integrity: sha512-hDYioy4gAusO9NJI0n1e0Dwne4zofRVjou8i+FdNNz4vOG/iEBS99Rl87ybytjx/WD3NXqZQJ5g98AA+ZW7JKA==}
-
   '@types/styled-components@5.1.34':
     resolution: {integrity: sha512-mmiVvwpYklFIv9E8qfxuPyIt/OuyIrn6gMOAMOFUO3WJfSrSE+sGUoa4PiZj77Ut7bKZpaa6o1fBKS/4TOEvnA==}
 
   '@types/styled-system@5.1.22':
     resolution: {integrity: sha512-NbRp37zWcrf/+Qf2NumdyZfhSx1dzJ50zgfKvnezYJx1HTRUMVYY8jtWvK1eoIAa6F5sXwHLhE8oXNu15ThBAA==}
+
+  '@types/styled-system__css@5.0.21':
+    resolution: {integrity: sha512-8S1lPbUbrE8U/2btqjh9X6pK9//kQdbQDe9z3vQl4SWtxtqoAVnrFZE6Xs+IHM7NMZ1uC68XrF9nLdzRHm3VyA==}
 
   '@types/unist@2.0.10':
     resolution: {integrity: sha512-IfYcSBWE3hLpBg8+X2SEa8LVkJdJEkT2Ese2aaLs3ptGdVtABxndrMaxuFlQ1qdFf9Q5rDvDpxI3WwgvKFAsQA==}
@@ -15882,27 +15812,6 @@ snapshots:
       '@types/react': 18.3.6
       react: 18.2.0
 
-  '@meshx/mxui-badge@0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))':
-    dependencies:
-      '@meshx/mxui-core': 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-      styled-components: 5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0)
-      styled-system: 5.1.5
-
-  '@meshx/mxui-button@0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))':
-    dependencies:
-      '@meshx/mxui-core': 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
-      '@meshx/mxui-primitives': 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
-      '@meshx/mxui-text': 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
-      '@react-aria/button': 3.9.3(react@18.2.0)
-      '@react-aria/focus': 3.16.2(react@18.2.0)
-      '@react-aria/utils': 3.23.2(react@18.2.0)
-      react: 18.2.0
-      react-aria: 3.32.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      react-dom: 18.2.0(react@18.2.0)
-      styled-components: 5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0)
-
   '@meshx/mxui-core@0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))':
     dependencies:
       react: 18.2.0
@@ -15910,92 +15819,6 @@ snapshots:
       react-stately: 3.30.1(react@18.2.0)
       styled-components: 5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0)
       styled-system: 5.1.5
-
-  '@meshx/mxui-dropdown@0.7.49(react-dom@18.2.0(react@18.2.0))(react-spring@9.7.3(@react-three/fiber@8.15.16(react-dom@18.2.0(react@18.2.0))(react-native@0.70.6(@babel/core@7.25.2)(@babel/preset-env@7.23.9(@babel/core@7.25.2))(react@18.2.0))(react@18.2.0)(three@0.161.0))(konva@9.3.3)(react-dom@18.2.0(react@18.2.0))(react-konva@16.8.6(konva@9.3.3)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-native@0.70.6(@babel/core@7.25.2)(@babel/preset-env@7.23.9(@babel/core@7.25.2))(react@18.2.0))(react-zdog@1.2.2)(react@18.2.0)(three@0.161.0)(zdog@1.1.3))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))':
-    dependencies:
-      '@meshx/mxui-button': 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
-      '@meshx/mxui-core': 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
-      '@meshx/mxui-icons': 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
-      '@meshx/mxui-listbox': 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
-      '@meshx/mxui-overlays': 0.7.49(react-dom@18.2.0(react@18.2.0))(react-spring@9.7.3(@react-three/fiber@8.15.16(react-dom@18.2.0(react@18.2.0))(react-native@0.70.6(@babel/core@7.25.2)(@babel/preset-env@7.23.9(@babel/core@7.25.2))(react@18.2.0))(react@18.2.0)(three@0.161.0))(konva@9.3.3)(react-dom@18.2.0(react@18.2.0))(react-konva@16.8.6(konva@9.3.3)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-native@0.70.6(@babel/core@7.25.2)(@babel/preset-env@7.23.9(@babel/core@7.25.2))(react@18.2.0))(react-zdog@1.2.2)(react@18.2.0)(three@0.161.0)(zdog@1.1.3))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
-      '@meshx/mxui-primitives': 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
-      '@meshx/mxui-text': 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
-      '@react-aria/interactions': 3.22.4(react@18.2.0)
-      '@react-spectrum/utils': 3.11.11(react@18.2.0)
-      react: 18.2.0
-      react-aria: 3.32.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      react-dom: 18.2.0(react@18.2.0)
-      react-stately: 3.30.1(react@18.2.0)
-      styled-components: 5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0)
-    transitivePeerDependencies:
-      - react-spring
-
-  '@meshx/mxui-icons@0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))':
-    dependencies:
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-      styled-components: 5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0)
-
-  '@meshx/mxui-listbox@0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))':
-    dependencies:
-      '@meshx/mxui-core': 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
-      '@meshx/mxui-icons': 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
-      '@meshx/mxui-text': 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
-      '@react-aria/interactions': 3.21.1(react@18.2.0)
-      '@react-aria/virtualizer': 3.9.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@react-stately/layout': 3.13.5(react@18.2.0)
-      '@react-stately/virtualizer': 3.6.8(react@18.2.0)
-      react: 18.2.0
-      react-aria: 3.32.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      react-dom: 18.2.0(react@18.2.0)
-      react-stately: 3.30.1(react@18.2.0)
-      styled-components: 5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0)
-
-  '@meshx/mxui-overlays@0.7.49(react-dom@18.2.0(react@18.2.0))(react-spring@9.7.3(@react-three/fiber@8.15.16(react-dom@18.2.0(react@18.2.0))(react-native@0.70.6(@babel/core@7.25.2)(@babel/preset-env@7.23.9(@babel/core@7.25.2))(react@18.2.0))(react@18.2.0)(three@0.161.0))(konva@9.3.3)(react-dom@18.2.0(react@18.2.0))(react-konva@16.8.6(konva@9.3.3)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-native@0.70.6(@babel/core@7.25.2)(@babel/preset-env@7.23.9(@babel/core@7.25.2))(react@18.2.0))(react-zdog@1.2.2)(react@18.2.0)(three@0.161.0)(zdog@1.1.3))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))':
-    dependencies:
-      '@meshx/mxui-core': 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
-      '@meshx/mxui-primitives': 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
-      '@react-spectrum/utils': 3.11.3(react@18.2.0)
-      '@types/react-transition-group': 4.4.6
-      '@types/styled-components': 5.1.34
-      classnames: 2.5.1
-      react: 18.2.0
-      react-aria: 3.31.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      react-dom: 18.2.0(react@18.2.0)
-      react-spring: 9.7.3(@react-three/fiber@8.15.16(react-dom@18.2.0(react@18.2.0))(react-native@0.70.6(@babel/core@7.25.2)(@babel/preset-env@7.23.9(@babel/core@7.25.2))(react@18.2.0))(react@18.2.0)(three@0.161.0))(konva@9.3.3)(react-dom@18.2.0(react@18.2.0))(react-konva@16.8.6(konva@9.3.3)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-native@0.70.6(@babel/core@7.25.2)(@babel/preset-env@7.23.9(@babel/core@7.25.2))(react@18.2.0))(react-zdog@1.2.2)(react@18.2.0)(three@0.161.0)(zdog@1.1.3)
-      react-stately: 3.29.1(react@18.2.0)
-      react-transition-group: 4.4.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      styled-components: 5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0)
-
-  '@meshx/mxui-primitives@0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))':
-    dependencies:
-      '@meshx/mxui-core': 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
-      '@types/styled-components': 5.1.34
-      '@types/styled-system': 5.1.22
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-      styled-components: 5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0)
-      styled-system: 5.1.5
-
-  '@meshx/mxui-text@0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))':
-    dependencies:
-      '@meshx/mxui-core': 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-      styled-components: 5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0)
-      styled-system: 5.1.5
-
-  '@meshx/mxui-textbox@0.7.49(react-dom@18.2.0(react@18.2.0))(react-native@0.70.6(@babel/core@7.25.2)(@babel/preset-env@7.23.9(@babel/core@7.25.2))(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))':
-    dependencies:
-      '@meshx/mxui-core': 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
-      '@meshx/mxui-primitives': 0.7.49(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
-      '@react-stately/utils': 3.9.0(react@18.2.0)
-      react: 18.2.0
-      react-aria: 3.31.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      react-dom: 18.2.0(react@18.2.0)
-      react-native: 0.70.6(@babel/core@7.25.2)(@babel/preset-env@7.23.9(@babel/core@7.25.2))(react@18.2.0)
-      react-stately: 3.29.1(react@18.2.0)
-      styled-components: 5.3.11(@babel/core@7.25.2)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0)
 
   '@microsoft/api-extractor-model@7.29.8(@types/node@18.16.9)':
     dependencies:
@@ -16261,9 +16084,9 @@ snapshots:
       - '@swc/core'
       - debug
 
-  '@nrwl/vite@18.0.3(@babel/traverse@7.25.6)(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6))(@types/node@18.16.9)(nx@18.0.3(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6)))(typescript@5.3.3)(verdaccio@5.29.0(typanion@3.14.0))(vite@5.1.1(@types/node@18.16.9)(less@4.1.3)(sass@1.70.0)(stylus@0.59.0)(terser@5.27.0))(vitest@1.2.2(@types/node@18.16.9)(@vitest/ui@1.6.0)(jsdom@22.1.0)(less@4.1.3)(sass@1.70.0)(stylus@0.59.0)(terser@5.27.0))':
+  '@nrwl/vite@18.0.3(@babel/traverse@7.25.6)(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6))(@types/node@18.16.9)(nx@18.0.3(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6)))(typescript@5.3.3)(verdaccio@5.29.0(typanion@3.14.0))(vite@5.1.1(@types/node@18.16.9)(less@4.1.3)(sass@1.70.0)(stylus@0.59.0)(terser@5.27.0))(vitest@1.2.2)':
     dependencies:
-      '@nx/vite': 18.0.3(@babel/traverse@7.25.6)(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6))(@types/node@18.16.9)(nx@18.0.3(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6)))(typescript@5.3.3)(verdaccio@5.29.0(typanion@3.14.0))(vite@5.1.1(@types/node@18.16.9)(less@4.1.3)(sass@1.70.0)(stylus@0.59.0)(terser@5.27.0))(vitest@1.2.2(@types/node@18.16.9)(@vitest/ui@1.6.0)(jsdom@22.1.0)(less@4.1.3)(sass@1.70.0)(stylus@0.59.0)(terser@5.27.0))
+      '@nx/vite': 18.0.3(@babel/traverse@7.25.6)(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6))(@types/node@18.16.9)(nx@18.0.3(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6)))(typescript@5.3.3)(verdaccio@5.29.0(typanion@3.14.0))(vite@5.1.1(@types/node@18.16.9)(less@4.1.3)(sass@1.70.0)(stylus@0.59.0)(terser@5.27.0))(vitest@1.2.2)
     transitivePeerDependencies:
       - '@babel/traverse'
       - '@swc-node/register'
@@ -16958,9 +16781,9 @@ snapshots:
       - typescript
       - verdaccio
 
-  '@nx/vite@18.0.3(@babel/traverse@7.25.6)(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6))(@types/node@18.16.9)(nx@18.0.3(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6)))(typescript@5.3.3)(verdaccio@5.29.0(typanion@3.14.0))(vite@5.1.1(@types/node@18.16.9)(less@4.1.3)(sass@1.70.0)(stylus@0.59.0)(terser@5.27.0))(vitest@1.2.2(@types/node@18.16.9)(@vitest/ui@1.6.0)(jsdom@22.1.0)(less@4.1.3)(sass@1.70.0)(stylus@0.59.0)(terser@5.27.0))':
+  '@nx/vite@18.0.3(@babel/traverse@7.25.6)(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6))(@types/node@18.16.9)(nx@18.0.3(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6)))(typescript@5.3.3)(verdaccio@5.29.0(typanion@3.14.0))(vite@5.1.1(@types/node@18.16.9)(less@4.1.3)(sass@1.70.0)(stylus@0.59.0)(terser@5.27.0))(vitest@1.2.2)':
     dependencies:
-      '@nrwl/vite': 18.0.3(@babel/traverse@7.25.6)(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6))(@types/node@18.16.9)(nx@18.0.3(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6)))(typescript@5.3.3)(verdaccio@5.29.0(typanion@3.14.0))(vite@5.1.1(@types/node@18.16.9)(less@4.1.3)(sass@1.70.0)(stylus@0.59.0)(terser@5.27.0))(vitest@1.2.2(@types/node@18.16.9)(@vitest/ui@1.6.0)(jsdom@22.1.0)(less@4.1.3)(sass@1.70.0)(stylus@0.59.0)(terser@5.27.0))
+      '@nrwl/vite': 18.0.3(@babel/traverse@7.25.6)(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6))(@types/node@18.16.9)(nx@18.0.3(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6)))(typescript@5.3.3)(verdaccio@5.29.0(typanion@3.14.0))(vite@5.1.1(@types/node@18.16.9)(less@4.1.3)(sass@1.70.0)(stylus@0.59.0)(terser@5.27.0))(vitest@1.2.2)
       '@nx/devkit': 18.0.3(nx@18.0.3(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6)))
       '@nx/js': 18.0.3(@babel/traverse@7.25.6)(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6))(@types/node@18.16.9)(nx@18.0.3(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6)))(typescript@5.3.3)(verdaccio@5.29.0(typanion@3.14.0))
       '@phenomnomnominal/tsquery': 5.0.1(typescript@5.3.3)
@@ -19477,17 +19300,6 @@ snapshots:
       clsx: 2.1.1
       react: 18.2.0
 
-  '@react-aria/virtualizer@3.9.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
-    dependencies:
-      '@react-aria/i18n': 3.10.0(react@18.2.0)
-      '@react-aria/interactions': 3.21.0(react@18.2.0)
-      '@react-aria/utils': 3.25.3(react@18.2.0)
-      '@react-stately/virtualizer': 3.6.8(react@18.2.0)
-      '@react-types/shared': 3.25.0(react@18.2.0)
-      '@swc/helpers': 0.5.13
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-
   '@react-aria/virtualizer@4.0.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       '@react-aria/i18n': 3.12.3(react@18.2.0)
@@ -20121,17 +19933,6 @@ snapshots:
       '@react-stately/selection': 3.17.0(react@18.2.0)
       '@react-types/grid': 3.2.9(react@18.2.0)
       '@react-types/shared': 3.25.0(react@18.2.0)
-      '@swc/helpers': 0.5.13
-      react: 18.2.0
-
-  '@react-stately/layout@3.13.5(react@18.2.0)':
-    dependencies:
-      '@react-stately/collections': 3.11.0(react@18.2.0)
-      '@react-stately/table': 3.11.4(react@18.2.0)
-      '@react-stately/virtualizer': 3.6.8(react@18.2.0)
-      '@react-types/grid': 3.2.3(react@18.2.0)
-      '@react-types/shared': 3.25.0(react@18.2.0)
-      '@react-types/table': 3.9.2(react@18.2.0)
       '@swc/helpers': 0.5.13
       react: 18.2.0
 
@@ -22241,10 +22042,6 @@ snapshots:
     dependencies:
       '@types/react': 18.3.6
 
-  '@types/react-native@0.70.19':
-    dependencies:
-      '@types/react': 18.3.6
-
   '@types/react-reconciler@0.26.7':
     dependencies:
       '@types/react': 18.3.6
@@ -22305,12 +22102,6 @@ snapshots:
 
   '@types/stack-utils@2.0.3': {}
 
-  '@types/styled-components-react-native@5.2.5':
-    dependencies:
-      '@types/react': 18.3.6
-      '@types/react-native': 0.70.19
-      '@types/styled-components': 5.1.34
-
   '@types/styled-components@5.1.34':
     dependencies:
       '@types/hoist-non-react-statics': 3.3.5
@@ -22318,6 +22109,10 @@ snapshots:
       csstype: 3.1.3
 
   '@types/styled-system@5.1.22':
+    dependencies:
+      csstype: 3.1.3
+
+  '@types/styled-system__css@5.0.21':
     dependencies:
       csstype: 3.1.3
 

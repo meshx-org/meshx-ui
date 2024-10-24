@@ -1,0 +1,35 @@
+.CardSurface {
+    box-shadow: 0 0 0 1px var(--theme-stroke-card);
+
+    &[data-variant='well'] {
+        background-color: var(--theme-card-secondary);
+    }
+
+    &[data-variant='default'] {
+        background-color: var(--theme-card-default);
+    }
+
+    &[data-variant='warning'] {
+        background-color: var(--theme-card-warning);
+    }
+
+    &[data-variant='danger'] {
+        background-color: var(--theme-card-danger);
+    }
+
+    &[data-variant='success'] {
+        background-color: var(--theme-card-success);
+    }
+
+    // ------------------- light ------------------- //
+
+    [data-theme='light'] &[data-variant='default'] {
+        box-shadow: 0 4px 8px 0 rgba(0 0 0 / 12%), 0 0 0 1px var(--theme-stroke-card);
+    }
+
+    // ------------------- dark -------------------- //
+
+    [data-theme='dark'] &[data-variant='default'] {
+        box-shadow: 0 4px 8px 0 rgba(0 0 0 / 26%), 0 0 0 1px var(--theme-stroke-card);
+    }
+}

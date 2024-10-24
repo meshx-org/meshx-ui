@@ -1,4 +1,4 @@
-import type { ThemeValues } from '../types'
+import type { ThemeValues } from './types'
 
 // https://tailwindcss.com/docs/customizing-spacing#default-spacing-scale
 const space: ThemeValues['space'] = [

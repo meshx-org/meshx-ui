@@ -18,7 +18,10 @@ export * from './collections'
 export * from './selection'
 export * from './input'
 
-export type { ThemeValues, ColorScheme, RGBA } from './types'
+export type { ThemeValues, ThemeColors, RGBA } from './theme/types'
+export type { SxProp } from './sx'
+
+export { sx } from './sx'
 export * from './theme'
 
 import './styles.scss'

@@ -1,6 +1,6 @@
-import { CSSVariable, ColorScheme, RGBA } from '../types'
+import { CSSVariable, ThemeColors, RGBA } from './types'
 
-export const DEFAULT_LIGHT: ColorScheme<RGBA> = {
+export const DEFAULT_LIGHT: ThemeColors<RGBA> = {
     accent: {
         default: [3, 150, 255, 1]
     },
@@ -84,7 +84,7 @@ export const DEFAULT_LIGHT: ColorScheme<RGBA> = {
     }
 }
 
-export const DEFAULT_DARK: ColorScheme<RGBA> = {
+export const DEFAULT_DARK: ThemeColors<RGBA> = {
     accent: {
         default: [127, 212, 255, 1]
     },
@@ -123,7 +123,7 @@ export const DEFAULT_DARK: ColorScheme<RGBA> = {
     stroke: {
         divider: [255, 255, 255, 0.0837],
         card: [255, 255, 255, 0.14],
-        well: [0, 0, 0, 0.10],
+        well: [0, 0, 0, 0.1],
         surface: [255, 255, 255, 0.18],
         control: [255, 255, 255, 0.54]
     },
@@ -170,7 +170,7 @@ export const DEFAULT_DARK: ColorScheme<RGBA> = {
 
 // Backgrounds Colors
 
-export const VARIABLE: ColorScheme<CSSVariable> = {
+export const VARIABLE: ThemeColors<CSSVariable> = {
     accent: {
         default: 'var(--theme-accent-default)'
     },

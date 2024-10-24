@@ -1,4 +1,14 @@
 {
     "name": "icons",
-    "targets": {}
+    "sourceRoot": "libs/icons",
+    "targets": {
+        "generate-icons": {},
+        "build": {
+            "executor": "@nx/vite:build",
+            "options": {
+                "outputPath": "libs/icons/lib",
+                "configFile": "libs/icons/vite.config.ts"
+            }
+        }
+    }
 }

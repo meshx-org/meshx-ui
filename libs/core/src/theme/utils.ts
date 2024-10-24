@@ -1,4 +1,4 @@
-import { RGBA } from '../types'
+import { RGBA } from './types'
 
 export function tailwindRgb([r, g, b, a]: RGBA) {
     return `${r}, ${g}, ${b}`
