@@ -1,7 +1,8 @@
 .CheckboxLabel {
     display: flex;
     align-items: center;
-    gap: 4px;
+    column-gap: 10px;
+    height: 32px
 }
 
 .Checkbox {

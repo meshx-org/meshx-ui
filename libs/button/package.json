@@ -31,8 +31,8 @@
     },
     "devDependencies": {
         "@types/react": "^18.3.6",
-        "@types/styled-components": "^5.1.26"
-        
+        "@types/styled-components": "^5.1.26",
+        "@storybook/react": "^7.6.13"
     },
     "peerDependencies": {
         "react": "^17.0.0 || ^18.0.0",

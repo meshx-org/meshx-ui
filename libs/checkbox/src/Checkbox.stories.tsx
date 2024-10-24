@@ -1,7 +1,9 @@
 import type { StoryObj, Meta } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { Checkbox } from './Checkbox'
+import { Text } from '@meshx/mxui-text'
 import { CheckboxProps } from './Checkbox.types'
+import React from 'react'
 
 const meta: Meta<CheckboxProps> = {
     title: 'Form/Checkbox',
@@ -20,7 +22,7 @@ type Story = StoryObj<CheckboxProps>
 
 export const Default: Story = {
     args: {
-        children: 'test'
+        children: <Text>Test</Text>
     }
 }
 

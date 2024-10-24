@@ -1,5 +1,5 @@
 import type { StoryObj, Meta } from '@storybook/react'
-import { Badge } from '@meshx/mxui'
+import { Badge } from './Badge'
 import React from 'react'
 
 const meta = {

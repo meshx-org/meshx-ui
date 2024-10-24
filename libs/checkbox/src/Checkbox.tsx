@@ -102,7 +102,7 @@ function Checkbox(props: CheckboxProps, ref: FocusableRef<HTMLLabelElement>) {
             >
                 {markIcon}
             </div>
-            {children && <span /*className={classNames(styles, 'spectrum-Checkbox-label')}*/>{children}</span>}
+            {children}
         </label>
     )
 }

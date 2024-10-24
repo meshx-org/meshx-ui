@@ -5,68 +5,7 @@ import { Text } from '@meshx/mxui-text'
 import { useFocusable } from '@react-aria/focus'
 import { useObjectRef } from '@react-aria/utils'
 import { ButtonProps } from './Button.types'
-import styled from 'styled-components'
-
-const StyledButton = styled.button`
-    position: relative;
-    display: flex;
-    align-items: center;
-
-    border: none;
-    background: transparent;
-
-    cursor: pointer;
-    width: 100%;
-    height: 32px;
-
-    &[data-state='disabled'] {
-        pointer-events: none;
-        cursor: not-allowed !important;
-    }
-
-    &[data-state='pressed'] .buttonContent {
-        opacity: 0.5;
-    }
-`
-
-const ButtonContent = styled.div`
-    position: relative;
-    z-index: 3;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0px 12px;
-    column-gap: 6px;
-
-    &[data-icon-only='true'] {
-        padding: 0px !important;
-        width: 32px;
-    }
-
-    *[data-theme='light'] &[data-variant='accent'],
-    *[data-theme='light'] &[data-variant='danger'],
-    *[data-theme='light'] &[data-variant='warning'] {
-        --theme-text-primary: white !important;
-    }
-
-    span {
-        display: flex;
-        color: var(--theme-text-primary);
-    }
-
-    *[data-theme='dark'] &[data-variant='accent'] {
-        --theme-text-primary: rgb(142, 208, 255) !important;
-    }
-
-    *[data-theme='dark'] &[data-variant='danger'] {
-        --theme-text-primary: rgb(238, 159, 159) !important;
-    }
-
-    *[data-theme='dark'] &[data-variant='warning'] {
-        --theme-text-primary: rgb(237, 202, 146) !important;
-    }
-`
+import styles from './Button.module.scss'
 
 function Button<C extends React.ElementType = 'button'>(props: ButtonProps<C>, ref: ForwardedRef<HTMLButtonElement>) {
     const {
@@ -93,7 +32,8 @@ function Button<C extends React.ElementType = 'button'>(props: ButtonProps<C>, r
     const hasChildren = children !== undefined
 
     return (
-        <StyledButton
+        <button
+            className={styles.Button}
             style={{ maxWidth: fit ? 'fit-content' : undefined }}
             type="button"
             {...otherProps}
@@ -104,7 +44,7 @@ function Button<C extends React.ElementType = 'button'>(props: ButtonProps<C>, r
             as={as}
             ref={refd}
         >
-            <ButtonContent data-variant={variant} data-icon-only={!hasChildren}>
+            <div className={styles.ButtonContent} data-variant={variant} data-icon-only={!hasChildren}>
                 {icon && <span>{icon}</span>}
                 {children && (
                     <Text
@@ -116,10 +56,10 @@ function Button<C extends React.ElementType = 'button'>(props: ButtonProps<C>, r
                     />
                 )}
                 {iconRight && <span>{iconRight}</span>}
-            </ButtonContent>
+            </div>
             {hasStroke && <ControlStrokeX borderRadius={5.5} data-state={controlledState ?? state} />}
             <ControlFillX data-state={controlledState ?? state} variant={variant} borderRadius={6} />
-        </StyledButton>
+        </button>
     )
 }
 
