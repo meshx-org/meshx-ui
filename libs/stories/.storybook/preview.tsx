@@ -1,5 +1,6 @@
 import React from 'react'
 import { ThemeProvider, DEFAULT_DARK, DEFAULT_LIGHT } from '@meshx/mxui'
+import '@meshx/mxui/lib/index.css'
 import { useDarkMode } from 'storybook-dark-mode'
 import { themes, ThemeVars } from '@storybook/theming'
 

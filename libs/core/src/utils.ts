@@ -14,6 +14,9 @@
  * limitations under the License.
  */
 
+// we use the empty object {} a lot in this public API
+/* eslint-disable @typescript-eslint/ban-types */
+
 export enum ControlState {
     Rest = 'rest',
     Hovered = 'hovered',
@@ -35,9 +38,6 @@ export function getControlState(pressed: boolean, hovered: boolean, disabled: bo
 
     return state
 }
-
-// we use the empty object {} a lot in this public API
-/* eslint-disable @typescript-eslint/ban-types */
 
 export interface KeyAllowlist<T> {
     include: Array<keyof T>

@@ -57,3 +57,11 @@ export const Danger: Story = {
         variant: "danger"
     }
 }
+
+export const Success: Story = {
+    args: {
+        title: 'Success',
+        description: 'This is Body text. MeshX is faster and more intuitive.',
+        variant: "success"
+    }
+}

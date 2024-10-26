@@ -1,6 +1,6 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { CardSurface, SmokeSurface, FlyoutSurface } from './Surface'
+import { CardSurface, SmokeSurface, FlyoutSurface, LayerSurface, ControlSurface } from './Surface'
 import { Divider } from '../divider/Divider'
 
 const meta = {
@@ -17,7 +17,27 @@ export const Default: Story = {
     }
 }
 
-export const Variations: Story = {
+export const Smoke: Story = {
+    render: (args) => <SmokeSurface {...args} />,
+    args: {
+        children: 'Button'
+    }
+}
+export const Layer: Story = {
+    render: (args) => <LayerSurface {...args} />,
+    args: {
+        children: 'Button'
+    }
+}
+
+export const Flyout: Story = {
+    render: (args) => <FlyoutSurface {...args} />,
+    args: {
+        children: 'Button'
+    }
+}
+
+export const All: Story = {
     render: (args) => (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
             <CardSurface {...args} variant="default" children="Card: default" />
@@ -32,12 +52,26 @@ export const Variations: Story = {
             <Divider />
             <SmokeSurface {...args} children="Smoke" />
             <Divider />
+            <LayerSurface {...args} children="Layer" />
+            <Divider />
             <FlyoutSurface {...args} children="Flyout" />
+            <Divider />
+            <ControlSurface {...args} variant="accent" children="Control: accent" />
+            <Divider />
+            <ControlSurface {...args} variant="link" children="Control: link" />
+            <Divider />
+            <ControlSurface {...args} variant="outline" children="Control: outline" />
+            <Divider />
+            <ControlSurface {...args} variant="warning" children="Control: warning" />
+            <Divider />
+            <ControlSurface {...args} variant="danger" children="Control: danger" />
+            <Divider />
+            <ControlSurface {...args} variant="success" children="Control: success" />
         </div>
     ),
     args: {
         sx: {
-            p: 4,
+            p: 3,
             borderRadius: 6
         }
     }

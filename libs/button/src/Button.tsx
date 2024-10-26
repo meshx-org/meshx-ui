@@ -1,13 +1,13 @@
 import React, { ForwardedRef } from 'react'
 import { useTheme, useControlState } from '@meshx/mxui-core'
-import { ControlFillX, ControlStrokeX } from '@meshx/mxui-primitives'
+import { ControlStrokeX, ControlSurface } from '@meshx/mxui-primitives'
 import { Text } from '@meshx/mxui-text'
 import { useFocusable } from '@react-aria/focus'
 import { useObjectRef } from '@react-aria/utils'
 import { ButtonProps } from './Button.types'
 import styles from './Button.module.scss'
 
-function Button<C extends React.ElementType = 'button'>(props: ButtonProps<C>, ref: ForwardedRef<HTMLButtonElement>) {
+function Button<C extends React.ElementType = 'button'>(props: ButtonProps<C>, ref: ForwardedRef<any>) {
     const {
         children,
         variant = 'default',
@@ -23,31 +23,30 @@ function Button<C extends React.ElementType = 'button'>(props: ButtonProps<C>, r
 
     const refd = useObjectRef(ref)
     const { focusableProps } = useFocusable(props, refd)
-    // const domRef = useFocusableRef(ref)
 
-    const theme = useTheme()
     const { state, handlers } = useControlState<HTMLButtonElement>(disabled)
 
-    const hasStroke = variant === 'accent' || variant === 'default' || variant === 'danger' || variant === 'warning'
     const hasChildren = children !== undefined
 
     return (
-        <button
+        <ControlSurface
             className={styles.Button}
-            style={{ maxWidth: fit ? 'fit-content' : undefined }}
+            role="button"
             type="button"
+            sx={{ maxWidth: fit ? 'fit-content' : undefined, borderRadius: 6 }}
             {...otherProps}
             {...handlers}
             {...focusableProps}
-            data-theme={theme}
-            data-state={controlledState ?? state}
-            as={as}
+            state={controlledState ?? state}
+            variant={variant}
             ref={refd}
+            as={as}
         >
             <div className={styles.ButtonContent} data-variant={variant} data-icon-only={!hasChildren}>
                 {icon && <span>{icon}</span>}
                 {children && (
                     <Text
+                        className={styles.Text}
                         as="span"
                         variant="body"
                         selectable={false}
@@ -57,9 +56,7 @@ function Button<C extends React.ElementType = 'button'>(props: ButtonProps<C>, r
                 )}
                 {iconRight && <span>{iconRight}</span>}
             </div>
-            {hasStroke && <ControlStrokeX borderRadius={5.5} data-state={controlledState ?? state} />}
-            <ControlFillX data-state={controlledState ?? state} variant={variant} borderRadius={6} />
-        </button>
+        </ControlSurface>
     )
 }
 

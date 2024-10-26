@@ -2,10 +2,9 @@ import React from 'react'
 import { LinkButtonProps } from './LinkButton.types'
 import { ControlState, useControlState } from '@meshx/mxui-core'
 import { Text } from '@meshx/mxui-text'
-import { SubtleFillX } from '@meshx/mxui-primitives'
 import styled from 'styled-components'
 
-const StyledSubtleFillX = styled(SubtleFillX)`
+const StyledSubtleFillX = styled.div`
     transition: all 0.15s ease-out;
 `
 
@@ -53,7 +52,7 @@ export function LinkButton<T>({ children, state: controlledState, ...otherProps 
 
     return (
         <StyledButton data-state={controlledState ?? state} {...handlers}>
-            <StyledSubtleFillX data-state={controlledState ?? state} borderRadius={5} />
+            <StyledSubtleFillX data-state={controlledState ?? state} />
             <ButtonContent {...otherProps}>
                 <Text
                     as="span"

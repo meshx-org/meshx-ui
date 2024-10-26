@@ -258,26 +258,11 @@ export const TextControlFillX = styled.div.attrs(ariaHidden)`
     }
 `
 
-export const SmokeFill = styled.div.attrs(ariaHidden)<SmokeFillProps>`
-    ${fillBase}
-    ${borderRadius}
-
-    background-color: var(--theme-smoke-default);
-`
-
-export const LayerFill = styled.div.attrs(ariaHidden)<LayerFillProps>`
-    ${fillBase}
-    ${borderRadius}
-
-    background-color: var(--theme-layer-default);
-`
-
 export const AcrylicFill = styled.div.attrs(ariaHidden)<AcrylicFillProps>`
     ${fillBase}
     ${borderRadius}
 
     backdrop-filter: ${({ theme }) => (theme.name === 'light' ? 'blur(20px) saturate(3)' : 'blur(20px) saturate(3.5)')};
-
     background-color: var(--theme-acrylic-default);
 `
 

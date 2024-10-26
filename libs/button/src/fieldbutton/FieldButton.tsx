@@ -15,7 +15,7 @@ import { useHover, mergeProps, FocusRing } from 'react-aria'
 import { useButton } from '@react-aria/button'
 import { FieldButtonProps } from './FieldButton.types'
 import { useFocusableRef, FocusableRef } from '../focusableRef'
-import { ControlFillX, ControlStrokeX } from '@meshx/mxui-primitives'
+import { ControlStrokeX } from '@meshx/mxui-primitives'
 import { Text } from '@meshx/mxui-text'
 import styled from 'styled-components'
 import { ControlState } from '@meshx/mxui-core'
@@ -125,7 +125,6 @@ function FieldButton(props: FieldButtonProps, ref: FocusableRef<HTMLButtonElemen
                     )}
                 </ButtonContent>
                 <ControlStrokeX borderRadius={5.5} data-state={ControlState.Rest} />
-                <ControlFillX variant="default" borderRadius={6} data-state={ControlState.Rest} />
             </Button>
         </FocusRing>
     )

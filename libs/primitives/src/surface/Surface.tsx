@@ -1,30 +1,17 @@
 import React, { ForwardedRef } from 'react'
 import styled from 'styled-components'
+import { padding, PaddingProps } from 'styled-system'
+import { ControlStrokeX } from '../stroke/Stroke'
 import {
-    layout,
-    margin,
-    padding,
-    borderRadius,
-    MarginProps,
-    LayoutProps,
-    PaddingProps,
-    BorderRadiusProps,
-    opacity,
-    OpacityProps
-} from 'styled-system'
-import { LayerStroke, ControlStrokeX } from '../stroke/Stroke'
-import { LayerFill, SmokeFill, ControlFillX, SubtleFillX } from '../fill/Fill'
-import { FlyoutSurfaceProps, LayerSurfaceProps, CardSurfaceProps } from './Surface.types'
+    FlyoutSurfaceProps,
+    LayerSurfaceProps,
+    CardSurfaceProps,
+    SmokeSurfaceProps,
+    ControlSurfaceProps
+} from './Surface.types'
 import { useControlState, sx } from '@meshx/mxui-core'
 import styles from './Surface.module.scss'
 import clsx from 'clsx'
-
-const SurfaceWrapper = styled.div<MarginProps>`
-    ${margin}
-    ${layout}
-    position: relative;
-    display: flex;
-`
 
 const SurfaceContent = styled('div')<PaddingProps>`
     ${padding}
@@ -33,61 +20,59 @@ const SurfaceContent = styled('div')<PaddingProps>`
     z-index: 3;
 `
 
-const StyledFlyoutSurface = styled.div<MarginProps & PaddingProps & LayoutProps & BorderRadiusProps & OpacityProps>`
-    ${margin}
-    ${layout}
-    ${padding}
-    ${opacity}
-    ${borderRadius}
-
-    backdrop-filter: ${({ theme }) => (theme.name === 'light' ? 'blur(20px) saturate(3)' : 'blur(20px) saturate(3.5)')};
-    background-color: var(--theme-acrylic-default);
-    box-shadow: 0 8px 16px 0 ${(props) => (props.theme.name === 'light' ? 'rgba(0 0 0 / 14%)' : 'rgba(0 0 0 / 26%)')},
-        0 0 0 1px var(--theme-stroke-surface);
-`
-
 function FlyoutSurface<C extends React.ElementType = 'div'>(props: FlyoutSurfaceProps<C>, ref: ForwardedRef<any>) {
-    const { children, as = 'div', borderRadius = 5, ...restProps } = props
-
-    return (
-        <StyledFlyoutSurface ref={ref} role="presentation" borderRadius={borderRadius} {...restProps}>
-            {children}
-        </StyledFlyoutSurface>
-    )
-}
-
-function CardSurface<C extends React.ElementType = 'div'>(props: CardSurfaceProps<C>, ref: ForwardedRef<C>) {
-    const { children, as = 'div', variant = 'default', className, sx: s, ...restProps } = props
+    const { children, as: Component = 'div', className, sx: s, ...restProps } = props
     const css = sx({ sx: s })
 
     return (
-        <div
-            ref={ref as any}
+        <Component
+            ref={ref}
             style={css()}
             role="presentation"
-            {...restProps}
             className={clsx(className, styles.CardSurface)}
+            {...restProps}
+        >
+            {children}
+        </Component>
+    )
+}
+
+function CardSurface<C extends React.ElementType = 'div'>(props: CardSurfaceProps<C>, ref: ForwardedRef<any>) {
+    const { children, as: Component = 'div', variant = 'default', className, sx: s, ...restProps } = props
+    const css = sx({ sx: s })
+
+    return (
+        <Component
+            ref={ref}
+            style={css()}
+            role="presentation"
+            className={clsx(className, styles.CardSurface)}
+            {...restProps}
             data-variant={variant}
         >
             {children}
-        </div>
+        </Component>
     )
 }
 
-export function SmokeSurface(props: any) {
-    const { children, as, ...restProps } = props
+function SmokeSurface<C extends React.ElementType = 'div'>(props: SmokeSurfaceProps<C>, ref: ForwardedRef<any>) {
+    const { children, as: Component = 'div', className, sx: s, ...restProps } = props
+    const css = sx({ sx: s })
 
     return (
-        <SurfaceWrapper {...restProps}>
-            <SmokeFill borderRadius={5} {...restProps} />
-            <SurfaceContent as={as} {...restProps}>
-                {children}
-            </SurfaceContent>
-        </SurfaceWrapper>
+        <Component
+            ref={ref}
+            style={css()}
+            role="presentation"
+            className={clsx(className, styles.SmokeSurface)}
+            {...restProps}
+        >
+            {children}
+        </Component>
     )
 }
 
-export function SubtleSurface(props: any) {
+/*export function SubtleSurface(props: any) {
     const { children, as, ...restProps } = props
     const { state, handlers } = useControlState<HTMLDivElement>(props.disabled)
 
@@ -99,34 +84,47 @@ export function SubtleSurface(props: any) {
             </SurfaceContent>
         </SurfaceWrapper>
     )
-}
+}*/
 
-export function ControlSurface(props: any) {
-    const { children, as, ...restProps } = props
-    const { state, handlers } = useControlState<HTMLDivElement>(props.disabled)
+function ControlSurface<C extends React.ElementType = 'div'>(props: ControlSurfaceProps<C>, ref: ForwardedRef<any>) {
+    const { children, as: Component = 'div', variant = 'default', className, state, sx: s, ...restProps } = props
+    const css = sx({ sx: s })
+    const hasStroke =
+        variant === 'accent' ||
+        variant === 'default' ||
+        variant === 'danger' ||
+        variant === 'warning' ||
+        variant === 'success'
 
     return (
-        <SurfaceWrapper {...handlers}>
-            <ControlStrokeX data-state={state} borderRadius={6} />
-            <ControlFillX data-state={state} borderRadius={6} />
-            <SurfaceContent as={as} {...restProps}>
-                {children}
-            </SurfaceContent>
-        </SurfaceWrapper>
+        <Component
+            ref={ref}
+            style={css()}
+            role="presentation"
+            {...restProps}
+            data-variant={variant}
+            className={clsx(className, styles.ControlSurface)}
+        >
+            {hasStroke && <ControlStrokeX borderRadius={5.5} data-state={state} />}
+            <SurfaceContent>{children}</SurfaceContent>
+        </Component>
     )
 }
 
-export function LayerSurface(props: LayerSurfaceProps) {
-    const { children, as, ...restProps } = props
+function LayerSurface<C extends React.ElementType = 'div'>(props: LayerSurfaceProps<C>, ref: ForwardedRef<C>) {
+    const { children, as: Component = 'div', className, sx: s, ...restProps } = props
+    const css = sx({ sx: s })
 
     return (
-        <SurfaceWrapper {...restProps}>
-            <LayerStroke borderRadius={5} {...restProps} />
-            <LayerFill {...restProps} />
-            <SurfaceContent as={as} {...restProps}>
-                {children}
-            </SurfaceContent>
-        </SurfaceWrapper>
+        <Component
+            ref={ref as any}
+            style={css()}
+            role="presentation"
+            className={clsx(className, styles.LayerSurface)}
+            {...restProps}
+        >
+            {children}
+        </Component>
     )
 }
 
@@ -135,3 +133,12 @@ export { _FlyoutSurface as FlyoutSurface }
 
 const _CardSurface = React.forwardRef(CardSurface)
 export { _CardSurface as CardSurface }
+
+const _SmokeSurface = React.forwardRef(SmokeSurface)
+export { _SmokeSurface as SmokeSurface }
+
+const _LayerSurface = React.forwardRef(LayerSurface)
+export { _LayerSurface as LayerSurface }
+
+const _ControlSurface = React.forwardRef(ControlSurface)
+export { _ControlSurface as ControlSurface }

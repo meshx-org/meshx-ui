@@ -237,14 +237,8 @@ export function ControlStrokeX({ borderRadius, focused = false, ...props }: Cont
 
     let stroke = url('grad')
 
-    if (theme === 'dark') {
-        if (props['data-state'] === ControlState.Disabled || props['data-state'] === ControlState.Pressed) {
-            stroke = 'rgba(255, 255, 255, 0.09)'
-        }
-    } else if (theme === 'light') {
-        if (props['data-state'] === ControlState.Disabled || props['data-state'] === ControlState.Pressed) {
-            stroke = 'rgba(0, 0, 0, 0.06)'
-        }
+    if (props['data-state'] === ControlState.Disabled || props['data-state'] === ControlState.Pressed) {
+        stroke = 'var(--theme-stroke-button-secondary)'
     }
 
     // get bounding box of the svg element

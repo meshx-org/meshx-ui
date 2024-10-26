@@ -56,6 +56,8 @@ export const Variations: Story = {
             <Button {...args} variant="warning" children="Warning" />
             <Divider />
             <Button {...args} variant="danger" children="Danger" />
+            <Divider />
+            <Button {...args} variant="success" children="Success" />
         </div>
     ),
     args: {

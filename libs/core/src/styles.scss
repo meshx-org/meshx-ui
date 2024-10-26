@@ -41,14 +41,20 @@
     --theme-button-danger-secondary: 255, 0, 255, 1;
     --theme-button-danger-tertiary: 255, 0, 255, 1;
 
+    --theme-button-success-default: rgba(22, 163, 74, 1);
+    --theme-button-success-secondary: rgba(22, 163, 74, 1);
+    --theme-button-success-tertiary: rgba(22, 163, 74, 1);
+
     // Strokes
+    --theme-stroke-divider: rgba(0, 0, 0, 0.08);
     --theme-stroke-card: rgba(0, 0, 0, 0.09);
+    --theme-stroke-button-secondary: rgba(0, 0, 0, 0.06);
 
     // Card surfaces
     --theme-card-default: rgba(255, 255, 255, 0.7);
     --theme-card-warning: rgba(245, 166, 35, 0.1);
     --theme-card-danger: rgba(238, 0, 0, 0.1);
-    --theme-card-success: magenta;
+    --theme-card-success: rgba(22, 163, 74, 0.1);
 }
 
 [data-theme='dark'],
@@ -75,12 +81,18 @@
     --theme-button-danger-secondary: 238, 0, 0, 0.5;
     --theme-button-danger-tertiary: 238, 0, 0, 0.2;
 
+    --theme-button-success-default: rgba(22, 163, 74, 0.4);
+    --theme-button-success-secondary: rgba(22, 163, 74, 0.5);
+    --theme-button-success-tertiary: rgba(22, 163, 74, 0.2);
+
     // Strokes
+    --theme-stroke-divider: rgba(255, 255, 255, 0.0837);
     --theme-stroke-card: rgba(255, 255, 255, 0.14);
+    --theme-stroke-button-secondary: rgba(255, 255, 255, 0.09);
 
     // Card surfaces
     --theme-card-default: rgba(255, 255, 255, 0.051);
     --theme-card-warning: rgba(245, 166, 35, 0.1);
     --theme-card-danger: rgba(238, 0, 0, 0.1);
-    --theme-card-success: magenta;
+    --theme-card-success: rgba(22, 163, 74, 0.1);
 }

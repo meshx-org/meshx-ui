@@ -14,7 +14,7 @@
     "targetDefaults": {
         "build": {
             "dependsOn": ["^build"],
-            "inputs": ["default"],
+            "inputs": ["default", "{projectRoot}/src/**/*.scss"],
             "outputs": ["{projectRoot}/lib"],
             "cache": true
         },

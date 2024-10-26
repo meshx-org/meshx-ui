@@ -1,18 +1,14 @@
 import type { ReactNode } from 'react'
 import type { SxProp } from '@meshx/mxui-core'
-import type { LayoutProps, SpaceProps, MarginProps, BorderRadiusProps, OpacityProps, PaddingProps } from 'styled-system'
 
 export type CardSurfaceVariant = 'default' | 'well' | 'success' | 'warning' | 'danger'
+export type ControlSurfaceVariant = 'default' | 'accent' | 'link' | 'outline' | 'warning' | 'danger' | 'success'
 
 export type FlyoutSurfaceProps<C extends React.ElementType> = {
     children?: ReactNode
     as?: C
 } & React.ComponentPropsWithoutRef<C> &
-    MarginProps &
-    PaddingProps &
-    LayoutProps &
-    BorderRadiusProps &
-    OpacityProps
+    SxProp
 
 export type CardSurfaceProps<C extends React.ElementType> = {
     children?: React.ReactNode | React.ReactNode[]
@@ -21,12 +17,21 @@ export type CardSurfaceProps<C extends React.ElementType> = {
 } & React.ComponentPropsWithoutRef<C> &
     SxProp
 
-export interface LayerSurfaceProps extends LayoutProps, SpaceProps, BorderRadiusProps {
+export type LayerSurfaceProps<C extends React.ElementType> = {
     children?: React.ReactNode | React.ReactNode[]
-    as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
-}
+    as?: C
+} & React.ComponentPropsWithoutRef<C> &
+    SxProp
 
-export interface SmokeSurfaceProps extends LayoutProps, SpaceProps, BorderRadiusProps {
+export type SmokeSurfaceProps<C extends React.ElementType> = {
     children?: React.ReactNode | React.ReactNode[]
-    as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
-}
+    as?: C
+} & React.ComponentPropsWithoutRef<C> &
+    SxProp
+
+export type ControlSurfaceProps<C extends React.ElementType> = {
+    children?: React.ReactNode | React.ReactNode[]
+    as?: C
+    disabled?: boolean
+} & React.ComponentPropsWithoutRef<C> &
+    SxProp

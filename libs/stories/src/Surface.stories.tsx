@@ -14,7 +14,7 @@ import {
     FlyoutSurfaceProps,
     CardSurfaceProps,
     ControlSurface,
-    SubtleSurface
+    
 } from '@meshx/mxui'
 import { Text } from '@meshx/mxui'
 
@@ -28,29 +28,7 @@ export default {
     }
 } as Meta
 
-const SubtleSurfaceTemplate: Story<FlyoutSurfaceProps> = (args) => (
-    <View>
-        <View
-            style={{
-                position: 'absolute',
-                backgroundColor: 'rgb(3, 150, 255)',
-                left: -10,
-                top: -10,
-                height: 100,
-                width: 70
-            }}
-        />
-
-        <SubtleSurface as="main" p={10} {...args} />
-    </View>
-)
-
-export const Subtle = SubtleSurfaceTemplate.bind({})
-
-Subtle.args = {
-    children: <Text variant="body">This is a SubtleSurface</Text>,
-    borderRadius: 5
-}
+ 
 
 const ControlSurfaceTemplate: Story<FlyoutSurfaceProps> = (args) => (
     <View>
