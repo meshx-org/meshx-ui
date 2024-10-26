@@ -31,6 +31,7 @@ export type PopoverProps = {
     disableFocusManagement?: boolean
     enableBothDismissButtons?: boolean
     onDismissButtonPress?: () => void
+    className?: string
 } & Omit<AriaPopoverProps, 'popoverRef' | 'maxHeight'> & { UNSAFE_style: CSSProperties }
 
 export interface PopoverWrapperProps extends PopoverProps, FocusWithinProps {

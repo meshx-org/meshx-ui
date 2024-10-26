@@ -14,7 +14,10 @@
         "src/**/*.test.js",
         "src/**/*.spec.jsx",
         "src/**/*.test.jsx",
-        "src/**/*.stories.tsx"
+        "src/**/*.stories.tsx",
+        "src/**/*.stories.jsx",
+        "src/**/*.stories.ts",
+        "src/**/*.stories.js"
     ],
     "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"]
 }

@@ -1,4 +1,6 @@
-export interface FormGroupProps {
+import { SxProp } from '@meshx/mxui-core'
+
+export type FormGroupProps = {
     /** Group contents. */
     children?: React.ReactNode
 
@@ -34,4 +36,4 @@ export interface FormGroupProps {
      * is determined by the `intent`.
      */
     subLabel?: React.ReactNode
-}
+} & SxProp

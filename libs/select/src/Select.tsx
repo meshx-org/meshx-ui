@@ -1,8 +1,9 @@
 import React from 'react'
 import { SelectProps } from './Select.types'
-import { ControlFill, ControlFillX, ControlStroke, ControlStrokeX } from '@meshx/mxui-primitives'
-import { useControlState, useTheme } from '@meshx/mxui-core'
-import styled from 'styled-components'
+import { ControlSurface } from '@meshx/mxui-primitives'
+import { useControlState } from '@meshx/mxui-core'
+import styles from './Select.module.scss'
+import clsx from 'clsx'
 
 const Icon = () => {
     return (
@@ -27,76 +28,6 @@ const Icon = () => {
 
 const defaultIcon = <Icon />
 
-const StyledSelect = styled.div`
-    position: relative;
-    display: flex;
-    align-items: center;
-
-    border: none;
-    background: transparent;
-
-    width: fit-content;
-    height: 32px;
-
-    &[data-state='disabled'] {
-        pointer-events: none;
-    }
-
-    &[data-state='pressed'] .buttonContent {
-        opacity: 0.5;
-    }
-`
-
-const StyledIcon = styled.div`
-    // transform: scale(0.75);
-    display: flex;
-    padding: 0px 2px;
-    align-items: center;
-    justify-content: right;
-    width: 100%;
-    height: 100%;
-
-    pointer-events: none;
-`
-
-const SelectContent = styled.div`
-    position: relative;
-    z-index: 3;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    column-gap: 6px;
-
-    span {
-        opacity: 0.7;
-        pointer-events: none;
-        position: absolute;
-        width: 24px;
-        height: 24px;
-    }
-
-    span.left {
-        left: 4px;
-    }
-
-    span.right {
-        right: 4px;
-    }
-`
-
-const SelectInput = styled.select`
-    padding: 0 12px;
-    background: none;
-    border: none;
-
-    height: 32px;
-
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-`
-
 export function Select(props: SelectProps) {
     const {
         children,
@@ -104,29 +35,33 @@ export function Select(props: SelectProps) {
         iconRight = defaultIcon,
         apparance = 'default',
         disabled = false,
-        as,
+        as = 'div',
         ...otherProps
     } = props
     const { state, handlers } = useControlState<HTMLSelectElement>(disabled)
-    const theme = useTheme()
 
     return (
-        <StyledSelect className="focusable" as={as} {...otherProps} data-theme={theme} data-state={state} {...handlers}>
-            <SelectContent>
+        <ControlSurface
+            as={as}
+            sx={{ borderRadius: 6 }}
+            className={clsx(styles.Select, 'focusable')}
+            state={state}
+            {...otherProps}
+            {...handlers}
+        >
+            <div className={styles.SelectContent}>
                 {icon && <span className="left">{icon}</span>}
-                <SelectInput
+                <select
+                    className={styles.SelectInput}
                     style={{ paddingLeft: icon ? 28 : undefined, paddingRight: iconRight ? 28 : undefined }}
-                    color={disabled ? 'text.disabled' : 'text.primary'}
+                    //color={disabled ? 'text.disabled' : 'text.primary'}
                 >
                     <option>System</option>
                     <option>Dark</option>
                     <option>Light</option>
-                </SelectInput>
+                </select>
                 {iconRight && <span className="right">{iconRight}</span>}
-            </SelectContent>
-
-            <ControlStrokeX borderRadius={5.5} data-state={state} />
-            <ControlFillX data-state={state} variant={'default'} borderRadius={6} />
-        </StyledSelect>
+            </div>
+        </ControlSurface>
     )
 }

@@ -27,6 +27,7 @@
             "@meshx/mxui-primitives": ["libs/primitives/src/index.ts"],
             "@meshx/mxui-rating": ["libs/rating/src/index.ts"],
             "@meshx/mxui-searchbox": ["libs/searchbox/src/index.ts"],
+            "@meshx/mxui-progress": ["libs/progress/src/index.ts"],
             "@meshx/mxui-select": ["libs/select/src/index.ts"],
             "@meshx/mxui-slider": ["libs/slider/src/index.ts"],
             "@meshx/mxui-switch": ["libs/toggle-switch/src/index.ts"],

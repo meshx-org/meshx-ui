@@ -4,110 +4,15 @@ import { useLayoutEffect } from '@meshx/mxui-core'
 import { Text } from '@meshx/mxui-text'
 import { Popover } from '@meshx/mxui-overlays'
 
-import { useDOMRef, useIsMobileDevice, useResizeObserver, useUnwrapDOMRef } from '@react-spectrum/utils'
+import { useDOMRef, useResizeObserver, useUnwrapDOMRef } from '@react-spectrum/utils'
 import { useSelectState } from 'react-stately'
 import { PressResponder } from '@react-aria/interactions'
 import { HiddenSelect, mergeProps, useHover, useId, useSelect } from 'react-aria'
 
-import styled from 'styled-components'
 import { ChevronBottomSmall } from '@meshx/mxui-icons'
 import { ListBoxBase, useListBoxLayout } from '@meshx/mxui-listbox'
 import { FieldButton } from '@meshx/mxui-button'
-
-const StyledChevronBottomSmall = styled(ChevronBottomSmall)`
-    display: inline-block;
-    position: relative;
-    vertical-align: top;
-    transition: color var(--spectrum-global-animation-duration-100) ease-out;
-    flex-shrink: 0;
-`
-
-const DropdownWrapper = styled.div`
-    --spectrum-global-dimension-size-2400: 192px;
-    --spectrum-global-dimension-size-3000: 240px;
-    --spectrum-dropdown-min-width: 240px;
-
-    --spectrum-dropdown-popover-max-width: var(--spectrum-global-dimension-size-3000);
-    --spectrum-dropdown-width: var(--spectrum-global-dimension-size-2400);
-
-    width: fit-content;
-
-    position: relative;
-    display: inline-block;
-    user-select: none;
-
-    /* Truncate if menu options make us too wide */
-    max-inline-size: 100%;
-    inline-size: var(--spectrum-dropdown-width);
-    min-inline-size: var(--spectrum-dropdown-min-width);
-
-    /* Hack to enable select-powered Dropdowns */
-    select {
-        appearance: none;
-        -ms-appearance: none; /* Edge */
-
-        &::-ms-expand {
-            display: none;
-        }
-
-        &::-ms-value {
-            background-color: transparent;
-        }
-
-        & + ${StyledChevronBottomSmall} {
-            position: absolute;
-            inset-inline-end: var(--spectrum-dropdown-padding-x);
-            inset-block-start: 50%;
-            margin-block-start: calc(var(--spectrum-icon-chevron-down-medium-height) / -2);
-        }
-    }
-`
-
-const StyledLabel = styled.div`
-    /* Be the biggest, but also shrink! */
-    flex: 1 1 auto;
-
-    white-space: nowrap;
-    overflow: hidden;
-
-    block-size: calc(var(--spectrum-dropdown-height) - calc(var(--spectrum-dropdown-border-size) * 2));
-    line-height: calc(var(--spectrum-dropdown-height) - calc(var(--spectrum-dropdown-border-size) * 2));
-
-    font-size: var(--spectrum-dropdown-text-size);
-
-    text-overflow: ellipsis;
-    text-align: start;
-
-    &[data-is-placeholder] {
-        font-weight: var(--spectrum-dropdown-placeholder-text-font-weight);
-        font-style: var(--spectrum-dropdown-placeholder-text-font-style);
-        transition: color var(--spectrum-global-animation-duration-100) ease-in-out;
-    }
-`
-
-/*const StyledOption = styled(Listbox.Option)`
-    cursor: pointer;
-    border-radius: 4px;
-    padding: 2px 6px;
-
-    display: flex;
-    width: 100%;
-    position: relative;
-    flex-direction: row;
-    align-items: center;
-
-    &[data-headlessui-state='selected'] {
-        background: var(--theme-accent-default);
-    }
-
-    &[data-headlessui-state='active selected'] {
-        background: var(--theme-accent-default);
-    }
-
-    &[data-headlessui-state='active'] {
-        background: var(--theme-subtle-default);
-    }
-`*/
+import styles from './Dropdown.module.scss'
 
 type DOMRefValue<T> = any
 type FocusableRefValue<T> = any
@@ -117,7 +22,7 @@ function Dropdown<T extends object, C extends React.ElementType = 'div'>(props: 
     const {
         autoComplete,
         isDisabled,
-        as = 'div',
+        as: Component = 'div',
         direction = 'bottom',
         align = 'start',
         shouldFlip = true,
@@ -145,9 +50,9 @@ function Dropdown<T extends object, C extends React.ElementType = 'div'>(props: 
     // We create the listbox layout in Picker and pass it to ListBoxBase below
     // so that the layout information can be cached even while the listbox is not mounted.
     // We also use the layout as the keyboard delegate for type to select.
-    const layout = useListBoxLayout(state, isLoadingMore)
+    const layout = useListBoxLayout()
 
-    const {
+    let {
         labelProps,
         triggerProps,
         valueProps,
@@ -160,8 +65,7 @@ function Dropdown<T extends object, C extends React.ElementType = 'div'>(props: 
     } = useSelect(
         {
             ...props,
-            'aria-describedby': isLoadingInitial ? progressCircleId : undefined,
-            keyboardDelegate: layout
+            'aria-describedby': isLoadingInitial ? progressCircleId : undefined
         },
         state,
         unwrappedTriggerRef
@@ -206,6 +110,7 @@ function Dropdown<T extends object, C extends React.ElementType = 'div'>(props: 
             // Set max height: inherit so Tray scrolling works
             UNSAFE_style={{ maxHeight: 'inherit' }}
             isLoading={props.isLoading}
+            showLoadingSpinner={isLoadingMore}
             onLoadMore={props.onLoadMore}
         />
     )
@@ -246,10 +151,11 @@ function Dropdown<T extends object, C extends React.ElementType = 'div'>(props: 
     }
 
     const picker = (
-        <DropdownWrapper
-            as={as}
+        <Component
+            className={styles.Dropdown}
             data-disabled={isDisabled || undefined}
             data-invalid={isInvalid && !isDisabled}
+            data-quiet={isQuiet}
             //className={classNames(styles, 'spectrum-Dropdown', {
             //    'is-invalid': isInvalid && !isDisabled,
             //    'is-disabled': ,
@@ -272,12 +178,12 @@ function Dropdown<T extends object, C extends React.ElementType = 'div'>(props: 
                     isInvalid={isInvalid}
                     autoFocus={autoFocus}
                 >
-                    <StyledLabel>{contents}</StyledLabel>
-                    <StyledChevronBottomSmall />
+                    <div className={styles.Label}>{contents}</div>
+                    <ChevronBottomSmall className={styles.ChevronBottomSmall} />
                 </FieldButton>
             </PressResponder>
             {state.collection.size === 0 ? null : overlay}
-        </DropdownWrapper>
+        </Component>
     )
 
     return <div ref={domRef as any}>{picker}</div>

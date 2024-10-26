@@ -1,0 +1,70 @@
+.Dropdown {
+    --spectrum-global-dimension-size-2400: 192px;
+    --spectrum-global-dimension-size-3000: 240px;
+    --spectrum-dropdown-min-width: 240px;
+
+    --spectrum-dropdown-popover-max-width: var(--spectrum-global-dimension-size-3000);
+    --spectrum-dropdown-width: var(--spectrum-global-dimension-size-2400);
+
+    width: fit-content;
+
+    position: relative;
+    display: inline-block;
+    user-select: none;
+
+    /* Truncate if menu options make us too wide */
+    max-inline-size: 100%;
+    inline-size: var(--spectrum-dropdown-width);
+    min-inline-size: var(--spectrum-dropdown-min-width);
+
+    /* Hack to enable select-powered Dropdowns */
+    select {
+        appearance: none;
+        -ms-appearance: none; /* Edge */
+
+        &::-ms-expand {
+            display: none;
+        }
+
+        &::-ms-value {
+            background-color: transparent;
+        }
+
+        & + .ChevronBottomSmall {
+            position: absolute;
+            inset-inline-end: var(--spectrum-dropdown-padding-x);
+            inset-block-start: 50%;
+            margin-block-start: calc(var(--spectrum-icon-chevron-down-medium-height) / -2);
+        }
+    }
+}
+
+.Label {
+    /* Be the biggest, but also shrink! */
+    flex: 1 1 auto;
+
+    white-space: nowrap;
+    overflow: hidden;
+
+    block-size: calc(var(--spectrum-dropdown-height) - calc(var(--spectrum-dropdown-border-size) * 2));
+    line-height: calc(var(--spectrum-dropdown-height) - calc(var(--spectrum-dropdown-border-size) * 2));
+
+    font-size: var(--spectrum-dropdown-text-size);
+
+    text-overflow: ellipsis;
+    text-align: start;
+
+    &[data-is-placeholder] {
+        font-weight: var(--spectrum-dropdown-placeholder-text-font-weight);
+        font-style: var(--spectrum-dropdown-placeholder-text-font-style);
+        transition: color var(--spectrum-global-animation-duration-100) ease-in-out;
+    }
+}
+
+.ChevronBottomSmall {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    transition: color var(--spectrum-global-animation-duration-100) ease-out;
+    flex-shrink: 0;
+}

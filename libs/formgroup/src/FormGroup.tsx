@@ -1,12 +1,9 @@
 import React from 'react'
 import { FormGroupProps } from './FormGroup.types'
+import { Text } from '@meshx/mxui-text'
 import styled from 'styled-components'
-
-const FormGroupStyled = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin: 0 0 calc(12px * 1.5);
-`
+import { sx } from '@meshx/mxui-core'
+import styles from './FormGroup.module.scss'
 
 const Label = styled.label`
     margin-bottom: calc(12px * 0.5);
@@ -25,29 +22,28 @@ const TextMuted = styled.span`
 
 const FormContent = styled.div``
 
-const FormGroupSubLabel = styled.div`
-    color: var(--theme-text-secondary);
-    font-size: var(--theme-font-size-0);
-    margin-bottom: calc(12px * 0.5);
-`
-
-export function FormGroup(props: FormGroupProps) {
+function FormGroup(props: FormGroupProps, ref: any) {
     const { children, helperText, label, labelFor, labelInfo, subLabel } = props
 
     return (
-        <FormGroupStyled>
+        <div className={styles.FormGroup} css={sx(props)} ref={ref}>
             {label && (
-                <Label htmlFor={labelFor}>
-                    {label} <TextMuted>{labelInfo}</TextMuted>
-                </Label>
+                <Text htmlFor={labelFor}>
+                    {label} <Text sx={{ color: 'text.secondary' }}>{labelInfo}</Text>
+                </Text>
             )}
-            {subLabel && <FormGroupSubLabel>{subLabel}</FormGroupSubLabel>}
+            {subLabel && <div className={styles.FormGroupSubLabel}>{subLabel}</div>}
             <FormContent>
                 {children}
                 {helperText && <FormHelperText>{helperText}</FormHelperText>}
             </FormContent>
-        </FormGroupStyled>
+        </div>
     )
 }
 
-FormGroup.displayName = `FormGroup`
+/**
+ * A InfoBar is a content container that displays non-editable content separate from other content on the screen.
+ * Often this is used to display preformatted text, such as code/markup examples on a documentation page.
+ */
+const _FormGroup = React.forwardRef(FormGroup)
+export { _FormGroup as FormGroup }

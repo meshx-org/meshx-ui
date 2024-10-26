@@ -11,7 +11,7 @@
  */
 
 import React, { CSSProperties, ReactElement, RefObject, useCallback, useContext, useMemo } from 'react'
-import styled from 'styled-components'
+import styles from './ListBoxBase.module.scss'
 import clsx from 'clsx'
 
 import { FocusScope } from '@react-aria/focus'
@@ -25,38 +25,6 @@ import { ListBoxSection } from './ListBoxSection'
 import { Virtualizer, VirtualizerItem } from '@react-aria/virtualizer'
 import { ListBoxBaseProps } from './ListBoxBase.types'
 import { ListBoxLayout } from './ListBoxLayout'
-
-const StyledVirtualizer = styled(Virtualizer as any)`
-    --spectrum-popover-padding: 6px;
-
-    /*
-    Menu border radius + 1 to match XD designs for submenu offset. No calc use so
-    getComputedStyle + getPropertyValue actually returns a pixel value rather than the calc string.
-  */
-    --spectrum-submenu-offset-distance: var(--spectrum-global-dimension-size-65);
-    text-align: start;
-    display: block;
-
-    box-sizing: border-box;
-
-    padding: var(--spectrum-popover-padding);
-    margin: 0;
-
-    list-style-type: none;
-
-    overflow-y: auto;
-    user-select: none;
-
-    & .spectrum-Menu-sectionHeading {
-        /* Support headings as LI */
-        margin-block-start: var(--spectrum-global-dimension-size-75);
-        margin-block-end: var(--spectrum-global-dimension-size-40);
-    }
-
-    &:focus {
-        outline: none;
-    }
-` as typeof Virtualizer
 
 /** @private */
 export function useListBoxLayout<T>(): ListBoxLayout<T> {
@@ -192,7 +160,8 @@ function ListBoxBase<T>(props: ListBoxBaseProps<T>, ref: RefObject<HTMLDivElemen
     return (
         <ListBoxContext.Provider value={{ state, renderEmptyState, shouldFocusOnHover, shouldUseVirtualFocus }}>
             <FocusScope>
-                <StyledVirtualizer
+                <Virtualizer
+                    className={clsx(styles.Menu)}
                     {...styleProps}
                     {...mergeProps(listBoxProps, domProps)}
                     contentEditable="false"
@@ -200,7 +169,6 @@ function ListBoxBase<T>(props: ListBoxBaseProps<T>, ref: RefObject<HTMLDivElemen
                     persistedKeys={persistedKeys}
                     autoFocus={!!props.autoFocus || undefined}
                     scrollDirection="vertical"
-                    className={clsx('spectrum-Menu')}
                     layout={layout}
                     layoutOptions={useMemo(
                         () => ({
@@ -223,7 +191,7 @@ function ListBoxBase<T>(props: ListBoxBaseProps<T>, ref: RefObject<HTMLDivElemen
                             return <EmptyState />
                         }
                     }, [])}
-                </StyledVirtualizer>
+                </Virtualizer>
             </FocusScope>
         </ListBoxContext.Provider>
     )

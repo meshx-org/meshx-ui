@@ -15,5 +15,5 @@
         "src/**/*.spec.jsx",
         "src/**/*.test.jsx"
     ],
-    "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx", "../button/src/Button.stories.tsx", "../button/src/linkbutton/LinkButton.stories.tsx", "../badge/src/Badge.stories.tsx", "../infobar/src/InfoBar.stories.tsx", "../primitives/src/surface/SurfaceNew.stories.tsx"]
+    "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx", "../button/src/Button.stories.tsx", "../button/src/linkbutton/LinkButton.stories.tsx", "../badge/src/Badge.stories.tsx", "../infobar/src/InfoBar.stories.tsx", "../primitives/src/surface/SurfaceNew.stories.tsx", "../link/src/Link.stories.tsx"]
 }

@@ -1,6 +1,7 @@
 import type { StoryObj, Meta } from '@storybook/react'
-import { Dropdown, Item } from '@meshx/mxui'
+import { Dropdown } from './Dropdown'
 import React from 'react'
+import { Item } from 'react-stately'
 
 const flatOptions = [
     { id: 1, name: 'Aardvark' },

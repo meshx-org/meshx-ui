@@ -1,0 +1,11 @@
+.FormGroup {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 calc(12px * 1.5);
+}
+
+.FormGroupSubLabel {
+    color: var(--theme-text-secondary);
+    font-size: var(--theme-font-size-0);
+    margin-bottom: calc(12px * 0.5);
+}

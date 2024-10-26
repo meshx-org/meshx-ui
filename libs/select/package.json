@@ -21,10 +21,12 @@
         "url": "https://github.com/meshx-org/meshx-ui.git"
     },
     "dependencies": {
+        "clsx": "2.1.1",
         "@meshx/mxui-core": "workspace:0.7.49",
         "@meshx/mxui-primitives": "workspace:0.7.49"
     },
     "devDependencies": {
+        "@storybook/react": "7.6.13",
         "@types/styled-components": "^5.1.26",
         "@types/react": "^18.3.6"
     },

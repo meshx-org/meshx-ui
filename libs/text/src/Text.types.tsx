@@ -1,5 +1,5 @@
 import React, { ComponentPropsWithoutRef, ElementType, ReactNode } from 'react'
-import { ColorProps, SpaceProps, TypographyProps } from 'styled-system'
+import { SxProp } from '@meshx/mxui-core'
 import { textVariants, headingVariants } from './variants'
 
 type BaseProps<C extends ElementType> = {
@@ -13,9 +13,7 @@ type BaseProps<C extends ElementType> = {
 
     as?: C
 } & ComponentPropsWithoutRef<C> &
-    ColorProps &
-    SpaceProps &
-    TypographyProps
+    SxProp
 
 export type TextProps<C extends React.ElementType> = {
     variant?: keyof typeof textVariants

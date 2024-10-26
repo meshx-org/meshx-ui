@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import classNames from 'classnames'
+import clsx from 'clsx'
 import * as React from 'react'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
@@ -131,7 +131,7 @@ export class Overlay2 extends AbstractPureComponent<OverlayProps2, OverlayState>
             }
         }
 
-        const containerClasses = classNames(
+        const containerClasses = clsx(
             Classes.OVERLAY,
             {
                 [Classes.OVERLAY_OPEN]: isOpen,
@@ -224,7 +224,7 @@ export class Overlay2 extends AbstractPureComponent<OverlayProps2, OverlayState>
         const decoratedChild =
             typeof child === 'object' ? (
                 React.cloneElement(child as React.ReactElement, {
-                    className: classNames((child as React.ReactElement).props.className, Classes.OVERLAY_CONTENT),
+                    className: clsx((child as React.ReactElement).props.className, Classes.OVERLAY_CONTENT),
                     tabIndex
                 })
             ) : (
@@ -265,11 +265,7 @@ export class Overlay2 extends AbstractPureComponent<OverlayProps2, OverlayState>
                         (
                             <div
                                 {...backdropProps}
-                                className={classNames(
-                                    Classes.OVERLAY_BACKDROP,
-                                    backdropClassName,
-                                    backdropProps?.className
-                                )}
+                                className={clsx(Classes.OVERLAY_BACKDROP, backdropClassName, backdropProps?.className)}
                                 onMouseDown={this.handleBackdropMouseDown}
                             />
                         ) as any

@@ -1,0 +1,31 @@
+.Menu {
+    --spectrum-popover-padding: 0px;
+
+    /*
+    Menu border radius + 1 to match XD designs for submenu offset. No calc use so
+    getComputedStyle + getPropertyValue actually returns a pixel value rather than the calc string.
+  */
+    --spectrum-submenu-offset-distance: var(--spectrum-global-dimension-size-65);
+    text-align: start;
+    display: block;
+
+    box-sizing: border-box;
+
+    padding: var(--spectrum-popover-padding);
+    margin: 0;
+
+    list-style-type: none;
+
+    overflow-y: auto;
+    user-select: none;
+
+    & .spectrum-Menu-sectionHeading {
+        /* Support headings as LI */
+        margin-block-start: var(--spectrum-global-dimension-size-75);
+        margin-block-end: var(--spectrum-global-dimension-size-40);
+    }
+
+    &:focus {
+        outline: none;
+    }
+}

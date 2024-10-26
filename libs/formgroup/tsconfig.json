@@ -2,7 +2,9 @@
     "extends": "../../tsconfig.base.json",
     "compilerOptions": {
         "types": ["node"],
-        "target": "es2020"
+        "target": "es2020",
+        "jsx": "react-jsx",
+        "jsxImportSource": "@emotion/react"
     },
     "include": [],
     "files": [],

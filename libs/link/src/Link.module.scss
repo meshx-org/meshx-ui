@@ -1,0 +1,16 @@
+.Link {
+    cursor: pointer;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    [data-theme='dark'] &[data-variant='primary'] {
+        color: hsl(200, 100%, 75%);
+    }
+
+    [data-theme='light'] &[data-variant='primary'] {
+        color: hsl(215, 90%, 40%);
+    }
+}

@@ -63,7 +63,7 @@ function Overlay(props: OverlayProps, ref: Ref<HTMLDivElement>) {
             isExiting={!isOpen}
         >
             {/*<Provider ref={ref} UNSAFE_style={{ background: 'transparent', isolation: 'isolate' }} isDisabled={false}>*/}
-            <ModalProvider>
+            <ModalProvider style={{ background: 'transparent', isolation: 'isolate' }}>
                 <OpenTransition
                     in={isOpen}
                     appear

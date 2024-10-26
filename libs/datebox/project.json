@@ -2,14 +2,8 @@
     "name": "datebox",
     "targets": {
         "build": {
-            "executor": "@nx/rollup:rollup",
-            "options": {
-                "main": "libs/datebox/src/index.ts",
-                "format": ["esm"],
-                "tsConfig": "libs/datebox/tsconfig.json",
-                "outputPath": "dist/datebox",
-                "generateExportsField": true
-            }
+            "executor": "nx:noop",
+            "options": {}
         }
     }
 }

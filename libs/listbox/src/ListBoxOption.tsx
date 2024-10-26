@@ -21,8 +21,8 @@ import { ListBoxContext } from './ListBoxContext'
 import { Node } from '@meshx/mxui-core'
 import { Text } from '@meshx/mxui-text'
 import { CheckmarkSmall } from '@meshx/mxui-icons'
-import styled from 'styled-components'
 import clsx from 'clsx'
+import styles from './ListBoxOption.module.scss'
 
 type OptionProps<T, C extends React.ElementType> = {
     item: Node<T>
@@ -32,77 +32,12 @@ type OptionProps<T, C extends React.ElementType> = {
     as?: C
 } & React.ComponentPropsWithoutRef<C>
 
-const StyledCheckmarkSmall = styled(CheckmarkSmall)`
-    display: none;
-    align-self: flex-start;
-    justify-self: end;
-    grid-area: checkmark;
-    stroke: var(--theme-accent-default);
-`
-
-const ItemGrid = styled.div`
-    border-radius: 4px;
-    margin: 2px 4px;
-
-    display: grid;
-    grid-template-columns: 12px auto 1fr auto auto auto auto 4px;
-    /*
-        Renamed from padding-y to padding-height to fix docs issue where fallback var replaced this value
-        (due to old spectrum-css postcss-custom-properties-custom-mapping plugin).
-        */
-    grid-template-rows: 4px 1fr auto 4px;
-
-    grid-template-areas:
-        '. .    .            .         .     .         .        .'
-        '. icon text         checkmark end   keyboard  chevron  .'
-        '. icon description  checkmark end   keyboard  chevron  .'
-        '. .    .            .         .     .         .        .';
-`
-
-const StyledOption = styled.div`
-    cursor: default;
-    position: relative;
-    display: block;
-    height: 32px;
-    box-sizing: border-box;
-    margin: 0;
-
-    &:focus {
-        outline: none;
-    }
-
-    &[data-selectable='true'] ${ItemGrid} {
-        grid-template-columns: 12px auto 1fr calc(24px + 8px) auto auto 12px;
-    }
-
-    &[data-selected='true'] ${StyledCheckmarkSmall} {
-        display: block;
-    }
-
-    &[data-disabled='true'] {
-        cursor: not-allowed;
-    }
-
-    &[href] {
-        cursor: pointer;
-    }
-
-    &:focus ${ItemGrid} {
-        background: var(--theme-subtle-default);
-    }
-
-    &[data-selected='true'] {
-        // background: var(--theme-accent-default);
-        color: var(--theme-accent-default);
-    }
-`
-
 /** @private */
 export function ListBoxOption<T, C extends React.ElementType = 'div'>(props: OptionProps<T, C>) {
     const { item } = props
 
     const { rendered, key } = item
-    const as = item.props.href ? 'a' : ('div' as any)
+    const Component = item.props.href ? 'a' : ('div' as any)
 
     const { state, shouldFocusOnHover, shouldUseVirtualFocus } = useContext(ListBoxContext)!
 
@@ -132,9 +67,8 @@ export function ListBoxOption<T, C extends React.ElementType = 'div'>(props: Opt
 
     return (
         <FocusRing focusRingClass={clsx('focus-ring')}>
-            <StyledOption
+            <Component className={styles.Option}
                 {...mergeProps(optionProps, shouldFocusOnHover ? {} : hoverProps)}
-                as={as}
                 ref={ref}
                 data-focused={shouldUseVirtualFocus && isFocused && isKeyboardModality}
                 data-disabled={isDisabled}
@@ -152,18 +86,18 @@ export function ListBoxOption<T, C extends React.ElementType = 'div'>(props: Opt
                 //    'is-hovered': (isHovered && !shouldFocusOnHover) || (isFocused && !isKeyboardModality)
                 //})}
             >
-                <ItemGrid>
+                <div className={styles.ItemGrid}>
                     <span style={{ gridArea: 'text' }}>{contents}</span>
                     {isSelected && (
-                        <StyledCheckmarkSmall
+                        <CheckmarkSmall
+                            className={styles.CheckmarkSmall}
                             style={{ gridArea: 'checkmark' }}
-                            className="h-5 w-5"
                             //slot="checkmark"
                             // UNSAFE_className={classNames(styles, 'spectrum-Menu-checkmark')}
                         />
                     )}
-                </ItemGrid>
-            </StyledOption>
+                </div>
+            </Component>
         </FocusRing>
     )
 }

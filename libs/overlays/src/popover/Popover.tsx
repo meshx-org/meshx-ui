@@ -17,7 +17,9 @@ import { mergeProps, useFocusWithin, usePopover } from 'react-aria'
 import { useDOMRef } from '@react-spectrum/utils'
 import { useLayoutEffect } from '@meshx/mxui-core'
 import { DOMRef } from '../types'
-import { FlyoutSurface, FlyoutShadow, SurfaceStroke, AcrylicFill } from '@meshx/mxui-primitives'
+import { FlyoutSurface } from '@meshx/mxui-primitives'
+import clsx from 'clsx'
+import styles from './Popover.module.scss'
 
 function Popover(props: PopoverProps, ref: DOMRef<HTMLElement>) {
     const { children, state, ...otherProps } = props
@@ -41,18 +43,19 @@ const PopoverWrapper = forwardRef((props: PopoverWrapperProps, ref: ForwardedRef
         isNonModal,
         enableBothDismissButtons,
         state,
+        className,
         wrapperRef,
         onDismissButtonPress = () => state.close()
     } = props
 
     const { size, borderWidth, arrowRef } = useArrowSize()
-    const borderRadius = 5 // usePopoverBorderRadius(ref as any)
+    const borderRadius = 7 // usePopoverBorderRadius(ref as any)
     const borderDiagonal = borderWidth * Math.SQRT2
     const primary = size + borderDiagonal
     const secondary = primary * 2
 
     const { focusWithinProps } = useFocusWithin(props)
-    const { popoverProps, arrowProps, underlayProps, placement } = usePopover(
+    let { popoverProps, arrowProps, underlayProps, placement } = usePopover(
         {
             ...props,
             popoverRef: ref as any,
@@ -71,12 +74,13 @@ const PopoverWrapper = forwardRef((props: PopoverWrapperProps, ref: ForwardedRef
                 // {...styleProps}
                 {...mergeProps(popoverProps, focusWithinProps)}
                 style={{
-                    position: 'relative',
-                    height: 'fit-content',
                     ...props.UNSAFE_style,
                     ...popoverProps.style
                 }}
                 ref={ref as any}
+                className={clsx(className, styles.Popover)}
+                data-is-open={isOpen}
+                {...{ [`data-is-open--${placement}`]: isOpen }}
                 //className={classNames(
                 //    styles,
                 //    'spectrum-Popover',
@@ -92,7 +96,7 @@ const PopoverWrapper = forwardRef((props: PopoverWrapperProps, ref: ForwardedRef
                 role="presentation"
                 data-testid="popover"
             >
-                <FlyoutSurface borderRadius={borderRadius}>{children}</FlyoutSurface>
+                <FlyoutSurface sx={{ borderRadius }}>{children}</FlyoutSurface>
             </div>
         </div>
     )

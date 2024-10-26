@@ -1,3 +1,6 @@
+import { SxProp } from '@meshx/mxui-core'
+import { BetterSystemStyleObject } from 'libs/core/src/sx'
+
 const displayVariants = {
     display1: {
         fontFamily: 'default',
@@ -49,53 +52,53 @@ export const headingVariants = {
     ...hVariants
 }
 
-export const textVariants = {
+export const textVariants: Record<string, BetterSystemStyleObject> = {
     body: {
         fontFamily: 'default',
-        lineHeight: 'body',
+        lineHeight: 'default',
         fontWeight: 400,
         fontSize: 1
     },
     'body.medium': {
         fontFamily: 'default',
-        lineHeight: 'body',
+        lineHeight: 'default',
         fontWeight: 500,
         fontSize: 1
     },
     'body.semibold': {
         fontFamily: 'default',
-        lineHeight: 'body',
+        lineHeight: 'default',
         fontWeight: 600,
         fontSize: 1
     },
     'body.bold': {
         fontFamily: 'default',
-        lineHeight: 'body',
+        lineHeight: 'default',
         fontWeight: 'bold',
         fontSize: 1
     },
     'body.large': {
         fontFamily: 'default',
-        lineHeight: 'body',
+        lineHeight: 'default',
         fontWeight: 400,
         fontSize: 2
     },
     'body.large.semibold': {
         fontFamily: 'default',
-        lineHeight: 'body',
+        lineHeight: 'default',
         fontWeight: 600,
         fontSize: 2
     },
     caption: {
         fontFamily: 'default',
-        lineHeight: 'body',
+        lineHeight: 'default',
         opacity: 0.8,
         fontWeight: 400,
         fontSize: 0
     },
     captionAlt: {
         fontFamily: 'default',
-        lineHeight: 'body',
+        lineHeight: 'default',
         opacity: 0.8,
         fontWeight: 600,
         fontSize: 0

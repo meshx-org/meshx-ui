@@ -4,36 +4,56 @@ import { CardSurface, SmokeSurface, FlyoutSurface, LayerSurface, ControlSurface 
 import { Divider } from '../divider/Divider'
 
 const meta = {
-    title: 'Primitives/Surface2',
-    component: CardSurface
+    title: 'Primitives/Surface',
+    component: CardSurface,
+    argTypes: {
+        variant: { control: 'select', options: ['default', 'well'] }
+    }
 } satisfies Meta<typeof CardSurface>
 
 export default meta
 type Story = StoryObj<typeof CardSurface>
 
-export const Default: Story = {
+export const Card: Story = {
     args: {
-        children: 'Button'
+        children: 'Card',
+        sx: {
+            p: 3,
+            borderRadius: 6
+        }
     }
 }
 
 export const Smoke: Story = {
     render: (args) => <SmokeSurface {...args} />,
+    argTypes: {},
     args: {
-        children: 'Button'
+        children: 'Smoke',
+        sx: {
+            p: 3,
+            borderRadius: 6
+        }
     }
 }
 export const Layer: Story = {
     render: (args) => <LayerSurface {...args} />,
     args: {
-        children: 'Button'
+        children: 'Layer',
+        sx: {
+            p: 3,
+            borderRadius: 6
+        }
     }
 }
 
 export const Flyout: Story = {
     render: (args) => <FlyoutSurface {...args} />,
     args: {
-        children: 'Button'
+        children: 'Flyout',
+        sx: {
+            p: 3,
+            borderRadius: 6
+        }
     }
 }
 
