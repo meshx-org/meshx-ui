@@ -21,7 +21,7 @@
         "url": "https://github.com/meshx-org/meshx-ui.git"
     },
     "devDependencies": {
-        "@types/react": "^18.3.6"
+        "@types/react": "^18.3.12"
     },
     "dependencies": {
         "clsx": "2.1.1",
