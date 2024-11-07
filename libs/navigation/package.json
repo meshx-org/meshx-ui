@@ -1,7 +1,7 @@
 {
     "name": "@meshx/mxui-navigation",
     "description": "Navigation components for MXUI",
-    "version": "0.7.49",
+    "version": "0.7.50",
     "license": "Apache-2.0",
     "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
     "homepage": "https://meshx.co/produts/mxui",
@@ -26,10 +26,10 @@
         "@react-stately/list": "^3.10.3",
         "@react-stately/collections": "3.10.5",
         "@react-spectrum/utils": "^3.11.5",
-        "@meshx/mxui-core": "workspace:0.7.49",
-        "@meshx/mxui-dropdown": "workspace:0.7.49",
-        "@meshx/mxui-button": "workspace:0.7.49",
-        "@meshx/mxui-text": "workspace:0.7.49",
+        "@meshx/mxui-core": "workspace:0.7.50",
+        "@meshx/mxui-dropdown": "workspace:0.7.50",
+        "@meshx/mxui-button": "workspace:0.7.50",
+        "@meshx/mxui-text": "workspace:0.7.50",
         "styled-system": "^5.1.5"
     },
     "devDependencies": {

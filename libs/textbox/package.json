@@ -1,7 +1,7 @@
 {
     "name": "@meshx/mxui-textbox",
     "description": "TextBox component for MXUI",
-    "version": "0.7.49",
+    "version": "0.7.50",
     "license": "Apache-2.0",
     "author": "Roland Szarka-Kovács <Roland.Szarka-Kovacs@meshx.co>",
     "homepage": "https://meshx.co/produts/mxui",
@@ -25,8 +25,8 @@
         "react-aria": "3.31.0",
         "react-stately": "3.29.1",
         "@react-stately/utils": "3.9.0",
-        "@meshx/mxui-core": "workspace:0.7.49",
-        "@meshx/mxui-primitives": "workspace:0.7.49"
+        "@meshx/mxui-core": "workspace:0.7.50",
+        "@meshx/mxui-primitives": "workspace:0.7.50"
     },
     "devDependencies": {
         "@types/react": "^18.3.6",
