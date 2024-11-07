@@ -4,13 +4,19 @@ import react from '@vitejs/plugin-react'
 import dts from 'vite-plugin-dts'
 import * as path from 'path'
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
+import pkg from './package.json'
 
 export default defineConfig({
     root: __dirname,
     cacheDir: '../../node_modules/.vite/libs/text',
 
     plugins: [
-        react(),
+        react({
+            jsxImportSource: '@emotion/react',
+            babel: {
+                plugins: ['@emotion/babel-plugin']
+            }
+        }),
         nxViteTsPaths(),
         dts({ entryRoot: 'src', tsConfigFilePath: path.join(__dirname, 'tsconfig.lib.json'), skipDiagnostics: true })
     ],
@@ -39,7 +45,15 @@ export default defineConfig({
         },
         rollupOptions: {
             // External packages that should not be bundled into your library.
-            external: ['react', 'react-dom', 'react-is', 'react/jsx-runtime']
+            external: [
+                'react',
+                'react-dom',
+                'react-is',
+                'react/jsx-runtime',
+                'styled-components',
+                '@emotion/react',
+                ...Object.keys(pkg.dependencies || {})
+            ]
         }
     }
 })

@@ -1,5 +1,5 @@
 import React, { createContext, useContext } from 'react'
-import type { ThemeContextValue } from '../theme/types'
+import type { ThemeColors, ThemeContextValue } from '../theme/types'
 import { THEME_VALUES } from '../theme/themeValues'
 import { DEFAULT_DARK, DEFAULT_LIGHT, VARIABLE } from '../theme/colorSchemes'
 import { GlobalStyle } from '../theme/globalStyles'
@@ -13,6 +13,18 @@ const ThemeContext = createContext<ThemeContextValue>({ name: 'light', values: T
 export const useTheme = () => useContext(ThemeContext).name
 export const useThemeValues = () => useContext(ThemeContext).values
 export const useThemeColors = () => useContext(ThemeContext).colors
+
+declare module '@emotion/react' {
+    export interface Theme {
+        colors: ThemeColors<any>
+        breakpoints: any[]
+        fonts: any
+        fontSizes: any
+        fontWeights: any
+        lineHeights: any
+        sizes: any
+    }
+}
 
 interface ThemeProviderProps {
     theme: 'light' | 'dark'
@@ -81,25 +93,22 @@ const emotionTheme: Theme = {
 }
 
 export function ThemeProvider({ theme, children }: ThemeProviderProps) {
-    // TODO: detect native platform
-    const isWeb = true
-
     return (
-        <EmotionThemeProvider theme={emotionTheme}>
-            <ThemeContext.Provider value={{ name: theme, colors: VARIABLE, values: THEME_VALUES }}>
-                <SCProvider
-                    theme={{
-                        darkScheme: DEFAULT_DARK,
-                        lightScheme: DEFAULT_LIGHT,
-                        colors: VARIABLE,
-                        ...THEME_VALUES,
-                        name: theme
-                    }}
-                >
-                    {isWeb ? <GlobalStyle /> : null}
+        <ThemeContext.Provider value={{ name: theme, colors: VARIABLE, values: THEME_VALUES }}>
+            <SCProvider
+                theme={{
+                    darkScheme: DEFAULT_DARK,
+                    lightScheme: DEFAULT_LIGHT,
+                    colors: VARIABLE,
+                    ...THEME_VALUES,
+                    name: theme
+                }}
+            >
+                <EmotionThemeProvider theme={{ colors: VARIABLE, ...THEME_VALUES }}>
+                    <GlobalStyle></GlobalStyle>
                     {children}
-                </SCProvider>
-            </ThemeContext.Provider>
-        </EmotionThemeProvider>
+                </EmotionThemeProvider>
+            </SCProvider>
+        </ThemeContext.Provider>
     )
 }

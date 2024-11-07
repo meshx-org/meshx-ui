@@ -6,12 +6,10 @@
             }
         ],
         "target": "es2020",
-        "jsx": "react",
+        "jsx": "react-jsx",
         "module": "esnext",
         "lib": ["es2020", "es6", "dom"],
         "paths": {
-            "@meshx": ["libs/use-viewport-size/src/index.ts"],
-            "@meshx/delete-later": ["libs/delete-later/src/index.ts"],
             "@meshx/mxui-badge": ["libs/badge/src/index.ts"],
             "@meshx/mxui-button": ["libs/button/src/index.ts"],
             "@meshx/mxui-checkbox": ["libs/checkbox/src/index.ts"],

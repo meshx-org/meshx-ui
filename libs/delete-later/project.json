@@ -1,8 +1,0 @@
-{
-    "name": "delete-later",
-    "$schema": "../../node_modules/nx/schemas/project-schema.json",
-    "sourceRoot": "libs/delete-later/src",
-    "projectType": "library",
-    "tags": [],
-    "targets": {}
-}

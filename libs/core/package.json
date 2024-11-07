@@ -21,7 +21,6 @@
         "url": "https://github.com/meshx-org/meshx-ui.git"
     },
     "dependencies": {
-        "@emotion/react": "11.13.3",
         "styled-system": "^5.1.5",
         "react-stately": "^3.29.1",
         "@styled-system/css": "5.1.5",
@@ -35,6 +34,7 @@
         "@types/styled-components": "^5.1.26"
     },
     "peerDependencies": {
+        "@emotion/react": "^11",
         "react": "^17.0.0 || ^18.0.0",
         "react-dom": "^17.0.0 || ^18.0.0",
         "styled-components": ">=5.0.0"

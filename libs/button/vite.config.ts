@@ -46,6 +46,7 @@ export default defineConfig({
                 'react-is',
                 'react/jsx-runtime',
                 'styled-components',
+                '@emotion/react',
                 ...Object.keys(pkg.dependencies || {})
             ]
         }

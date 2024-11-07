@@ -2,7 +2,7 @@ import { mergeConfig } from 'vite'
 import type { StorybookConfig } from '@storybook/react-vite'
 
 const config: StorybookConfig = {
-    stories: ['../src/**/*.stories.@(js|jsx|ts|tsx)', "../../**/*.stories.@(js|jsx|ts|tsx)"],
+    stories: ['../src/**/*.stories.@(js|jsx|ts|tsx)', '../../**/*.stories.@(js|jsx|ts|tsx)'],
     addons: [
         {
             name: '@storybook/addon-essentials',
@@ -44,7 +44,7 @@ const config: StorybookConfig = {
                 esbuildOptions: {
                     plugins: []
                 },
-                include: ['storybook-dark-mode']
+                include: ['storybook-dark-mode', '@storybook/theming', '@emotion/react/jsx-dev-runtime']
             }
         })
     },
@@ -63,8 +63,8 @@ const config: StorybookConfig = {
         }
     },
     features: {
-       // storyStoreV7: true,
-       // buildStoriesJson: true
+        // storyStoreV7: true,
+        // buildStoriesJson: true
     }
 }
 
