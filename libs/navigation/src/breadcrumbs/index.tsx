@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import { useCallback } from 'react'
 import { BreadcrumbProps, BreadcrumbsProps } from './types'
 import styled from 'styled-components'
 
@@ -10,9 +10,9 @@ const StyledBreadcrumbs = styled.ul`
     display: flex;
     list-style: none;
     flex-wrap: wrap;
-    
+
     line-height: 20px;
-    font-size: var(--h5-size,14px);
+    font-size: var(--h5-size, 14px);
     color: var(--theme-text-secondary);
 `
 
@@ -20,7 +20,7 @@ const Separator = styled.li`
     margin: 0 8px;
 `
 
-const BreadcrumbWrapper = styled.li`
+const BreadcrumbWrapper = styled.div`
     display: flex;
 `
 
