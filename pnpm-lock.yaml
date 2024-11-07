@@ -80,7 +80,7 @@ importers:
         version: 18.0.3(@babel/traverse@7.25.6)(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6))(@types/node@18.16.9)(js-yaml@4.1.0)(nx@18.0.3(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6)))(typescript@5.3.3)(verdaccio@5.29.0(typanion@3.14.0))
       '@nx/vite':
         specifier: 18.0.3
-        version: 18.0.3(@babel/traverse@7.25.6)(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6))(@types/node@18.16.9)(nx@18.0.3(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6)))(typescript@5.3.3)(verdaccio@5.29.0(typanion@3.14.0))(vite@5.1.1(@types/node@18.16.9)(less@4.1.3)(sass@1.70.0)(stylus@0.59.0)(terser@5.27.0))(vitest@1.2.2(@types/node@18.16.9)(@vitest/ui@1.6.0)(jsdom@22.1.0)(less@4.1.3)(sass@1.70.0)(stylus@0.59.0)(terser@5.27.0))
+        version: 18.0.3(@babel/traverse@7.25.6)(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6))(@types/node@18.16.9)(nx@18.0.3(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6)))(typescript@5.3.3)(verdaccio@5.29.0(typanion@3.14.0))(vite@5.1.1(@types/node@18.16.9)(less@4.1.3)(sass@1.70.0)(stylus@0.59.0)(terser@5.27.0))(vitest@1.2.2)
       '@nx/web':
         specifier: 18.0.3
         version: 18.0.3(@babel/traverse@7.25.6)(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6))(@types/node@18.16.9)(nx@18.0.3(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6)))(typescript@5.3.3)(verdaccio@5.29.0(typanion@3.14.0))
@@ -244,7 +244,7 @@ importers:
   libs/badge:
     dependencies:
       '@meshx/mxui-core':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../core
       react:
         specifier: ^17.0.0 || ^18.0.0
@@ -269,13 +269,13 @@ importers:
   libs/button:
     dependencies:
       '@meshx/mxui-core':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../core
       '@meshx/mxui-primitives':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../primitives
       '@meshx/mxui-text':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../text
       '@react-aria/button':
         specifier: ^3.9.2
@@ -315,13 +315,13 @@ importers:
   libs/checkbox:
     dependencies:
       '@meshx/mxui-core':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../core
       '@meshx/mxui-icons':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../icons
       '@meshx/mxui-text':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../text
       clsx:
         specifier: 2.1.0
@@ -401,10 +401,10 @@ importers:
         specifier: 3.2.0
         version: 3.2.0
       '@meshx/mxui-core':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../core
       '@meshx/mxui-primitives':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../primitives
       clsx:
         specifier: 1.2.1
@@ -432,25 +432,25 @@ importers:
   libs/dropdown:
     dependencies:
       '@meshx/mxui-button':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../button
       '@meshx/mxui-core':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../core
       '@meshx/mxui-icons':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../icons
       '@meshx/mxui-listbox':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../listbox
       '@meshx/mxui-overlays':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../overlays
       '@meshx/mxui-primitives':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../primitives
       '@meshx/mxui-text':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../text
       '@react-aria/interactions':
         specifier: ^3.20.1
@@ -484,10 +484,10 @@ importers:
         specifier: ^11
         version: 11.13.3(@types/react@18.3.6)(react@18.2.0)
       '@meshx/mxui-core':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../core
       '@meshx/mxui-text':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../text
       react:
         specifier: ^17.0.0 || ^18.0.0
@@ -537,16 +537,16 @@ importers:
   libs/infobar:
     dependencies:
       '@meshx/mxui-badge':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../badge
       '@meshx/mxui-core':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../core
       '@meshx/mxui-primitives':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../primitives
       '@meshx/mxui-text':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../text
       react:
         specifier: ^17.0.0 || ^18.0.0
@@ -571,7 +571,7 @@ importers:
   libs/link:
     dependencies:
       '@meshx/mxui-core':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../core
       react:
         specifier: ^17.0.0 || ^18.0.0
@@ -581,7 +581,7 @@ importers:
         version: 18.2.0(react@18.2.0)
     devDependencies:
       '@meshx/mxui-text':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../text
       '@storybook/react':
         specifier: 7.6.13
@@ -593,13 +593,13 @@ importers:
   libs/listbox:
     dependencies:
       '@meshx/mxui-core':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../core
       '@meshx/mxui-icons':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../icons
       '@meshx/mxui-text':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../text
       '@react-aria/focus':
         specifier: ^3.18.4
@@ -645,76 +645,76 @@ importers:
   libs/mxui:
     dependencies:
       '@meshx/mxui-badge':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../badge
       '@meshx/mxui-button':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../button
       '@meshx/mxui-checkbox':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../checkbox
       '@meshx/mxui-core':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../core
       '@meshx/mxui-dropdown':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../dropdown
       '@meshx/mxui-formgroup':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../formgroup
       '@meshx/mxui-infobar':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../infobar
       '@meshx/mxui-link':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../link
       '@meshx/mxui-listbox':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../listbox
       '@meshx/mxui-navigation':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../navigation
       '@meshx/mxui-overlays':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../overlays
       '@meshx/mxui-primitives':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../primitives
       '@meshx/mxui-progress':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../progress
       '@meshx/mxui-rating':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../rating
       '@meshx/mxui-searchbox':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../searchbox
       '@meshx/mxui-select':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../select
       '@meshx/mxui-slider':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../slider
       '@meshx/mxui-stripebox':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../stripe
       '@meshx/mxui-switch':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../toggle-switch
       '@meshx/mxui-tailwind':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../tailwind
       '@meshx/mxui-text':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../text
       '@meshx/mxui-textbox':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../textbox
       '@meshx/mxui-tooltip':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../tooltip
       '@meshx/mxui-treeview':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../treeview
       vite-plugin-lib-inject-css:
         specifier: 2.1.1
@@ -723,16 +723,16 @@ importers:
   libs/navigation:
     dependencies:
       '@meshx/mxui-button':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../button
       '@meshx/mxui-core':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../core
       '@meshx/mxui-dropdown':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../dropdown
       '@meshx/mxui-text':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../text
       '@react-spectrum/utils':
         specifier: ^3.11.5
@@ -775,10 +775,10 @@ importers:
   libs/overlays:
     dependencies:
       '@meshx/mxui-core':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../core
       '@meshx/mxui-primitives':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../primitives
       '@react-spectrum/utils':
         specifier: 3.11.3
@@ -815,7 +815,7 @@ importers:
   libs/primitives:
     dependencies:
       '@meshx/mxui-core':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../core
       clsx:
         specifier: ^2.1.1
@@ -852,10 +852,10 @@ importers:
   libs/progress:
     dependencies:
       '@meshx/mxui-core':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../core
       '@meshx/mxui-primitives':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../primitives
       react:
         specifier: ^17.0.0 || ^18.0.0
@@ -889,13 +889,13 @@ importers:
   libs/rating:
     dependencies:
       '@meshx/mxui-core':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../core
       '@meshx/mxui-primitives':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../primitives
       '@meshx/mxui-text':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../text
       react:
         specifier: ^17.0.0 || ^18.0.0
@@ -917,16 +917,16 @@ importers:
   libs/searchbox:
     dependencies:
       '@meshx/mxui-overlays':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../overlays
       '@meshx/mxui-primitives':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../primitives
       '@meshx/mxui-text':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../text
       '@meshx/mxui-textbox':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../textbox
       react:
         specifier: ^17.0.0 || ^18.0.0
@@ -954,10 +954,10 @@ importers:
   libs/select:
     dependencies:
       '@meshx/mxui-core':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../core
       '@meshx/mxui-primitives':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../primitives
       clsx:
         specifier: 2.1.1
@@ -985,10 +985,10 @@ importers:
   libs/slider:
     dependencies:
       '@meshx/mxui-core':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../core
       '@meshx/mxui-primitives':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../primitives
       react:
         specifier: ^17.0.0 || ^18.0.0
@@ -1034,10 +1034,10 @@ importers:
         specifier: '*'
         version: 2.3.0(react@18.2.0)
       '@meshx/mxui':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../mxui
       '@meshx/mxui-core':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../core
       '@nx/react':
         specifier: ^18.0.3
@@ -1130,10 +1130,10 @@ importers:
   libs/stripe:
     dependencies:
       '@meshx/mxui-core':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../core
       '@meshx/mxui-primitives':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../primitives
       react:
         specifier: ^17.0.0 || ^18.0.0
@@ -1164,7 +1164,7 @@ importers:
   libs/tailwind:
     dependencies:
       '@meshx/mxui-core':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../core
       tailwindcss:
         specifier: ^3.4.1
@@ -1179,7 +1179,7 @@ importers:
         specifier: ^11
         version: 11.13.3(@types/react@18.3.6)(react@18.2.0)
       '@meshx/mxui-core':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../core
       react:
         specifier: ^17.0.0 || ^18.0.0
@@ -1198,10 +1198,10 @@ importers:
   libs/textbox:
     dependencies:
       '@meshx/mxui-core':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../core
       '@meshx/mxui-primitives':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../primitives
       '@react-stately/utils':
         specifier: 3.9.0
@@ -1238,10 +1238,10 @@ importers:
         specifier: ^11
         version: 11.13.3(@types/react@18.3.6)(react@18.2.0)
       '@meshx/mxui-core':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../core
       '@meshx/mxui-text':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../text
       react:
         specifier: ^17.0.0 || ^18.0.0
@@ -1269,7 +1269,7 @@ importers:
   libs/tooltip:
     dependencies:
       '@meshx/mxui-overlays':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../overlays
       '@react-aria/focus':
         specifier: ^3.18.4
@@ -1315,10 +1315,10 @@ importers:
   libs/treeview:
     dependencies:
       '@meshx/mxui-core':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../core
       '@meshx/mxui-primitives':
-        specifier: workspace:0.7.49
+        specifier: workspace:0.7.50
         version: link:../primitives
       react:
         specifier: ^17.0.0 || ^18.0.0
@@ -6516,6 +6516,7 @@ packages:
 
   acorn-import-assertions@1.9.0:
     resolution: {integrity: sha512-cmMwop9x+8KFhxvKrKfPYmN6/pKTYYHBqLa0DfvVZcKMJWNyWLnaqND7dx/qn66R7ewM1UX5XMaDVP5wlVTaVA==}
+    deprecated: package has been renamed to acorn-import-attributes
     peerDependencies:
       acorn: ^8
 
@@ -13295,9 +13296,27 @@ snapshots:
       regexpu-core: 5.3.2
       semver: 6.3.1
 
+  '@babel/helper-create-regexp-features-plugin@7.22.15(@babel/core@7.25.2)':
+    dependencies:
+      '@babel/core': 7.25.2
+      '@babel/helper-annotate-as-pure': 7.24.7
+      regexpu-core: 5.3.2
+      semver: 6.3.1
+
   '@babel/helper-define-polyfill-provider@0.5.0(@babel/core@7.23.9)':
     dependencies:
       '@babel/core': 7.23.9
+      '@babel/helper-compilation-targets': 7.25.2
+      '@babel/helper-plugin-utils': 7.24.8
+      debug: 4.3.7
+      lodash.debounce: 4.0.8
+      resolve: 1.22.8
+    transitivePeerDependencies:
+      - supports-color
+
+  '@babel/helper-define-polyfill-provider@0.5.0(@babel/core@7.25.2)':
+    dependencies:
+      '@babel/core': 7.25.2
       '@babel/helper-compilation-targets': 7.25.2
       '@babel/helper-plugin-utils': 7.24.8
       debug: 4.3.7
@@ -13342,6 +13361,17 @@ snapshots:
   '@babel/helper-module-transforms@7.23.3(@babel/core@7.23.9)':
     dependencies:
       '@babel/core': 7.23.9
+      '@babel/helper-environment-visitor': 7.22.20
+      '@babel/helper-module-imports': 7.24.7
+      '@babel/helper-simple-access': 7.22.5
+      '@babel/helper-split-export-declaration': 7.22.6
+      '@babel/helper-validator-identifier': 7.22.20
+    transitivePeerDependencies:
+      - supports-color
+
+  '@babel/helper-module-transforms@7.23.3(@babel/core@7.25.2)':
+    dependencies:
+      '@babel/core': 7.25.2
       '@babel/helper-environment-visitor': 7.22.20
       '@babel/helper-module-imports': 7.24.7
       '@babel/helper-simple-access': 7.22.5
@@ -13528,7 +13558,7 @@ snapshots:
       '@babel/core': 7.25.2
       '@babel/helper-plugin-utils': 7.24.8
       '@babel/helper-skip-transparent-expression-wrappers': 7.22.5
-      '@babel/plugin-transform-optional-chaining': 7.23.4(@babel/core@7.23.9)
+      '@babel/plugin-transform-optional-chaining': 7.23.4(@babel/core@7.25.2)
 
   '@babel/plugin-bugfix-v8-static-class-fields-redefine-readonly@7.23.7(@babel/core@7.23.9)':
     dependencies:
@@ -13946,7 +13976,7 @@ snapshots:
   '@babel/plugin-syntax-unicode-sets-regex@7.18.6(@babel/core@7.25.2)':
     dependencies:
       '@babel/core': 7.25.2
-      '@babel/helper-create-regexp-features-plugin': 7.22.15(@babel/core@7.23.9)
+      '@babel/helper-create-regexp-features-plugin': 7.22.15(@babel/core@7.25.2)
       '@babel/helper-plugin-utils': 7.24.8
 
   '@babel/plugin-transform-arrow-functions@7.23.3(@babel/core@7.23.9)':
@@ -13972,8 +14002,8 @@ snapshots:
       '@babel/core': 7.25.2
       '@babel/helper-environment-visitor': 7.22.20
       '@babel/helper-plugin-utils': 7.24.8
-      '@babel/helper-remap-async-to-generator': 7.22.20(@babel/core@7.23.9)
-      '@babel/plugin-syntax-async-generators': 7.8.4(@babel/core@7.23.9)
+      '@babel/helper-remap-async-to-generator': 7.22.20(@babel/core@7.25.2)
+      '@babel/plugin-syntax-async-generators': 7.8.4(@babel/core@7.25.2)
 
   '@babel/plugin-transform-async-to-generator@7.23.3(@babel/core@7.23.9)':
     dependencies:
@@ -13989,7 +14019,7 @@ snapshots:
       '@babel/core': 7.25.2
       '@babel/helper-module-imports': 7.24.7
       '@babel/helper-plugin-utils': 7.24.8
-      '@babel/helper-remap-async-to-generator': 7.22.20(@babel/core@7.23.9)
+      '@babel/helper-remap-async-to-generator': 7.22.20(@babel/core@7.25.2)
     transitivePeerDependencies:
       - supports-color
 
@@ -14035,9 +14065,9 @@ snapshots:
   '@babel/plugin-transform-class-static-block@7.23.4(@babel/core@7.25.2)':
     dependencies:
       '@babel/core': 7.25.2
-      '@babel/helper-create-class-features-plugin': 7.23.10(@babel/core@7.23.9)
+      '@babel/helper-create-class-features-plugin': 7.23.10(@babel/core@7.25.2)
       '@babel/helper-plugin-utils': 7.24.8
-      '@babel/plugin-syntax-class-static-block': 7.14.5(@babel/core@7.23.9)
+      '@babel/plugin-syntax-class-static-block': 7.14.5(@babel/core@7.25.2)
 
   '@babel/plugin-transform-classes@7.23.8(@babel/core@7.23.9)':
     dependencies:
@@ -14059,7 +14089,7 @@ snapshots:
       '@babel/helper-environment-visitor': 7.22.20
       '@babel/helper-function-name': 7.23.0
       '@babel/helper-plugin-utils': 7.24.8
-      '@babel/helper-replace-supers': 7.22.20(@babel/core@7.23.9)
+      '@babel/helper-replace-supers': 7.22.20(@babel/core@7.25.2)
       '@babel/helper-split-export-declaration': 7.22.6
       globals: 11.12.0
 
@@ -14094,7 +14124,7 @@ snapshots:
   '@babel/plugin-transform-dotall-regex@7.23.3(@babel/core@7.25.2)':
     dependencies:
       '@babel/core': 7.25.2
-      '@babel/helper-create-regexp-features-plugin': 7.22.15(@babel/core@7.23.9)
+      '@babel/helper-create-regexp-features-plugin': 7.22.15(@babel/core@7.25.2)
       '@babel/helper-plugin-utils': 7.24.8
 
   '@babel/plugin-transform-duplicate-keys@7.23.3(@babel/core@7.23.9)':
@@ -14117,7 +14147,7 @@ snapshots:
     dependencies:
       '@babel/core': 7.25.2
       '@babel/helper-plugin-utils': 7.24.8
-      '@babel/plugin-syntax-dynamic-import': 7.8.3(@babel/core@7.23.9)
+      '@babel/plugin-syntax-dynamic-import': 7.8.3(@babel/core@7.25.2)
 
   '@babel/plugin-transform-exponentiation-operator@7.23.3(@babel/core@7.23.9)':
     dependencies:
@@ -14141,7 +14171,7 @@ snapshots:
     dependencies:
       '@babel/core': 7.25.2
       '@babel/helper-plugin-utils': 7.24.8
-      '@babel/plugin-syntax-export-namespace-from': 7.8.3(@babel/core@7.23.9)
+      '@babel/plugin-syntax-export-namespace-from': 7.8.3(@babel/core@7.25.2)
 
   '@babel/plugin-transform-flow-strip-types@7.23.3(@babel/core@7.23.9)':
     dependencies:
@@ -14191,7 +14221,7 @@ snapshots:
     dependencies:
       '@babel/core': 7.25.2
       '@babel/helper-plugin-utils': 7.24.8
-      '@babel/plugin-syntax-json-strings': 7.8.3(@babel/core@7.23.9)
+      '@babel/plugin-syntax-json-strings': 7.8.3(@babel/core@7.25.2)
 
   '@babel/plugin-transform-literals@7.23.3(@babel/core@7.23.9)':
     dependencies:
@@ -14213,7 +14243,7 @@ snapshots:
     dependencies:
       '@babel/core': 7.25.2
       '@babel/helper-plugin-utils': 7.24.8
-      '@babel/plugin-syntax-logical-assignment-operators': 7.10.4(@babel/core@7.23.9)
+      '@babel/plugin-syntax-logical-assignment-operators': 7.10.4(@babel/core@7.25.2)
 
   '@babel/plugin-transform-member-expression-literals@7.23.3(@babel/core@7.23.9)':
     dependencies:
@@ -14236,7 +14266,7 @@ snapshots:
   '@babel/plugin-transform-modules-amd@7.23.3(@babel/core@7.25.2)':
     dependencies:
       '@babel/core': 7.25.2
-      '@babel/helper-module-transforms': 7.23.3(@babel/core@7.23.9)
+      '@babel/helper-module-transforms': 7.23.3(@babel/core@7.25.2)
       '@babel/helper-plugin-utils': 7.24.8
     transitivePeerDependencies:
       - supports-color
@@ -14253,7 +14283,7 @@ snapshots:
   '@babel/plugin-transform-modules-commonjs@7.23.3(@babel/core@7.25.2)':
     dependencies:
       '@babel/core': 7.25.2
-      '@babel/helper-module-transforms': 7.23.3(@babel/core@7.23.9)
+      '@babel/helper-module-transforms': 7.23.3(@babel/core@7.25.2)
       '@babel/helper-plugin-utils': 7.24.8
       '@babel/helper-simple-access': 7.22.5
     transitivePeerDependencies:
@@ -14291,7 +14321,7 @@ snapshots:
     dependencies:
       '@babel/core': 7.25.2
       '@babel/helper-hoist-variables': 7.22.5
-      '@babel/helper-module-transforms': 7.23.3(@babel/core@7.23.9)
+      '@babel/helper-module-transforms': 7.23.3(@babel/core@7.25.2)
       '@babel/helper-plugin-utils': 7.24.8
       '@babel/helper-validator-identifier': 7.22.20
     transitivePeerDependencies:
@@ -14308,7 +14338,7 @@ snapshots:
   '@babel/plugin-transform-modules-umd@7.23.3(@babel/core@7.25.2)':
     dependencies:
       '@babel/core': 7.25.2
-      '@babel/helper-module-transforms': 7.23.3(@babel/core@7.23.9)
+      '@babel/helper-module-transforms': 7.23.3(@babel/core@7.25.2)
       '@babel/helper-plugin-utils': 7.24.8
     transitivePeerDependencies:
       - supports-color
@@ -14322,7 +14352,7 @@ snapshots:
   '@babel/plugin-transform-named-capturing-groups-regex@7.22.5(@babel/core@7.25.2)':
     dependencies:
       '@babel/core': 7.25.2
-      '@babel/helper-create-regexp-features-plugin': 7.22.15(@babel/core@7.23.9)
+      '@babel/helper-create-regexp-features-plugin': 7.22.15(@babel/core@7.25.2)
       '@babel/helper-plugin-utils': 7.24.8
 
   '@babel/plugin-transform-new-target@7.23.3(@babel/core@7.23.9)':
@@ -14345,7 +14375,7 @@ snapshots:
     dependencies:
       '@babel/core': 7.25.2
       '@babel/helper-plugin-utils': 7.24.8
-      '@babel/plugin-syntax-nullish-coalescing-operator': 7.8.3(@babel/core@7.23.9)
+      '@babel/plugin-syntax-nullish-coalescing-operator': 7.8.3(@babel/core@7.25.2)
 
   '@babel/plugin-transform-numeric-separator@7.23.4(@babel/core@7.23.9)':
     dependencies:
@@ -14357,7 +14387,7 @@ snapshots:
     dependencies:
       '@babel/core': 7.25.2
       '@babel/helper-plugin-utils': 7.24.8
-      '@babel/plugin-syntax-numeric-separator': 7.10.4(@babel/core@7.23.9)
+      '@babel/plugin-syntax-numeric-separator': 7.10.4(@babel/core@7.25.2)
 
   '@babel/plugin-transform-object-rest-spread@7.23.4(@babel/core@7.23.9)':
     dependencies:
@@ -14374,8 +14404,8 @@ snapshots:
       '@babel/core': 7.25.2
       '@babel/helper-compilation-targets': 7.23.6
       '@babel/helper-plugin-utils': 7.24.8
-      '@babel/plugin-syntax-object-rest-spread': 7.8.3(@babel/core@7.23.9)
-      '@babel/plugin-transform-parameters': 7.23.3(@babel/core@7.23.9)
+      '@babel/plugin-syntax-object-rest-spread': 7.8.3(@babel/core@7.25.2)
+      '@babel/plugin-transform-parameters': 7.23.3(@babel/core@7.25.2)
 
   '@babel/plugin-transform-object-super@7.23.3(@babel/core@7.23.9)':
     dependencies:
@@ -14387,7 +14417,7 @@ snapshots:
     dependencies:
       '@babel/core': 7.25.2
       '@babel/helper-plugin-utils': 7.24.8
-      '@babel/helper-replace-supers': 7.22.20(@babel/core@7.23.9)
+      '@babel/helper-replace-supers': 7.22.20(@babel/core@7.25.2)
 
   '@babel/plugin-transform-optional-catch-binding@7.23.4(@babel/core@7.23.9)':
     dependencies:
@@ -14399,7 +14429,7 @@ snapshots:
     dependencies:
       '@babel/core': 7.25.2
       '@babel/helper-plugin-utils': 7.24.8
-      '@babel/plugin-syntax-optional-catch-binding': 7.8.3(@babel/core@7.23.9)
+      '@babel/plugin-syntax-optional-catch-binding': 7.8.3(@babel/core@7.25.2)
 
   '@babel/plugin-transform-optional-chaining@7.23.4(@babel/core@7.23.9)':
     dependencies:
@@ -14413,7 +14443,7 @@ snapshots:
       '@babel/core': 7.25.2
       '@babel/helper-plugin-utils': 7.24.8
       '@babel/helper-skip-transparent-expression-wrappers': 7.22.5
-      '@babel/plugin-syntax-optional-chaining': 7.8.3(@babel/core@7.23.9)
+      '@babel/plugin-syntax-optional-chaining': 7.8.3(@babel/core@7.25.2)
 
   '@babel/plugin-transform-parameters@7.23.3(@babel/core@7.23.9)':
     dependencies:
@@ -14434,7 +14464,7 @@ snapshots:
   '@babel/plugin-transform-private-methods@7.23.3(@babel/core@7.25.2)':
     dependencies:
       '@babel/core': 7.25.2
-      '@babel/helper-create-class-features-plugin': 7.23.10(@babel/core@7.23.9)
+      '@babel/helper-create-class-features-plugin': 7.23.10(@babel/core@7.25.2)
       '@babel/helper-plugin-utils': 7.24.8
 
   '@babel/plugin-transform-private-property-in-object@7.23.4(@babel/core@7.23.9)':
@@ -14449,9 +14479,9 @@ snapshots:
     dependencies:
       '@babel/core': 7.25.2
       '@babel/helper-annotate-as-pure': 7.24.7
-      '@babel/helper-create-class-features-plugin': 7.23.10(@babel/core@7.23.9)
+      '@babel/helper-create-class-features-plugin': 7.23.10(@babel/core@7.25.2)
       '@babel/helper-plugin-utils': 7.24.8
-      '@babel/plugin-syntax-private-property-in-object': 7.14.5(@babel/core@7.23.9)
+      '@babel/plugin-syntax-private-property-in-object': 7.14.5(@babel/core@7.25.2)
 
   '@babel/plugin-transform-property-literals@7.23.3(@babel/core@7.23.9)':
     dependencies:
@@ -14711,7 +14741,7 @@ snapshots:
   '@babel/plugin-transform-unicode-property-regex@7.23.3(@babel/core@7.25.2)':
     dependencies:
       '@babel/core': 7.25.2
-      '@babel/helper-create-regexp-features-plugin': 7.22.15(@babel/core@7.23.9)
+      '@babel/helper-create-regexp-features-plugin': 7.22.15(@babel/core@7.25.2)
       '@babel/helper-plugin-utils': 7.24.8
 
   '@babel/plugin-transform-unicode-regex@7.23.3(@babel/core@7.23.9)':
@@ -14723,7 +14753,7 @@ snapshots:
   '@babel/plugin-transform-unicode-regex@7.23.3(@babel/core@7.25.2)':
     dependencies:
       '@babel/core': 7.25.2
-      '@babel/helper-create-regexp-features-plugin': 7.22.15(@babel/core@7.23.9)
+      '@babel/helper-create-regexp-features-plugin': 7.22.15(@babel/core@7.25.2)
       '@babel/helper-plugin-utils': 7.24.8
 
   '@babel/plugin-transform-unicode-sets-regex@7.23.3(@babel/core@7.23.9)':
@@ -14735,7 +14765,7 @@ snapshots:
   '@babel/plugin-transform-unicode-sets-regex@7.23.3(@babel/core@7.25.2)':
     dependencies:
       '@babel/core': 7.25.2
-      '@babel/helper-create-regexp-features-plugin': 7.22.15(@babel/core@7.23.9)
+      '@babel/helper-create-regexp-features-plugin': 7.22.15(@babel/core@7.25.2)
       '@babel/helper-plugin-utils': 7.24.8
 
   '@babel/preset-env@7.23.9(@babel/core@7.23.9)':
@@ -16158,9 +16188,9 @@ snapshots:
       - '@swc/core'
       - debug
 
-  '@nrwl/vite@18.0.3(@babel/traverse@7.25.6)(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6))(@types/node@18.16.9)(nx@18.0.3(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6)))(typescript@5.3.3)(verdaccio@5.29.0(typanion@3.14.0))(vite@5.1.1(@types/node@18.16.9)(less@4.1.3)(sass@1.70.0)(stylus@0.59.0)(terser@5.27.0))(vitest@1.2.2(@types/node@18.16.9)(@vitest/ui@1.6.0)(jsdom@22.1.0)(less@4.1.3)(sass@1.70.0)(stylus@0.59.0)(terser@5.27.0))':
+  '@nrwl/vite@18.0.3(@babel/traverse@7.25.6)(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6))(@types/node@18.16.9)(nx@18.0.3(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6)))(typescript@5.3.3)(verdaccio@5.29.0(typanion@3.14.0))(vite@5.1.1(@types/node@18.16.9)(less@4.1.3)(sass@1.70.0)(stylus@0.59.0)(terser@5.27.0))(vitest@1.2.2)':
     dependencies:
-      '@nx/vite': 18.0.3(@babel/traverse@7.25.6)(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6))(@types/node@18.16.9)(nx@18.0.3(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6)))(typescript@5.3.3)(verdaccio@5.29.0(typanion@3.14.0))(vite@5.1.1(@types/node@18.16.9)(less@4.1.3)(sass@1.70.0)(stylus@0.59.0)(terser@5.27.0))(vitest@1.2.2(@types/node@18.16.9)(@vitest/ui@1.6.0)(jsdom@22.1.0)(less@4.1.3)(sass@1.70.0)(stylus@0.59.0)(terser@5.27.0))
+      '@nx/vite': 18.0.3(@babel/traverse@7.25.6)(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6))(@types/node@18.16.9)(nx@18.0.3(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6)))(typescript@5.3.3)(verdaccio@5.29.0(typanion@3.14.0))(vite@5.1.1(@types/node@18.16.9)(less@4.1.3)(sass@1.70.0)(stylus@0.59.0)(terser@5.27.0))(vitest@1.2.2)
     transitivePeerDependencies:
       - '@babel/traverse'
       - '@swc-node/register'
@@ -16855,9 +16885,9 @@ snapshots:
       - typescript
       - verdaccio
 
-  '@nx/vite@18.0.3(@babel/traverse@7.25.6)(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6))(@types/node@18.16.9)(nx@18.0.3(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6)))(typescript@5.3.3)(verdaccio@5.29.0(typanion@3.14.0))(vite@5.1.1(@types/node@18.16.9)(less@4.1.3)(sass@1.70.0)(stylus@0.59.0)(terser@5.27.0))(vitest@1.2.2(@types/node@18.16.9)(@vitest/ui@1.6.0)(jsdom@22.1.0)(less@4.1.3)(sass@1.70.0)(stylus@0.59.0)(terser@5.27.0))':
+  '@nx/vite@18.0.3(@babel/traverse@7.25.6)(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6))(@types/node@18.16.9)(nx@18.0.3(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6)))(typescript@5.3.3)(verdaccio@5.29.0(typanion@3.14.0))(vite@5.1.1(@types/node@18.16.9)(less@4.1.3)(sass@1.70.0)(stylus@0.59.0)(terser@5.27.0))(vitest@1.2.2)':
     dependencies:
-      '@nrwl/vite': 18.0.3(@babel/traverse@7.25.6)(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6))(@types/node@18.16.9)(nx@18.0.3(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6)))(typescript@5.3.3)(verdaccio@5.29.0(typanion@3.14.0))(vite@5.1.1(@types/node@18.16.9)(less@4.1.3)(sass@1.70.0)(stylus@0.59.0)(terser@5.27.0))(vitest@1.2.2(@types/node@18.16.9)(@vitest/ui@1.6.0)(jsdom@22.1.0)(less@4.1.3)(sass@1.70.0)(stylus@0.59.0)(terser@5.27.0))
+      '@nrwl/vite': 18.0.3(@babel/traverse@7.25.6)(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6))(@types/node@18.16.9)(nx@18.0.3(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6)))(typescript@5.3.3)(verdaccio@5.29.0(typanion@3.14.0))(vite@5.1.1(@types/node@18.16.9)(less@4.1.3)(sass@1.70.0)(stylus@0.59.0)(terser@5.27.0))(vitest@1.2.2)
       '@nx/devkit': 18.0.3(nx@18.0.3(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6)))
       '@nx/js': 18.0.3(@babel/traverse@7.25.6)(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6))(@types/node@18.16.9)(nx@18.0.3(@swc-node/register@1.6.8(@swc/core@1.3.107(@swc/helpers@0.5.6))(@swc/types@0.1.5)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.6)))(typescript@5.3.3)(verdaccio@5.29.0(typanion@3.14.0))
       '@phenomnomnominal/tsquery': 5.0.1(typescript@5.3.3)
@@ -21739,6 +21769,15 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
+  '@svgr/plugin-svgo@8.1.0(@svgr/core@8.1.0(typescript@5.3.3))(typescript@5.4.2)':
+    dependencies:
+      '@svgr/core': 8.1.0(typescript@5.3.3)
+      cosmiconfig: 8.3.6(typescript@5.4.2)
+      deepmerge: 4.3.1
+      svgo: 3.2.0
+    transitivePeerDependencies:
+      - typescript
+
   '@svgr/plugin-svgo@8.1.0(@svgr/core@8.1.0(typescript@5.4.2))(typescript@5.4.2)':
     dependencies:
       '@svgr/core': 8.1.0(typescript@5.4.2)
@@ -21786,8 +21825,8 @@ snapshots:
       '@babel/preset-react': 7.23.3(@babel/core@7.25.2)
       '@babel/preset-typescript': 7.24.7(@babel/core@7.25.2)
       '@svgr/core': 8.1.0(typescript@5.4.2)
-      '@svgr/plugin-jsx': 8.1.0(@svgr/core@8.1.0(typescript@5.4.2))
-      '@svgr/plugin-svgo': 8.1.0(@svgr/core@8.1.0(typescript@5.4.2))(typescript@5.4.2)
+      '@svgr/plugin-jsx': 8.1.0(@svgr/core@8.1.0(typescript@5.3.3))
+      '@svgr/plugin-svgo': 8.1.0(@svgr/core@8.1.0(typescript@5.3.3))(typescript@5.4.2)
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -23044,7 +23083,7 @@ snapshots:
     dependencies:
       '@babel/compat-data': 7.23.5
       '@babel/core': 7.25.2
-      '@babel/helper-define-polyfill-provider': 0.5.0(@babel/core@7.23.9)
+      '@babel/helper-define-polyfill-provider': 0.5.0(@babel/core@7.25.2)
       semver: 6.3.1
     transitivePeerDependencies:
       - supports-color
@@ -23060,7 +23099,7 @@ snapshots:
   babel-plugin-polyfill-corejs3@0.9.0(@babel/core@7.25.2):
     dependencies:
       '@babel/core': 7.25.2
-      '@babel/helper-define-polyfill-provider': 0.5.0(@babel/core@7.23.9)
+      '@babel/helper-define-polyfill-provider': 0.5.0(@babel/core@7.25.2)
       core-js-compat: 3.35.1
     transitivePeerDependencies:
       - supports-color
@@ -23075,7 +23114,7 @@ snapshots:
   babel-plugin-polyfill-regenerator@0.5.5(@babel/core@7.25.2):
     dependencies:
       '@babel/core': 7.25.2
-      '@babel/helper-define-polyfill-provider': 0.5.0(@babel/core@7.23.9)
+      '@babel/helper-define-polyfill-provider': 0.5.0(@babel/core@7.25.2)
     transitivePeerDependencies:
       - supports-color
 
