@@ -29,7 +29,7 @@
         "@meshx/mxui-text": "workspace:0.7.50",
         "@meshx/mxui-icons": "workspace:0.7.50",
         "@react-aria/focus": "^3.18.4",
-        "@react-stately/list": "^3.11.0",
+        "@react-stately/list": "^3.11.1",
         "@react-aria/utils": "^3.25.3",
         "@react-aria/listbox": "^3.13.5",
         "@react-aria/interactions": "^3.20.1",
