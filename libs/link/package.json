@@ -25,7 +25,7 @@
     },
     "devDependencies": {
         "@storybook/react": "7.6.13",
-        "@types/react": "^18.3.6",
+        "@types/react": "^18.3.12",
         "@meshx/mxui-text": "workspace:0.7.50"
     },
     "peerDependencies": {

@@ -22,7 +22,7 @@
         "url": "https://github.com/meshx-org/meshx-ui.git"
     },
     "devDependencies": {
-        "@types/react": "^18.3.6",
+        "@types/react": "^18.3.12",
         "@storybook/react": "^7.6.13",
         "@storybook/addon-actions": "^7.6.13"
     },
