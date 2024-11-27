@@ -24,7 +24,7 @@
         "@storybook/theming": "7.6.13",
         "storybook": "7.6.13",
         "storybook-css-modules-preset": "^1.1.1",
-        "storybook-dark-mode": "^3.0.0",
+        "storybook-dark-mode": "^4.0.2",
         "@internationalized/date": "*",
         "@bunchtogether/vite-plugin-flow": "*",
         "vite": "^4.4.0",
