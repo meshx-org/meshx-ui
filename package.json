@@ -24,7 +24,7 @@
         "@changesets/cli": "^2.26.0",
         "@internationalized/date": "3.1.0",
         "@mdx-js/react": "^2.3.0",
-        "@nx/eslint": "18.0.3",
+        "@nx/eslint": "20.2.2",
         "@nx/eslint-plugin": "20.0.3",
         "@nx/js": "18.0.3",
         "@nx/react": "18.0.3",
